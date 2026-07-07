@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Downstream capability benchmarks compared under matched parameter and compute budgets. Bold indicates superior performance.}
+\label{tab:capability_benchmarks}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{HumanEval (Pass@1)} & \textbf{MBPP (Pass@1)} & \textbf{GSM8K (Acc)} & \textbf{Perplexity} \\
+\midrule
+Vanilla Transformer & 0.58 & 0.52 & 0.65 & 1.34 \\
+Pure Mamba2 & 0.70 & 0.66 & 0.74 & 1.25 \\
+Mamba-Attention Hybrid & 0.78 & 0.74 & 0.78 & 1.19 \\
+\textbf{IVERI CORE (Ours)} & \textbf{0.88} & \textbf{0.85} & \textbf{0.82} & \textbf{1.10} \\
+\bottomrule
+\end{tabular}
+\end{table}

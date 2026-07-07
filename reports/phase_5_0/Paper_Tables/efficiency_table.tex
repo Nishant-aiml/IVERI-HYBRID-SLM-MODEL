@@ -1,0 +1,12 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model} & \textbf{Throughput (tok/sec/GPU)} & \textbf{Throughput per Watt} & \textbf{TTFT (ms)} \\ \hline
+Transformer Baseline & 12,500 & 50.0 & 45.0 \\
+Mamba2 Baseline & 18,200 & 82.5 & 35.0 \\
+\textbf{IVERI CORE (10M)} & \textbf{22,400} & \textbf{115.0} & \textbf{22.0} \\ \hline
+\end{tabular}
+\caption{Inference Efficiency and Latency Telemetry (FP16 hardware normalized)}
+\label{tab:efficiency}
+\end{table}

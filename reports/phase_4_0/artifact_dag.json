@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "dataset",
+      "type": "data"
+    },
+    {
+      "id": "training",
+      "type": "process"
+    },
+    {
+      "id": "checkpoint",
+      "type": "artifact"
+    },
+    {
+      "id": "benchmark",
+      "type": "process"
+    },
+    {
+      "id": "statistics",
+      "type": "process"
+    },
+    {
+      "id": "reports",
+      "type": "artifact"
+    },
+    {
+      "id": "paper",
+      "type": "publication"
+    }
+  ],
+  "edges": [
+    {
+      "source": "dataset",
+      "target": "training"
+    },
+    {
+      "source": "training",
+      "target": "checkpoint"
+    },
+    {
+      "source": "checkpoint",
+      "target": "benchmark"
+    },
+    {
+      "source": "benchmark",
+      "target": "statistics"
+    },
+    {
+      "source": "statistics",
+      "target": "reports"
+    },
+    {
+      "source": "reports",
+      "target": "paper"
+    }
+  ]
+}

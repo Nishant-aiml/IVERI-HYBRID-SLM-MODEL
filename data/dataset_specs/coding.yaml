@@ -1,0 +1,75 @@
+# IVERI Stage 3A — Coding Specialization Datasets
+
+stage: "3A"
+stage_name: coding_specialization
+
+datasets:
+  the_stack_v2_deep:
+    hf_id: bigcode/the-stack-v2
+    hf_config: Python
+    hf_split: train
+    priority: S
+    license: various-permissive
+    format: pretrain
+    description: Python source code corpus
+    size_estimate_gb: 50.0
+    text_field: content
+    mixing_weight: 0.30
+    requires_hf_token: true
+    license_filter_field: license
+    license_filter_values: [mit, apache-2.0, bsd-2-clause, bsd-3-clause]
+    tags: [code, python]
+
+  nemotron_competitive:
+    hf_id: nvidia/Nemotron-SFT-Competitive-Programming-v2
+    hf_config: null
+    hf_split: train
+    priority: S
+    license: NVIDIA-Open-Model
+    format: sft
+    description: Competitive programming with DeepSeek-R1 reasoning traces
+    size_estimate_gb: 2.0
+    format_type: messages
+    mixing_weight: 0.20
+    tags: [competitive, reasoning, programming]
+
+  leetcode:
+    hf_id: yunhui/LeetCodeDataset
+    hf_config: null
+    hf_split: train
+    priority: S
+    license: CC-BY-4.0
+    format: sft
+    description: LeetCode problems with temporal splits
+    size_estimate_gb: 0.5
+    format_type: alpaca
+    mixing_weight: 0.20
+    attribution_required: true
+    tags: [leetcode, algorithms, python]
+
+  opencode_instruct:
+    hf_id: nvidia/OpenCodeInstruct
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: NVIDIA-Open-Model
+    format: sft
+    description: Large-scale coding instruction following
+    size_estimate_gb: 1.0
+    format_type: messages
+    mixing_weight: 0.15
+    tags: [code, instruction]
+
+  codeforces:
+    hf_id: open-r1/codeforces
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: CC-BY-4.0
+    format: sft
+    description: Codeforces problems with DeepSeek-R1 solutions
+    size_estimate_gb: 1.0
+    format_type: messages
+    mixing_weight: 0.15
+    attribution_required: true
+    tags: [competitive, codeforces, reasoning]

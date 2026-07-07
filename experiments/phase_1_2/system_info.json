@@ -1,0 +1,11 @@
+{
+  "os": "Windows",
+  "os_release": "11",
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "pytorch_version": "2.12.1+cpu",
+  "cuda_available": false,
+  "cuda_version": "N/A",
+  "cpu_architecture": "AMD64",
+  "gpu_name": "N/A",
+  "git_commit_hash": "N/A"
+}

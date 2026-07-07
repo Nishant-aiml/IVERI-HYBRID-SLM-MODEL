@@ -1,0 +1,73 @@
+{
+  "campaign_id": "IVERI_CAMPAIGN_2026_PHASE5",
+  "protocol_version": "Phase5.0-v1.0",
+  "git_sha": "unknown",
+  "stage": "all",
+  "ablation": "none",
+  "experiment_ids": [
+    "IVERI_Phase5_pretrain_Seed42_IVERI_Run001",
+    "IVERI_Phase5_pretrain_Seed123_IVERI_Run002",
+    "IVERI_Phase5_pretrain_Seed3407_IVERI_Run003",
+    "IVERI_Phase5_pretrain_Seed2026_IVERI_Run004",
+    "IVERI_Phase5_pretrain_Seed9999_IVERI_Run005",
+    "IVERI_Phase5_pretrain_Seed42_TRANSFORMER_Run001",
+    "IVERI_Phase5_pretrain_Seed123_TRANSFORMER_Run002",
+    "IVERI_Phase5_pretrain_Seed3407_TRANSFORMER_Run003",
+    "IVERI_Phase5_pretrain_Seed2026_TRANSFORMER_Run004",
+    "IVERI_Phase5_pretrain_Seed9999_TRANSFORMER_Run005",
+    "IVERI_Phase5_pretrain_Seed42_MAMBA2_Run001",
+    "IVERI_Phase5_pretrain_Seed123_MAMBA2_Run002",
+    "IVERI_Phase5_pretrain_Seed3407_MAMBA2_Run003",
+    "IVERI_Phase5_pretrain_Seed2026_MAMBA2_Run004",
+    "IVERI_Phase5_pretrain_Seed9999_MAMBA2_Run005",
+    "IVERI_Phase5_pretrain_Seed42_HYBRID_Run001",
+    "IVERI_Phase5_pretrain_Seed123_HYBRID_Run002",
+    "IVERI_Phase5_pretrain_Seed3407_HYBRID_Run003",
+    "IVERI_Phase5_pretrain_Seed2026_HYBRID_Run004",
+    "IVERI_Phase5_pretrain_Seed9999_HYBRID_Run005",
+    "IVERI_Phase5_SFT_Seed42_Run001",
+    "IVERI_Phase5_SFT_Seed123_Run002",
+    "IVERI_Phase5_SFT_Seed3407_Run003",
+    "IVERI_Phase5_SFT_Seed2026_Run004",
+    "IVERI_Phase5_SFT_Seed9999_Run005",
+    "IVERI_Phase5_Coding_Seed42_Run001",
+    "IVERI_Phase5_Coding_Seed123_Run002",
+    "IVERI_Phase5_Coding_Seed3407_Run003",
+    "IVERI_Phase5_Coding_Seed2026_Run004",
+    "IVERI_Phase5_Coding_Seed9999_Run005",
+    "IVERI_Phase5_Alignment_Seed42_Run001",
+    "IVERI_Phase5_Alignment_Seed123_Run002",
+    "IVERI_Phase5_Alignment_Seed3407_Run003",
+    "IVERI_Phase5_Alignment_Seed2026_Run004",
+    "IVERI_Phase5_Alignment_Seed9999_Run005"
+  ],
+  "dataset_versions": {
+    "FineWeb-Edu": "sample-10B",
+    "Wikipedia": "2026-06-01-dump",
+    "The Stack": "v1.2-licensed-subset",
+    "OpenHermes": "OpenHermes-2.5-sft",
+    "UltraFeedback": "binarized-cleaned-preference"
+  },
+  "benchmark_versions": {
+    "HumanEval": "1.0.0",
+    "MBPP": "1.0.0",
+    "LiveCodeBench": "2026.06",
+    "LongBench": "1.0.0",
+    "IFEval": "1.0.0"
+  },
+  "dataset_hashes": {
+    "pretrain.bin": "e5fba752ad9ecc048818b108fc74542dc730f194af5e70248c0bb474e2d027f6",
+    "validation.bin": "444607a1cb00cd8bd5cd5fc8363806e6dab2f3c50f889ab4c650446753a8b67d",
+    "VERSION.json": "7dda6cd5c50205fab50359b045ea5306123b880ed2fe238585b5f542ff6f2f4c",
+    "dataset_manifest.json": "7d71a1940b39b2d27bffaf0fcb79a72b9243caf7bc09d88761808eea292a7756",
+    "base_config.py": "c24744cc1b55978d7e38f78ced0f697a16d51086456d70d8ca1a5cbc5758a434",
+    "preprocessing.py": "8d62a59e59c40c9b6a09070d64ab17b27f6e1e00aac01aff66897f43ca20b433",
+    "dataloader.py": "d721d8cf903c1640691d59f54f39fae5c81be9080e651db62f0b852b487030e0"
+  },
+  "timestamp": 1783331118.4357665,
+  "timestamp_utc": "2026-07-06T09:45:18Z",
+  "hardware_summary": {
+    "platform": "Windows",
+    "gpu_available": true
+  }
+}

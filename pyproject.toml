@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iveri-core"
+version = "0.1.0"
+description = "IVERI CORE — Byte-entropy-native hybrid SLM combining BLT + Titans + Mamba2 + MoR + MoE"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [
+    {name = "IVERI Project"},
+]
+keywords = [
+    "language-model",
+    "byte-latent-transformer",
+    "state-space-model",
+    "mixture-of-experts",
+    "neural-memory",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Repository = "https://github.com/iveri-project/iveri-core"
+
+# ============================================================
+# Tool Configurations
+# ============================================================
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | scratch
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["configs", "core", "model", "data", "training", "evaluation", "baselines", "utils", "scripts"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "scratch",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM"]
+ignore = ["E501", "N803", "N806", "N802", "N812"]  # Line length handled by black, math conventions allowed
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "gpu: marks tests that require CUDA GPU",
+    "integration: marks integration tests",
+]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Relaxed for research code
+ignore_missing_imports = true  # Many ML libraries lack stubs
+exclude = "scratch"
+
+[tool.setuptools.packages.find]
+include = [
+    "configs*",
+    "core*",
+    "model*",
+    "data*",
+    "training*",
+    "evaluation*",
+    "baselines*",
+    "utils*",
+    "scripts*",
+]

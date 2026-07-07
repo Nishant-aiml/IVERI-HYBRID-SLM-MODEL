@@ -1,0 +1,43 @@
+{
+  "release_id": "rel_IVERI_2026_Phase6_1_Seed42_IVERI_Run001",
+  "experiment_id": "IVERI_2026_Phase6_1_Seed42_IVERI_Run001",
+  "model_version": "v1.0.0-Nano",
+  "architecture_version": "v1.0.0",
+  "git_commit_sha": "sha_git_lock_phase6_1_abc",
+  "git_branch": "main",
+  "dataset_versions": {
+    "FineWeb-Edu": "sample-10B",
+    "Wikipedia": "2026-06-01-dump",
+    "Magpie-Pro": "v0.1-1M",
+    "UltraFeedback": "binarized"
+  },
+  "dataset_hashes": {
+    "pretrain.bin": "locked-hash-pretrain-bin",
+    "validation.bin": "locked-hash-val-bin"
+  },
+  "tokenizer_hash": "byte-latent-native-no-tokenizer",
+  "config_hash": "locked-base-config-hash",
+  "benchmark_versions": {
+    "HumanEval": "v1.0",
+    "NeedleInHaystack": "v2.1"
+  },
+  "environment_information": {
+    "os": "Windows",
+    "python": "3.10.11",
+    "pytorch": "2.3.0",
+    "numpy": "1.24.3",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "cuda": "12.1"
+  },
+  "checkpoint_hash": "locked-checkpoint-sha256",
+  "checkpoint_path": "checkpoints/IVERI_2026_Phase6_1_Seed42_IVERI_Run001/final.pt",
+  "publication_version": "v2.0.0",
+  "report_hashes": {
+    "FINAL_REPORT.md": "hash-final-report"
+  },
+  "reproducibility_score": 100,
+  "generation_timestamp": "2026-07-05T06:43:47Z",
+  "license": "Apache-2.0",
+  "citation": "@article{ivericore2026, title={IVERI CORE: Byte-Entropy-Native Hybrid SLM}, year={2026}}",
+  "build_profile": "production"
+}

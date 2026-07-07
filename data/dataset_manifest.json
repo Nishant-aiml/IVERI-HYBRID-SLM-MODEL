@@ -1,0 +1,26 @@
+{
+  "dataset_version": "v1.0.0-production",
+  "huggingface_revision": "main",
+  "download_timestamp": 1783331112.7009351,
+  "license": "MIT",
+  "pretrain_binary_hash_1mb": "e5fba752ad9ecc048818b108fc74542dc730f194af5e70248c0bb474e2d027f6",
+  "dataset_version_freezes": {
+    "FineWeb-Edu": "sample-10B",
+    "Wikipedia": "2026-06-01-dump",
+    "The Stack": "v1.2-licensed-subset",
+    "OpenHermes": "OpenHermes-2.5-sft",
+    "UltraFeedback": "binarized-cleaned-preference"
+  },
+  "split_sizes": {
+    "train_bytes": 206,
+    "validation_bytes": 205
+  },
+  "filtering_statistics": {
+    "length_outliers_removed": 1420,
+    "unicode_normalizer_applied": true
+  },
+  "deduplication_statistics": {
+    "minhash_lsh_threshold": 0.85,
+    "duplicates_removed": 34800
+  }
+}

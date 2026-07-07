@@ -1,0 +1,16 @@
+{
+  "config_hash": "fe12de98d498ce0be38e504594f17bf91a78689000e67cd706d4b0a8e5da8f18",
+  "git_sha": "unknown",
+  "dataset_hashes": {
+    "pretrain.bin": "e5fba752ad9ecc048818b108fc74542dc730f194af5e70248c0bb474e2d027f6",
+    "validation.bin": "444607a1cb00cd8bd5cd5fc8363806e6dab2f3c50f889ab4c650446753a8b67d",
+    "VERSION.json": "7dda6cd5c50205fab50359b045ea5306123b880ed2fe238585b5f542ff6f2f4c",
+    "dataset_manifest.json": "7d71a1940b39b2d27bffaf0fcb79a72b9243caf7bc09d88761808eea292a7756",
+    "base_config.py": "c24744cc1b55978d7e38f78ced0f697a16d51086456d70d8ca1a5cbc5758a434",
+    "preprocessing.py": "8d62a59e59c40c9b6a09070d64ab17b27f6e1e00aac01aff66897f43ca20b433",
+    "dataloader.py": "d721d8cf903c1640691d59f54f39fae5c81be9080e651db62f0b852b487030e0"
+  },
+  "checkpoint_hashes": {
+    "golden_base": "hash_golden_phase6_1"
+  }
+}

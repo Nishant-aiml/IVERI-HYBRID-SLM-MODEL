@@ -1,0 +1,43 @@
+# IVERI CORE — Requirements
+# ========================
+# Production dependencies for the IVERI hybrid SLM architecture.
+#
+# NOTE: GPU-specific packages (mamba-ssm, flash-attn, triton) require
+# CUDA toolkit and are installed separately. See README.md for instructions.
+
+# Core Framework
+torch>=2.3.0
+
+# Tensor Manipulation
+einops>=0.7.0
+numpy>=1.24.0
+
+# Progress Bars
+tqdm>=4.65.0
+
+# Configuration & Serialization
+pyyaml>=6.0
+
+# HuggingFace Ecosystem
+transformers>=4.40.0
+datasets>=2.19.0
+tokenizers>=0.19.0
+accelerate>=0.30.0
+
+# Training Monitoring
+wandb>=0.16.0
+
+# Evaluation
+lm-eval>=0.4.0
+
+# Quantization
+bitsandbytes>=0.43.0
+
+# rotary-emb>=0.1.0 (requires CUDA compiler to build)
+
+# ============================================================
+# GPU-SPECIFIC PACKAGES (install separately with CUDA toolkit)
+# ============================================================
+# pip install mamba-ssm --no-build-isolation
+# pip install flash-attn --no-build-isolation
+# pip install triton

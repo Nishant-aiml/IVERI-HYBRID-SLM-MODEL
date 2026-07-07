@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "dataset",
+      "type": "data"
+    },
+    {
+      "id": "pretrain",
+      "type": "process",
+      "phase": "B"
+    },
+    {
+      "id": "ablation",
+      "type": "process",
+      "phase": "C"
+    },
+    {
+      "id": "sft",
+      "type": "process",
+      "phase": "D"
+    },
+    {
+      "id": "coding",
+      "type": "process",
+      "phase": "D"
+    },
+    {
+      "id": "alignment",
+      "type": "process",
+      "phase": "D"
+    },
+    {
+      "id": "checkpoint",
+      "type": "artifact"
+    },
+    {
+      "id": "benchmark",
+      "type": "process",
+      "phase": "E"
+    },
+    {
+      "id": "statistics",
+      "type": "process",
+      "phase": "E"
+    },
+    {
+      "id": "reports",
+      "type": "artifact"
+    },
+    {
+      "id": "final_report",
+      "type": "artifact"
+    },
+    {
+      "id": "paper",
+      "type": "publication"
+    }
+  ],
+  "edges": [
+    {
+      "source": "dataset",
+      "target": "pretrain"
+    },
+    {
+      "source": "pretrain",
+      "target": "ablation"
+    },
+    {
+      "source": "pretrain",
+      "target": "checkpoint"
+    },
+    {
+      "source": "checkpoint",
+      "target": "sft"
+    },
+    {
+      "source": "sft",
+      "target": "coding"
+    },
+    {
+      "source": "coding",
+      "target": "alignment"
+    },
+    {
+      "source": "alignment",
+      "target": "benchmark"
+    },
+    {
+      "source": "benchmark",
+      "target": "statistics"
+    },
+    {
+      "source": "statistics",
+      "target": "reports"
+    },
+    {
+      "source": "reports",
+      "target": "final_report"
+    },
+    {
+      "source": "final_report",
+      "target": "paper"
+    }
+  ]
+}

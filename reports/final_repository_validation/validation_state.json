@@ -1,0 +1,76 @@
+{
+  "timestamp_utc": "2026-07-06T18:39:39Z",
+  "integrity_tests_passed": 68,
+  "integrity_tests_failed": 0,
+  "audits": [
+    {
+      "name": "ablation",
+      "phase": "6.3.1F",
+      "verdict": "PASS",
+      "detail": "distinct=True"
+    },
+    {
+      "name": "statistics",
+      "phase": "6.3.1G",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "documentation",
+      "phase": "6.3.1H",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "publication",
+      "phase": "6.3.1A",
+      "verdict": "PASS",
+      "detail": "mock_removed=True"
+    },
+    {
+      "name": "replay",
+      "phase": "6.3.1A/6",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "causality",
+      "phase": "6.3.1C",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "titans",
+      "phase": "6.3.1D",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "entropy_routing",
+      "phase": "6.3.1E",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "byte_vocab",
+      "phase": "6.3.2-OBJ7",
+      "verdict": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "documentation_sync",
+      "phase": "6.3.2-OBJ8",
+      "verdict": "PASS",
+      "detail": ""
+    }
+  ],
+  "remaining_issues": [
+    "No dedicated inference/ package (generation only via IVERIModel.generate).",
+    "Stage 3B proprietary dataset directories are empty (.gitkeep only).",
+    "research/generate_reports.py is Phase 3.5 scratch with mock metrics \u2014 must not be used for publication (publication_manager is fail-closed).",
+    "Only phase_0_plan.md exists; Phases 1\u20136.3 implementation plans missing.",
+    "Campaign metadata labels Phase 5.0 while artifacts live under reports/phase_6_3/."
+  ],
+  "fixes_applied": [],
+  "final_verdict": "\u26a0 Research Ready (Engineering Pending)"
+}

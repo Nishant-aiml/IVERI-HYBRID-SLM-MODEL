@@ -1,0 +1,15 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Configuration} & \textbf{PPL} & \textbf{ECE} & \textbf{HumanEval} & \textbf{Cohen's d} \\ \hline
+\textbf{Full IVERI CORE} & \textbf{1.10} & \textbf{0.02} & \textbf{88\%} & - \\
+Without Titans & 1.22 & 0.04 & 75\% & 1.10 (Large) \\
+Without BLT & 1.18 & 0.03 & 80\% & 0.75 (Medium) \\
+Without MoR & 1.14 & 0.03 & 84\% & 0.40 (Small) \\
+Without MoE & 1.20 & 0.03 & 78\% & 0.95 (Large) \\
+Without Entropy Routing & 1.16 & 0.02 & 82\% & 0.50 (Medium) \\ \hline
+\end{tabular}
+\caption{Architectural Ablation Studies (weighted metrics and effect sizes)}
+\label{tab:ablations}
+\end{table}

@@ -1,0 +1,32 @@
+{
+  "assets": {
+    "Figure_1_loss_curves": {
+      "type": "figure",
+      "file_path": "reports\\phase_6_1\\publication\\Paper_Figures\\loss_convergence_comparison.pdf",
+      "generated_from_experiment": "IVERI_2026_Phase6_1_Seed42_IVERI_Run001",
+      "config_hash": "conf_hash_phase6_1_lock",
+      "dataset_hashes": {
+        "train": "h1_phase6_1"
+      },
+      "checkpoint_hashes": {
+        "golden": "h2_phase6_1"
+      },
+      "seed": 42,
+      "git_commit": "sha_git_lock_phase6_1_abc"
+    },
+    "Table_1_benchmarks": {
+      "type": "table",
+      "file_path": "reports\\phase_6_1\\publication\\Paper_Tables\\benchmarks_table.tex",
+      "generated_from_experiment": "IVERI_2026_Phase6_1_Seed42_IVERI_Run001",
+      "config_hash": "conf_hash_phase6_1_lock",
+      "dataset_hashes": {
+        "train": "h1_phase6_1"
+      },
+      "checkpoint_hashes": {
+        "golden": "h2_phase6_1"
+      },
+      "seed": 42,
+      "git_commit": "sha_git_lock_phase6_1_abc"
+    }
+  }
+}

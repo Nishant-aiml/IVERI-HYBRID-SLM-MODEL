@@ -1,0 +1,25 @@
+# IVERI CORE — Development Dependencies
+# ======================================
+# Testing, linting, formatting, type checking.
+
+# Testing
+pytest>=7.0
+pytest-cov>=4.0
+pytest-timeout>=2.2.0
+
+# Formatting
+black>=23.0
+isort>=5.0
+
+# Linting
+ruff>=0.4.0
+
+# Type Checking
+mypy>=1.0
+
+# Publication figures (required for replay/publication integration tests)
+matplotlib>=3.9.0
+
+# Documentation (future)
+# mkdocs>=1.5.0
+# mkdocs-material>=9.0

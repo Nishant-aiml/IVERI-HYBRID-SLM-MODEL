@@ -1,0 +1,16 @@
+# Performance Report
+
+```json
+{
+  "timestamp_utc": "2026-07-07T04:41:39Z",
+  "device": "cpu",
+  "model_profile": "nano-reduced (hidden=64, layers=2)",
+  "provenance": "MEASURED",
+  "runs": 2,
+  "avg_latency_seconds": 0.3315276499961328,
+  "avg_tokens_per_second": 57.07853220391104,
+  "peak_vram_mb": 0.0
+}
+```
+
+**Generated:** 2026-07-07T04:41:49Z

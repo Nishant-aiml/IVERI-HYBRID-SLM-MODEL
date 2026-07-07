@@ -1,0 +1,20 @@
+{
+  "assets": {
+    "Figure_1_loss_curves": {
+      "type": "figure",
+      "file_path": "reports\\phase_3_6\\Paper_Figures\\loss_convergence_comparison.pdf",
+      "generated_from_experiment": "exp_iveri_candidate",
+      "checkpoint_hash": "hash_gold",
+      "seed": 42,
+      "git_commit": "git_abc"
+    },
+    "Table_1_benchmarks": {
+      "type": "table",
+      "file_path": "reports\\phase_3_6\\Paper_Tables\\benchmarks_table.tex",
+      "generated_from_experiment": "exp_iveri_candidate",
+      "checkpoint_hash": "hash_gold",
+      "seed": 42,
+      "git_commit": "git_abc"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+# IVERI Stage 2 — Instruction Tuning (SFT) Datasets
+# All datasets MUST be in Q+A format
+
+stage: 2
+stage_name: instruction_tuning
+
+datasets:
+  magpie_pro:
+    hf_id: magpie-align/Magpie-Pro-1M-v0.1
+    hf_config: null
+    hf_split: train
+    priority: S
+    license: Apache-2.0
+    format: sft
+    description: 1M high-quality conversations from Llama-3-Instruct
+    size_estimate_gb: 2.0
+    format_type: messages
+    mixing_weight: 0.30
+    tags: [instruction, conversation, high-quality]
+
+  tulu3_sft:
+    hf_id: allenai/tulu-3-sft-mixture
+    hf_config: null
+    hf_split: train
+    priority: S
+    license: Apache-2.0
+    format: sft
+    description: 940K diverse SFT examples from AI2
+    size_estimate_gb: 1.0
+    format_type: messages
+    mixing_weight: 0.25
+    tags: [instruction, diverse, ai2]
+
+  openhermes:
+    hf_id: teknium/OpenHermes-2.5
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: Apache-2.0
+    format: sft
+    description: 1M diverse, high-quality instruction pairs
+    size_estimate_gb: 1.0
+    format_type: conversations
+    mixing_weight: 0.20
+    tags: [instruction, diverse]
+
+  wildchat:
+    hf_id: allenai/WildChat
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: Apache-2.0
+    format: sft
+    description: 652K real human-AI conversations
+    size_estimate_gb: 0.5
+    format_type: conversation
+    mixing_weight: 0.10
+    tags: [real-world, human, conversation]
+
+  code_feedback:
+    hf_id: m-a-p/Code-Feedback
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: Apache-2.0
+    format: sft
+    description: Iterative code debugging conversations
+    size_estimate_gb: 1.0
+    format_type: messages
+    mixing_weight: 0.10
+    tags: [code, debugging, iterative]
+
+  numinamath:
+    hf_id: AI-MO/NuminaMath-CoT
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: Apache-2.0
+    format: sft
+    description: 860K math problems with chain-of-thought reasoning
+    size_estimate_gb: 0.5
+    format_type: alpaca
+    mixing_weight: 0.05
+    tags: [math, reasoning, chain-of-thought]

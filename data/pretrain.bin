@@ -1,0 +1,1 @@
+This is mock pretraining binary data representing processed token/byte streams for IVERI CORE pretraining validation stage. It contains sufficient text and byte contents to allow dataloader mapping checks.

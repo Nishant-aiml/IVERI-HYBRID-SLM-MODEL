@@ -1,0 +1,44 @@
+{
+  "rmsnorm": {
+    "forward_latency_ms": 3.8096765000082087,
+    "backward_latency_ms": 13.37697909999406,
+    "peak_memory_mb": 0.0,
+    "parameter_count": 256.0,
+    "throughput_elements_per_sec": 1100960672.1176884,
+    "gradients_norm_distribution": [
+      2136763.0
+    ],
+    "nan_count_gradients": 0.0,
+    "inf_count_gradients": 0.0,
+    "nan_count_outputs": 0.0,
+    "inf_count_outputs": 0.0
+  },
+  "swiglu": {
+    "forward_latency_ms": 80.28756619998603,
+    "backward_latency_ms": 171.59610379999503,
+    "peak_memory_mb": 0.0,
+    "parameter_count": 589824.0,
+    "throughput_elements_per_sec": 52241015.62068187,
+    "gradients_norm_distribution": [
+      45058968.0,
+      45062592.0,
+      77459856.0
+    ],
+    "nan_count_gradients": 0.0,
+    "inf_count_gradients": 0.0,
+    "nan_count_outputs": 0.0,
+    "inf_count_outputs": 0.0
+  },
+  "rope": {
+    "forward_latency_ms": 6.198178599996027,
+    "backward_latency_ms": 9.41664540002239,
+    "peak_memory_mb": 0.0,
+    "parameter_count": 0.0,
+    "throughput_elements_per_sec": 676699441.9945706,
+    "gradients_norm_distribution": [],
+    "nan_count_gradients": 0.0,
+    "inf_count_gradients": 0.0,
+    "nan_count_outputs": 0.0,
+    "inf_count_outputs": 0.0
+  }
+}

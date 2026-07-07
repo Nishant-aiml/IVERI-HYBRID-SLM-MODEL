@@ -1,0 +1,48 @@
+{
+  "campaign_id": "IVERI_CAMPAIGN_2026_001",
+  "protocol_version": "Phase4.1-v1.4",
+  "git_sha": "sha_git_abc",
+  "experiment_ids": [
+    "IVERI_2026_07_04_Seed42_IVERI_Run001",
+    "IVERI_2026_07_04_Seed123_IVERI_Run002",
+    "IVERI_2026_07_04_Seed3407_IVERI_Run003",
+    "IVERI_2026_07_04_Seed2026_IVERI_Run004",
+    "IVERI_2026_07_04_Seed9999_IVERI_Run005",
+    "IVERI_2026_07_04_Seed42_TRANSFORMER_Run001",
+    "IVERI_2026_07_04_Seed123_TRANSFORMER_Run002",
+    "IVERI_2026_07_04_Seed3407_TRANSFORMER_Run003",
+    "IVERI_2026_07_04_Seed2026_TRANSFORMER_Run004",
+    "IVERI_2026_07_04_Seed9999_TRANSFORMER_Run005",
+    "IVERI_2026_07_04_Seed42_MAMBA2_Run001",
+    "IVERI_2026_07_04_Seed123_MAMBA2_Run002",
+    "IVERI_2026_07_04_Seed3407_MAMBA2_Run003",
+    "IVERI_2026_07_04_Seed2026_MAMBA2_Run004",
+    "IVERI_2026_07_04_Seed9999_MAMBA2_Run005",
+    "IVERI_2026_07_04_Seed42_HYBRID_Run001",
+    "IVERI_2026_07_04_Seed123_HYBRID_Run002",
+    "IVERI_2026_07_04_Seed3407_HYBRID_Run003",
+    "IVERI_2026_07_04_Seed2026_HYBRID_Run004",
+    "IVERI_2026_07_04_Seed9999_HYBRID_Run005"
+  ],
+  "dataset_versions": {
+    "FineWeb-Edu": "sample-10B",
+    "Wikipedia": "2026-06-01-dump",
+    "The Stack": "v1.2-licensed-subset",
+    "OpenHermes": "OpenHermes-2.5-sft",
+    "UltraFeedback": "binarized-cleaned-preference"
+  },
+  "benchmark_versions": {
+    "HumanEval": "1.0.0",
+    "MBPP": "1.0.0",
+    "LiveCodeBench": "2026.06"
+  },
+  "dataset_hashes": {
+    "pretrain": "hash_pretrain",
+    "validation": "hash_validation"
+  },
+  "timestamp": 1783220459.880822,
+  "hardware_summary": {
+    "platform": "Windows",
+    "gpu_available": true
+  }
+}

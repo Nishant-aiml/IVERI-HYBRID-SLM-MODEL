@@ -1,0 +1,13 @@
+{
+  "forward_latency_ms": 3.8126488999987487,
+  "backward_latency_ms": 3.667678400001023,
+  "mean_routing_entropy": 1.3485281467437744,
+  "expert_utilization_variance": 5.018462616135366e-05,
+  "expert_utilization_histogram": [
+    0.50726318359375,
+    0.50244140625,
+    0.49041748046875,
+    0.4998779296875
+  ],
+  "aux_loss_value": 0.020000580698251724
+}
