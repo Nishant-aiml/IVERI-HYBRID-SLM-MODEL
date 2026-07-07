@@ -1,0 +1,50 @@
+{
+  "stages": {
+    "input_projection_ms": 3.2119450002210215,
+    "causal_conv1d_ms": 0.7310869998764247,
+    "selective_ssd_scan_ms": 120.21005199989304,
+    "output_projection_ms": 1.2033629999496043
+  },
+  "sequence_scaling": {
+    "seq_128": {
+      "mamba_forward_ms": 36.91071000066586,
+      "mamba_backward_ms": 86.7806850001216,
+      "attention_forward_ms": 2.104844999848865,
+      "attention_backward_ms": 2.3928250011522323,
+      "mamba_state_norm": 1.3917535543441772,
+      "mamba_grad_norm": 2.824496030807495
+    },
+    "seq_512": {
+      "mamba_forward_ms": 151.15104500000598,
+      "mamba_backward_ms": 434.96692000044277,
+      "attention_forward_ms": 7.139939999615308,
+      "attention_backward_ms": 9.734160000516567,
+      "mamba_state_norm": 2.749554395675659,
+      "mamba_grad_norm": 5.381362438201904
+    },
+    "seq_1024": {
+      "mamba_forward_ms": 310.75498499994865,
+      "mamba_backward_ms": 1237.7387399988947,
+      "attention_forward_ms": 22.33401999983471,
+      "attention_backward_ms": 33.5204299990437,
+      "mamba_state_norm": 3.79970121383667,
+      "mamba_grad_norm": 7.70826530456543
+    },
+    "seq_2048": {
+      "mamba_forward_ms": 622.0824250005535,
+      "mamba_backward_ms": 3987.7330299990717,
+      "attention_forward_ms": 84.1430800006492,
+      "attention_backward_ms": 113.97501499886857,
+      "mamba_state_norm": 5.495083332061768,
+      "mamba_grad_norm": 10.891497611999512
+    },
+    "seq_4096": {
+      "mamba_forward_ms": 1227.6523799999268,
+      "mamba_backward_ms": 17333.30753499904,
+      "attention_forward_ms": 276.0332749996451,
+      "attention_backward_ms": 387.70763500069734,
+      "mamba_state_norm": 7.677306175231934,
+      "mamba_grad_norm": 15.3839693069458
+    }
+  }
+}

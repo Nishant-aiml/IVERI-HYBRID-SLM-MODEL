@@ -1,0 +1,34 @@
+{
+  "campaign_id": "IVERI_CAMPAIGN_2026_PHASE5",
+  "protocol_version": "Phase5.0-v1.0",
+  "git_sha": "sha_git_phase5_abc",
+  "stage": "pretrain",
+  "ablation": "none",
+  "experiment_ids": [
+    "IVERI_Phase5_Benchmarks_Only_Eval"
+  ],
+  "dataset_versions": {
+    "FineWeb-Edu": "sample-10B",
+    "Wikipedia": "2026-06-01-dump",
+    "The Stack": "v1.2-licensed-subset",
+    "OpenHermes": "OpenHermes-2.5-sft",
+    "UltraFeedback": "binarized-cleaned-preference"
+  },
+  "benchmark_versions": {
+    "HumanEval": "1.0.0",
+    "MBPP": "1.0.0",
+    "LiveCodeBench": "2026.06",
+    "LongBench": "1.0.0",
+    "IFEval": "1.0.0"
+  },
+  "dataset_hashes": {
+    "pretrain": "hash_pretrain_phase5",
+    "validation": "hash_validation_phase5"
+  },
+  "timestamp": 1783222316.2787614,
+  "timestamp_utc": "2026-07-05T03:31:56Z",
+  "hardware_summary": {
+    "platform": "Windows",
+    "gpu_available": true
+  }
+}

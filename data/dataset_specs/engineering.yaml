@@ -1,0 +1,54 @@
+# IVERI Stage 3B — Proprietary Indian Engineering Dataset
+# These datasets are built manually — not downloaded from HuggingFace
+
+stage: "3B"
+stage_name: proprietary_engineering
+
+datasets:
+  university_papers:
+    source: local
+    path: data/proprietary/university_papers
+    priority: S
+    license: PUBLIC
+    format: sft
+    description: Anna University/VTU/AKTU question papers in Q+A format
+    size_estimate_gb: 0.5
+    format_type: alpaca
+    mixing_weight: 0.20
+    tags: [university, exam, india]
+
+  gate_questions:
+    source: local
+    path: data/proprietary/gate_questions
+    priority: S
+    license: PUBLIC
+    format: sft
+    description: GATE CS 1991-2025 questions with detailed explanations
+    size_estimate_gb: 0.1
+    format_type: alpaca
+    mixing_weight: 0.20
+    tags: [gate, cs, exam, india]
+
+  placement_qa:
+    source: local
+    path: data/proprietary/placement_qa
+    priority: S
+    license: PROPRIETARY
+    format: sft
+    description: Placement interview Q+A for Indian CS students
+    size_estimate_gb: 0.2
+    format_type: messages
+    mixing_weight: 0.25
+    tags: [placement, interview, india]
+
+  subject_explanations:
+    source: local
+    path: data/proprietary/subject_explanations
+    priority: S
+    license: PROPRIETARY
+    format: sft
+    description: Subject-wise concept explanations as Q+A pairs
+    size_estimate_gb: 0.5
+    format_type: alpaca
+    mixing_weight: 0.35
+    tags: [education, concepts, india]

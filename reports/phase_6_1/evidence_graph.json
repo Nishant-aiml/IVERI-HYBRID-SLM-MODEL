@@ -1,0 +1,21 @@
+{
+  "H1": {
+    "statistics_report": "reports/phase_5_0/Statistics_Report.md",
+    "benchmarks": [
+      "perplexity"
+    ],
+    "run_uuid": "IVERI_Phase5_pretrain_Seed42_IVERI_Run001",
+    "p_value": null,
+    "cohen_d": null
+  },
+  "H2": {
+    "statistics_report": "reports/phase_5_0/Long_Context_Report.md",
+    "benchmarks": [
+      "longbench",
+      "needle"
+    ],
+    "run_uuid": "IVERI_Phase5_pretrain_Seed42_IVERI_Run001",
+    "p_value": null,
+    "cohen_d": null
+  }
+}

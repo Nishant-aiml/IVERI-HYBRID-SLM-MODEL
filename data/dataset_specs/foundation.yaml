@@ -1,0 +1,89 @@
+# IVERI Stage 1 — Foundation Pretraining Datasets
+# Format: YAML plugin spec loaded by DataRegistry
+
+stage: 1
+stage_name: foundation_pretraining
+
+datasets:
+  tinystories:
+    hf_id: roneneldan/TinyStories
+    hf_config: null
+    hf_split: train
+    priority: S
+    license: MIT
+    format: pretrain
+    description: Simple English stories for initial training
+    size_estimate_gb: 2.1
+    text_field: text
+    mixing_weight: 0.05
+    tags: [simple, english, stories]
+
+  fineweb_edu:
+    hf_id: HuggingFaceFW/fineweb-edu
+    hf_config: sample-10BT
+    hf_split: train
+    priority: S
+    license: ODC-By
+    format: pretrain
+    description: High-quality educational web text filtered by Llama-3-70B
+    size_estimate_gb: 40.0
+    text_field: text
+    mixing_weight: 0.35
+    requires_hf_token: false
+    tags: [web, educational, high-quality]
+
+  dclm_baseline:
+    hf_id: mlfoundations/dclm-baseline-1.0
+    hf_config: null
+    hf_split: train
+    priority: S
+    license: ODC-By
+    format: pretrain
+    description: DCLM curated web corpus with best benchmark performance
+    size_estimate_gb: 30.0
+    text_field: text
+    mixing_weight: 0.25
+    tags: [web, curated, dclm]
+
+  wikipedia:
+    hf_id: wikimedia/wikipedia
+    hf_config: 20220301.en
+    hf_split: train
+    priority: A
+    license: CC-BY-SA-3.0
+    format: pretrain
+    description: English Wikipedia - factual structured knowledge
+    size_estimate_gb: 20.0
+    text_field: text
+    mixing_weight: 0.10
+    attribution_required: true
+    tags: [encyclopedia, factual, structured]
+
+  finemath:
+    hf_id: HuggingFaceFW/finemath
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: ODC-By
+    format: pretrain
+    description: 54B tokens of math content, improves general reasoning
+    size_estimate_gb: 20.0
+    text_field: text
+    mixing_weight: 0.10
+    tags: [math, reasoning, stem]
+
+  the_stack_v2_python:
+    hf_id: bigcode/the-stack-v2
+    hf_config: Python
+    hf_split: train
+    priority: A
+    license: various-permissive
+    format: pretrain
+    description: Python source code, improves code and reasoning
+    size_estimate_gb: 50.0
+    text_field: content
+    mixing_weight: 0.15
+    requires_hf_token: true
+    license_filter_field: license
+    license_filter_values: [mit, apache-2.0, bsd-2-clause, bsd-3-clause]
+    tags: [code, python, programming]

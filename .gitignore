@@ -1,0 +1,85 @@
+# ============================================================
+# IVERI CORE — .gitignore
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Training Artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+checkpoints/
+
+# Logs
+logs/
+*.log
+
+# Weights & Biases
+wandb/
+
+# Data (downloaded datasets — too large for git)
+data/raw/
+data/processed/
+data/cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+
+# Reports (generated, can be regenerated)
+reports/*/tests/*.xml
+reports/*/tests/*.html
+
+# Temporary
+tmp/
+temp/
+scratch/
+
+# Custom project environment and local databases
+.venv312/
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+

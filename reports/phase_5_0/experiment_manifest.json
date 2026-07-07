@@ -1,0 +1,31 @@
+{
+  "experiment_id": "IVERI_Phase5_Benchmarks_Only_Eval",
+  "git_sha": "unknown",
+  "git_branch": "unknown",
+  "config_hash": "hash_conf_phase5_frozen",
+  "dataset_hashes": {
+    "pretrain": "hash_pretrain_phase5",
+    "validation": "hash_validation_phase5"
+  },
+  "checkpoint_hashes": {
+    "golden_base": "hash_golden_phase5"
+  },
+  "versions": {
+    "python": "3.14.4",
+    "pytorch": "2.12.1+cpu",
+    "cuda": "None",
+    "cudnn": "None",
+    "compiler": "MSC v.1944 64 bit (AMD64)"
+  },
+  "environment": {
+    "os": "Windows 11",
+    "hostname": "Nishant-Datta",
+    "cpu_cores": 16,
+    "gpu": "None",
+    "total_ram_gb": 16.0
+  },
+  "environment_variables": {
+    "PYTHONPATH": "",
+    "CUDA_VISIBLE_DEVICES": ""
+  }
+}

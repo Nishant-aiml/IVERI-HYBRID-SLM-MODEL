@@ -1,0 +1,45 @@
+# IVERI Stage 4 — Preference Optimization Datasets
+# Use ONLY after Stage 2+3 are stable
+
+stage: 4
+stage_name: preference_optimization
+
+datasets:
+  ultrafeedback:
+    hf_id: HuggingFaceH4/ultrafeedback_binarized
+    hf_config: null
+    hf_split: train_prefs
+    priority: A
+    license: MIT
+    format: preference
+    description: 64K prompts with GPT-4 ranked responses (chosen/rejected)
+    size_estimate_gb: 0.2
+    format_type: dpo
+    mixing_weight: 0.35
+    tags: [dpo, preference, alignment]
+
+  tulu3_pref:
+    hf_id: allenai/tulu-3-pref-mixture
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: Apache-2.0
+    format: preference
+    description: State of the art preference data from AI2
+    size_estimate_gb: 0.5
+    format_type: dpo
+    mixing_weight: 0.35
+    tags: [dpo, preference, ai2]
+
+  magpie_pro_dpo:
+    hf_id: magpie-align/Magpie-Pro-DPO-200K-v0.1
+    hf_config: null
+    hf_split: train
+    priority: A
+    license: Apache-2.0
+    format: preference
+    description: 200K DPO pairs from Magpie
+    size_estimate_gb: 1.0
+    format_type: dpo
+    mixing_weight: 0.30
+    tags: [dpo, preference, magpie]

@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-07-07T04:41:49Z",
+  "tests_passed": 615,
+  "tests_failed": 0,
+  "fixes": [
+    "BYTE_VOCAB_SIZE test migration (256 -> 259 logits)",
+    "loss_mask._mask_padding accepts list[int]",
+    "generation_inspector safe byte decode",
+    "inference/ package added",
+    "logger PermissionError fallback for save_dir and W&B init",
+    "coding mock dataset uses torch Dataset; num_workers=0 in tests",
+    "publication backward-compat test seeds MEASURED registry rows",
+    "baseline_transformer asserts RAW_BYTE_VOCAB_SIZE (256)",
+    "logging test mocks wandb.init failure for portable fallback",
+    "conftest base_config: num_workers=0, CPU fallback when no CUDA",
+    "Stage 3B proprietary ingest pipeline (proprietary_ingest.py)",
+    "Deployment guide and measured inference benchmark script"
+  ],
+  "remaining": [
+    "Stage 3B proprietary assets not yet added (ingest pipeline ready; 0 raw records)"
+  ],
+  "benchmark": {
+    "timestamp_utc": "2026-07-07T04:41:39Z",
+    "device": "cpu",
+    "model_profile": "nano-reduced (hidden=64, layers=2)",
+    "provenance": "MEASURED",
+    "runs": 2,
+    "avg_latency_seconds": 0.3315276499961328,
+    "avg_tokens_per_second": 57.07853220391104,
+    "peak_vram_mb": 0.0
+  },
+  "proprietary": {
+    "pipeline_ready": true,
+    "raw_record_count": 0,
+    "by_source": {
+      "university_papers": 0,
+      "gate_questions": 0,
+      "placement_qa": 0,
+      "subject_explanations": 0
+    },
+    "processed_manifest_exists": false
+  },
+  "verdict": "Product Ready (Minor Non-Blocking Issues)"
+}

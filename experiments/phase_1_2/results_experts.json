@@ -1,0 +1,11 @@
+{
+  "moe_fwd_ms": 185.84474549992592,
+  "moe_bwd_ms": 243.71521950000897,
+  "dense_fwd_ms": 77.15174850003677,
+  "dense_bwd_ms": 112.48831249991781,
+  "moe_params": 2359296.0,
+  "dense_params": 589824.0,
+  "flop_savings_pct": 50.0,
+  "capacity_value": 10240.0,
+  "dropped_tokens": 0.0
+}

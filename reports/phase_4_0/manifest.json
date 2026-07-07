@@ -1,0 +1,31 @@
+{
+  "experiment_id": "exp_campaign_Nano_10M",
+  "git_sha": "unknown",
+  "git_branch": "unknown",
+  "config_hash": "hash_conf_123",
+  "dataset_hashes": {
+    "pretrain": "hash_pretrain",
+    "validation": "hash_validation"
+  },
+  "checkpoint_hashes": {
+    "golden_base": "hash_golden"
+  },
+  "versions": {
+    "python": "3.14.4",
+    "pytorch": "2.12.1+cpu",
+    "cuda": "None",
+    "cudnn": "None",
+    "compiler": "MSC v.1944 64 bit (AMD64)"
+  },
+  "environment": {
+    "os": "Windows 11",
+    "hostname": "Nishant-Datta",
+    "cpu_cores": 16,
+    "gpu": "None",
+    "total_ram_gb": 16.0
+  },
+  "environment_variables": {
+    "PYTHONPATH": "",
+    "CUDA_VISIBLE_DEVICES": ""
+  }
+}

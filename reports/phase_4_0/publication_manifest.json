@@ -1,0 +1,48 @@
+{
+  "figures": [
+    {
+      "id": "Figure_1_loss_curves",
+      "path": "Paper_Figures/loss_curves.pdf",
+      "format": "PDF"
+    },
+    {
+      "id": "Figure_1_loss_curves_svg",
+      "path": "Paper_Figures/loss_curves.svg",
+      "format": "SVG"
+    }
+  ],
+  "tables": [
+    {
+      "id": "main_benchmark_comparison",
+      "path": "Paper_Tables/main_benchmark_comparison.tex",
+      "format": "LaTeX"
+    },
+    {
+      "id": "ablation_table",
+      "path": "Paper_Tables/ablation_table.tex",
+      "format": "LaTeX"
+    },
+    {
+      "id": "efficiency_table",
+      "path": "Paper_Tables/efficiency_table.tex",
+      "format": "LaTeX"
+    },
+    {
+      "id": "long_context_table",
+      "path": "Paper_Tables/long_context_table.tex",
+      "format": "LaTeX"
+    },
+    {
+      "id": "calibration_table",
+      "path": "Paper_Tables/calibration_table.tex",
+      "format": "LaTeX"
+    },
+    {
+      "id": "statistical_significance_table",
+      "path": "Paper_Tables/statistical_significance_table.tex",
+      "format": "LaTeX"
+    }
+  ],
+  "reports_count": 17,
+  "reproducibility_package": "reproducibility_package.zip"
+}

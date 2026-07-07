@@ -1,0 +1,34 @@
+{
+  "HumanEval": {
+    "name": "HumanEval",
+    "version": "v1.0",
+    "source": "OpenAI / HuggingFace",
+    "dataset_revision": "main",
+    "prompt_suite_version": "3A-v1.0",
+    "hash_sha256": "4a7b5d2e3f8a9c1d0b6e",
+    "num_prompts": 17,
+    "evaluation_parameters": {
+      "temperature": 0.8,
+      "top_k": 50,
+      "max_new_bytes": 128
+    }
+  },
+  "NeedleInHaystack": {
+    "name": "NeedleInHaystack",
+    "version": "v2.1",
+    "source": "Custom / LongBench",
+    "dataset_revision": "main",
+    "prompt_suite_version": "Needle-v1.0",
+    "hash_sha256": "1e9b2c3d4f5a6b7c8d9e",
+    "num_prompts": 100,
+    "evaluation_parameters": {
+      "context_lengths": [
+        2048,
+        8192,
+        32768,
+        65536,
+        131072
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "prompt_id": "reasoning_01",
+    "category": "general_reasoning",
+    "prompt": "If all roses are flowers and some flowers fade quickly, does it follow logically that some roses fade quickly? Explain.",
+    "reference_model_response": "N/A (SimPO Reference-Free)",
+    "policy_model_response": "dummy response",
+    "human_chosen_ground_truth": "No. The premise 'some flowers fade quickly' does not guarantee that those fading flowers are roses."
+  },
+  {
+    "prompt_id": "reasoning_02",
+    "category": "general_reasoning",
+    "prompt": "You have a 3-liter jug and a 5-liter jug. Explain how to measure exactly 4 liters of water.",
+    "reference_model_response": "N/A (SimPO Reference-Free)",
+    "policy_model_response": "dummy response",
+    "human_chosen_ground_truth": "Fill 5L jug. Pour into 3L jug, leaving 2L. Empty 3L jug. Pour 2L into 3L jug. Fill 5L jug. Pour into 3L jug until full (needs 1L). 5L jug now has exactly 4L."
+  },
+  {
+    "prompt_id": "reasoning_03",
+    "category": "general_reasoning",
+    "prompt": "Explain the difference between inductive and deductive reasoning with examples.",
+    "reference_model_response": "N/A (SimPO Reference-Free)",
+    "policy_model_response": "dummy response",
+    "human_chosen_ground_truth": "Deductive starts with general rules and guarantees specific conclusions. Inductive goes from specific observations to probable generalizations."
+  },
+  {
+    "prompt_id": "reasoning_04",
+    "category": "general_reasoning",
+    "prompt": "A farmer has chickens and rabbits. There are 35 heads and 94 legs. How many chickens and rabbits does he have?",
+    "reference_model_response": "N/A (SimPO Reference-Free)",
+    "policy_model_response": "dummy response",
+    "human_chosen_ground_truth": "23 chickens and 12 rabbits. Let c + r = 35 and 2c + 4r = 94. Solving yields c=23, r=12."
+  },
+  {
+    "prompt_id": "reasoning_05",
+    "category": "general_reasoning",
+    "prompt": "What is the logical fallacy in the argument: 'Nobody has proven that ghosts don't exist, therefore they must exist'?",
+    "reference_model_response": "N/A (SimPO Reference-Free)",
+    "policy_model_response": "dummy response",
+    "human_chosen_ground_truth": "Appeal to Ignorance (Argumentum ad Ignorantiam)."
+  }
+]
