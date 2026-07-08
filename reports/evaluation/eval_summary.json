@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "timestamp": "2026-07-07T11:31:57",
-    "git_commit": "",
-    "git_branch": "",
+    "timestamp": "2026-07-08T11:08:47",
+    "git_commit": "f2adb39",
+    "git_branch": "main",
     "architecture_version": "0.2.0-byte-vocab",
     "random_seed": 42,
     "device": "cpu",
     "dtype": "float32",
     "pytorch_version": "2.5.1+cu121",
     "cuda_version": "12.1",
-    "evaluation_duration_seconds": 0.6959715999983018
+    "evaluation_duration_seconds": 1.3635659999999916
   },
   "perplexity": {
     "loss": 5.567132822672526,
@@ -18,30 +18,30 @@
     "num_batches": 2
   },
   "generation": {
-    "latency_seconds": 0.1428959000040777,
-    "bytes_per_second": 55.98481131909111,
+    "latency_seconds": 0.17959430000337306,
+    "bytes_per_second": 44.54484357159301,
     "avg_generated_length": 4.0,
     "early_stopped_ratio": 0.0
   },
   "benchmark": {
-    "warmup_latency_ms": 40.68760000518523,
-    "latency_mean_ms": 41.58556666516233,
-    "latency_median_ms": 41.32709999976214,
-    "latency_p50_ms": 41.32709999976214,
-    "latency_p90_ms": 42.396220003138296,
-    "latency_p95_ms": 42.529860003560316,
-    "latency_p99_ms": 42.63677200389793,
-    "latency_min_ms": 40.76609999174252,
-    "latency_max_ms": 42.663500003982335,
-    "samples_per_sec": 48.093609403078524,
-    "tokens_per_sec": 721.4041410461779,
-    "bytes_per_sec": 721.4041410461779,
-    "patches_per_sec": 721.4041410461779,
-    "docs_per_sec": 48.093609403078524,
-    "cpu_utilization_pct": 31.200000000000003,
+    "warmup_latency_ms": 74.64639999670908,
+    "latency_mean_ms": 65.29676666589997,
+    "latency_median_ms": 65.97440000041388,
+    "latency_p50_ms": 65.97440000041388,
+    "latency_p90_ms": 69.86415999708697,
+    "latency_p95_ms": 70.35037999667111,
+    "latency_p99_ms": 70.73935599633842,
+    "latency_min_ms": 59.07930000103079,
+    "latency_max_ms": 70.83659999625525,
+    "samples_per_sec": 30.629387979243745,
+    "tokens_per_sec": 459.4408196886562,
+    "bytes_per_sec": 459.4408196886562,
+    "patches_per_sec": 459.4408196886562,
+    "docs_per_sec": 30.629387979243745,
+    "cpu_utilization_pct": 28.549999999999997,
     "gpu_utilization_pct": 0.0,
     "vram_used_mb": 16.25,
-    "ram_used_mb": 1259.296875,
+    "ram_used_mb": 265.21484375,
     "estimated_flops": 87928560.0,
     "parameter_count": 488492
   },
@@ -49,13 +49,13 @@
     "gpu_allocated_mb": 16.25,
     "gpu_reserved_mb": 24.0,
     "gpu_peak_mb": 16.25,
-    "cpu_ram_mb": 1266.421875,
-    "cpu_peak_ram_mb": 1341.05078125,
+    "cpu_ram_mb": 430.18359375,
+    "cpu_peak_ram_mb": 1217.47265625,
     "parameter_mb": 1.8634490966796875,
     "activation_mb": 0.0,
     "checkpoint_mb": 2.3293113708496094,
     "fragmentation_ratio": 0.47692307692307695,
-    "growth_mb": 7.125
+    "growth_mb": 164.96875
   },
   "architecture": {
     "blt": {
@@ -170,17 +170,17 @@
       },
       "state_update_norm": 0.9999870356348677,
       "state_variance": 1.178705133497715e-09,
-      "throughput_tokens_per_sec": 858.4702994629463
+      "throughput_tokens_per_sec": 776.812186357624
     },
     "attention": {
       "backend_selected": "SDPA (PyTorch)",
       "latency": {
-        "mean": 0.003046349999931408,
-        "std": 0.0002469799997925294,
-        "median": 0.003046349999931408,
-        "min": 0.0027993700001388787,
-        "max": 0.0032933299997239375,
-        "p95": 0.0032686319997446847,
+        "mean": 0.0036524650000501428,
+        "std": 0.0009255750002921559,
+        "median": 0.0036524650000501428,
+        "min": 0.0027268899997579866,
+        "max": 0.0045780400003422985,
+        "p95": 0.0044854825003130825,
         "histogram": {
           "counts": [
             1,
@@ -195,17 +195,17 @@
             1
           ],
           "bin_edges": [
-            0.0027993700001388787,
-            0.0028487660000973847,
-            0.0028981620000558903,
-            0.0029475580000143963,
-            0.0029969539999729023,
-            0.003046349999931408,
-            0.003095745999889914,
-            0.00314514199984842,
-            0.003194537999806926,
-            0.0032439339997654315,
-            0.0032933299997239375
+            0.0027268899997579866,
+            0.0029120049998164177,
+            0.003097119999874849,
+            0.0032822349999332805,
+            0.0034673499999917116,
+            0.0036524650000501428,
+            0.003837580000108574,
+            0.004022695000167005,
+            0.004207810000225436,
+            0.004392925000283867,
+            0.0045780400003422985
           ]
         }
       },
@@ -398,7 +398,7 @@
     "backbone": {
       "num_layers": 1,
       "layer_latencies": [
-        0.03046349999931408
+        0.036524650000501424
       ],
       "residual_norms": {
         "mean": 7.99971604347229,
@@ -494,7 +494,8 @@
       "use_blt": true,
       "use_mor": true,
       "use_moe": true,
-      "use_entropy_routing": true
+      "use_entropy_routing": true,
+      "moe_capacity_factor": 1.25
     },
     "training": {
       "batch_size": 32,
