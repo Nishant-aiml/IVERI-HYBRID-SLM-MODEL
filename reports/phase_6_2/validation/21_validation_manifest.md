@@ -14,7 +14,7 @@ This manifest provides a comprehensive cryptographic verification and configurat
 - **Freeze Tag**: `v1.0-engineering-freeze`
 
 ## 3. Environment Metadata
-- **Git Commit Hash**: `1a47d4de6b1fb455291dd01b21c2e59740a7cd38` (Verified code + reports tree)
+- **Git Commit Hash**: `fc1cc5dce59186af02761554a3c35aa6c4c3a869` (Verified code + reports tree)
 - **Audit Timestamp**: `2026-07-08T05:43:00Z`
 - **Operating System**: `Windows 11` (win32)
 - **Python Version**: `3.12.10`
