@@ -126,13 +126,13 @@ class ModelConfig:
     """
 
     hidden_dim: int = 256
-    num_layers: int = 6
+    num_layers: int = 4
     num_heads: int = 4
-    mamba_ratio: int = 6
-    num_experts: int = 4
-    num_active_experts: int = 2
-    max_recursion_depth: int = 8
-    titans_memory_dim: int = 128
+    mamba_ratio: int = 1
+    num_experts: int = 2
+    num_active_experts: int = 1
+    max_recursion_depth: int = 4
+    titans_memory_dim: int = 64
     dropout: float = 0.0
     blt: BLTConfig = field(default_factory=BLTConfig)
     # Phase 6.3.2 OBJ4 — physical ablation gates (default True preserves production path)
@@ -142,6 +142,7 @@ class ModelConfig:
     use_moe: bool = True
     use_entropy_routing: bool = True
     moe_capacity_factor: float = 1.25
+
 
     def __post_init__(self) -> None:
         if self.hidden_dim <= 0:
@@ -743,7 +744,7 @@ class IVERIConfig:
 
     @classmethod
     def load(cls, path: str | Path) -> IVERIConfig:
-        """Load and validate a config from a JSON file.
+        """Load and validate a config from a JSON or YAML file.
 
         Parameters
         ----------
@@ -765,8 +766,18 @@ class IVERIConfig:
         path = Path(path)
         if not path.exists():
             raise FileNotFoundError(f"Config file not found: {path}")
-        raw = json.loads(path.read_text(encoding="utf-8"))
+        
+        if path.suffix in (".yaml", ".yml"):
+            try:
+                import yaml
+                raw = yaml.safe_load(path.read_text(encoding="utf-8"))
+            except ImportError:
+                raise ImportError("PyYAML is required to load configuration from YAML files.")
+        else:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            
         return cls.from_dict(raw)
+
 
     # ── Pretty printing ────────────────────────────────────────────────
 
@@ -848,6 +859,132 @@ def get_base_config(**overrides: Any) -> IVERIConfig:
     return IVERIConfig.from_dict(base)
 
 
+def get_nano_config(**overrides: Any) -> IVERIConfig:
+    """Create a 10M Nano IVERIConfig.
+
+    Nano scale: hidden_dim=256, num_layers=4, num_heads=4, mamba_ratio=1,
+    num_experts=2, num_active_experts=1, titans_memory_dim=64, max_recursion_depth=4.
+    """
+    model_defaults = {
+        "hidden_dim": 256,
+        "num_layers": 4,
+        "num_heads": 4,
+        "mamba_ratio": 1,
+        "num_experts": 2,
+        "num_active_experts": 1,
+        "titans_memory_dim": 64,
+        "max_recursion_depth": 4,
+    }
+    if "model" in overrides:
+        model_defaults.update(overrides.pop("model"))
+    return get_base_config(model=model_defaults, **overrides)
+
+
+def get_small_config(**overrides: Any) -> IVERIConfig:
+    """Create a 35M Small IVERIConfig.
+
+    Small scale: hidden_dim=384, num_layers=5, num_heads=6, mamba_ratio=1,
+    num_experts=4, num_active_experts=1, titans_memory_dim=96, max_recursion_depth=6.
+    """
+    model_defaults = {
+        "hidden_dim": 384,
+        "num_layers": 5,
+        "num_heads": 6,
+        "mamba_ratio": 1,
+        "num_experts": 4,
+        "num_active_experts": 1,
+        "titans_memory_dim": 96,
+        "max_recursion_depth": 6,
+    }
+    if "model" in overrides:
+        model_defaults.update(overrides.pop("model"))
+    return get_base_config(model=model_defaults, **overrides)
+
+
+def get_medium_config(**overrides: Any) -> IVERIConfig:
+    """Create a 70M Medium IVERIConfig.
+
+    Medium scale: hidden_dim=512, num_layers=5, num_heads=8, mamba_ratio=1,
+    num_experts=4, num_active_experts=1, titans_memory_dim=128, max_recursion_depth=8.
+    """
+    model_defaults = {
+        "hidden_dim": 512,
+        "num_layers": 5,
+        "num_heads": 8,
+        "mamba_ratio": 1,
+        "num_experts": 4,
+        "num_active_experts": 1,
+        "titans_memory_dim": 128,
+        "max_recursion_depth": 8,
+    }
+    if "model" in overrides:
+        model_defaults.update(overrides.pop("model"))
+    return get_base_config(model=model_defaults, **overrides)
+
+
+def get_large_config(**overrides: Any) -> IVERIConfig:
+    """Create a 150M Large IVERIConfig.
+
+    Large scale: hidden_dim=768, num_layers=5, num_heads=12, mamba_ratio=1,
+    num_experts=4, num_active_experts=1, titans_memory_dim=192, max_recursion_depth=8.
+    """
+    model_defaults = {
+        "hidden_dim": 768,
+        "num_layers": 5,
+        "num_heads": 12,
+        "mamba_ratio": 1,
+        "num_experts": 4,
+        "num_active_experts": 1,
+        "titans_memory_dim": 192,
+        "max_recursion_depth": 8,
+    }
+    if "model" in overrides:
+        model_defaults.update(overrides.pop("model"))
+    return get_base_config(model=model_defaults, **overrides)
+
+
+def get_xlarge_config(**overrides: Any) -> IVERIConfig:
+    """Create a 300M XLarge IVERIConfig.
+
+    XLarge scale: hidden_dim=1024, num_layers=6, num_heads=16, mamba_ratio=1,
+    num_experts=4, num_active_experts=1, titans_memory_dim=256, max_recursion_depth=12.
+    """
+    model_defaults = {
+        "hidden_dim": 1024,
+        "num_layers": 6,
+        "num_heads": 16,
+        "mamba_ratio": 1,
+        "num_experts": 4,
+        "num_active_experts": 1,
+        "titans_memory_dim": 256,
+        "max_recursion_depth": 12,
+    }
+    if "model" in overrides:
+        model_defaults.update(overrides.pop("model"))
+    return get_base_config(model=model_defaults, **overrides)
+
+
+def get_max_config(**overrides: Any) -> IVERIConfig:
+    """Create a 500M Max IVERIConfig.
+
+    Max scale: hidden_dim=1280, num_layers=7, num_heads=20, mamba_ratio=1,
+    num_experts=4, num_active_experts=1, titans_memory_dim=320, max_recursion_depth=16.
+    """
+    model_defaults = {
+        "hidden_dim": 1280,
+        "num_layers": 7,
+        "num_heads": 20,
+        "mamba_ratio": 1,
+        "num_experts": 4,
+        "num_active_experts": 1,
+        "titans_memory_dim": 320,
+        "max_recursion_depth": 16,
+    }
+    if "model" in overrides:
+        model_defaults.update(overrides.pop("model"))
+    return get_base_config(model=model_defaults, **overrides)
+
+
 def apply_ablation_overrides(cfg: IVERIConfig, overrides: dict[str, bool]) -> None:
     """Apply component ablation flags to ``cfg.model`` and re-validate.
 
@@ -864,3 +1001,4 @@ def apply_ablation_overrides(cfg: IVERIConfig, overrides: dict[str, bool]) -> No
             )
         setattr(cfg.model, field, value)
     cfg.validate()
+

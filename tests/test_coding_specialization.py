@@ -342,7 +342,13 @@ def test_coding_checkpoint_selector(temp_dir):
 # ── 12. Runner Smoke Test ───────────────────────────────────────────────────
 
 
-def test_run_coding_mock(base_config):
+def test_run_coding_mock(base_config, monkeypatch):
+    """Smoke-test run_coding() with mock datasets.
+
+    Sets IVERI_OFFLINE=1 so HumanEval/MBPP benchmarks skip network calls
+    and return stub results immediately.
+    """
+    monkeypatch.setenv("IVERI_OFFLINE", "1")
     base_config.hardware.num_workers = 0
     base_config.logging.mode = "disabled"
 
@@ -368,3 +374,4 @@ def test_run_coding_mock(base_config):
     assert "final_loss" in results
     assert "final_val_loss" in results
     assert "curriculum_stage_history" in results
+

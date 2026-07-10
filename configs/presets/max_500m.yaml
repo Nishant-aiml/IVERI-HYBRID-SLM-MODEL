@@ -1,0 +1,29 @@
+# IVERI Max (500M Parameters) Preset Configuration
+model:
+  hidden_dim: 1280
+  num_layers: 7
+  num_heads: 20
+  mamba_ratio: 1
+  num_experts: 4
+  num_active_experts: 1
+  titans_memory_dim: 320
+  max_recursion_depth: 16
+  dropout: 0.0
+  use_titans: true
+  use_blt: true
+  use_mor: true
+  use_moe: true
+  use_entropy_routing: true
+  moe_capacity_factor: 1.25
+
+training:
+  batch_size: 1
+  gradient_accumulation: 128
+  learning_rate: 0.00008
+  min_lr: 0.000008
+  warmup_steps: 1000
+  max_steps: 50000
+  weight_decay: 0.1
+  grad_clip: 1.0
+  seq_len: 512
+  scheduler_type: cosine

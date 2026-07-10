@@ -124,6 +124,14 @@ class HumanEvalBenchmark:
         if self._dataset is not None:
             return self._dataset
 
+        # Respect offline mode env vars (set by CI / tests to avoid network hangs)
+        import os
+        if os.environ.get("HF_DATASETS_OFFLINE", "") == "1" or \
+                os.environ.get("TRANSFORMERS_OFFLINE", "") == "1" or \
+                os.environ.get("IVERI_OFFLINE", "") == "1":
+            logger.info("Offline mode active — skipping HumanEval dataset download.")
+            return []
+
         try:
             from datasets import load_dataset  # type: ignore[import]
             ds = load_dataset("openai_humaneval", split="test", trust_remote_code=True)

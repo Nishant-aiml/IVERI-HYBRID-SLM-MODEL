@@ -421,13 +421,17 @@ def run_coding(
     # 12. Final Qualitative Evaluation
     model.eval()
     logger.info("Running final qualitative coding evaluation...")
+    # Limit generation length for verification-level 1 (20-step test runs) to avoid
+    # CPU timeout — full generation is only meaningful after real training.
+    _max_gen_bytes = 2 if verification_level == 1 else _get_val(coding_cfg, "max_new_bytes", 256)
     gen_results = coding_evaluator.evaluate_code_prompt_suite(
         code_prompt_suite,
-        max_new_bytes=_get_val(coding_cfg, "max_new_bytes", 256),
+        max_new_bytes=_max_gen_bytes,
         temperature=_get_val(coding_cfg, "generation_temperature", 0.2),
         top_k=_get_val(coding_cfg, "generation_top_k", 20),
         seed=seed,
     )
+
 
     # Final retention check
     final_retention = retention_evaluator.evaluate(step)

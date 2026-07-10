@@ -1,0 +1,29 @@
+# IVERI XLarge (300M Parameters) Preset Configuration
+model:
+  hidden_dim: 1024
+  num_layers: 6
+  num_heads: 16
+  mamba_ratio: 1
+  num_experts: 4
+  num_active_experts: 1
+  titans_memory_dim: 256
+  max_recursion_depth: 12
+  dropout: 0.0
+  use_titans: true
+  use_blt: true
+  use_mor: true
+  use_moe: true
+  use_entropy_routing: true
+  moe_capacity_factor: 1.25
+
+training:
+  batch_size: 2
+  gradient_accumulation: 64
+  learning_rate: 0.0001
+  min_lr: 0.00001
+  warmup_steps: 1000
+  max_steps: 50000
+  weight_decay: 0.1
+  grad_clip: 1.0
+  seq_len: 512
+  scheduler_type: cosine

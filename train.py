@@ -72,7 +72,33 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Load config and model but do not train. Useful for validation.",
     )
+    parser.add_argument(
+        "--disable-titans",
+        action="store_true",
+        help="Disable Titans Neural Memory architecture component.",
+    )
+    parser.add_argument(
+        "--disable-blt",
+        action="store_true",
+        help="Disable Byte Latent Transformer patching.",
+    )
+    parser.add_argument(
+        "--disable-mor",
+        action="store_true",
+        help="Disable Mixture of Recursions dynamic depth routing.",
+    )
+    parser.add_argument(
+        "--disable-moe",
+        action="store_true",
+        help="Disable Mixture of Experts sparse routing.",
+    )
+    parser.add_argument(
+        "--disable-entropy",
+        action="store_true",
+        help="Disable entropy-driven gating/routing.",
+    )
     return parser.parse_args()
+
 
 
 def main() -> None:
@@ -119,7 +145,25 @@ def main() -> None:
         config.model.num_active_experts = 1
         config.model.titans_memory_dim = 16
 
+    # Apply architecture component disable flags
+    if args.disable_titans:
+        config.model.use_titans = False
+        logger.info("Disabling Titans Neural Memory component")
+    if args.disable_blt:
+        config.model.use_blt = False
+        logger.info("Disabling Byte Latent Transformer patching")
+    if args.disable_mor:
+        config.model.use_mor = False
+        logger.info("Disabling Mixture of Recursions dynamic routing")
+    if args.disable_moe:
+        config.model.use_moe = False
+        logger.info("Disabling Mixture of Experts routing")
+    if args.disable_entropy:
+        config.model.use_entropy_routing = False
+        logger.info("Disabling entropy-driven routing")
+
     logger.info(f"Config loaded: {config.model.hidden_dim}d, {config.model.num_layers}L, batch_size={config.training.batch_size}, seq_len={config.training.seq_len}")
+
 
     if args.dry_run:
         logger.info("Dry run complete. Config is valid.")

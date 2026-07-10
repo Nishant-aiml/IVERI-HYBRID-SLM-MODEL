@@ -1,6 +1,6 @@
 # Documentation Discrepancies Report (Phase 6.3.1H)
 
-**Generated:** 2026-07-08T05:38:39Z  
+**Generated:** 2026-07-09T03:01:31Z  
 **Protocol:** Phase-6.3.1H  
 **Mode:** Audit-only — scientific claims in publication artifacts are not modified
 
@@ -23,7 +23,6 @@
 | `docs/research/Research_Methodology.md` | Seven statistical methods via single pipeline | **VERIFIED** | LOW | Statistics_Consistency_Report.md PASS |
 | `docs/phases/` | Phase 1–6.3 implementation plans | **PENDING** | MEDIUM | Only 1 phase plan file(s) on disk |
 | `repository root` | Project walkthrough documents | **PENDING** | LOW | No walkthrough files found |
-| `repository root` | task.md task tracking files | **PENDING** | LOW | No task.md files found |
 | `docs/research/Reproducibility_Guide.md` | Replay lineage and artifact checksums | **VERIFIED** | LOW | Replay_Integrity_Report.md PASS (Phase 6.3.2 OBJ6) |
 | `research/campaign_runner.py` | Experiment IDs label Phase 5.0 while output dir is phase_6_3 | **TODO** | MEDIUM | Harmonize phase labels in metadata without changing metrics |
 
@@ -31,7 +30,7 @@
 
 - **VERIFIED:** 8
 - **TODO:** 1
-- **PENDING:** 3
+- **PENDING:** 2
 
 ## Documents Scanned
 
@@ -52,7 +51,7 @@
 ```json
 {
   "protocol_version": "Phase-6.3.1H",
-  "timestamp_utc": "2026-07-08T05:38:39Z",
+  "timestamp_utc": "2026-07-09T03:01:31Z",
   "production_verdict": "PASS",
   "items": [
     {
@@ -116,13 +115,6 @@
       "claim": "Project walkthrough documents",
       "status": "PENDING",
       "evidence": "No walkthrough files found",
-      "severity": "LOW"
-    },
-    {
-      "source": "repository root",
-      "claim": "task.md task tracking files",
-      "status": "PENDING",
-      "evidence": "No task.md files found",
       "severity": "LOW"
     },
     {

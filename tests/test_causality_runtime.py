@@ -84,6 +84,7 @@ def test_decoder_logits_invariant_under_future_perturbation(causality_model: IVE
     assert torch.allclose(ref.logits[:, :15, :], pert.logits[:, :15, :], atol=1e-6, rtol=1e-5)
 
 
+@pytest.mark.slow  # Runs full corpus audit with multiple models — ~3-5 min on CPU
 def test_generate_causality_report_md() -> None:
     result = write_causality_report(
         REPORT_PATH,
@@ -99,6 +100,7 @@ def test_generate_causality_report_md() -> None:
     assert result.end_to_end_verdict == "PASS"
 
 
+@pytest.mark.slow  # Runs full multi-corpus audit — ~2-4 min on CPU
 def test_full_audit_json_fields() -> None:
     result = run_causality_audit(seq_len=24, seed=3, position_step=3, trials_per_position=1)
     assert result.protocol_version == "Phase-6.3.2-OBJ1"

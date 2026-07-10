@@ -1,6 +1,6 @@
 # Causality Report — Runtime Perturbation Audit (Phase 6.3.2 / Objective 1)
 
-**Generated:** 2026-07-08T05:31:13Z  
+**Generated:** 2026-07-08T14:07:38Z  
 **Protocol:** Phase-6.3.2-OBJ1  
 **Device:** cpu  
 **Sequence length:** 32  
@@ -84,7 +84,7 @@ Positions pass when `torch.allclose(ref, pert, atol=1e-6, rtol=1e-5)`.
 ```json
 {
   "protocol_version": "Phase-6.3.2-OBJ1",
-  "timestamp_utc": "2026-07-08T05:31:13Z",
+  "timestamp_utc": "2026-07-08T14:07:38Z",
   "device": "cpu",
   "seq_len": 32,
   "model_hidden_dim": 64,

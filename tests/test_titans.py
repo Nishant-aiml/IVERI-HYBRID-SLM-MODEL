@@ -260,4 +260,5 @@ def test_interface_compliance(config):
     # Test initialization with integer directly
     memory_from_dim = TitansMemory(256)
     assert memory_from_dim.hidden_dim == 256
-    assert memory_from_dim.memory_dim == 128
+    # When constructed from an int, memory_dim defaults to hidden_dim // 4 = 64
+    assert memory_from_dim.memory_dim == 64

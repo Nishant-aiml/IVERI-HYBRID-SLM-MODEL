@@ -90,21 +90,28 @@ class MoEExperts(BaseModule):
         orig_shape = x.shape
         if len(orig_shape) == 3:
             b, s, d = orig_shape
+            # Use actual K from the inputs (not self.num_active_experts from config),
+            # as callers may pass K != config default.
+            actual_k = weights.shape[-1]
             x_flat = x.view(-1, d)
-            weights_flat = weights.view(-1, self.num_active_experts)
-            indices_flat = indices.view(-1, self.num_active_experts)
+            weights_flat = weights.view(-1, actual_k)
+            indices_flat = indices.view(-1, actual_k)
         else:
+            actual_k = weights.shape[-1]
             x_flat = x
             weights_flat = weights
             indices_flat = indices
 
         num_tokens = x_flat.shape[0]
-        total_dispatches = num_tokens * self.num_active_experts
+        # Use actual K from the flattened inputs, not self.num_active_experts from config.
+        # The caller may pass more or fewer active experts than the config default.
+        actual_k = indices_flat.shape[1]
+        total_dispatches = num_tokens * actual_k
 
         # 1. Calculate expert capacity threshold
         capacity = int(
             math.ceil(
-                (num_tokens * self.num_active_experts / self.num_experts) * self.capacity_factor
+                (num_tokens * actual_k / self.num_experts) * self.capacity_factor
             )
         )
 
@@ -115,10 +122,10 @@ class MoEExperts(BaseModule):
         token_indices = (
             torch.arange(num_tokens, device=x.device)
             .unsqueeze(-1)
-            .expand(-1, self.num_active_experts)
+            .expand(-1, actual_k)
         )
         rank_indices = (
-            torch.arange(self.num_active_experts, device=x.device)
+            torch.arange(actual_k, device=x.device)
             .unsqueeze(0)
             .expand(num_tokens, -1)
         )

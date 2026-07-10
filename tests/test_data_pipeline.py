@@ -782,9 +782,12 @@ def test_dataloaders_offline(temp_dir):
 
     sft_ds = SFTByteDataset(sft_dir, seq_len=32)
     assert len(sft_ds) == 2
-    x_sft, y_sft = sft_ds[0]
+    x_sft, y_sft, mask_sft = sft_ds[0]
     assert x_sft.shape == (32,)
     assert y_sft.shape == (32,)
+    assert mask_sft.shape == (32,)
+    assert mask_sft.dtype == torch.bool
+
 
     # Create dummy Coding dataset file
     coding_dir = temp_dir / "coding"

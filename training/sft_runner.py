@@ -261,10 +261,10 @@ def run_sft(
     if val_loader:
         initial_val_metrics = sft_evaluator.evaluate_sft(val_loader)
         logger.info(
-            "[SFT Initial Eval] val_loss=%.4f perplexity=%.2f top1=%.2%",
+            "[SFT Initial Eval] val_loss=%.4f perplexity=%.2f top1=%.2f%%",
             initial_val_metrics.get("sft/val_loss", 0.0),
             initial_val_metrics.get("sft/perplexity", 0.0),
-            initial_val_metrics.get("sft/top1_accuracy", 0.0),
+            initial_val_metrics.get("sft/top1_accuracy", 0.0) * 100,
         )
         model.train()
 
@@ -345,6 +345,10 @@ def run_sft(
         elapsed_step = time.perf_counter() - t_step0
         step += 1
 
+        # Track training instability and divergence diagnostics
+        trainer.instability_tracker.step(step)
+
+
         # Numerical health
         _assert_finite(model, loss)
 
@@ -392,7 +396,7 @@ def run_sft(
             loss_monitor.update_loss(val_metrics["sft/val_loss"], is_val=True)
             logger.info(
                 "[SFT Step %d] train_loss=%.4f val_loss=%.4f perplexity=%.2f "
-                "top1=%.2%% bpb=%.3f",
+                "top1=%.2f%% bpb=%.3f",
                 step,
                 loss.item(),
                 val_metrics["sft/val_loss"],
@@ -445,20 +449,26 @@ def run_sft(
 
     # ── 11. Cleanup ────────────────────────────────────────────────────
     loss_monitor.remove_hooks()
+    trainer.instability_tracker.remove_hooks()
     trainer.shutdown_logger()
+
 
     # ── 12. Final generation evaluation ───────────────────────────────
     model.eval()
     logger.info("Running final prompt suite evaluation...")
+    # Limit generation length for level-1 (20-step test runs) to avoid CPU timeout —
+    # full-length generation is only meaningful after real SFT training.
+    _max_gen_bytes = 2 if verification_level == 1 else _get_val(
+        getattr(config, "instruction", None), "max_new_bytes", 128
+    )
     gen_results = sft_evaluator.evaluate_prompt_suite(
         prompt_suite,
-        max_new_bytes=_get_val(
-            getattr(config, "instruction", None), "max_new_bytes", 128
-        ),
+        max_new_bytes=_max_gen_bytes,
         temperature=config.evaluation.generation_temperature,
         top_k=config.evaluation.generation_top_k,
         seed=seed,
     )
+
 
     final_analysis = convergence_analyzer.analyze()
     elapsed_total = time.perf_counter() - t_start

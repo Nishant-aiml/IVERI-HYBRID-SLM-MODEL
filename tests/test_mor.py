@@ -38,6 +38,8 @@ class MockBlock(nn.Module):
 @pytest.mark.parametrize("device", ["cpu"])
 def test_router_entropy_mapping(base_config: IVERIConfig, device: str) -> None:
     """Verify that entropy-driven depth mapping spans correct range and obeys Option C."""
+    # This test requires max_recursion_depth=8 for the expected index calculations.
+    base_config.model.max_recursion_depth = 8
     router = RecursionDepthRouter(base_config, research_mode=False).to(device)
     max_depth = base_config.model.max_recursion_depth
 
@@ -87,6 +89,8 @@ def test_router_learned_mode(base_config: IVERIConfig, device: str) -> None:
 @pytest.mark.parametrize("device", ["cpu"])
 def test_recursion_engine_execution(base_config: IVERIConfig, device: str) -> None:
     """Verify that RecursionEngine loops correctly and skips inactive patches."""
+    # This test uses depth=8 so requires max_recursion_depth >= 8.
+    base_config.model.max_recursion_depth = 8
     mock_block = MockBlock(base_config.model.hidden_dim, increment=1.0).to(device)
     engine = RecursionEngine(mock_block, base_config).to(device)
 
