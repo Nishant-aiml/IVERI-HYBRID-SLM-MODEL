@@ -1,6 +1,6 @@
 # Ablation Verification Report (Phase 6.3.1F)
 
-**Generated:** 2026-07-08T05:25:20Z  
+**Generated:** 2026-07-09T02:58:44Z  
 **Protocol:** Phase-6.3.1F  
 **Device:** cpu  
 
@@ -54,7 +54,7 @@ No unused flags, dead configuration, or silent fallback detected.
 ```json
 {
   "protocol_version": "Phase-6.3.1F",
-  "timestamp_utc": "2026-07-08T05:25:20Z",
+  "timestamp_utc": "2026-07-09T02:58:44Z",
   "device": "cpu",
   "production_verdict": "PASS",
   "probes": [
@@ -82,7 +82,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "flag_value": false,
       "component_absent": true,
       "parameter_delta": 0,
-      "output_diff_l1": 0.6287198662757874,
+      "output_diff_l1": 0.6287198066711426,
       "proof": "BackboneBlock calls sub_block once without RecursionEngine when use_mor=False."
     },
     {
@@ -121,7 +121,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": true,
-      "output_checksum": 328.2557067871094
+      "output_checksum": 328.2557373046875
     },
     {
       "label": "no_titans",
@@ -155,7 +155,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": true,
-      "output_checksum": 1064.2281494140625
+      "output_checksum": 1064.22802734375
     },
     {
       "label": "no_mor",
@@ -172,7 +172,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": false,
-      "output_checksum": 318.943359375
+      "output_checksum": 318.9433898925781
     },
     {
       "label": "no_moe",

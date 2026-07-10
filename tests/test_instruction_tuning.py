@@ -80,6 +80,7 @@ def base_config():
     )
     cfg.hardware.device = "cpu"
     cfg.hardware.mixed_precision = "fp32"
+    cfg.hardware.num_workers = 0  # Avoid Windows multiprocessing DataLoader hang in pytest
     cfg.training.seq_len = 16
     cfg.training.batch_size = 2
     cfg.training.gradient_accumulation = 1
@@ -353,6 +354,7 @@ def test_checkpoint_selection(temp_dir):
 # ── 8. E2E SFT Verification Run (run_sft) ───────────────────────────────────
 
 
+@pytest.mark.slow  # Full E2E run: 20 SFT steps + generation. ~60-120s on CPU.
 def test_sft_runner_e2e(temp_dir, base_config):
     """Verify run_sft e2e with mock datasets."""
     # Write mock config paths

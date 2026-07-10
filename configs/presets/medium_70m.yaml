@@ -1,0 +1,29 @@
+# IVERI Medium (70M Parameters) Preset Configuration
+model:
+  hidden_dim: 512
+  num_layers: 5
+  num_heads: 8
+  mamba_ratio: 1
+  num_experts: 4
+  num_active_experts: 1
+  titans_memory_dim: 128
+  max_recursion_depth: 8
+  dropout: 0.0
+  use_titans: true
+  use_blt: true
+  use_mor: true
+  use_moe: true
+  use_entropy_routing: true
+  moe_capacity_factor: 1.25
+
+training:
+  batch_size: 8
+  gradient_accumulation: 16
+  learning_rate: 0.0002
+  min_lr: 0.00002
+  warmup_steps: 1000
+  max_steps: 50000
+  weight_decay: 0.1
+  grad_clip: 1.0
+  seq_len: 512
+  scheduler_type: cosine

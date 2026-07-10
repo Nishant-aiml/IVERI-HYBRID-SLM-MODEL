@@ -1,6 +1,6 @@
 # Publication Integrity Report (Phase 6.3.2 OBJ5)
 
-**Generated:** 2026-07-07T06:08:54Z  
+**Generated:** 2026-07-09T03:05:18Z  
 **Protocol:** Phase-6.3.2-OBJ5  
 
 ## Executive Verdict
@@ -17,7 +17,7 @@
 | non_measured_blocked | True | Publication blocked: non-measured experiment provenance present (1). |
 | failed_runs_blocked | True | Publication blocked: failed runs exist (1). |
 | failure_records_blocked | True | Publication blocked: 1 failure record(s) in registry. |
-| measured_pipeline_passes | True | exp=exp_good_128cccf7 |
+| measured_pipeline_passes | True | exp=exp_good_c2c33503 |
 
 ## Proof: Fail-Closed Publication
 
@@ -32,7 +32,7 @@
 ```json
 {
   "protocol_version": "Phase-6.3.2-OBJ5",
-  "timestamp_utc": "2026-07-07T06:08:54Z",
+  "timestamp_utc": "2026-07-09T03:05:18Z",
   "production_verdict": "PASS",
   "mock_metrics_path_removed": true,
   "campaign_marks_failed_on_training_error": true,
@@ -55,7 +55,7 @@
     {
       "gate_name": "measured_pipeline_passes",
       "passed": true,
-      "detail": "exp=exp_good_128cccf7"
+      "detail": "exp=exp_good_c2c33503"
     }
   ],
   "presence_proof": [

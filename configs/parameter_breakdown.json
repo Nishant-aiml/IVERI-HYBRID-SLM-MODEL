@@ -1,0 +1,218 @@
+{
+  "nano": {
+    "model_parameters": {
+      "total": 9347282,
+      "active_per_token": 6987986,
+      "breakdown": {
+        "blt_encoder_decoder": 791299,
+        "entropy_model": 329731,
+        "titans_neural_memory": 295748,
+        "mamba2_ssm": 2156160,
+        "flash_attention": 1049600,
+        "moe_experts": 4718592,
+        "moe_router": 4104,
+        "norms_and_other": 2048
+      }
+    },
+    "flops_per_token": {
+      "forward": 13975972.0,
+      "backward": 27951944.0,
+      "total_training": 41927916.0
+    },
+    "memory_caches_bytes": {
+      "attention_kv_cache": 67108864,
+      "mamba_state_cache": 17301504,
+      "titans_neural_memory_cache": 4194304,
+      "total_inference_cache": 88604672
+    },
+    "vram_estimate_mb": {
+      "model_weights_fp16": 17.83,
+      "optimizer_states_adamw": 142.63,
+      "activations_with_gc": 192.0,
+      "activations_no_gc": 544.0,
+      "inference_kv_cache": 84.5,
+      "estimated_training_footprint": 370.29,
+      "estimated_inference_footprint": 102.33
+    }
+  },
+  "small": {
+    "model_parameters": {
+      "total": 35507614,
+      "active_per_token": 17812894,
+      "breakdown": {
+        "blt_encoder_decoder": 1629187,
+        "entropy_model": 641923,
+        "titans_neural_memory": 664804,
+        "mamba2_ssm": 6008480,
+        "flash_attention": 2951040,
+        "moe_experts": 23592960,
+        "moe_router": 15380,
+        "norms_and_other": 3840
+      }
+    },
+    "flops_per_token": {
+      "forward": 35625788.0,
+      "backward": 71251576.0,
+      "total_training": 106877364.0
+    },
+    "memory_caches_bytes": {
+      "attention_kv_cache": 125829120,
+      "mamba_state_cache": 32440320,
+      "titans_neural_memory_cache": 11796480,
+      "total_inference_cache": 170065920
+    },
+    "vram_estimate_mb": {
+      "model_weights_fp16": 67.73,
+      "optimizer_states_adamw": 541.8,
+      "activations_with_gc": 360.0,
+      "activations_no_gc": 1020.0,
+      "inference_kv_cache": 162.19,
+      "estimated_training_footprint": 1037.25,
+      "estimated_inference_footprint": 229.91
+    }
+  },
+  "medium": {
+    "model_parameters": {
+      "total": 68085182,
+      "active_per_token": 32695742,
+      "breakdown": {
+        "blt_encoder_decoder": 2761987,
+        "entropy_model": 1052419,
+        "titans_neural_memory": 1181316,
+        "mamba2_ssm": 10632480,
+        "flash_attention": 5245440,
+        "moe_experts": 47185920,
+        "moe_router": 20500,
+        "norms_and_other": 5120
+      }
+    },
+    "flops_per_token": {
+      "forward": 65391484.0,
+      "backward": 130782968.0,
+      "total_training": 196174452.0
+    },
+    "memory_caches_bytes": {
+      "attention_kv_cache": 167772160,
+      "mamba_state_cache": 43253760,
+      "titans_neural_memory_cache": 20971520,
+      "total_inference_cache": 231997440
+    },
+    "vram_estimate_mb": {
+      "model_weights_fp16": 129.86,
+      "optimizer_states_adamw": 1038.9,
+      "activations_with_gc": 480.0,
+      "activations_no_gc": 1360.0,
+      "inference_kv_cache": 221.25,
+      "estimated_training_footprint": 1778.62,
+      "estimated_inference_footprint": 351.11
+    }
+  },
+  "large": {
+    "model_parameters": {
+      "total": 140760574,
+      "active_per_token": 69981694,
+      "breakdown": {
+        "blt_encoder_decoder": 5912323,
+        "entropy_model": 2168323,
+        "titans_neural_memory": 2656708,
+        "mamba2_ssm": 23812640,
+        "flash_attention": 11800320,
+        "moe_experts": 94371840,
+        "moe_router": 30740,
+        "norms_and_other": 7680
+      }
+    },
+    "flops_per_token": {
+      "forward": 139963388.0,
+      "backward": 279926776.0,
+      "total_training": 419890164.0
+    },
+    "memory_caches_bytes": {
+      "attention_kv_cache": 251658240,
+      "mamba_state_cache": 64880640,
+      "titans_neural_memory_cache": 47185920,
+      "total_inference_cache": 363724800
+    },
+    "vram_estimate_mb": {
+      "model_weights_fp16": 268.48,
+      "optimizer_states_adamw": 2147.84,
+      "activations_with_gc": 720.0,
+      "activations_no_gc": 2040.0,
+      "inference_kv_cache": 346.88,
+      "estimated_training_footprint": 3404.79,
+      "estimated_inference_footprint": 615.35
+    }
+  },
+  "xlarge": {
+    "model_parameters": {
+      "total": 302175970,
+      "active_per_token": 146462434,
+      "breakdown": {
+        "blt_encoder_decoder": 10242307,
+        "entropy_model": 3677443,
+        "titans_neural_memory": 4721924,
+        "mamba2_ssm": 50682816,
+        "flash_attention": 25171968,
+        "moe_experts": 207618048,
+        "moe_router": 49176,
+        "norms_and_other": 12288
+      }
+    },
+    "flops_per_token": {
+      "forward": 292924868.0,
+      "backward": 585849736.0,
+      "total_training": 878774604.0
+    },
+    "memory_caches_bytes": {
+      "attention_kv_cache": 402653184,
+      "mamba_state_cache": 103809024,
+      "titans_neural_memory_cache": 100663296,
+      "total_inference_cache": 607125504
+    },
+    "vram_estimate_mb": {
+      "model_weights_fp16": 576.35,
+      "optimizer_states_adamw": 4610.84,
+      "activations_with_gc": 1152.0,
+      "activations_no_gc": 3264.0,
+      "inference_kv_cache": 579.0,
+      "estimated_training_footprint": 6915.55,
+      "estimated_inference_footprint": 1155.35
+    }
+  },
+  "max": {
+    "model_parameters": {
+      "total": 552296390,
+      "active_per_token": 263282630,
+      "breakdown": {
+        "blt_encoder_decoder": 15751939,
+        "entropy_model": 5579779,
+        "titans_neural_memory": 7376964,
+        "mamba2_ssm": 92262240,
+        "flash_attention": 45884160,
+        "moe_experts": 385351680,
+        "moe_router": 71708,
+        "norms_and_other": 17920
+      }
+    },
+    "flops_per_token": {
+      "forward": 526565260.0,
+      "backward": 1053130520.0,
+      "total_training": 1579695780.0
+    },
+    "memory_caches_bytes": {
+      "attention_kv_cache": 587202560,
+      "mamba_state_cache": 151388160,
+      "titans_neural_memory_cache": 183500800,
+      "total_inference_cache": 922091520
+    },
+    "vram_estimate_mb": {
+      "model_weights_fp16": 1053.42,
+      "optimizer_states_adamw": 8427.37,
+      "activations_with_gc": 1680.0,
+      "activations_no_gc": 4760.0,
+      "inference_kv_cache": 879.38,
+      "estimated_training_footprint": 12214.22,
+      "estimated_inference_footprint": 1932.8
+    }
+  }
+}

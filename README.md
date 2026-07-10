@@ -87,6 +87,22 @@ python scripts/ingest_stage3b.py                 # process to data/processed/sta
 
 Format: `data/proprietary/FORMAT.md`. Raw assets are not shipped in this repository.
 
+## Quick Start
+
+New to IVERI? Start here:
+
+- **[QUICKSTART.md](QUICKSTART.md)** — Get running in under 10 minutes
+- **[Training Guide](docs/TRAINING_GUIDE.md)** — In-depth training configuration and scaling
+- **[Architecture Overview](docs/architecture/overview.md)** — Component deep-dive
+
+```bash
+pip install -e ".[dev]"
+python scripts/regression_suite.py   # verify installation
+python train.py --verification-level 1   # 20-step smoke test
+```
+
+---
+
 ## Setup
 
 ### Prerequisites

@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Any
 
 import torch
+import torch.nn as nn
 from torch.utils.data import DataLoader
 
 from configs.base_config import IVERIConfig
@@ -251,6 +252,10 @@ def run_pretraining(
         elapsed_step = time.perf_counter() - t_step0
         step += 1
 
+        # Track training instability and divergence diagnostics
+        trainer.instability_tracker.step(step)
+
+
         # Numerical Stability Check: verify weights, gradients, loss, activations are finite
         _assert_finite_tensors(model, loss)
 
@@ -369,7 +374,9 @@ def run_pretraining(
             _update_checkpoint_history_markdown(live_dir, selector)
 
     loss_monitor.remove_hooks()
+    trainer.instability_tracker.remove_hooks()
     trainer.shutdown_logger()
+
 
     final_analysis = convergence_analyzer.analyze()
     logger.info(f"Completed pretraining level {verification_level} in {time.perf_counter() - t_start:.2f}s.")

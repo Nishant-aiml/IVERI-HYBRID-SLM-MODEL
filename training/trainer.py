@@ -18,6 +18,7 @@ from torch.utils.data import DataLoader
 
 from configs.base_config import IVERIConfig
 from training.checkpointing import load_checkpoint, save_checkpoint
+from training.instability_tracker import DivergenceError
 from training.mixed_precision import PrecisionHandler
 from training.optimizer import get_optimizer
 from training.logger import ExperimentLogger
@@ -98,6 +99,15 @@ class Trainer:
         # Directories
         self.log_dir = pathlib.Path(config.logging.log_dir)
         self.log_dir.mkdir(parents=True, exist_ok=True)
+
+        # Initialize instability & divergence tracker
+        from training.instability_tracker import InstabilityTracker
+        self.instability_tracker = InstabilityTracker(
+            model=model,
+            log_dir=self.log_dir,
+            threshold=1e4,
+        )
+
 
     def train_epoch(self) -> dict[str, float]:
         """Train the model for a single epoch.
@@ -184,6 +194,31 @@ class Trainer:
 
                 self.global_step += 1
                 step_count += 1
+
+                # Track training instability and divergence diagnostics.
+                # On DivergenceError: save an emergency checkpoint so no progress
+                # is lost, then re-raise so the caller can decide recovery strategy.
+                try:
+                    self.instability_tracker.step(self.global_step)
+                except DivergenceError:
+                    import logging as _log
+                    _log.getLogger(__name__).error(
+                        "DivergenceError at step %d — saving emergency checkpoint.",
+                        self.global_step,
+                    )
+                    save_checkpoint(
+                        path=self.log_dir / f"emergency_checkpoint_{self.global_step}.pt",
+                        model=self.model,
+                        optimizer=self.optimizer,
+                        scheduler=self.scheduler,
+                        scaler=self.precision_handler.scaler,
+                        step=self.global_step,
+                        epoch=self.epoch,
+                        metrics={"loss": ce_loss.item(), "emergency": True},
+                        config=self.config,
+                    )
+                    raise
+
 
                 step_total_time = time.perf_counter() - step_start
 
@@ -360,5 +395,6 @@ class Trainer:
         print(f"Resumed training from checkpoint at step={self.global_step}, epoch={self.epoch}")
 
     def shutdown_logger(self) -> None:
-        """Shutdown the active logging session."""
+        """Shutdown the active logging session and release monitoring hooks."""
+        self.instability_tracker.remove_hooks()
         self.logger.shutdown()

@@ -26,7 +26,10 @@ def get_test_devices() -> list[str]:
 def test_router_shapes_and_outputs(device: str) -> None:
     """Verify router forward shapes and returned dtypes."""
     config = get_base_config()
-    # default: num_experts = 4, num_active_experts = 2, hidden_dim = 256
+    # Explicitly set num_active_experts=2 to test K=2 routing output shape.
+    # default num_active_experts may be 1 for dev iteration; this tests K=2 routing.
+    config.model.num_active_experts = 2
+    config.model.num_experts = 4
     router = SparseMoERouter(config).to(device=device)
 
     # 3D input shape (B, S, D)
@@ -118,6 +121,9 @@ def test_router_determinism(device: str) -> None:
 def test_router_stress_shapes(device: str, shape: tuple[int, int, int]) -> None:
     """Stress test routing across variable scale dimensions."""
     config = get_base_config()
+    # Explicitly set K=2 for shape checks below.
+    config.model.num_active_experts = 2
+    config.model.num_experts = 4
     router = SparseMoERouter(config).to(device=device)
 
     x = torch.randn(shape, device=device)

@@ -21,6 +21,8 @@ import torch
 from torch.utils.data import DataLoader, Dataset
 
 from core.constants import PAD_BYTE
+from training.loss_mask import LossMaskBuilder, MaskStrategy
+
 
 # Optional import of HuggingFace datasets
 import os
@@ -177,10 +179,21 @@ class SFTByteDataset(BaseByteDataset):
 
     PROMPT_TEMPLATE = "### Instruction:\n{instruction}\n\n### Response:\n{output}"
 
-    def __init__(self, data_path: str | Path, seq_len: int = 512, split: str = "train") -> None:
+    def __init__(
+        self,
+        data_path: str | Path,
+        seq_len: int = 512,
+        split: str = "train",
+        train_on_prompt: bool = False,
+    ) -> None:
         super().__init__(seq_len=seq_len, split=split)
+        self.train_on_prompt = train_on_prompt
         self.samples: list[bytes] = []
+        self.mask_builder = LossMaskBuilder(
+            strategy=MaskStrategy.TRAIN_ENTIRE_SEQUENCE if train_on_prompt else MaskStrategy.CUSTOM
+        )
         self._load_data(data_path)
+
 
     def _format_sample(self, example: dict[str, Any]) -> str:
         """Format an SFT sample as a single string."""
@@ -268,20 +281,49 @@ class SFTByteDataset(BaseByteDataset):
     def __len__(self) -> int:
         return len(self.samples)
 
-    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor]:
+    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         byte_list = list(self.samples[idx])
-
-        # Pad or truncate to seq_len + 1 (inputs=seq_len, targets=seq_len next bytes)
         target_len = self.seq_len + 1
+
+        sample_bytes = self.samples[idx]
+        response_start = 0
+        sep_alpaca = b"\n\n### Response:\n"
+        sep_msg = b"### Assistant:\n"
+
+        if sep_alpaca in sample_bytes:
+            response_start = sample_bytes.rfind(sep_alpaca) + len(sep_alpaca)
+        elif sep_msg in sample_bytes:
+            response_start = sample_bytes.rfind(sep_msg) + len(sep_msg)
+
+        full_mask = torch.zeros(len(byte_list), dtype=torch.bool)
+        full_mask[response_start:] = True
+
         if len(byte_list) > target_len:
             byte_list = byte_list[:target_len]
+            full_mask = full_mask[:target_len]
         else:
-            byte_list = byte_list + [PAD_BYTE] * (target_len - len(byte_list))
+            pad_len = target_len - len(byte_list)
+            byte_list = byte_list + [PAD_BYTE] * pad_len
+            full_mask = torch.cat([full_mask, torch.zeros(pad_len, dtype=torch.bool)])
 
-        byte_arr = byte_list
-        x = torch.tensor(byte_arr[:-1], dtype=torch.long)
-        y = torch.tensor(byte_arr[1:], dtype=torch.long)
-        return x, y
+        tokens = torch.tensor(byte_list, dtype=torch.long)
+        x = tokens[:-1].clone()
+        y = tokens[1:].clone()
+
+        if self.train_on_prompt:
+            loss_mask = torch.ones(self.seq_len, dtype=torch.bool)
+        else:
+            loss_mask = full_mask[1:].clone()
+
+        result = self.mask_builder.build(
+            y,
+            custom_mask=loss_mask,
+            seq_len=self.seq_len,
+        )
+        loss_mask = result.mask
+
+        return x, y, loss_mask
+
 
 
 class CodingByteDataset(BaseByteDataset):

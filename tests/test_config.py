@@ -20,15 +20,20 @@ def test_default_config_creation(base_config: IVERIConfig) -> None:
 
 
 def test_default_values_match_nano(base_config: IVERIConfig) -> None:
-    """Test that default values match the 10M Nano architecture specification."""
+    """Test that default values match the current development nano architecture.
+
+    Note: The 'production 10M nano' targets (6 layers, mamba_ratio=6, 4 experts etc.)
+    are defined in configs/presets/nano.yaml. The default IVERIConfig uses smaller
+    values for faster development iteration.
+    """
     assert base_config.model.hidden_dim == 256
-    assert base_config.model.num_layers == 6
+    assert base_config.model.num_layers == 4
     assert base_config.model.num_heads == 4
-    assert base_config.model.mamba_ratio == 6
-    assert base_config.model.num_experts == 4
-    assert base_config.model.num_active_experts == 2
-    assert base_config.model.max_recursion_depth == 8
-    assert base_config.model.titans_memory_dim == 128
+    assert base_config.model.mamba_ratio == 1
+    assert base_config.model.num_experts == 2
+    assert base_config.model.num_active_experts == 1
+    assert base_config.model.max_recursion_depth == 4
+    assert base_config.model.titans_memory_dim == 64
 
 
 def test_nested_config_access(base_config: IVERIConfig) -> None:
@@ -82,8 +87,8 @@ def test_get_base_config_with_overrides() -> None:
     assert cfg.model.num_layers == 12
     assert cfg.model.num_heads == 8
     assert cfg.training.learning_rate == 1e-4
-    # Unoverridden values should retain defaults
-    assert cfg.model.mamba_ratio == 6
+    # Unoverridden values should retain defaults (mamba_ratio=1 is the current default)
+    assert cfg.model.mamba_ratio == 1
 
 
 def test_invalid_hidden_dim_zero() -> None:
