@@ -1,0 +1,21 @@
+{
+  "score": 74.9,
+  "status": "PASS",
+  "components": {
+    "moe_balance": 9.895833333333334,
+    "titans_active": 25.0,
+    "mor_routing": 15.0,
+    "blt_entropy": 15.0,
+    "gradient_health": 10.0
+  },
+  "telemetry_sample": {
+    "expert_utilization_histogram": [
+      1856,
+      1216
+    ],
+    "titans_read_count": 512,
+    "average_recursion_depth": 3.0,
+    "average_byte_entropy": 0.9999985694885254,
+    "grad_norm_mean": null
+  }
+}

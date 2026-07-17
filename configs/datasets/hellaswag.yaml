@@ -1,0 +1,25 @@
+# IVERI Dataset Specification — HellaSwag (EVALUATION ONLY)
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+# ⚠️ EVAL ONLY — NEVER USE FOR TRAINING. stage: eval_only enforces this.
+
+name: hellaswag
+hf_id: Rowan/hellaswag
+hf_revision: "main"
+hf_config: null
+license: MIT
+license_url: https://opensource.org/licenses/MIT
+source_url: https://huggingface.co/datasets/Rowan/hellaswag
+text_field: ctx
+priority: 7
+stage: eval_only
+max_storage_gb: 0.1
+source_type: huggingface
+enabled: true
+curriculum_phases: []
+quality_backend: null
+quality_threshold: null
+tags: [evaluation, commonsense, benchmark]
+description: >
+  HellaSwag commonsense NLI benchmark. EVALUATION ONLY.
+  Physical isolation enforced: stored in data/evaluation/hellaswag/ only.
+  Contamination check run against all training datasets before freeze.

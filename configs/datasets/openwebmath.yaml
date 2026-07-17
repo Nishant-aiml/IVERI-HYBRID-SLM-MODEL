@@ -1,0 +1,28 @@
+# IVERI Dataset Specification — OpenWebMath
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: openwebmath
+hf_id: open-web-math/open-web-math
+hf_revision: "main"
+hf_config: null
+license: CC-BY-4.0
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_url: https://huggingface.co/datasets/open-web-math/open-web-math
+text_field: text
+priority: 5
+stage: pretrain
+max_storage_gb: 3.0
+source_type: huggingface
+enabled: true
+curriculum_phases: [B, C]
+quality_backend: fast
+quality_threshold: 0.4
+tags: [math, web, latex, stem, reasoning]
+description: >
+  Mathematical content scraped from the web with LaTeX rendering.
+  Covers diverse mathematical topics including proofs, derivations, and problem sets.
+  Provides complementary math coverage to FineMath with different source distribution.
+notes: >
+  Use as an alternative or complement to FineMath. Sometimes has better coverage
+  depending on the subset. Budget: 3 GB. Only in curriculum phases B and C
+  (knowledge expansion and reasoning — not language foundation phase A).

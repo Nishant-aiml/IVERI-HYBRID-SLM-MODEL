@@ -1,0 +1,16 @@
+# IVERI Curriculum Recipe — IVERI v1.0 Default
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: iveri_v1
+version: "1.0"
+description: "Default training recipe for IVERI 10M pretraining."
+phase: A
+created_by: iveri-team
+datasets:
+  tinystories: 0.35
+  fineweb_edu: 0.40
+  wikipedia: 0.15
+  finemath: 0.05
+  dclm: 0.05
+min_datasets_required: 2
+fallback_recipe: foundation

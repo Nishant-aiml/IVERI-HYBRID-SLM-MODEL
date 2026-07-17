@@ -1,0 +1,36 @@
+{
+    "version": "1.0",
+    "phase": "A",
+    "description": "IVERI Phase A curriculum manifest",
+    "created_at": "2026-07-17T07:45:22.779722+00:00",
+    "weights": {
+        "tinystories": 0.35,
+        "fineweb_edu": 0.4,
+        "wikipedia": 0.15,
+        "finemath": 0.05,
+        "dclm": 0.05
+    },
+    "certified_paths": {
+        "tinystories": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\data\\certified\\tinystories",
+        "fineweb_edu": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\data\\certified\\fineweb_edu",
+        "wikipedia": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\data\\certified\\wikipedia",
+        "finemath": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\data\\certified\\finemath",
+        "dclm": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\data\\certified\\dclm"
+    },
+    "freeze_hashes": {
+        "tinystories": "3e75da6c0c38bae74a6c0b9e3414a0d998dacd65083e7a5857e725d23c5bb6c6",
+        "fineweb_edu": "dfa8c917f3f2287029e7fa605be32b9bf48cf0a9e81e7c37273452b3bdb44d65",
+        "wikipedia": "98804c504fb35c1169e5660c278845b5e0ceef099d8078b8671757b1fb1245c3",
+        "finemath": "366897bec2e7483ef6b3cdcd84d0e4c27056923552bf222014193d1a5f30eef9",
+        "dclm": "e5dcaf5acb090852b8f5cc3143c1de2922df23788eadc17616e339ca9765aedc"
+    },
+    "available_datasets": [
+        "tinystories",
+        "fineweb_edu",
+        "wikipedia",
+        "finemath",
+        "dclm"
+    ],
+    "total_certified_gb": 0.00014211051166057587,
+    "curriculum_manifest_hash": "e0fa6f709d90583bd1297691634c131a76054d14fbe420c2b2f906ede55053f2"
+}

@@ -1,0 +1,20 @@
+{
+    "byte_count": 22670,
+    "certification_stages": 24,
+    "certified_path": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\data\\certified\\fineweb_edu",
+    "config_hash": "",
+    "dataset_name": "fineweb_edu",
+    "doc_count": 60,
+    "frozen_at": "2026-07-12T06:49:04.070931+00:00",
+    "frozen_by": "Phase8-CertificationPipeline-v1",
+    "git_commit": "4d1e203173c112ff3730c07fa3d0586b4e50ca0a",
+    "hf_revision": null,
+    "license": "",
+    "license_url": "",
+    "pipeline_version": "1.0.0",
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "recipe_hash": null,
+    "sha256_manifest_hash": "dfa8c917f3f2287029e7fa605be32b9bf48cf0a9e81e7c37273452b3bdb44d65",
+    "stages_passed": 24,
+    "version": "IVERI_DATASET_v1.0"
+}

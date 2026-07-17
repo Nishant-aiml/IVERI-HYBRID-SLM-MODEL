@@ -26,7 +26,7 @@ from training.loss_mask import LossMaskBuilder, MaskStrategy
 
 # Optional import of HuggingFace datasets
 import os
-if os.environ.get("IVERI_DISABLE_HF", "0") == "1":
+if os.environ.get("IVERI_DISABLE_HF", "0") == "1" or os.name == "nt":
     _HF_DATASETS_AVAILABLE = False
 else:
     try:
@@ -519,3 +519,152 @@ def get_coding_dataloader(
         pin_memory=pin_memory,
         drop_last=drop_last,
     )
+
+
+class CurriculumByteDataset(BaseByteDataset):
+    """Curriculum-aware dataset that mixes multiple certified sources by manifest weights.
+
+    Reads a CurriculumManifest JSON or CurriculumRecipe YAML, loads each certified
+    source proportionally, and concatenates byte sequences. No data duplication.
+    Compatible with existing DataLoader interface (returns same (x, y) tuples).
+    """
+
+    def __init__(
+        self,
+        manifest_path: str | Path,
+        seq_len: int = 512,
+        split: str = "train",
+        text_field: str = "text",
+    ) -> None:
+        super().__init__(seq_len=seq_len, split=split)
+        self.text_field = text_field
+        self.manifest_path = Path(manifest_path)
+        self.data = np.array([], dtype=np.uint8)
+        self._load_data(self.manifest_path)
+
+    def _load_data(self, manifest_path: Path) -> None:
+        """Load manifest or recipe, sample from each certified source proportionally, concatenate."""
+        if not manifest_path.exists():
+            logger.error(f"Curriculum manifest/recipe not found: {manifest_path}")
+            return
+
+        # Handle YAML recipe files as fallback/direct loading
+        if manifest_path.suffix in (".yaml", ".yml"):
+            try:
+                import yaml
+                recipe = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+                weights = recipe.get("datasets", {})
+                # For recipes, paths are expected in standard data/certified/{dataset_name}
+                certified_paths = {
+                    name: f"data/certified/{name}" for name in weights
+                }
+                available = [name for name in weights if Path(certified_paths[name]).exists()]
+                phase = recipe.get("phase", "?")
+            except Exception as e:
+                logger.error(f"Failed to load curriculum recipe {manifest_path}: {e}")
+                return
+        else:
+            try:
+                with open(manifest_path, encoding="utf-8") as f:
+                    manifest = json.load(f)
+                weights = manifest.get("weights", {})
+                certified_paths = manifest.get("certified_paths", {})
+                available = manifest.get("available_datasets", list(weights.keys()))
+                phase = manifest.get("phase", "?")
+            except Exception as e:
+                logger.error(f"Failed to load curriculum manifest {manifest_path}: {e}")
+                return
+
+        # Renormalize weights to available datasets
+        avail_weights = {k: v for k, v in weights.items() if k in available}
+        total_w = sum(avail_weights.values())
+        if total_w == 0:
+            logger.error("No available datasets in curriculum manifest")
+            return
+        norm_weights = {k: v / total_w for k, v in avail_weights.items()}
+
+        all_bytes: list[int] = []
+
+        for dataset_name, weight in sorted(norm_weights.items(), key=lambda x: -x[1]):
+            cert_path = certified_paths.get(dataset_name)
+            if not cert_path:
+                continue
+            cert_path = Path(cert_path)
+            # Handle versioned subdirectories if present (Change 3)
+            # If cert_path is e.g. data/certified/fineweb_edu, check if v1 exists
+            if cert_path.exists():
+                v1_dir = cert_path / "v1"
+                if v1_dir.exists():
+                    cert_path = v1_dir
+
+            # Load JSONL files from certified path
+            source_bytes = self._load_source(cert_path, self.text_field)
+            # Take proportion of bytes based on weight
+            n_bytes = int(len(source_bytes) * weight)
+            all_bytes.extend(source_bytes[:n_bytes])
+            logger.info(
+                f"Curriculum [{phase}] {dataset_name}: weight={weight:.2f}, bytes={n_bytes:,}"
+            )
+
+        self.data = np.array(all_bytes, dtype=np.uint8)
+        self._total_bytes = len(self.data)
+
+    def _load_source(self, path: Path, text_field: str) -> list[int]:
+        """Load bytes from a certified JSONL directory."""
+        all_bytes: list[int] = []
+        if path.is_dir():
+            files = sorted(list(path.glob(f"**/{self.split}.jsonl")) +
+                           list(path.glob("**/*.jsonl")))
+        elif path.is_file():
+            files = [path]
+        else:
+            files = []
+
+        for f in files:
+            try:
+                with open(f, encoding="utf-8") as fh:
+                    for line in fh:
+                        if line.strip():
+                            sample = json.loads(line)
+                            text = sample.get(text_field, sample.get("content", ""))
+                            if text:
+                                all_bytes.extend(text.encode("utf-8"))
+            except Exception as e:
+                logger.error(f"Failed to load certified source {f}: {e}")
+
+        return all_bytes
+
+    @property
+    def num_bytes(self) -> int:
+        return self._total_bytes
+
+    def __len__(self) -> int:
+        return max(0, len(self.data) - self.seq_len - 1)
+
+    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor]:
+        chunk = self.data[idx : idx + self.seq_len + 1]
+        x = torch.from_numpy(chunk[:-1].copy()).long()
+        y = torch.from_numpy(chunk[1:].copy()).long()
+        return x, y
+
+
+def get_curriculum_dataloader(
+    manifest_path: str | Path,
+    batch_size: int = 8,
+    seq_len: int = 512,
+    num_workers: int = 2,
+    split: str = "train",
+    pin_memory: bool = True,
+    drop_last: bool = True,
+) -> DataLoader:
+    """Helper factory to instantiate a CurriculumByteDataset dataloader."""
+    dataset = CurriculumByteDataset(manifest_path, seq_len=seq_len, split=split)
+    return DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=(split == "train"),
+        num_workers=num_workers,
+        pin_memory=pin_memory,
+        drop_last=drop_last,
+    )
+

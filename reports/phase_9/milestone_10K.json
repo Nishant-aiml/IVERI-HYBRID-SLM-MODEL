@@ -1,0 +1,29 @@
+{
+  "label": "10K",
+  "token_target": 10000,
+  "tokens_processed": 25600,
+  "loss_reduction": 3.1779439449310303,
+  "architecture_health": {
+    "score": 69.87,
+    "status": "WARNING",
+    "components": {
+      "moe_balance": 4.874674479166666,
+      "titans_active": 25.0,
+      "mor_routing": 15.0,
+      "blt_entropy": 15.0,
+      "gradient_health": 10.0
+    },
+    "telemetry_sample": {
+      "expert_utilization_histogram": [
+        2473,
+        599
+      ],
+      "titans_read_count": 512,
+      "average_recursion_depth": 3.0,
+      "average_byte_entropy": 0.9999986290931702,
+      "grad_norm_mean": null
+    }
+  },
+  "status": "PASS",
+  "timestamp": "2026-07-17T13:18:56.404824"
+}

@@ -1,0 +1,16 @@
+# IVERI Curriculum Recipe — Language Foundation
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: foundation
+version: "1.0"
+description: "Language foundation training mix focusing on simple syntax and basic grammar."
+phase: A
+created_by: iveri-team
+datasets:
+  tinystories: 0.35
+  fineweb_edu: 0.40
+  wikipedia: 0.15
+  finemath: 0.05
+  dclm: 0.05
+min_datasets_required: 2
+fallback_recipe: null

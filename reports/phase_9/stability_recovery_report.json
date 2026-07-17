@@ -1,0 +1,13 @@
+{
+  "nan_injection": {
+    "recoverable": true,
+    "action": "RETRY_WITH_ROLLBACK",
+    "severity": "CRITICAL"
+  },
+  "oom_injection": {
+    "recoverable": true,
+    "action": "RETRY_WITH_SMALLER_BATCH",
+    "severity": "WARNING"
+  },
+  "checkpoint_rollback_test": "PASS"
+}

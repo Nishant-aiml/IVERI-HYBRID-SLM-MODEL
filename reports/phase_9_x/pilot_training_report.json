@@ -1,0 +1,30 @@
+{
+  "pilot_steps": 30,
+  "initial_loss": 5.550940990447998,
+  "final_loss": 3.785598039627075,
+  "loss_reduction": 1.7653429508209229,
+  "tokens_processed": 15360,
+  "tokens_per_sec": 129.8,
+  "architecture_health": {
+    "score": 86.63,
+    "status": "PASS",
+    "components": {
+      "moe_balance": 11.629231770833334,
+      "titans_active": 25.0,
+      "mor_routing": 15.0,
+      "blt_entropy": 15.0,
+      "gradient_health": 20.0
+    },
+    "telemetry_sample": {
+      "expert_utilization_histogram": [
+        1643,
+        1429
+      ],
+      "titans_read_count": 512,
+      "average_recursion_depth": 3.0,
+      "average_byte_entropy": 0.9999991059303284
+    }
+  },
+  "status": "PASS",
+  "timestamp": "2026-07-17T11:33:21.342854"
+}

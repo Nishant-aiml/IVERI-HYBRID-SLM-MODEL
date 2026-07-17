@@ -1,0 +1,24 @@
+# IVERI Dataset Specification — WinoGrande (EVALUATION ONLY)
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+# ⚠️ EVAL ONLY — NEVER USE FOR TRAINING.
+
+name: winogrande
+hf_id: allenai/winogrande
+hf_revision: "main"
+hf_config: winogrande_xl
+license: CC-BY
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_url: https://huggingface.co/datasets/allenai/winogrande
+text_field: sentence
+priority: 10
+stage: eval_only
+max_storage_gb: 0.1
+source_type: huggingface
+enabled: true
+curriculum_phases: []
+quality_backend: null
+quality_threshold: null
+tags: [evaluation, commonsense, pronoun-resolution, benchmark]
+description: >
+  WinoGrande pronoun resolution benchmark. EVALUATION ONLY.
+  Stored in data/evaluation/winogrande/ only.

@@ -1,0 +1,15 @@
+[
+    {
+        "dataset_name": "finemath",
+        "version": "1.0",
+        "license": "cc-by-4.0",
+        "sha256": "f9e4d22349a8ec59d017d9cae3c5ba8d4aa271b3ad00e2e3a765e42281a89115",
+        "pipeline_version": "3.0.0",
+        "creation_time": "2026-07-12T12:19:04.301449",
+        "document_count": 60,
+        "byte_count": 24410,
+        "stage": "certified",
+        "source": "certification_pipeline",
+        "mixing_weight": 1.0
+    }
+]

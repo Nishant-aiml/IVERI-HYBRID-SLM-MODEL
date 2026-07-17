@@ -1,0 +1,11 @@
+{
+  "python_version": "3.12.10",
+  "pytorch_version": "2.5.1+cu121",
+  "cuda_available": true,
+  "cuda_version": "12.1",
+  "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "vram_total_gb": 3.99951171875,
+  "git_commit": "4d1e203173c112ff3730c07fa3d0586b4e50ca0a",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "timestamp": "2026-07-17T07:29:38.918714+00:00"
+}

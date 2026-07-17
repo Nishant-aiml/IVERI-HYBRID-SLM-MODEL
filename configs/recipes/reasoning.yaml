@@ -1,0 +1,16 @@
+# IVERI Curriculum Recipe — Reasoning
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: reasoning
+version: "1.0"
+description: "Reasoning training mix focusing on math, logic and problem solving."
+phase: C
+created_by: iveri-team
+datasets:
+  fineweb_edu: 0.35
+  finemath: 0.25
+  wikipedia: 0.15
+  dclm: 0.15
+  tinystories: 0.10
+min_datasets_required: 2
+fallback_recipe: null

@@ -1,0 +1,27 @@
+# IVERI Dataset Specification — FineMath
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: finemath
+hf_id: HuggingFaceTB/finemath
+hf_revision: "main"
+hf_config: finemath-4plus
+license: ODC-By
+license_url: https://opendatacommons.org/licenses/by/
+source_url: https://huggingface.co/datasets/HuggingFaceTB/finemath
+text_field: text
+priority: 4
+stage: pretrain
+max_storage_gb: 3.0
+source_type: huggingface
+enabled: true
+curriculum_phases: [A, B, C]
+quality_backend: fast
+quality_threshold: 0.4
+tags: [math, reasoning, stem, educational]
+description: >
+  High-quality mathematical content filtered for educational quality.
+  finemath-4plus config selects documents scoring 4+ on educational quality (0-5 scale).
+  Critical for teaching mathematical reasoning and STEM knowledge.
+notes: >
+  Use finemath-4plus config for highest quality math content.
+  Budget: 3 GB — provides substantial math training signal for a 10M model.
