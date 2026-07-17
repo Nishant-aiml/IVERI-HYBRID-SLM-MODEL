@@ -1,0 +1,16 @@
+# IVERI Curriculum Recipe — Knowledge Expansion
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: knowledge
+version: "1.0"
+description: "Knowledge expansion training mix focusing on facts, math and general knowledge."
+phase: B
+created_by: iveri-team
+datasets:
+  fineweb_edu: 0.45
+  wikipedia: 0.20
+  dclm: 0.20
+  finemath: 0.10
+  tinystories: 0.05
+min_datasets_required: 2
+fallback_recipe: null

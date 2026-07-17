@@ -1,0 +1,24 @@
+# IVERI Dataset Specification — PIQA (EVALUATION ONLY)
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+# ⚠️ EVAL ONLY — NEVER USE FOR TRAINING.
+
+name: piqa
+hf_id: ybisk/piqa
+hf_revision: "main"
+hf_config: null
+license: AFL-3.0
+license_url: https://opensource.org/licenses/AFL-3.0
+source_url: https://huggingface.co/datasets/ybisk/piqa
+text_field: goal
+priority: 8
+stage: eval_only
+max_storage_gb: 0.1
+source_type: huggingface
+enabled: true
+curriculum_phases: []
+quality_backend: null
+quality_threshold: null
+tags: [evaluation, physical-intuition, benchmark]
+description: >
+  PIQA physical intuition QA benchmark. EVALUATION ONLY.
+  Stored in data/evaluation/piqa/ only.

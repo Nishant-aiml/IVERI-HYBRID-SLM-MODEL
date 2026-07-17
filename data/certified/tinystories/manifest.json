@@ -1,0 +1,15 @@
+[
+    {
+        "dataset_name": "tinystories",
+        "version": "1.0",
+        "license": "cc-by-4.0",
+        "sha256": "346737e82b5af8f867f4383ecd475fa4faa3fee20341b45fdca326d459f797d8",
+        "pipeline_version": "3.0.0",
+        "creation_time": "2026-07-12T12:19:03.851756",
+        "document_count": 60,
+        "byte_count": 20870,
+        "stage": "certified",
+        "source": "certification_pipeline",
+        "mixing_weight": 1.0
+    }
+]

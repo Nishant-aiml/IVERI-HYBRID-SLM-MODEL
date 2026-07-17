@@ -1,0 +1,28 @@
+# IVERI Dataset Specification — Wikipedia (English)
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: wikipedia
+hf_id: wikimedia/wikipedia
+hf_revision: "main"
+hf_config: "20231101.en"
+license: CC-BY-SA-4.0
+license_url: https://creativecommons.org/licenses/by-sa/4.0/
+source_url: https://huggingface.co/datasets/wikimedia/wikipedia
+text_field: text
+priority: 3
+stage: pretrain
+max_storage_gb: 6.0
+source_type: huggingface
+enabled: true
+curriculum_phases: [A, B, C]
+quality_backend: fast
+quality_threshold: 0.5
+tags: [encyclopedia, factual, high-quality, educational, structured]
+description: >
+  English Wikipedia snapshot (November 2023). High-quality factual text with
+  consistent structure and reliable content. Attribution required per CC-BY-SA-4.0.
+  Streaming to 6 GB budget — covers a substantial portion of the full ~21 GB dump.
+notes: >
+  Full English Wikipedia is ~21 GB compressed. 6 GB budget provides ~6M articles
+  which is more than sufficient for a 10M parameter model. Focus on clean, long articles.
+  Attribution: Wikimedia Foundation.

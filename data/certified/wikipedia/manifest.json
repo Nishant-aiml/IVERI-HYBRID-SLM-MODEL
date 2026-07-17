@@ -1,0 +1,15 @@
+[
+    {
+        "dataset_name": "wikipedia",
+        "version": "1.0",
+        "license": "cc-by-4.0",
+        "sha256": "48a97c932f7bd461b70208a811d9aa12a6b4edd84b6ee0f25456bd20c74ea987",
+        "pipeline_version": "3.0.0",
+        "creation_time": "2026-07-12T12:19:04.153655",
+        "document_count": 60,
+        "byte_count": 23390,
+        "stage": "certified",
+        "source": "certification_pipeline",
+        "mixing_weight": 1.0
+    }
+]

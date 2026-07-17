@@ -1,0 +1,8 @@
+{
+  "total_parameters": 455262,
+  "trainable_parameters": 455262,
+  "frozen_parameters": 0,
+  "estimated_flops": 34930688,
+  "status": "PASS",
+  "timestamp": "2026-07-17T07:29:39.119090+00:00"
+}

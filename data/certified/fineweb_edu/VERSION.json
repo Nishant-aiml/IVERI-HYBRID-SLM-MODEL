@@ -1,0 +1,40 @@
+{
+    "version_id": "v_20260712_121904_8def56af",
+    "dataset_name": "fineweb_edu",
+    "created_at": "2026-07-12T12:19:04.000706",
+    "config_hash": "257124ef03e6b214d0a321dc8d3e03f1",
+    "content_hash": "8def56af2c2ef5f6b2bb9fa4912db1593760a984ba0d5c34a884eee205e83e2e",
+    "pipeline_hash": "257124ef03e6b214d0a321dc8d3e03f1",
+    "document_count": 60,
+    "byte_count": 22670,
+    "stage": "certified",
+    "source_datasets": [
+        "fineweb_edu"
+    ],
+    "processing_steps": [
+        "download_verification",
+        "file_integrity",
+        "utf8_validation",
+        "encoding_normalization",
+        "language_detection",
+        "english_filtering",
+        "corruption_detection",
+        "empty_removal",
+        "length_filtering",
+        "exact_deduplication",
+        "near_dedup_detection",
+        "boilerplate_detection",
+        "repetition_detection",
+        "pii_detection",
+        "safety_filtering",
+        "quality_scoring",
+        "entropy_analysis",
+        "formatting_standardization",
+        "byte_encoding_verification",
+        "curriculum_tagging",
+        "statistics_generation",
+        "dataset_card_generation",
+        "sha256_manifest",
+        "freeze_certification"
+    ]
+}

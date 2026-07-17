@@ -1,0 +1,15 @@
+[
+    {
+        "dataset_name": "dclm",
+        "version": "1.0",
+        "license": "cc-by-4.0",
+        "sha256": "d7cc277473b045cf28619a01d73736cf4f0f00b1e4eee32855f27dcd470df1b8",
+        "pipeline_version": "3.0.0",
+        "creation_time": "2026-07-12T12:19:04.459466",
+        "document_count": 60,
+        "byte_count": 24830,
+        "stage": "certified",
+        "source": "certification_pipeline",
+        "mixing_weight": 1.0
+    }
+]

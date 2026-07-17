@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-07-17T06:11:46.750507+00:00",
+  "step": 5,
+  "seed": 42,
+  "gpu_memory_allocated_mb": 0.0,
+  "error_message": "Injected NaN Loss error (test)",
+  "stack_trace": "Recovery: RETRY_WITH_ROLLBACK"
+}

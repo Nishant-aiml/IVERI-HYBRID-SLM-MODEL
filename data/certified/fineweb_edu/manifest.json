@@ -1,0 +1,15 @@
+[
+    {
+        "dataset_name": "fineweb_edu",
+        "version": "1.0",
+        "license": "cc-by-4.0",
+        "sha256": "8def56af2c2ef5f6b2bb9fa4912db1593760a984ba0d5c34a884eee205e83e2e",
+        "pipeline_version": "3.0.0",
+        "creation_time": "2026-07-12T12:19:04.002246",
+        "document_count": 60,
+        "byte_count": 22670,
+        "stage": "certified",
+        "source": "certification_pipeline",
+        "mixing_weight": 1.0
+    }
+]

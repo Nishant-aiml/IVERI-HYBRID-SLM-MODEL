@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "moe_active": true,
+    "titans_active": true,
+    "mor_active": true,
+    "blt_active": true
+  },
+  "architecture_health": {
+    "score": 76.63,
+    "status": "PASS",
+    "components": {
+      "moe_balance": 11.629231770833334,
+      "titans_active": 25.0,
+      "mor_routing": 15.0,
+      "blt_entropy": 15.0,
+      "gradient_health": 10.0
+    },
+    "telemetry_sample": {
+      "expert_utilization_histogram": [
+        1643,
+        1429
+      ],
+      "titans_read_count": 512,
+      "average_recursion_depth": 3.0,
+      "average_byte_entropy": 0.9999991059303284,
+      "grad_norm_mean": null
+    }
+  },
+  "timestamp": "2026-07-17T13:15:20.259639"
+}

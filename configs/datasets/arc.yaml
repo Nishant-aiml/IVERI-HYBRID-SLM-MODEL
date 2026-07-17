@@ -1,0 +1,24 @@
+# IVERI Dataset Specification — AI2 ARC (EVALUATION ONLY)
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+# ⚠️ EVAL ONLY — NEVER USE FOR TRAINING.
+
+name: arc
+hf_id: allenai/ai2_arc
+hf_revision: "main"
+hf_config: ARC-Easy
+license: CC-BY-4.0
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_url: https://huggingface.co/datasets/allenai/ai2_arc
+text_field: question
+priority: 9
+stage: eval_only
+max_storage_gb: 0.1
+source_type: huggingface
+enabled: true
+curriculum_phases: []
+quality_backend: null
+quality_threshold: null
+tags: [evaluation, science, reasoning, benchmark]
+description: >
+  AI2 Reasoning Challenge (ARC) Easy set. EVALUATION ONLY.
+  Stored in data/evaluation/arc/ only.

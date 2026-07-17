@@ -1,0 +1,12 @@
+{
+  "recipe": "iveri_v1",
+  "datasets_verified": [
+    "tinystories",
+    "fineweb_edu",
+    "wikipedia",
+    "finemath",
+    "dclm"
+  ],
+  "status": "PASS",
+  "timestamp": "2026-07-17T07:29:38.957708+00:00"
+}

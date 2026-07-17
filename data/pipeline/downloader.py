@@ -25,7 +25,7 @@ if TYPE_CHECKING:
 
 # Optional datasets import
 import os
-if os.environ.get("IVERI_DISABLE_HF", "0") == "1":
+if os.environ.get("IVERI_DISABLE_HF", "0") == "1" or os.name == "nt":
     _HF_AVAILABLE = False
     load_dataset = None  # type: ignore[assignment]
 else:

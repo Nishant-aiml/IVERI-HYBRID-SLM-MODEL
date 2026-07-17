@@ -1,0 +1,30 @@
+# IVERI Dataset Specification — TinyStories
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+# -----------------------------------------------------------------
+# DO NOT CHANGE hf_revision without updating sha256_sample.
+# Revision pinning guarantees reproducibility across machines.
+
+name: tinystories
+hf_id: roneneldan/TinyStories
+hf_revision: "4d208838640e8acc1fb8de57c68c4e2aa44e08b6"
+hf_config: null
+license: CC-BY-4.0
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_url: https://huggingface.co/datasets/roneneldan/TinyStories
+text_field: text
+priority: 1
+stage: pretrain
+max_storage_gb: 2.0
+source_type: huggingface
+enabled: true
+curriculum_phases: [A, B, C]
+quality_backend: fast
+quality_threshold: 0.3
+tags: [children, stories, simple, language-foundation]
+description: >
+  Synthetically generated children's stories (GPT-3.5 + GPT-4).
+  Ideal for teaching grammar, syntax, and stable byte-level prediction.
+  Small size (~2 GB) makes it the first dataset to download and validate.
+notes: >
+  Full dataset used (not sampled). Already partially prepared with synthetic
+  stories in data/processed/stage1/tinystories/ — replace with real HF data.

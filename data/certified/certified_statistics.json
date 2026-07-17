@@ -1,0 +1,62 @@
+{
+    "name": "dclm",
+    "stage": "certified",
+    "num_documents": 60,
+    "total_bytes": 24830,
+    "total_gb": 2.312473952770233e-05,
+    "avg_bytes": 413.8333333333333,
+    "median_bytes": 414.0,
+    "min_bytes": 413,
+    "max_bytes": 414,
+    "p25_bytes": 414.0,
+    "p75_bytes": 414.0,
+    "p95_bytes": 414.0,
+    "p99_bytes": 414.0,
+    "language_distribution": {
+        "en": 60
+    },
+    "license": "unknown",
+    "mixing_weight": 0.0,
+    "duplicate_rate": null,
+    "filter_rate": null,
+    "creation_time": "2026-07-12T12:19:04.427809",
+    "length_histogram": {
+        "bins": [
+            413,
+            413,
+            413,
+            413,
+            413,
+            413,
+            413,
+            413,
+            413,
+            413,
+            414
+        ],
+        "counts": [
+            10,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            50
+        ],
+        "bin_labels": [
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 413",
+            "413 - 414"
+        ]
+    }
+}

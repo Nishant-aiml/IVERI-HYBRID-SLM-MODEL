@@ -1,0 +1,24 @@
+# IVERI Dataset Specification — GSM8K (EVALUATION ONLY)
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+# ⚠️ EVAL ONLY — NEVER USE FOR TRAINING.
+
+name: gsm8k
+hf_id: openai/gsm8k
+hf_revision: "main"
+hf_config: main
+license: MIT
+license_url: https://opensource.org/licenses/MIT
+source_url: https://huggingface.co/datasets/openai/gsm8k
+text_field: question
+priority: 11
+stage: eval_only
+max_storage_gb: 0.1
+source_type: huggingface
+enabled: true
+curriculum_phases: []
+quality_backend: null
+quality_threshold: null
+tags: [evaluation, math, grade-school, reasoning, benchmark]
+description: >
+  GSM8K grade school math word problems benchmark. EVALUATION ONLY.
+  Stored in data/evaluation/gsm8k/ only.

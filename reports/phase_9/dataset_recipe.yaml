@@ -1,0 +1,2 @@
+recipe: iveri_v1
+datasets: ['tinystories', 'fineweb_edu', 'wikipedia', 'finemath', 'dclm']

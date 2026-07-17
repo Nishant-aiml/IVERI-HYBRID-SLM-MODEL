@@ -1,0 +1,27 @@
+# IVERI Dataset Specification — FineWeb-Edu
+# Copyright 2026 IVERI Project | SPDX-License-Identifier: Apache-2.0
+
+name: fineweb_edu
+hf_id: HuggingFaceFW/fineweb-edu
+hf_revision: "main"
+hf_config: sample-10BT
+license: ODC-By
+license_url: https://opendatacommons.org/licenses/by/
+source_url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu
+text_field: text
+priority: 2
+stage: pretrain
+max_storage_gb: 8.0
+source_type: huggingface
+enabled: true
+curriculum_phases: [A, B, C]
+quality_backend: fast
+quality_threshold: 0.4
+tags: [web, educational, filtered, high-quality]
+description: >
+  High-quality educational web text filtered from FineWeb using an educational
+  quality classifier. sample-10BT config provides a 10-billion-token sample
+  suitable for research. Streaming to 8 GB budget.
+notes: >
+  Use sample-10BT config for streaming. Full dataset is ~1.5TB — never download in full.
+  Budget cap: 8 GB raw → ~6 GB certified after filtering.
