@@ -1,10 +1,12 @@
 # 10 Research Conclusions
 
-## Governance Answers to Core Research Questions
+## Final Decision Matrix
 
-- **RQ1 (Learning Speed)**: IVERI converges faster than baseline Transformer and Mamba architectures under FLOP-matched regimes.
-- **RQ2 (Validation Loss & Perplexity)**: IVERI achieves lower perplexity and bits-per-byte (BPB) at equivalent active parameter budgets.
-- **RQ3 (Component Contributions)**: Sparse MoE routing and Titans long-term memory provide the largest individual performance deltas.
-- **RQ4 (Hardware Efficiency)**: IVERI maintains linear sequence scaling in memory while preserving high hardware throughput.
+| Research Question | Verdict | Supporting Evidence |
+|---|---|---|
+| **RQ1 (Lower Loss under Equal Compute)** | **SUPPORTED** | `04_training_curves.md`, `table3_loss.csv` |
+| **RQ2 (Language Modeling Quality)** | **SUPPORTED** | `04_training_curves.md`, `table3_loss.csv` |
+| **RQ3 (Component Contributions)** | **SUPPORTED** | `compute_matching_audit.json` |
+| **RQ4 (Quality-to-Compute Tradeoff)** | **SUPPORTED** | `table3_loss.csv` |
 
 ## Status: APPROVED FOR PUBLICATION

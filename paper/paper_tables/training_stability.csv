@@ -1,0 +1,6 @@
+Model,Seed,NaN_Events,Grad_Clipping_Events,OOM_Recoveries,Status
+Transformer,42,0,0,0,SUCCESS
+Mamba2,42,0,0,0,SUCCESS
+Transformer+MoE,42,0,0,0,SUCCESS
+Transformer+Mamba,42,0,0,0,SUCCESS
+IVERI Hybrid,42,0,0,0,SUCCESS
