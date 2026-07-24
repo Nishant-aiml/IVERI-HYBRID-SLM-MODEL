@@ -17,12 +17,14 @@ from configs.base_config import IVERIConfig
 from core.interfaces import BaseModule
 from core.registry import register
 from baselines.baseline_transformer import BaselineTransformer
+from baselines.baseline_transformer_moe import BaselineTransformerMoE
 from model.attention import FlashAttentionWrapper
 from model.mamba2 import Mamba2Block
 from model.norms import RMSNorm
 from utils.validation import validate_shape
 
 logger = logging.getLogger(__name__)
+
 
 
 @register("baseline_mamba2")
@@ -292,6 +294,11 @@ class BaselineManager:
     def build_hybrid_baseline(self) -> BaselineHybrid:
         """Create parameter/FLOP-matched Mamba-Attention hybrid baseline."""
         return BaselineHybrid(self.config)
+
+    def build_transformer_moe_baseline(self) -> BaselineTransformerMoE:
+        """Create parameter/FLOP-matched Transformer + MoE baseline."""
+        return BaselineTransformerMoE(self.config)
+
 
     def build_ablated_variant(self, component: str) -> nn.Module:
         """Create an ablated IVERI model by disabling a component flag.

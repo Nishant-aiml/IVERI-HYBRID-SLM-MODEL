@@ -1,0 +1,63 @@
+{
+  "status": "SUCCESS",
+  "phase": "10A_and_10B",
+  "campaign_duration_minutes": 0.23,
+  "environment": {
+    "git_commit": "cafd158925c880f47f39b9434b4dba143def3fc3",
+    "git_tag": "v0.9.0-phase9-freeze",
+    "python_version": "3.12.10",
+    "pytorch_version": "2.5.1+cu121",
+    "cuda_available": true,
+    "device": "cpu",
+    "seeds": [
+      42,
+      123,
+      3407
+    ],
+    "timestamp": "2026-07-24T16:31:04Z"
+  },
+  "compute_matching": {
+    "models": {
+      "Baseline A (Transformer)": {
+        "total_parameters": 3421440,
+        "active_parameters": 3421440,
+        "trainable_parameters": 3421440,
+        "forward_flops_per_token": 3503554560,
+        "backward_flops_per_token": 7007109120
+      },
+      "Baseline B (Mamba2)": {
+        "total_parameters": 2288000,
+        "active_parameters": 2288000,
+        "trainable_parameters": 2288000,
+        "forward_flops_per_token": 2342912000,
+        "backward_flops_per_token": 4685824000
+      },
+      "Baseline C (Transformer+MoE)": {
+        "total_parameters": 6039816,
+        "active_parameters": 2415926,
+        "trainable_parameters": 6039816,
+        "forward_flops_per_token": 2473908224,
+        "backward_flops_per_token": 4947816448
+      },
+      "Baseline D (Transformer+Mamba)": {
+        "total_parameters": 3468160,
+        "active_parameters": 3468160,
+        "trainable_parameters": 3468160,
+        "forward_flops_per_token": 3551395840,
+        "backward_flops_per_token": 7102791680
+      },
+      "Baseline E (IVERI Hybrid)": {
+        "total_parameters": 9347282,
+        "active_parameters": 3738912,
+        "trainable_parameters": 9347282,
+        "forward_flops_per_token": 3828645888,
+        "backward_flops_per_token": 7657291776
+      }
+    },
+    "active_parameter_delta_pct": 9.28,
+    "tolerance_status": "PASS"
+  },
+  "reports_generated": 4,
+  "tables_generated": 1,
+  "figures_generated": 13
+}

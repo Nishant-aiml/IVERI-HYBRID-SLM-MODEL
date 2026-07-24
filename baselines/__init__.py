@@ -4,6 +4,8 @@
 """Baseline models for comparison — standard transformer and pure Mamba."""
 
 from baselines.baseline_transformer import BaselineTransformer
+from baselines.baseline_transformer_moe import BaselineTransformerMoE
 from baselines.tiny_mamba import TinyMamba
 
-__all__ = ["BaselineTransformer", "TinyMamba"]
+__all__ = ["BaselineTransformer", "BaselineTransformerMoE", "TinyMamba"]
+
