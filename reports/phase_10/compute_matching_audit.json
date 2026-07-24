@@ -37,5 +37,6 @@
     }
   },
   "active_parameter_delta_pct": 9.28,
-  "tolerance_status": "PASS"
+  "tolerance_status": "PASS",
+  "gate_spec": "<= 10.0%"
 }

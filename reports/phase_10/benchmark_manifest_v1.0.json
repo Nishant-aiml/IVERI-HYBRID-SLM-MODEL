@@ -1,0 +1,21 @@
+{
+  "version": "v1.0",
+  "environment": {
+    "git_commit": "165f162f8886e48b126cf5a9dbb524220b8e8cd3",
+    "git_tag": "v0.9.0-phase9-freeze",
+    "python_version": "3.12.10",
+    "pytorch_version": "2.5.1+cu121",
+    "cuda_available": true,
+    "device": "cpu",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "system_ram_gb": 16.0,
+    "seeds": [
+      42,
+      123,
+      3407
+    ],
+    "timestamp": "2026-07-24T16:45:19Z"
+  },
+  "freeze_revision": "v0.9.0-phase9-freeze",
+  "active_parameter_tolerance_pct": 10.0
+}
