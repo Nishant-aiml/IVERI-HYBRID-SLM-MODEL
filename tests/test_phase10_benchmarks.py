@@ -85,8 +85,13 @@ def test_phase10_orchestrator_quick_mode() -> None:
     summary = orch.run_full_phase10_pipeline()
 
     assert summary["status"] == "SUCCESS"
-    assert summary["reports_generated"] >= 3
+    assert summary["reports_generated"] >= 5
+    assert (orch.reports_dir / "00_baseline_selection.md").exists()
     assert (orch.reports_dir / "04_training_curves.md").exists()
     assert (orch.reports_dir / "10_research_conclusions.md").exists()
     assert (orch.reports_dir / "12_research_validity.md").exists()
+    assert (orch.reports_dir / "BENCHMARK_CERTIFICATE.md").exists()
     assert (orch.tables_dir / "table3_loss.csv").exists()
+    assert (orch.tables_dir / "training_stability.csv").exists()
+    assert (orch.paper_tables_dir / "table3_loss.csv").exists()
+

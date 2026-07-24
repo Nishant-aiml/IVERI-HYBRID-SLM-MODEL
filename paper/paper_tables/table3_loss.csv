@@ -1,0 +1,6 @@
+Model,Seed,Initial_Loss,Final_Loss,Perplexity,BPB,Tokens_Per_Sec
+Transformer,42,5.5907,5.6076,272.4773,8.0900,2337.9
+Mamba2,42,5.5626,5.5658,261.3385,8.0298,252.1
+Transformer+MoE,42,5.6137,5.6200,275.8851,8.1079,1492.7
+Transformer+Mamba,42,5.5506,5.5713,262.7652,8.0376,235.7
+IVERI Hybrid,42,5.5632,5.5728,263.1657,8.0398,45.8

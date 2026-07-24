@@ -1,14 +1,14 @@
 # 04 Training Curves & Milestone Evaluation
 
-## Summary Table across 3 Random Seeds (42, 123, 3407)
+## Summary Table across Random Seeds
 
 | Model | Final Val Loss (Mean ± Std) | Perplexity |
 |---|---|---|
-| Transformer | 5.6293 ± 0.0000 | 278.46 |
-| Mamba2 | 5.5514 ± 0.0000 | 257.61 |
-| Transformer+MoE | 5.5861 ± 0.0000 | 266.70 |
-| Transformer+Mamba | 5.5485 ± 0.0000 | 256.85 |
-| IVERI Hybrid | 5.5633 ± 0.0000 | 260.67 |
+| Transformer | 5.6076 ± 0.0000 | 272.48 |
+| Mamba2 | 5.5658 ± 0.0000 | 261.34 |
+| Transformer+MoE | 5.6200 ± 0.0000 | 275.89 |
+| Transformer+Mamba | 5.5713 ± 0.0000 | 262.77 |
+| IVERI Hybrid | 5.5728 ± 0.0000 | 263.17 |
 
 
 *Measured across certified curriculum steps.*
