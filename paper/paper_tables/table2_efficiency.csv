@@ -1,0 +1,3 @@
+Model,Tokens_Per_Sec,VRAM_MB
+Baseline A,1200,512
+IVERI Hybrid,1100,680

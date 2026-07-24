@@ -90,8 +90,19 @@ def test_phase10_orchestrator_quick_mode() -> None:
     assert (orch.reports_dir / "04_training_curves.md").exists()
     assert (orch.reports_dir / "10_research_conclusions.md").exists()
     assert (orch.reports_dir / "12_research_validity.md").exists()
+    assert (orch.reports_dir / "BENCHMARK_SUMMARY.md").exists()
     assert (orch.reports_dir / "BENCHMARK_CERTIFICATE.md").exists()
+    assert (orch.reports_dir / "benchmark_manifest_v1.0.json").exists()
     assert (orch.tables_dir / "table3_loss.csv").exists()
     assert (orch.tables_dir / "training_stability.csv").exists()
     assert (orch.paper_tables_dir / "table3_loss.csv").exists()
+
+
+def test_reviewer_script() -> None:
+    """Verify scripts/review_phase10.py executes non-destructive verification cleanly."""
+    from scripts.review_phase10 import review_phase10
+
+    success = review_phase10()
+    assert success is True
+
 

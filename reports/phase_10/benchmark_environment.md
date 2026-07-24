@@ -2,17 +2,19 @@
 
 ```json
 {
-  "git_commit": "bd002c754497cd5ab1ae70f584054a9ffae2d9f5",
+  "git_commit": "165f162f8886e48b126cf5a9dbb524220b8e8cd3",
   "git_tag": "v0.9.0-phase9-freeze",
   "python_version": "3.12.10",
   "pytorch_version": "2.5.1+cu121",
   "cuda_available": true,
   "device": "cpu",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "system_ram_gb": 16.0,
   "seeds": [
     42,
     123,
     3407
   ],
-  "timestamp": "2026-07-24T16:38:48Z"
+  "timestamp": "2026-07-24T16:45:19Z"
 }
 ```
