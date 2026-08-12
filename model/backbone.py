@@ -96,19 +96,24 @@ class BackboneSubBlock(nn.Module):
             else:
                 x = x + mamba(norm(x))
 
-        # Run Attention wrapper block
-        if use_ckpt:
-            # Helper function for checkpointing attention
-            def run_attn(h: torch.Tensor) -> torch.Tensor:
-                return self.attention(self.attn_norm(h))
-            x = x + torch.utils.checkpoint.checkpoint(run_attn, x, use_reentrant=False)
-        else:
-            x = x + self.attention(self.attn_norm(x))
+        # Check Controller difficulty gate (Entropy threshold tau = 0.20)
+        entropy = kwargs.get("entropy")
+        is_complex = True
+        if isinstance(entropy, torch.Tensor):
+            is_complex = bool(entropy.mean().item() >= 0.20)
+
+        # Run Attention wrapper block (gated for complex tokens)
+        if is_complex:
+            if use_ckpt:
+                def run_attn(h: torch.Tensor) -> torch.Tensor:
+                    return self.attention(self.attn_norm(h))
+                x = x + torch.utils.checkpoint.checkpoint(run_attn, x, use_reentrant=False)
+            else:
+                x = x + self.attention(self.attn_norm(x))
 
         # Run MoE FFN block (or dense FFN ablation path)
         norm_x = self.moe_norm(x)
-        entropy = kwargs.get("entropy")
-        if self.use_moe:
+        if self.use_moe and is_complex:
             dispatch_weights, dispatch_indices, aux_loss = self.moe_router(
                 norm_x, entropy=entropy if isinstance(entropy, torch.Tensor) else None
             )

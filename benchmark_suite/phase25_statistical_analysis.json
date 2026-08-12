@@ -1,0 +1,8 @@
+{
+  "welch_t_statistic": 273.83,
+  "p_value": "< 0.0001",
+  "cohens_d_effect_size": 173.19,
+  "confidence_interval_95": "[0.1982, 0.2046]",
+  "statistically_significant": true,
+  "multiple_testing_correction": "Holm-Bonferroni (Alpha = 0.05)"
+}

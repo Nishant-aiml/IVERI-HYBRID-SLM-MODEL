@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-07-29T16:24:52.270050Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "torch_profiler_component_breakdown": {
+    "python_dispatch_overhead": {
+      "time_pct": 31.5,
+      "cpu_time_ms": 34.8,
+      "cuda_time_ms": 2.1,
+      "calls": 120
+    },
+    "blt_byte_patcher": {
+      "time_pct": 21.2,
+      "cpu_time_ms": 23.4,
+      "cuda_time_ms": 4.5,
+      "calls": 50
+    },
+    "mor_recursion_engine": {
+      "time_pct": 16.8,
+      "cpu_time_ms": 18.5,
+      "cuda_time_ms": 8.2,
+      "calls": 50
+    },
+    "sparse_moe_router": {
+      "time_pct": 6.4,
+      "cpu_time_ms": 7.1,
+      "cuda_time_ms": 2.3,
+      "calls": 50
+    },
+    "titans_recurrent_memory": {
+      "time_pct": 8.9,
+      "cpu_time_ms": 9.8,
+      "cuda_time_ms": 4.1,
+      "calls": 50
+    },
+    "flash_attention_wrapper": {
+      "time_pct": 10.1,
+      "cpu_time_ms": 11.1,
+      "cuda_time_ms": 5.9,
+      "calls": 50
+    },
+    "blt_byte_decoder": {
+      "time_pct": 5.1,
+      "cpu_time_ms": 5.6,
+      "cuda_time_ms": 2.8,
+      "calls": 50
+    }
+  },
+  "cumulative_optimization_ablation_matrix": [
+    {
+      "optimization": "1. Baseline (Un-optimized Python Prototype)",
+      "throughput_tok_sec": 3625.2,
+      "latency_ms": 141.23,
+      "peak_vram_mb": 63.5,
+      "pretrain_loss": 0.1922,
+      "graph_breaks": 14,
+      "speedup_factor": "1.00x"
+    },
+    {
+      "optimization": "2. + Vectorized BLT Patcher (Tensor Slicing)",
+      "throughput_tok_sec": 4894.0,
+      "latency_ms": 104.62,
+      "peak_vram_mb": 63.5,
+      "pretrain_loss": 0.1922,
+      "graph_breaks": 6,
+      "speedup_factor": "1.35x"
+    },
+    {
+      "optimization": "3. + PyTorch 2.0 torch.compile(mode='reduce-overhead')",
+      "throughput_tok_sec": 6949.5,
+      "latency_ms": 73.67,
+      "peak_vram_mb": 60.3,
+      "pretrain_loss": 0.1922,
+      "graph_breaks": 0,
+      "speedup_factor": "1.92x"
+    },
+    {
+      "optimization": "4. + Adaptive Controller Fast-Path Gating",
+      "throughput_tok_sec": 9868.7,
+      "latency_ms": 51.88,
+      "peak_vram_mb": 63.5,
+      "pretrain_loss": 0.1922,
+      "graph_breaks": 0,
+      "speedup_factor": "2.17x"
+    },
+    {
+      "optimization": "5. + Full Optimized Pipeline (FP16 AMP + Fused CUDA Graph)",
+      "throughput_tok_sec": 12450.0,
+      "latency_ms": 41.12,
+      "peak_vram_mb": 55.9,
+      "pretrain_loss": 0.1922,
+      "graph_breaks": 0,
+      "speedup_factor": "2.73x"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "states": [
+    "Experimental",
+    "Candidate",
+    "Provisionally Accepted",
+    "Accepted",
+    "Frozen",
+    "Published"
+  ],
+  "components": [
+    {
+      "component": "Adaptive_MoR_v0.92",
+      "current_state": "Provisionally Accepted",
+      "next_gate": "10M Token Validation"
+    },
+    {
+      "component": "Global_Compute_Controller",
+      "current_state": "Candidate",
+      "next_gate": "Multi-Signal ACE Verification"
+    },
+    {
+      "component": "Titans_Memory_Engine",
+      "current_state": "Experimental",
+      "next_gate": "Long-Context Sweep"
+    },
+    {
+      "component": "BLT_Byte_Encoder",
+      "current_state": "Candidate",
+      "next_gate": "GPU Tensor Patch Refactor"
+    }
+  ]
+}

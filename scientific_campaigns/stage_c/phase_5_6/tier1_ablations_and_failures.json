@@ -1,0 +1,402 @@
+[
+  {
+    "model_type": "IVERI_Full_v0.91",
+    "version": "v0.91",
+    "seed": 42,
+    "steps": 50,
+    "final_loss": 3.150135040283203,
+    "min_loss": 3.1435585021972656,
+    "mean_loss": 3.602752456665039,
+    "mean_grad_norm": NaN,
+    "avg_throughput_tok_sec": 186.4000043843477,
+    "peak_vram_mb": 824.9814453125,
+    "runtime_sec": 142.25230145454407,
+    "gpu_hours": 0.0395145281818178,
+    "est_joules": 8535.138087272644,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 1,
+      "events": [
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_Full_v0.91",
+    "version": "v0.91",
+    "seed": 123,
+    "steps": 50,
+    "final_loss": 3.1397666931152344,
+    "min_loss": 3.1397666931152344,
+    "mean_loss": 3.615554161071777,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 176.0420489612047,
+    "peak_vram_mb": 833.6884765625,
+    "runtime_sec": 155.83071970939636,
+    "gpu_hours": 0.04328631103038788,
+    "est_joules": 9349.843182563782,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 2,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_Full_v0.91",
+    "version": "v0.91",
+    "seed": 3407,
+    "steps": 50,
+    "final_loss": 3.1376190185546875,
+    "min_loss": 3.1376190185546875,
+    "mean_loss": 3.639034652709961,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 155.19664176255475,
+    "peak_vram_mb": 826.49853515625,
+    "runtime_sec": 169.96837043762207,
+    "gpu_hours": 0.047213436232672795,
+    "est_joules": 10198.102226257324,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 2,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 3,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_Entropy",
+    "version": "v0.91",
+    "seed": 42,
+    "steps": 50,
+    "final_loss": 3.1500205993652344,
+    "min_loss": 3.1434707641601562,
+    "mean_loss": 3.6031231689453125,
+    "mean_grad_norm": NaN,
+    "avg_throughput_tok_sec": 182.22011568178178,
+    "peak_vram_mb": 823.32666015625,
+    "runtime_sec": 143.99072003364563,
+    "gpu_hours": 0.03999742223156823,
+    "est_joules": 8639.443202018738,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 1,
+      "events": [
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_Entropy",
+    "version": "v0.91",
+    "seed": 123,
+    "steps": 50,
+    "final_loss": 3.1388092041015625,
+    "min_loss": 3.1388092041015625,
+    "mean_loss": 3.615846900939941,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 210.5907311113165,
+    "peak_vram_mb": 833.66845703125,
+    "runtime_sec": 122.88454985618591,
+    "gpu_hours": 0.034134597182273865,
+    "est_joules": 7373.072991371155,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 2,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_Entropy",
+    "version": "v0.91",
+    "seed": 3407,
+    "steps": 50,
+    "final_loss": 3.1371498107910156,
+    "min_loss": 3.1371498107910156,
+    "mean_loss": 3.637103271484375,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 166.1999601680408,
+    "peak_vram_mb": 826.32421875,
+    "runtime_sec": 159.2125563621521,
+    "gpu_hours": 0.0442257101005978,
+    "est_joules": 9552.753381729126,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 2,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 3,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_Titans",
+    "version": "v0.91",
+    "seed": 42,
+    "steps": 50,
+    "final_loss": 3.1500625610351562,
+    "min_loss": 3.1412353515625,
+    "mean_loss": 3.5997177886962892,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 250.56967502206393,
+    "peak_vram_mb": 689.04248046875,
+    "runtime_sec": 106.48037981987,
+    "gpu_hours": 0.029577883283297222,
+    "est_joules": 6388.8227891922,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 2,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_Titans",
+    "version": "v0.91",
+    "seed": 123,
+    "steps": 50,
+    "final_loss": 3.1375045776367188,
+    "min_loss": 3.1375045776367188,
+    "mean_loss": 3.6696235656738283,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 283.2060831113626,
+    "peak_vram_mb": 692.333984375,
+    "runtime_sec": 90.47208452224731,
+    "gpu_hours": 0.025131134589513143,
+    "est_joules": 5428.325071334839,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 3,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 4,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_Titans",
+    "version": "v0.91",
+    "seed": 3407,
+    "steps": 50,
+    "final_loss": 3.1382904052734375,
+    "min_loss": 3.1382904052734375,
+    "mean_loss": 3.6165715789794923,
+    "mean_grad_norm": Infinity,
+    "avg_throughput_tok_sec": 279.76429884986874,
+    "peak_vram_mb": 691.65625,
+    "runtime_sec": 91.58889079093933,
+    "gpu_hours": 0.025441358553038702,
+    "est_joules": 5495.33344745636,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 2,
+      "events": [
+        {
+          "step": 1,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_MoR",
+    "version": "v0.91",
+    "seed": 42,
+    "steps": 50,
+    "final_loss": 3.1481170654296875,
+    "min_loss": 3.141864776611328,
+    "mean_loss": 3.589638519287109,
+    "mean_grad_norm": NaN,
+    "avg_throughput_tok_sec": 349.25213578407477,
+    "peak_vram_mb": 421.32275390625,
+    "runtime_sec": 81.78154993057251,
+    "gpu_hours": 0.02271709720293681,
+    "est_joules": 4906.892995834351,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 0,
+      "events": []
+    }
+  },
+  {
+    "model_type": "IVERI_No_MoR",
+    "version": "v0.91",
+    "seed": 123,
+    "steps": 50,
+    "final_loss": 3.1380348205566406,
+    "min_loss": 3.1380348205566406,
+    "mean_loss": 3.642924118041992,
+    "mean_grad_norm": NaN,
+    "avg_throughput_tok_sec": 336.1316278335044,
+    "peak_vram_mb": 423.30810546875,
+    "runtime_sec": 81.04075002670288,
+    "gpu_hours": 0.02251131945186191,
+    "est_joules": 4862.445001602173,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 1,
+      "events": [
+        {
+          "step": 3,
+          "type": "GRADIENT_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    }
+  },
+  {
+    "model_type": "IVERI_No_MoR",
+    "version": "v0.91",
+    "seed": 3407,
+    "steps": 50,
+    "final_loss": 3.1232757568359375,
+    "min_loss": 3.1232757568359375,
+    "mean_loss": 3.6030821228027343,
+    "mean_grad_norm": NaN,
+    "avg_throughput_tok_sec": 392.23064674486255,
+    "peak_vram_mb": 423.44970703125,
+    "runtime_sec": 68.58659601211548,
+    "gpu_hours": 0.019051832225587633,
+    "est_joules": 4115.195760726929,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 0,
+      "events": []
+    }
+  },
+  {
+    "model_type": "Baseline_Dense_Transformer",
+    "version": "baseline",
+    "seed": 42,
+    "steps": 50,
+    "final_loss": 1.3487391471862793,
+    "min_loss": 1.3487391471862793,
+    "mean_loss": 2.0884839296340942,
+    "mean_grad_norm": 1.4723340356349945,
+    "avg_throughput_tok_sec": 12341.047758100336,
+    "peak_vram_mb": 393.5859375,
+    "runtime_sec": 2.364326238632202,
+    "gpu_hours": 0.000656757288508945,
+    "est_joules": 141.85957431793213,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 0,
+      "events": []
+    }
+  },
+  {
+    "model_type": "Baseline_Dense_Transformer",
+    "version": "baseline",
+    "seed": 123,
+    "steps": 50,
+    "final_loss": 1.3871190547943115,
+    "min_loss": 1.3515441417694092,
+    "mean_loss": 2.0814745736122133,
+    "mean_grad_norm": 1.480760713815689,
+    "avg_throughput_tok_sec": 16166.797291015739,
+    "peak_vram_mb": 393.5859375,
+    "runtime_sec": 1.6950466632843018,
+    "gpu_hours": 0.0004708462953567505,
+    "est_joules": 101.7027997970581,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 0,
+      "events": []
+    }
+  },
+  {
+    "model_type": "Baseline_Dense_Transformer",
+    "version": "baseline",
+    "seed": 3407,
+    "steps": 50,
+    "final_loss": 1.363241195678711,
+    "min_loss": 1.363241195678711,
+    "mean_loss": 2.093946931362152,
+    "mean_grad_norm": 1.6163546121120453,
+    "avg_throughput_tok_sec": 10540.975852857295,
+    "peak_vram_mb": 393.5859375,
+    "runtime_sec": 2.6504476070404053,
+    "gpu_hours": 0.0007362354464001125,
+    "est_joules": 159.02685642242432,
+    "total_tokens": 25600,
+    "failure_analysis": {
+      "total_failure_events": 0,
+      "events": []
+    }
+  }
+]

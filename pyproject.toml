@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "iveri-core"
-version = "0.1.0"
+version = "1.0.0"
 description = "IVERI CORE — Byte-entropy-native hybrid SLM combining BLT + Titans + Mamba2 + MoR + MoE"
 readme = "README.md"
 license = {text = "Apache-2.0"}

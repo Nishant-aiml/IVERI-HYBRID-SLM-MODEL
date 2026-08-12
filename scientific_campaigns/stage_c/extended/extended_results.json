@@ -1,0 +1,2260 @@
+{
+  "timestamp_start": "2026-07-26T07:14:41.410756Z",
+  "timestamp_last_update": "2026-07-29T13:37:03.265383Z",
+  "steps": 500,
+  "batch": 8,
+  "seq": 64,
+  "lr": 0.0003,
+  "seeds": [
+    42,
+    123,
+    3407,
+    7,
+    99,
+    2024,
+    314,
+    1337
+  ],
+  "models": [
+    "Baseline_Dense_Transformer",
+    "IVERI_Full_v0.91",
+    "IVERI_No_MoR",
+    "IVERI_Global_Adaptive_v1.1"
+  ],
+  "completed_runs": 27,
+  "summary": {
+    "Baseline_Dense_Transformer": {
+      "n_seeds_completed": 8,
+      "mean_final_loss": 1.148895,
+      "std_final_loss": 0.016103,
+      "mean_throughput": 14687.6,
+      "mean_vram_mb": 393.9,
+      "total_explosions": 0
+    },
+    "IVERI_Full_v0.91": {
+      "n_seeds_completed": 8,
+      "mean_final_loss": 2.179838,
+      "std_final_loss": 0.066814,
+      "mean_throughput": 77.7,
+      "mean_vram_mb": 836.9,
+      "total_explosions": 55
+    },
+    "IVERI_No_MoR": {
+      "n_seeds_completed": 8,
+      "mean_final_loss": 0.26105,
+      "std_final_loss": 0.072072,
+      "mean_throughput": 338.3,
+      "mean_vram_mb": 429.8,
+      "total_explosions": 33
+    },
+    "IVERI_Global_Adaptive_v1.1": {
+      "n_seeds_completed": 3,
+      "mean_final_loss": 0.933364,
+      "std_final_loss": 1.156612,
+      "mean_throughput": 261.6,
+      "mean_vram_mb": 567.2,
+      "total_explosions": 24
+    }
+  },
+  "results": [
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 42,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 2080.89,
+      "avg_throughput_tok_sec": 123.02,
+      "peak_vram_mb": 842.0,
+      "final_loss": 2.266108,
+      "min_loss": 2.266108,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.557358
+        },
+        {
+          "step": 50,
+          "loss": 3.144863
+        },
+        {
+          "step": 100,
+          "loss": 3.148308
+        },
+        {
+          "step": 150,
+          "loss": 2.571049
+        },
+        {
+          "step": 200,
+          "loss": 2.483191
+        },
+        {
+          "step": 250,
+          "loss": 2.445377
+        },
+        {
+          "step": 300,
+          "loss": 4.025949
+        },
+        {
+          "step": 350,
+          "loss": 2.366839
+        },
+        {
+          "step": 400,
+          "loss": 2.314175
+        },
+        {
+          "step": 450,
+          "loss": 2.284492
+        },
+        {
+          "step": 500,
+          "loss": 2.266108
+        }
+      ],
+      "gradient_explosion_events": 15,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 298,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 299,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 301,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 304,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 306,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 307,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 309,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 310,
+          "type": "GRAD_EXPLOSION",
+          "val": 268.08984375
+        },
+        {
+          "step": 311,
+          "type": "GRAD_EXPLOSION",
+          "val": 111.16126251220703
+        },
+        {
+          "step": 313,
+          "type": "GRAD_EXPLOSION",
+          "val": 937.598876953125
+        },
+        {
+          "step": 315,
+          "type": "GRAD_EXPLOSION",
+          "val": 460.8280944824219
+        },
+        {
+          "step": 317,
+          "type": "GRAD_EXPLOSION",
+          "val": 545.8572387695312
+        },
+        {
+          "step": 329,
+          "type": "GRAD_EXPLOSION",
+          "val": 223.642578125
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 123,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 7092.41,
+      "avg_throughput_tok_sec": 36.09,
+      "peak_vram_mb": 837.78,
+      "final_loss": 2.233296,
+      "min_loss": 2.233296,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.574028
+        },
+        {
+          "step": 50,
+          "loss": 3.15757
+        },
+        {
+          "step": 100,
+          "loss": 3.141914
+        },
+        {
+          "step": 150,
+          "loss": 3.146343
+        },
+        {
+          "step": 200,
+          "loss": 3.137966
+        },
+        {
+          "step": 250,
+          "loss": 3.147663
+        },
+        {
+          "step": 300,
+          "loss": 2.662731
+        },
+        {
+          "step": 350,
+          "loss": 2.471282
+        },
+        {
+          "step": 400,
+          "loss": 2.353565
+        },
+        {
+          "step": 450,
+          "loss": 2.282369
+        },
+        {
+          "step": 500,
+          "loss": 2.233296
+        }
+      ],
+      "gradient_explosion_events": 7,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 193,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 194,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 196,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 197,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 198,
+          "type": "GRAD_EXPLOSION",
+          "val": 365.4317626953125
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 3407,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 10016.34,
+      "avg_throughput_tok_sec": 25.56,
+      "peak_vram_mb": 829.65,
+      "final_loss": 2.182671,
+      "min_loss": 2.182671,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.561035
+        },
+        {
+          "step": 50,
+          "loss": 3.145554
+        },
+        {
+          "step": 100,
+          "loss": 3.141876
+        },
+        {
+          "step": 150,
+          "loss": 2.535975
+        },
+        {
+          "step": 200,
+          "loss": 2.450965
+        },
+        {
+          "step": 250,
+          "loss": 2.388986
+        },
+        {
+          "step": 300,
+          "loss": 2.397583
+        },
+        {
+          "step": 350,
+          "loss": 2.212555
+        },
+        {
+          "step": 400,
+          "loss": 2.206872
+        },
+        {
+          "step": 450,
+          "loss": 2.23851
+        },
+        {
+          "step": 500,
+          "loss": 2.182671
+        }
+      ],
+      "gradient_explosion_events": 2,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 7,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 8713.78,
+      "avg_throughput_tok_sec": 29.38,
+      "peak_vram_mb": 839.39,
+      "final_loss": 2.171834,
+      "min_loss": 2.171834,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.549355
+        },
+        {
+          "step": 50,
+          "loss": 3.144642
+        },
+        {
+          "step": 100,
+          "loss": 3.13924
+        },
+        {
+          "step": 150,
+          "loss": 2.654462
+        },
+        {
+          "step": 200,
+          "loss": 2.51849
+        },
+        {
+          "step": 250,
+          "loss": 2.439506
+        },
+        {
+          "step": 300,
+          "loss": 2.360353
+        },
+        {
+          "step": 350,
+          "loss": 2.346359
+        },
+        {
+          "step": 400,
+          "loss": 2.260711
+        },
+        {
+          "step": 450,
+          "loss": 2.18295
+        },
+        {
+          "step": 500,
+          "loss": 2.171834
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 308,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 309,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 42,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 16.12,
+      "avg_throughput_tok_sec": 15883.03,
+      "peak_vram_mb": 392.58,
+      "final_loss": 1.132681,
+      "min_loss": 1.127506,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.641235
+        },
+        {
+          "step": 50,
+          "loss": 1.354296
+        },
+        {
+          "step": 100,
+          "loss": 1.224785
+        },
+        {
+          "step": 150,
+          "loss": 1.233953
+        },
+        {
+          "step": 200,
+          "loss": 1.20523
+        },
+        {
+          "step": 250,
+          "loss": 1.127506
+        },
+        {
+          "step": 300,
+          "loss": 1.161273
+        },
+        {
+          "step": 350,
+          "loss": 1.154773
+        },
+        {
+          "step": 400,
+          "loss": 1.166716
+        },
+        {
+          "step": 450,
+          "loss": 1.130188
+        },
+        {
+          "step": 500,
+          "loss": 1.132681
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 123,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 15.16,
+      "avg_throughput_tok_sec": 16886.23,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.161009,
+      "min_loss": 1.137987,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.705765
+        },
+        {
+          "step": 50,
+          "loss": 1.377174
+        },
+        {
+          "step": 100,
+          "loss": 1.269302
+        },
+        {
+          "step": 150,
+          "loss": 1.174383
+        },
+        {
+          "step": 200,
+          "loss": 1.206444
+        },
+        {
+          "step": 250,
+          "loss": 1.168242
+        },
+        {
+          "step": 300,
+          "loss": 1.204112
+        },
+        {
+          "step": 350,
+          "loss": 1.161997
+        },
+        {
+          "step": 400,
+          "loss": 1.137987
+        },
+        {
+          "step": 450,
+          "loss": 1.140357
+        },
+        {
+          "step": 500,
+          "loss": 1.161009
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 3407,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 15.47,
+      "avg_throughput_tok_sec": 16550.69,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.126605,
+      "min_loss": 1.126605,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.720448
+        },
+        {
+          "step": 50,
+          "loss": 1.362142
+        },
+        {
+          "step": 100,
+          "loss": 1.233334
+        },
+        {
+          "step": 150,
+          "loss": 1.170012
+        },
+        {
+          "step": 200,
+          "loss": 1.177525
+        },
+        {
+          "step": 250,
+          "loss": 1.201698
+        },
+        {
+          "step": 300,
+          "loss": 1.142237
+        },
+        {
+          "step": 350,
+          "loss": 1.152415
+        },
+        {
+          "step": 400,
+          "loss": 1.177514
+        },
+        {
+          "step": 450,
+          "loss": 1.129777
+        },
+        {
+          "step": 500,
+          "loss": 1.126605
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 7,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 15.25,
+      "avg_throughput_tok_sec": 16790.53,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.159674,
+      "min_loss": 1.145174,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.671844
+        },
+        {
+          "step": 50,
+          "loss": 1.376841
+        },
+        {
+          "step": 100,
+          "loss": 1.251234
+        },
+        {
+          "step": 150,
+          "loss": 1.175631
+        },
+        {
+          "step": 200,
+          "loss": 1.17914
+        },
+        {
+          "step": 250,
+          "loss": 1.177017
+        },
+        {
+          "step": 300,
+          "loss": 1.155047
+        },
+        {
+          "step": 350,
+          "loss": 1.145174
+        },
+        {
+          "step": 400,
+          "loss": 1.169751
+        },
+        {
+          "step": 450,
+          "loss": 1.174574
+        },
+        {
+          "step": 500,
+          "loss": 1.159674
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 99,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 15.2,
+      "avg_throughput_tok_sec": 16837.35,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.149453,
+      "min_loss": 1.136413,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.581497
+        },
+        {
+          "step": 50,
+          "loss": 1.360633
+        },
+        {
+          "step": 100,
+          "loss": 1.266757
+        },
+        {
+          "step": 150,
+          "loss": 1.178157
+        },
+        {
+          "step": 200,
+          "loss": 1.173509
+        },
+        {
+          "step": 250,
+          "loss": 1.206979
+        },
+        {
+          "step": 300,
+          "loss": 1.150396
+        },
+        {
+          "step": 350,
+          "loss": 1.143047
+        },
+        {
+          "step": 400,
+          "loss": 1.136413
+        },
+        {
+          "step": 450,
+          "loss": 1.157436
+        },
+        {
+          "step": 500,
+          "loss": 1.149453
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 2024,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 22.25,
+      "avg_throughput_tok_sec": 11503.17,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.13241,
+      "min_loss": 1.13241,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.632538
+        },
+        {
+          "step": 50,
+          "loss": 1.370358
+        },
+        {
+          "step": 100,
+          "loss": 1.217096
+        },
+        {
+          "step": 150,
+          "loss": 1.224428
+        },
+        {
+          "step": 200,
+          "loss": 1.180055
+        },
+        {
+          "step": 250,
+          "loss": 1.166312
+        },
+        {
+          "step": 300,
+          "loss": 1.13452
+        },
+        {
+          "step": 350,
+          "loss": 1.162388
+        },
+        {
+          "step": 400,
+          "loss": 1.146934
+        },
+        {
+          "step": 450,
+          "loss": 1.135181
+        },
+        {
+          "step": 500,
+          "loss": 1.13241
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 314,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 22.22,
+      "avg_throughput_tok_sec": 11519.2,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.168061,
+      "min_loss": 1.140095,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.763939
+        },
+        {
+          "step": 50,
+          "loss": 1.352495
+        },
+        {
+          "step": 100,
+          "loss": 1.258459
+        },
+        {
+          "step": 150,
+          "loss": 1.144149
+        },
+        {
+          "step": 200,
+          "loss": 1.17987
+        },
+        {
+          "step": 250,
+          "loss": 1.19752
+        },
+        {
+          "step": 300,
+          "loss": 1.151309
+        },
+        {
+          "step": 350,
+          "loss": 1.140095
+        },
+        {
+          "step": 400,
+          "loss": 1.169722
+        },
+        {
+          "step": 450,
+          "loss": 1.166426
+        },
+        {
+          "step": 500,
+          "loss": 1.168061
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 1337,
+      "steps": 500,
+      "n_params": 19179779,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 22.2,
+      "avg_throughput_tok_sec": 11530.38,
+      "peak_vram_mb": 394.08,
+      "final_loss": 1.161267,
+      "min_loss": 1.138955,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.651527
+        },
+        {
+          "step": 50,
+          "loss": 1.339592
+        },
+        {
+          "step": 100,
+          "loss": 1.247903
+        },
+        {
+          "step": 150,
+          "loss": 1.196248
+        },
+        {
+          "step": 200,
+          "loss": 1.158891
+        },
+        {
+          "step": 250,
+          "loss": 1.171874
+        },
+        {
+          "step": 300,
+          "loss": 1.173747
+        },
+        {
+          "step": 350,
+          "loss": 1.175835
+        },
+        {
+          "step": 400,
+          "loss": 1.138955
+        },
+        {
+          "step": 450,
+          "loss": 1.139662
+        },
+        {
+          "step": 500,
+          "loss": 1.161267
+        }
+      ],
+      "gradient_explosion_events": 0,
+      "explosions": []
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 99,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 1636.41,
+      "avg_throughput_tok_sec": 156.44,
+      "peak_vram_mb": 835.9,
+      "final_loss": 2.090422,
+      "min_loss": 2.090422,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.551933
+        },
+        {
+          "step": 50,
+          "loss": 3.151051
+        },
+        {
+          "step": 100,
+          "loss": 3.136787
+        },
+        {
+          "step": 150,
+          "loss": 2.873312
+        },
+        {
+          "step": 200,
+          "loss": 2.504602
+        },
+        {
+          "step": 250,
+          "loss": 2.428848
+        },
+        {
+          "step": 300,
+          "loss": 2.390671
+        },
+        {
+          "step": 350,
+          "loss": 2.313638
+        },
+        {
+          "step": 400,
+          "loss": 2.256764
+        },
+        {
+          "step": 450,
+          "loss": 2.171271
+        },
+        {
+          "step": 500,
+          "loss": 2.090422
+        }
+      ],
+      "gradient_explosion_events": 6,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 108,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 109,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 110,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 111,
+          "type": "GRAD_EXPLOSION",
+          "val": 124.37933349609375
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 2024,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 2209.62,
+      "avg_throughput_tok_sec": 115.86,
+      "peak_vram_mb": 839.36,
+      "final_loss": 2.075662,
+      "min_loss": 2.061599,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.562569
+        },
+        {
+          "step": 50,
+          "loss": 3.143143
+        },
+        {
+          "step": 100,
+          "loss": 2.818408
+        },
+        {
+          "step": 150,
+          "loss": 2.493408
+        },
+        {
+          "step": 200,
+          "loss": 2.422516
+        },
+        {
+          "step": 250,
+          "loss": 2.340029
+        },
+        {
+          "step": 300,
+          "loss": 2.264601
+        },
+        {
+          "step": 350,
+          "loss": 2.270639
+        },
+        {
+          "step": 400,
+          "loss": 2.205846
+        },
+        {
+          "step": 450,
+          "loss": 2.061599
+        },
+        {
+          "step": 500,
+          "loss": 2.075662
+        }
+      ],
+      "gradient_explosion_events": 3,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 259,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 314,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 2205.11,
+      "avg_throughput_tok_sec": 116.09,
+      "peak_vram_mb": 829.18,
+      "final_loss": 2.197414,
+      "min_loss": 2.197414,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.576317
+        },
+        {
+          "step": 50,
+          "loss": 3.135586
+        },
+        {
+          "step": 100,
+          "loss": 2.763541
+        },
+        {
+          "step": 150,
+          "loss": 2.518152
+        },
+        {
+          "step": 200,
+          "loss": 10.391755
+        },
+        {
+          "step": 250,
+          "loss": 2.383434
+        },
+        {
+          "step": 300,
+          "loss": 2.340121
+        },
+        {
+          "step": 350,
+          "loss": 2.354173
+        },
+        {
+          "step": 400,
+          "loss": 2.236514
+        },
+        {
+          "step": 450,
+          "loss": 2.205096
+        },
+        {
+          "step": 500,
+          "loss": 2.197414
+        }
+      ],
+      "gradient_explosion_events": 12,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 197,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 199,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 200,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 201,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 202,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 203,
+          "type": "GRAD_EXPLOSION",
+          "val": 374.9330749511719
+        },
+        {
+          "step": 204,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 205,
+          "type": "GRAD_EXPLOSION",
+          "val": 342.16143798828125
+        },
+        {
+          "step": 206,
+          "type": "GRAD_EXPLOSION",
+          "val": 1377.6044921875
+        },
+        {
+          "step": 341,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Full_v0.91",
+      "seed": 1337,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 13360.76,
+      "avg_throughput_tok_sec": 19.16,
+      "peak_vram_mb": 842.21,
+      "final_loss": 2.221301,
+      "min_loss": 2.220541,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.549637
+        },
+        {
+          "step": 50,
+          "loss": 3.157303
+        },
+        {
+          "step": 100,
+          "loss": 3.141491
+        },
+        {
+          "step": 150,
+          "loss": 2.606474
+        },
+        {
+          "step": 200,
+          "loss": 2.408459
+        },
+        {
+          "step": 250,
+          "loss": 2.379219
+        },
+        {
+          "step": 300,
+          "loss": 2.306501
+        },
+        {
+          "step": 350,
+          "loss": 2.323177
+        },
+        {
+          "step": 400,
+          "loss": 2.564649
+        },
+        {
+          "step": 450,
+          "loss": 2.220541
+        },
+        {
+          "step": 500,
+          "loss": 2.221301
+        }
+      ],
+      "gradient_explosion_events": 6,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 3,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 389,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 390,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 391,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 42,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 619.35,
+      "avg_throughput_tok_sec": 413.34,
+      "peak_vram_mb": 427.94,
+      "final_loss": 0.227195,
+      "min_loss": 0.227195,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.536621
+        },
+        {
+          "step": 50,
+          "loss": 3.14394
+        },
+        {
+          "step": 100,
+          "loss": 2.929701
+        },
+        {
+          "step": 150,
+          "loss": 2.295867
+        },
+        {
+          "step": 200,
+          "loss": 2.007043
+        },
+        {
+          "step": 250,
+          "loss": 1.467547
+        },
+        {
+          "step": 300,
+          "loss": 0.774057
+        },
+        {
+          "step": 350,
+          "loss": 0.418889
+        },
+        {
+          "step": 400,
+          "loss": 0.229081
+        },
+        {
+          "step": 450,
+          "loss": 0.265209
+        },
+        {
+          "step": 500,
+          "loss": 0.227195
+        }
+      ],
+      "gradient_explosion_events": 3,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 358,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 123,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 559.58,
+      "avg_throughput_tok_sec": 457.48,
+      "peak_vram_mb": 427.89,
+      "final_loss": 0.192184,
+      "min_loss": 0.192184,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.561531
+        },
+        {
+          "step": 50,
+          "loss": 3.157436
+        },
+        {
+          "step": 100,
+          "loss": 3.110821
+        },
+        {
+          "step": 150,
+          "loss": 2.518845
+        },
+        {
+          "step": 200,
+          "loss": 2.07294
+        },
+        {
+          "step": 250,
+          "loss": 1.63226
+        },
+        {
+          "step": 300,
+          "loss": 0.991359
+        },
+        {
+          "step": 350,
+          "loss": 0.451958
+        },
+        {
+          "step": 400,
+          "loss": 0.314099
+        },
+        {
+          "step": 450,
+          "loss": 0.26513
+        },
+        {
+          "step": 500,
+          "loss": 0.192184
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 84,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 86,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 3407,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 724.85,
+      "avg_throughput_tok_sec": 353.18,
+      "peak_vram_mb": 428.74,
+      "final_loss": 0.341801,
+      "min_loss": 0.341801,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.565346
+        },
+        {
+          "step": 50,
+          "loss": 3.141781
+        },
+        {
+          "step": 100,
+          "loss": 2.771011
+        },
+        {
+          "step": 150,
+          "loss": 2.362967
+        },
+        {
+          "step": 200,
+          "loss": 2.277583
+        },
+        {
+          "step": 250,
+          "loss": 2.171229
+        },
+        {
+          "step": 300,
+          "loss": 1.935688
+        },
+        {
+          "step": 350,
+          "loss": 1.543251
+        },
+        {
+          "step": 400,
+          "loss": 1.034714
+        },
+        {
+          "step": 450,
+          "loss": 0.626822
+        },
+        {
+          "step": 500,
+          "loss": 0.341801
+        }
+      ],
+      "gradient_explosion_events": 5,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 78,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 81,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 208,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 7,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 971.86,
+      "avg_throughput_tok_sec": 263.41,
+      "peak_vram_mb": 430.85,
+      "final_loss": 0.37184,
+      "min_loss": 0.37184,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.534462
+        },
+        {
+          "step": 50,
+          "loss": 3.143661
+        },
+        {
+          "step": 100,
+          "loss": 2.906252
+        },
+        {
+          "step": 150,
+          "loss": 2.417498
+        },
+        {
+          "step": 200,
+          "loss": 2.222142
+        },
+        {
+          "step": 250,
+          "loss": 1.944525
+        },
+        {
+          "step": 300,
+          "loss": 1.507573
+        },
+        {
+          "step": 350,
+          "loss": 1.010009
+        },
+        {
+          "step": 400,
+          "loss": 0.614507
+        },
+        {
+          "step": 450,
+          "loss": 0.457242
+        },
+        {
+          "step": 500,
+          "loss": 0.37184
+        }
+      ],
+      "gradient_explosion_events": 5,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 78,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 99,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 321,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 99,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 6783.09,
+      "avg_throughput_tok_sec": 37.74,
+      "peak_vram_mb": 430.85,
+      "final_loss": 0.202008,
+      "min_loss": 0.202008,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.55442
+        },
+        {
+          "step": 50,
+          "loss": 3.14949
+        },
+        {
+          "step": 100,
+          "loss": 2.869637
+        },
+        {
+          "step": 150,
+          "loss": 2.387001
+        },
+        {
+          "step": 200,
+          "loss": 2.076414
+        },
+        {
+          "step": 250,
+          "loss": 1.656986
+        },
+        {
+          "step": 300,
+          "loss": 1.071195
+        },
+        {
+          "step": 350,
+          "loss": 0.492434
+        },
+        {
+          "step": 400,
+          "loss": 0.346094
+        },
+        {
+          "step": 450,
+          "loss": 0.2056
+        },
+        {
+          "step": 500,
+          "loss": 0.202008
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 60,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 61,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 2024,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 544.21,
+      "avg_throughput_tok_sec": 470.4,
+      "peak_vram_mb": 430.85,
+      "final_loss": 0.294801,
+      "min_loss": 0.257027,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.549927
+        },
+        {
+          "step": 50,
+          "loss": 3.143456
+        },
+        {
+          "step": 100,
+          "loss": 2.772385
+        },
+        {
+          "step": 150,
+          "loss": 2.43516
+        },
+        {
+          "step": 200,
+          "loss": 2.231966
+        },
+        {
+          "step": 250,
+          "loss": 1.930532
+        },
+        {
+          "step": 300,
+          "loss": 1.378863
+        },
+        {
+          "step": 350,
+          "loss": 0.786345
+        },
+        {
+          "step": 400,
+          "loss": 0.423932
+        },
+        {
+          "step": 450,
+          "loss": 0.257027
+        },
+        {
+          "step": 500,
+          "loss": 0.294801
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 106,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 209,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 314,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 970.67,
+      "avg_throughput_tok_sec": 263.74,
+      "peak_vram_mb": 430.85,
+      "final_loss": 0.17912,
+      "min_loss": 0.17912,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.550613
+        },
+        {
+          "step": 50,
+          "loss": 3.135632
+        },
+        {
+          "step": 100,
+          "loss": 2.750313
+        },
+        {
+          "step": 150,
+          "loss": 2.343274
+        },
+        {
+          "step": 200,
+          "loss": 2.046029
+        },
+        {
+          "step": 250,
+          "loss": 1.385037
+        },
+        {
+          "step": 300,
+          "loss": 0.661977
+        },
+        {
+          "step": 350,
+          "loss": 0.287518
+        },
+        {
+          "step": 400,
+          "loss": 0.261884
+        },
+        {
+          "step": 450,
+          "loss": 0.188858
+        },
+        {
+          "step": 500,
+          "loss": 0.17912
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 3,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 337,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 1337,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 572.58,
+      "avg_throughput_tok_sec": 447.1,
+      "peak_vram_mb": 430.66,
+      "final_loss": 0.279453,
+      "min_loss": 0.279453,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.576424
+        },
+        {
+          "step": 50,
+          "loss": 3.140629
+        },
+        {
+          "step": 100,
+          "loss": 2.605881
+        },
+        {
+          "step": 150,
+          "loss": 2.367022
+        },
+        {
+          "step": 200,
+          "loss": 2.177581
+        },
+        {
+          "step": 250,
+          "loss": 1.865668
+        },
+        {
+          "step": 300,
+          "loss": 1.297232
+        },
+        {
+          "step": 350,
+          "loss": 0.728495
+        },
+        {
+          "step": 400,
+          "loss": 0.509818
+        },
+        {
+          "step": 450,
+          "loss": 0.296748
+        },
+        {
+          "step": 500,
+          "loss": 0.279453
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 3,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 73,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Global_Adaptive_v1.1",
+      "seed": 42,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 1280.12,
+      "avg_throughput_tok_sec": 199.98,
+      "peak_vram_mb": 842.0,
+      "final_loss": 2.266108,
+      "min_loss": 2.266108,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.557358
+        },
+        {
+          "step": 50,
+          "loss": 3.144863
+        },
+        {
+          "step": 100,
+          "loss": 3.148308
+        },
+        {
+          "step": 150,
+          "loss": 2.571049
+        },
+        {
+          "step": 200,
+          "loss": 2.483191
+        },
+        {
+          "step": 250,
+          "loss": 2.445377
+        },
+        {
+          "step": 300,
+          "loss": 4.025949
+        },
+        {
+          "step": 350,
+          "loss": 2.366839
+        },
+        {
+          "step": 400,
+          "loss": 2.314175
+        },
+        {
+          "step": 450,
+          "loss": 2.284492
+        },
+        {
+          "step": 500,
+          "loss": 2.266108
+        }
+      ],
+      "gradient_explosion_events": 15,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": Infinity
+        },
+        {
+          "step": 298,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 299,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 301,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 304,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 306,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 307,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 309,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 310,
+          "type": "GRAD_EXPLOSION",
+          "val": 268.08984375
+        },
+        {
+          "step": 311,
+          "type": "GRAD_EXPLOSION",
+          "val": 111.16126251220703
+        },
+        {
+          "step": 313,
+          "type": "GRAD_EXPLOSION",
+          "val": 937.598876953125
+        },
+        {
+          "step": 315,
+          "type": "GRAD_EXPLOSION",
+          "val": 460.8280944824219
+        },
+        {
+          "step": 317,
+          "type": "GRAD_EXPLOSION",
+          "val": 545.8572387695312
+        },
+        {
+          "step": 329,
+          "type": "GRAD_EXPLOSION",
+          "val": 223.642578125
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Global_Adaptive_v1.1",
+      "seed": 123,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 852.17,
+      "avg_throughput_tok_sec": 300.41,
+      "peak_vram_mb": 428.69,
+      "final_loss": 0.192184,
+      "min_loss": 0.192184,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.561531
+        },
+        {
+          "step": 50,
+          "loss": 3.157436
+        },
+        {
+          "step": 100,
+          "loss": 3.110821
+        },
+        {
+          "step": 150,
+          "loss": 2.518845
+        },
+        {
+          "step": 200,
+          "loss": 2.07294
+        },
+        {
+          "step": 250,
+          "loss": 1.63226
+        },
+        {
+          "step": 300,
+          "loss": 0.991359
+        },
+        {
+          "step": 350,
+          "loss": 0.451958
+        },
+        {
+          "step": 400,
+          "loss": 0.314099
+        },
+        {
+          "step": 450,
+          "loss": 0.26513
+        },
+        {
+          "step": 500,
+          "loss": 0.192184
+        }
+      ],
+      "gradient_explosion_events": 4,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 84,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 86,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    },
+    {
+      "model_type": "IVERI_Global_Adaptive_v1.1",
+      "seed": 3407,
+      "steps": 500,
+      "n_params": 9347282,
+      "total_tokens_processed": 256000,
+      "wall_clock_sec": 899.77,
+      "avg_throughput_tok_sec": 284.52,
+      "peak_vram_mb": 430.85,
+      "final_loss": 0.341801,
+      "min_loss": 0.341801,
+      "loss_curve": [
+        {
+          "step": 1,
+          "loss": 5.565346
+        },
+        {
+          "step": 50,
+          "loss": 3.141781
+        },
+        {
+          "step": 100,
+          "loss": 2.771011
+        },
+        {
+          "step": 150,
+          "loss": 2.362967
+        },
+        {
+          "step": 200,
+          "loss": 2.277583
+        },
+        {
+          "step": 250,
+          "loss": 2.171229
+        },
+        {
+          "step": 300,
+          "loss": 1.935688
+        },
+        {
+          "step": 350,
+          "loss": 1.543251
+        },
+        {
+          "step": 400,
+          "loss": 1.034714
+        },
+        {
+          "step": 450,
+          "loss": 0.626822
+        },
+        {
+          "step": 500,
+          "loss": 0.341801
+        }
+      ],
+      "gradient_explosion_events": 5,
+      "explosions": [
+        {
+          "step": 1,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 2,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 78,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 81,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        },
+        {
+          "step": 208,
+          "type": "GRAD_EXPLOSION",
+          "val": NaN
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-07-30T13:51:25.222396Z",
+  "benchmark_results": {
+    "IVERI-Nano (~9M)": {
+      "parameters": 9351394,
+      "loss": 4.1417,
+      "perplexity": 62.9112,
+      "ece_calibration": 0.006,
+      "latency_ms": 7110.57,
+      "throughput_tok_sec": 36.0,
+      "vram_mb": 242.8,
+      "flops_per_param": 128.0
+    },
+    "IVERI-Small (~35M)": {
+      "parameters": 34948692,
+      "loss": 4.0898,
+      "perplexity": 59.7292,
+      "ece_calibration": 0.0234,
+      "latency_ms": 6795.59,
+      "throughput_tok_sec": 37.7,
+      "vram_mb": 743.8,
+      "flops_per_param": 128.0
+    },
+    "IVERI-Medium (~69M)": {
+      "parameters": 69153298,
+      "loss": 4.086,
+      "perplexity": 59.5027,
+      "ece_calibration": 0.0128,
+      "latency_ms": 6548.74,
+      "throughput_tok_sec": 39.1,
+      "vram_mb": 1366.8,
+      "flops_per_param": 128.0
+    },
+    "Dense_Transformer (~35M)": {
+      "parameters": 10845955,
+      "loss": 1.3477,
+      "perplexity": 3.8485,
+      "ece_calibration": 0.4725,
+      "latency_ms": 72.47,
+      "throughput_tok_sec": 3532.6,
+      "vram_mb": 782.7,
+      "flops_per_param": 128.0
+    },
+    "Mamba2_SSM (~35M)": {
+      "parameters": 5521411,
+      "loss": 4.2478,
+      "perplexity": 69.9496,
+      "ece_calibration": 0.077,
+      "latency_ms": 850.88,
+      "throughput_tok_sec": 300.9,
+      "vram_mb": 740.7,
+      "flops_per_param": 128.0
+    }
+  }
+}

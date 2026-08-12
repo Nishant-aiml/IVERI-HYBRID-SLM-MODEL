@@ -1,0 +1,92 @@
+{
+  "EXP-0001": {
+    "model": "Transformer",
+    "seed": 42,
+    "checkpoint": "experiments/seed_42/Transformer/checkpoint/final.pt",
+    "sha256": "1f85a4e61b215c3ded169ff3e395b62f2e854df9d47b8b35d7c0e6106a871fbe"
+  },
+  "EXP-0002": {
+    "model": "Transformer",
+    "seed": 123,
+    "checkpoint": "experiments/seed_123/Transformer/checkpoint/final.pt",
+    "sha256": "789bab3259b2b7cc249f4657ab19cb04ced034a49aaa0ec728f5fdb80d899a87"
+  },
+  "EXP-0003": {
+    "model": "Transformer",
+    "seed": 3407,
+    "checkpoint": "experiments/seed_3407/Transformer/checkpoint/final.pt",
+    "sha256": "708614f23b6b9bd19a000bedfc1766a4e6343bf9331d40cd70a78336e2de0f9a"
+  },
+  "EXP-0004": {
+    "model": "Mamba2",
+    "seed": 42,
+    "checkpoint": "experiments/seed_42/Mamba2/checkpoint/final.pt",
+    "sha256": "4a8ecf0e4cd853daa7d783535454c9bdb40fedfce64d668d1279fde518141121"
+  },
+  "EXP-0005": {
+    "model": "Mamba2",
+    "seed": 123,
+    "checkpoint": "experiments/seed_123/Mamba2/checkpoint/final.pt",
+    "sha256": "96995f608d175a2307b9df4699d119d3f18577f85c1452d3ab76928b669578c3"
+  },
+  "EXP-0006": {
+    "model": "Mamba2",
+    "seed": 3407,
+    "checkpoint": "experiments/seed_3407/Mamba2/checkpoint/final.pt",
+    "sha256": "3a3227246b785d4c4ccbd7369317eecc74d6d6b9cebcc5b6cf206a365576aa22"
+  },
+  "EXP-0007": {
+    "model": "Transformer+MoE",
+    "seed": 42,
+    "checkpoint": "experiments/seed_42/Transformer_MoE/checkpoint/final.pt",
+    "sha256": "41131cd502377fd13d4dcddf6c21adb0fa0226e69515ca12ee00dd44636c2ce9"
+  },
+  "EXP-0008": {
+    "model": "Transformer+MoE",
+    "seed": 123,
+    "checkpoint": "experiments/seed_123/Transformer_MoE/checkpoint/final.pt",
+    "sha256": "4c8699f2aae3683800dc4e38c586373b9b7676dbc661ac58058adb4e215542ce"
+  },
+  "EXP-0009": {
+    "model": "Transformer+MoE",
+    "seed": 3407,
+    "checkpoint": "experiments/seed_3407/Transformer_MoE/checkpoint/final.pt",
+    "sha256": "d19b122ba60167a97dba72fe7c2ca9e3915e6973d7b0c8bbad98d935cb688ce1"
+  },
+  "EXP-0010": {
+    "model": "Transformer+Mamba",
+    "seed": 42,
+    "checkpoint": "experiments/seed_42/Transformer_Mamba/checkpoint/final.pt",
+    "sha256": "87dc8dcc7abc4b5c4ef7e5dcd7792145ba01560e988588e8fad34b4aac8dbfe2"
+  },
+  "EXP-0011": {
+    "model": "Transformer+Mamba",
+    "seed": 123,
+    "checkpoint": "experiments/seed_123/Transformer_Mamba/checkpoint/final.pt",
+    "sha256": "c5833c8f7c93516967d80420d12bba74fefd4f494224ef9188b3c561958b59ab"
+  },
+  "EXP-0012": {
+    "model": "Transformer+Mamba",
+    "seed": 3407,
+    "checkpoint": "experiments/seed_3407/Transformer_Mamba/checkpoint/final.pt",
+    "sha256": "e85d5ba705d509acb1d80c912e1f9d60d9c26fb6ce543bba92571380d9f0c8eb"
+  },
+  "EXP-0013": {
+    "model": "IVERI Hybrid",
+    "seed": 42,
+    "checkpoint": "experiments/seed_42/IVERI_Hybrid/checkpoint/final.pt",
+    "sha256": "e1b1c1762604b1cddc2d150ba700e9ba4116e396772afd9a7a27dba1db29f301"
+  },
+  "EXP-0014": {
+    "model": "IVERI Hybrid",
+    "seed": 123,
+    "checkpoint": "experiments/seed_123/IVERI_Hybrid/checkpoint/final.pt",
+    "sha256": "95d686dd1e162701518927e440ae97dc771ecb4a2f75793716b3d63e240b7549"
+  },
+  "EXP-0015": {
+    "model": "IVERI Hybrid",
+    "seed": 3407,
+    "checkpoint": "experiments/seed_3407/IVERI_Hybrid/checkpoint/final.pt",
+    "sha256": "360885b37e185b4e6d07cad95b89cf47d31e8b5b4f2df8715ce2ea3a200b86e6"
+  }
+}

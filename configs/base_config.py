@@ -169,8 +169,8 @@ class ModelConfig:
             raise ConfigError(f"max_recursion_depth must be > 0, got {self.max_recursion_depth}")
         if self.titans_memory_dim <= 0:
             raise ConfigError(f"titans_memory_dim must be > 0, got {self.titans_memory_dim}")
-        if self.mamba_ratio <= 0:
-            raise ConfigError(f"mamba_ratio must be > 0, got {self.mamba_ratio}")
+        if self.mamba_ratio < 0:
+            raise ConfigError(f"mamba_ratio must be >= 0, got {self.mamba_ratio}")
         if not (0.0 <= self.dropout < 1.0):
             raise ConfigError(f"dropout must be in [0.0, 1.0), got {self.dropout}")
 

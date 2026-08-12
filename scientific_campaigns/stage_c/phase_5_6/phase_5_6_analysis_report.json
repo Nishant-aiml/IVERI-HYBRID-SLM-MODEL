@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "IVERI_Full_v0.91": {
+      "mean_final_loss": 3.1425069173177085,
+      "mean_loss": 3.6191137568155924,
+      "avg_throughput": 172.54623170270239,
+      "total_failures": 5,
+      "avg_vram_mb": 828.3894856770834
+    },
+    "IVERI_No_Entropy": {
+      "mean_final_loss": 3.141993204752604,
+      "mean_loss": 3.6186911137898767,
+      "avg_throughput": 186.33693565371303,
+      "total_failures": 5,
+      "avg_vram_mb": 827.7731119791666
+    },
+    "IVERI_No_Titans": {
+      "mean_final_loss": 3.1419525146484375,
+      "mean_loss": 3.6286376444498702,
+      "avg_throughput": 271.18001899443175,
+      "total_failures": 7,
+      "avg_vram_mb": 691.0109049479166
+    },
+    "IVERI_No_MoR": {
+      "mean_final_loss": 3.1364758809407554,
+      "mean_loss": 3.6118815867106115,
+      "avg_throughput": 359.2048034541472,
+      "total_failures": 1,
+      "avg_vram_mb": 422.6935221354167
+    },
+    "Baseline_Dense_Transformer": {
+      "mean_final_loss": 1.3663664658864338,
+      "mean_loss": 2.08796847820282,
+      "avg_throughput": 13016.273633991123,
+      "total_failures": 0,
+      "avg_vram_mb": 393.5859375
+    }
+  },
+  "statistical_tests": {
+    "full_vs_dense": {
+      "t_statistic": 150.0445,
+      "p_value": 0.0,
+      "cohens_d": 122.5108,
+      "verdict": "STATISTICALLY_SIGNIFICANT"
+    },
+    "full_vs_nomor": {
+      "t_statistic": 0.737,
+      "p_value": 0.461116,
+      "cohens_d": 0.6018,
+      "verdict": "INCONCLUSIVE"
+    }
+  }
+}

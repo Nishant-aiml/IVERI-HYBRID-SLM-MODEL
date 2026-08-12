@@ -1,0 +1,16 @@
+\begin{table}[h]
+\centering
+\caption{IVERI Core Stage C Tier-1 Ablation Results (3 Seeds $\times$ 50 Steps)}
+\label{tab:tier1}
+\begin{tabular}{lrrrrc}
+\hline
+Model & Loss $\downarrow$ & TP (tok/s) $\uparrow$ & VRAM (MB) $\downarrow$ & Expl. $\downarrow$ \\
+\hline
+Dense (Baseline) & 1.3664$\pm$0.0158 & 13016 & 394 & 0 \\
+Full v0.91 & 3.1425$\pm$0.0055 & 173 & 828 & 5 \\
+No Entropy & 3.1420$\pm$0.0057 & 186 & 828 & 5 \\
+No Titans & 3.1420$\pm$0.0057 & 271 & 691 & 7 \\
+No MoR & 3.1365$\pm$0.0102 & 359 & 423 & 1 \\
+\hline
+\end{tabular}
+\end{table}

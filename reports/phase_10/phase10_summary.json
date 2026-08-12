@@ -1,9 +1,9 @@
 {
   "status": "SUCCESS",
   "phase": "10A_and_10B",
-  "campaign_duration_minutes": 0.31,
+  "campaign_duration_minutes": 0.41,
   "environment": {
-    "git_commit": "165f162f8886e48b126cf5a9dbb524220b8e8cd3",
+    "git_commit": "2f31069b6b7180c666903732dba2e9642121bb7a",
     "git_tag": "v0.9.0-phase9-freeze",
     "python_version": "3.12.10",
     "pytorch_version": "2.5.1+cu121",
@@ -16,7 +16,7 @@
       123,
       3407
     ],
-    "timestamp": "2026-07-24T16:45:19Z"
+    "timestamp": "2026-07-26T02:47:19Z"
   },
   "compute_matching": {
     "models": {
@@ -60,8 +60,8 @@
     "tolerance_status": "PASS",
     "gate_spec": "<= 10.0%"
   },
-  "reports_generated": 17,
+  "reports_generated": 18,
   "tables_generated": 6,
-  "figures_generated": 13,
+  "figures_generated": 14,
   "paper_bundle_ready": true
 }

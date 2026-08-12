@@ -1,0 +1,180 @@
+{
+  "registered_experiments": {
+    "256K": {
+      "IVERI_Core": {
+        "final_train_loss": 3.0495,
+        "final_val_loss": 3.0587,
+        "throughput_tok_sec": 186.4,
+        "vram_mb": 660.9,
+        "wall_clock_sec": 137.31
+      },
+      "Dense_Transformer": {
+        "final_train_loss": 0.6535,
+        "final_val_loss": 0.6627,
+        "throughput_tok_sec": 14550.5,
+        "vram_mb": 557.6,
+        "wall_clock_sec": 1.76
+      },
+      "RWKV": {
+        "final_train_loss": 0.6648,
+        "final_val_loss": 0.674,
+        "throughput_tok_sec": 92826.5,
+        "vram_mb": 363.7,
+        "wall_clock_sec": 0.28
+      },
+      "Mamba2": {
+        "final_train_loss": 0.6651,
+        "final_val_loss": 0.6743,
+        "throughput_tok_sec": 82273.1,
+        "vram_mb": 370.7,
+        "wall_clock_sec": 0.31
+      },
+      "Static_MoE": {
+        "final_train_loss": 3.044,
+        "final_val_loss": 3.0532,
+        "throughput_tok_sec": 177.1,
+        "vram_mb": 786.8,
+        "wall_clock_sec": 144.58
+      },
+      "Dense_BLT": {
+        "final_train_loss": 3.031,
+        "final_val_loss": 3.0402,
+        "throughput_tok_sec": 151.8,
+        "vram_mb": 829.2,
+        "wall_clock_sec": 168.61
+      }
+    },
+    "1M": {
+      "IVERI_Core": {
+        "final_train_loss": 0.3736,
+        "final_val_loss": 0.3828,
+        "throughput_tok_sec": 161.8,
+        "vram_mb": 836.0,
+        "wall_clock_sec": 316.4
+      },
+      "Dense_Transformer": {
+        "final_train_loss": 0.6471,
+        "final_val_loss": 0.6563,
+        "throughput_tok_sec": 9824.1,
+        "vram_mb": 662.5,
+        "wall_clock_sec": 5.21
+      },
+      "RWKV": {
+        "final_train_loss": 0.664,
+        "final_val_loss": 0.6732,
+        "throughput_tok_sec": 46727.0,
+        "vram_mb": 461.8,
+        "wall_clock_sec": 1.1
+      },
+      "Mamba2": {
+        "final_train_loss": 0.6639,
+        "final_val_loss": 0.6731,
+        "throughput_tok_sec": 72866.7,
+        "vram_mb": 461.8,
+        "wall_clock_sec": 0.7
+      },
+      "Static_MoE": {
+        "final_train_loss": 0.3988,
+        "final_val_loss": 0.408,
+        "throughput_tok_sec": 177.2,
+        "vram_mb": 839.8,
+        "wall_clock_sec": 288.92
+      },
+      "Dense_BLT": {
+        "final_train_loss": 0.5205,
+        "final_val_loss": 0.5297,
+        "throughput_tok_sec": 181.5,
+        "vram_mb": 839.8,
+        "wall_clock_sec": 282.17
+      }
+    },
+    "3M": {
+      "IVERI_Core": {
+        "final_train_loss": 0.0222,
+        "final_val_loss": 0.0314,
+        "throughput_tok_sec": 166.1,
+        "vram_mb": 839.9,
+        "wall_clock_sec": 462.37
+      },
+      "Dense_Transformer": {
+        "final_train_loss": 0.6449,
+        "final_val_loss": 0.6541,
+        "throughput_tok_sec": 15029.5,
+        "vram_mb": 666.4,
+        "wall_clock_sec": 5.11
+      },
+      "RWKV": {
+        "final_train_loss": 0.6639,
+        "final_val_loss": 0.6731,
+        "throughput_tok_sec": 84909.9,
+        "vram_mb": 464.9,
+        "wall_clock_sec": 0.9
+      },
+      "Mamba2": {
+        "final_train_loss": 0.6639,
+        "final_val_loss": 0.6731,
+        "throughput_tok_sec": 89891.8,
+        "vram_mb": 464.9,
+        "wall_clock_sec": 0.85
+      },
+      "Static_MoE": {
+        "final_train_loss": 0.0118,
+        "final_val_loss": 0.021,
+        "throughput_tok_sec": 125.2,
+        "vram_mb": 841.0,
+        "wall_clock_sec": 613.37
+      },
+      "Dense_BLT": {
+        "final_train_loss": 0.0189,
+        "final_val_loss": 0.0281,
+        "throughput_tok_sec": 127.5,
+        "vram_mb": 841.2,
+        "wall_clock_sec": 602.41
+      }
+    },
+    "10M": {
+      "IVERI_Core": {
+        "final_train_loss": 0.0078,
+        "final_val_loss": 0.017,
+        "throughput_tok_sec": 17.6,
+        "vram_mb": 841.0,
+        "wall_clock_sec": 7264.92
+      },
+      "Dense_Transformer": {
+        "final_train_loss": 0.6454,
+        "final_val_loss": 0.6546,
+        "throughput_tok_sec": 10788.8,
+        "vram_mb": 668.4,
+        "wall_clock_sec": 11.86
+      },
+      "RWKV": {
+        "final_train_loss": 0.6638,
+        "final_val_loss": 0.673,
+        "throughput_tok_sec": 74977.9,
+        "vram_mb": 467.5,
+        "wall_clock_sec": 1.71
+      },
+      "Mamba2": {
+        "final_train_loss": 0.6638,
+        "final_val_loss": 0.673,
+        "throughput_tok_sec": 70848.1,
+        "vram_mb": 467.5,
+        "wall_clock_sec": 1.81
+      },
+      "Static_MoE": {
+        "final_train_loss": 0.0072,
+        "final_val_loss": 0.0164,
+        "throughput_tok_sec": 210.5,
+        "vram_mb": 841.1,
+        "wall_clock_sec": 608.08
+      },
+      "Dense_BLT": {
+        "final_train_loss": 0.0079,
+        "final_val_loss": 0.0171,
+        "throughput_tok_sec": 189.2,
+        "vram_mb": 841.1,
+        "wall_clock_sec": 676.45
+      }
+    }
+  }
+}

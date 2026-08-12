@@ -1,0 +1,62 @@
+{
+    "name": "dclm",
+    "stage": "11.0",
+    "num_documents": 3,
+    "total_bytes": 241,
+    "total_gb": 2.2444874048233032e-07,
+    "avg_bytes": 80.33333333333333,
+    "median_bytes": 79.0,
+    "min_bytes": 76,
+    "max_bytes": 86,
+    "p25_bytes": 77.5,
+    "p75_bytes": 82.5,
+    "p95_bytes": 85.3,
+    "p99_bytes": 85.86,
+    "language_distribution": {
+        "en": 3
+    },
+    "license": "Permissive",
+    "mixing_weight": 0.0,
+    "duplicate_rate": null,
+    "filter_rate": null,
+    "creation_time": "2026-07-25T09:54:10.792962",
+    "length_histogram": {
+        "bins": [
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+        ],
+        "counts": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+        ],
+        "bin_labels": [
+            "76 - 77",
+            "77 - 78",
+            "78 - 79",
+            "79 - 80",
+            "80 - 81",
+            "81 - 82",
+            "82 - 83",
+            "83 - 84",
+            "84 - 85",
+            "85 - 86"
+        ]
+    }
+}

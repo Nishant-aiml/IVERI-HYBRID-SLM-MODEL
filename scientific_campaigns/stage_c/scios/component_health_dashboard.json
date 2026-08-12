@@ -1,0 +1,38 @@
+{
+  "Router": {
+    "score": 83,
+    "latency_ms": 1.2,
+    "utilization_pct": 78.5,
+    "benefit": "Dynamic pathway selection",
+    "failures": 0,
+    "stability": "HIGH",
+    "blocker": "Entropy logging missing (MISSING-003)"
+  },
+  "Titans": {
+    "score": 71,
+    "latency_ms": 4.5,
+    "utilization_pct": 100.0,
+    "benefit": "Persistent memory bank",
+    "failures": 0,
+    "stability": "HIGH",
+    "blocker": "Long-context sweep missing (MISSING-002)"
+  },
+  "MoR": {
+    "score": 54,
+    "latency_ms": 12.8,
+    "utilization_pct": 50.0,
+    "benefit": "Recursive depth representation",
+    "failures": 5,
+    "stability": "MEDIUM",
+    "blocker": "High overhead at short sequence length (Needs v0.92 adaptive fix)"
+  },
+  "BLT": {
+    "score": 91,
+    "latency_ms": 2.1,
+    "utilization_pct": 94.0,
+    "benefit": "Byte-level tokenization-free input processing",
+    "failures": 0,
+    "stability": "VERY_HIGH",
+    "blocker": "None"
+  }
+}

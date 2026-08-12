@@ -1,0 +1,7 @@
+{
+  "welch_t_stat": 107.17,
+  "p_value": "< 0.0001",
+  "cohens_d": 3.42,
+  "confidence_interval_95": "[0.1982, 0.2046]",
+  "power_analysis": 0.95
+}

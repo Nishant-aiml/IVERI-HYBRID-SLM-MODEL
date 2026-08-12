@@ -108,6 +108,8 @@ def load_checkpoint(
     path_obj = pathlib.Path(path)
     if not path_obj.exists() or not path_obj.is_file():
         raise CheckpointError(f"Checkpoint file not found: {path}")
+    if path_obj.stat().st_size == 0:
+        raise CheckpointError(f"Checkpoint file is empty (0 bytes): {path}")
 
     try:
         checkpoint = torch.load(path_obj, map_location="cpu", weights_only=False)

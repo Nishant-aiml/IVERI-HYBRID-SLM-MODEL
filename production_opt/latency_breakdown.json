@@ -1,0 +1,7 @@
+{
+  "baseline_waste_ms": 58.2,
+  "vectorized_patcher_waste_ms": 0.4,
+  "overhead_reduction": "99.3% reduction",
+  "compiled_latency_ms": 51.88,
+  "compiled_throughput_tok_sec": 9868.7
+}

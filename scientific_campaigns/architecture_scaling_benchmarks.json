@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-07-30T10:10:37.100367Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "scaling_results": {
+    "IVERI-Nano (10M)": {
+      "total_parameters": 9351394,
+      "trainable_parameters": 9351394,
+      "final_loss": 4.9949,
+      "step_latency_ms": 5426.28,
+      "throughput_tok_sec": 23.6,
+      "peak_vram_mb": 200.2
+    },
+    "IVERI-Small (45M)": {
+      "total_parameters": 34948692,
+      "trainable_parameters": 34948692,
+      "final_loss": 4.1782,
+      "step_latency_ms": 7435.26,
+      "throughput_tok_sec": 17.2,
+      "peak_vram_mb": 695.6
+    },
+    "IVERI-Base (125M)": {
+      "total_parameters": 105955274,
+      "trainable_parameters": 105955274,
+      "final_loss": 3.7328,
+      "step_latency_ms": 6650.57,
+      "throughput_tok_sec": 19.2,
+      "peak_vram_mb": 2042.2
+    }
+  }
+}

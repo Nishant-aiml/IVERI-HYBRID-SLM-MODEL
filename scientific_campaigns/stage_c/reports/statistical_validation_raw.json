@@ -1,0 +1,249 @@
+{
+  "IVERI_Full_v0.91_vs_Baseline_Dense_Transformer": {
+    "comparison": "IVERI Full vs Baseline_Dense_Transformer",
+    "n_ref": 3,
+    "n_comp": 3,
+    "UNDERPOWERED_WARNING": "n=3 is insufficient. Results are preliminary.",
+    "normality": {
+      "ref_shapiro_W": 0.8743,
+      "ref_shapiro_p": 0.3078,
+      "comp_shapiro_W": 0.9805,
+      "comp_shapiro_p": 0.7324,
+      "note": "Shapiro-Wilk at n=3 has near-zero power \u2014 normality cannot be assessed"
+    },
+    "homogeneity": {
+      "levene_stat": 1.2765,
+      "levene_p": 0.3217
+    },
+    "loss_comparison": {
+      "mean_ref": 3.142507,
+      "mean_comp": 1.366366,
+      "delta_comp_minus_ref": -1.77614,
+      "welch_t": 150.0445,
+      "welch_p": 0.0,
+      "welch_p_label": "<0.001",
+      "mann_whitney_u": 9.0,
+      "mann_whitney_p": 0.1,
+      "mann_whitney_p_label": "=0.100",
+      "cohens_d": 150.0445,
+      "effect_label": "large",
+      "cliffs_delta": 1.0,
+      "bootstrap_95ci_ref_minus_comp": [
+        1.756104,
+        1.793768
+      ],
+      "bootstrap_ci_contains_zero": false,
+      "power_estimate": 1.0,
+      "power_warning": "Power estimate unreliable at n=3"
+    },
+    "throughput_comparison": {
+      "mean_ref_tp": 172.55,
+      "mean_comp_tp": 13016.27,
+      "delta_pct": 7443.6,
+      "welch_t": -7.7429,
+      "welch_p": 0.0163,
+      "mann_whitney_p": 0.1
+    },
+    "vram_comparison": {
+      "mean_ref_mb": 828.39,
+      "mean_comp_mb": 393.59,
+      "delta_pct": -52.5
+    },
+    "SIGNIFICANCE_VERDICT": "LIKELY_SIGNIFICANT (very large effect, low n)",
+    "LOSS_SIGNIFICANT": false,
+    "TP_SIGNIFICANT": true
+  },
+  "IVERI_Full_v0.91_vs_IVERI_No_Entropy": {
+    "comparison": "IVERI Full vs IVERI_No_Entropy",
+    "n_ref": 3,
+    "n_comp": 3,
+    "UNDERPOWERED_WARNING": "n=3 is insufficient. Results are preliminary.",
+    "normality": {
+      "ref_shapiro_W": 0.8743,
+      "ref_shapiro_p": 0.3078,
+      "comp_shapiro_W": 0.8449,
+      "comp_shapiro_p": 0.2269,
+      "note": "Shapiro-Wilk at n=3 has near-zero power \u2014 normality cannot be assessed"
+    },
+    "homogeneity": {
+      "levene_stat": 0.0006,
+      "levene_p": 0.9812
+    },
+    "loss_comparison": {
+      "mean_ref": 3.142507,
+      "mean_comp": 3.141993,
+      "delta_comp_minus_ref": -0.000514,
+      "welch_t": 0.0919,
+      "welch_p": 0.9312,
+      "welch_p_label": "=0.931",
+      "mann_whitney_u": 6.0,
+      "mann_whitney_p": 0.7,
+      "mann_whitney_p_label": "=0.700",
+      "cohens_d": 0.0919,
+      "effect_label": "negligible",
+      "cliffs_delta": 0.3333,
+      "bootstrap_95ci_ref_minus_comp": [
+        -0.007949,
+        0.008976
+      ],
+      "bootstrap_ci_contains_zero": true,
+      "power_estimate": 0.0504,
+      "power_warning": "Power estimate unreliable at n=3"
+    },
+    "throughput_comparison": {
+      "mean_ref_tp": 172.55,
+      "mean_comp_tp": 186.34,
+      "delta_pct": 8.0,
+      "welch_t": -0.8676,
+      "welch_p": 0.4396,
+      "mann_whitney_p": 0.7
+    },
+    "vram_comparison": {
+      "mean_ref_mb": 828.39,
+      "mean_comp_mb": 827.77,
+      "delta_pct": -0.1
+    },
+    "SIGNIFICANCE_VERDICT": "NOT_SIGNIFICANT (negligible effect)",
+    "LOSS_SIGNIFICANT": false,
+    "TP_SIGNIFICANT": false
+  },
+  "IVERI_Full_v0.91_vs_IVERI_No_Titans": {
+    "comparison": "IVERI Full vs IVERI_No_Titans",
+    "n_ref": 3,
+    "n_comp": 3,
+    "UNDERPOWERED_WARNING": "n=3 is insufficient. Results are preliminary.",
+    "normality": {
+      "ref_shapiro_W": 0.8743,
+      "ref_shapiro_p": 0.3078,
+      "comp_shapiro_W": 0.7967,
+      "comp_shapiro_p": 0.1067,
+      "note": "Shapiro-Wilk at n=3 has near-zero power \u2014 normality cannot be assessed"
+    },
+    "homogeneity": {
+      "levene_stat": 0.0,
+      "levene_p": 0.9979
+    },
+    "loss_comparison": {
+      "mean_ref": 3.142507,
+      "mean_comp": 3.141953,
+      "delta_comp_minus_ref": -0.000554,
+      "welch_t": 0.0989,
+      "welch_p": 0.926,
+      "welch_p_label": "=0.926",
+      "mann_whitney_u": 6.0,
+      "mann_whitney_p": 0.7,
+      "mann_whitney_p_label": "=0.700",
+      "cohens_d": 0.0989,
+      "effect_label": "negligible",
+      "cliffs_delta": 0.3333,
+      "bootstrap_95ci_ref_minus_comp": [
+        -0.007804,
+        0.008912
+      ],
+      "bootstrap_ci_contains_zero": true,
+      "power_estimate": 0.0504,
+      "power_warning": "Power estimate unreliable at n=3"
+    },
+    "throughput_comparison": {
+      "mean_ref_tp": 172.55,
+      "mean_comp_tp": 271.18,
+      "delta_pct": 57.2,
+      "welch_t": -7.1299,
+      "welch_p": 0.0022,
+      "mann_whitney_p": 0.1
+    },
+    "vram_comparison": {
+      "mean_ref_mb": 828.39,
+      "mean_comp_mb": 691.01,
+      "delta_pct": -16.6
+    },
+    "SIGNIFICANCE_VERDICT": "NOT_SIGNIFICANT (negligible effect)",
+    "LOSS_SIGNIFICANT": false,
+    "TP_SIGNIFICANT": true
+  },
+  "IVERI_Full_v0.91_vs_IVERI_No_MoR": {
+    "comparison": "IVERI Full vs IVERI_No_MoR",
+    "n_ref": 3,
+    "n_comp": 3,
+    "UNDERPOWERED_WARNING": "n=3 is insufficient. Results are preliminary.",
+    "normality": {
+      "ref_shapiro_W": 0.8743,
+      "ref_shapiro_p": 0.3078,
+      "comp_shapiro_W": 0.9883,
+      "comp_shapiro_p": 0.7932,
+      "note": "Shapiro-Wilk at n=3 has near-zero power \u2014 normality cannot be assessed"
+    },
+    "homogeneity": {
+      "levene_stat": 0.5831,
+      "levene_p": 0.4877
+    },
+    "loss_comparison": {
+      "mean_ref": 3.142507,
+      "mean_comp": 3.136476,
+      "delta_comp_minus_ref": -0.006031,
+      "welch_t": 0.737,
+      "welch_p": 0.5136,
+      "welch_p_label": "=0.514",
+      "mann_whitney_u": 6.0,
+      "mann_whitney_p": 0.7,
+      "mann_whitney_p_label": "=0.700",
+      "cohens_d": 0.737,
+      "effect_label": "medium",
+      "cliffs_delta": 0.3333,
+      "bootstrap_95ci_ref_minus_comp": [
+        -0.006421,
+        0.018595
+      ],
+      "bootstrap_ci_contains_zero": true,
+      "power_estimate": 0.0777,
+      "power_warning": "Power estimate unreliable at n=3"
+    },
+    "throughput_comparison": {
+      "mean_ref_tp": 172.55,
+      "mean_comp_tp": 359.2,
+      "delta_pct": 108.2,
+      "welch_t": -9.688,
+      "welch_p": 0.0021,
+      "mann_whitney_p": 0.1
+    },
+    "vram_comparison": {
+      "mean_ref_mb": 828.39,
+      "mean_comp_mb": 422.69,
+      "delta_pct": -49.0
+    },
+    "SIGNIFICANCE_VERDICT": "INCONCLUSIVE (n=3 too small to distinguish)",
+    "LOSS_SIGNIFICANT": false,
+    "TP_SIGNIFICANT": true
+  },
+  "warmup_effect_on_loss": {
+    "description": "Phase-7: Does LR warmup affect final loss?",
+    "warmup_values": [
+      0,
+      25,
+      50,
+      75,
+      100,
+      200
+    ],
+    "final_losses": [
+      3.140556,
+      3.142124,
+      3.143753,
+      3.142014,
+      3.14299,
+      3.142467
+    ],
+    "loss_range": 0.003197,
+    "loss_range_pct_of_mean": 0.1017,
+    "explosion_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "explosions_all_equal": true,
+    "conclusion": "EXPLOSION_INVARIANT: All warmup candidates produce identical explosion count. Loss variance across warmup candidates = 0.1017% of mean. Warmup schedule has NO measurable effect on training stability."
+  }
+}

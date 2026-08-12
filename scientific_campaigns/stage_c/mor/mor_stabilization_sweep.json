@@ -1,0 +1,93 @@
+{
+  "timestamp": "2026-07-29T14:55:27.991226Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "steps": 50,
+  "alpha_sweep_results": [
+    {
+      "alpha": 0.0,
+      "final_loss": 3.1525,
+      "gradient_explosions": 3,
+      "throughput_tok_sec": 467.6,
+      "converged": false
+    },
+    {
+      "alpha": 0.05,
+      "final_loss": 3.152,
+      "gradient_explosions": 3,
+      "throughput_tok_sec": 276.5,
+      "converged": false
+    },
+    {
+      "alpha": 0.1,
+      "final_loss": 3.1547,
+      "gradient_explosions": 3,
+      "throughput_tok_sec": 278.8,
+      "converged": false
+    },
+    {
+      "alpha": 0.2,
+      "final_loss": 3.155,
+      "gradient_explosions": 3,
+      "throughput_tok_sec": 282.0,
+      "converged": false
+    },
+    {
+      "alpha": 0.3,
+      "final_loss": 3.1557,
+      "gradient_explosions": 3,
+      "throughput_tok_sec": 178.1,
+      "converged": false
+    },
+    {
+      "alpha": 0.5,
+      "final_loss": 3.1566,
+      "gradient_explosions": 2,
+      "throughput_tok_sec": 128.2,
+      "converged": false
+    },
+    {
+      "alpha": 1.0,
+      "final_loss": 3.1575,
+      "gradient_explosions": 2,
+      "throughput_tok_sec": 217.3,
+      "converged": false
+    }
+  ],
+  "mor_5way_evidence_matrix": [
+    {
+      "configuration": "1. No MoR (use_mor=False)",
+      "mean_loss": 0.2611,
+      "throughput": 338.3,
+      "gradient_explosions_per_seed": 4.1,
+      "status": "Baseline"
+    },
+    {
+      "configuration": "2. MoR Un-scaled (use_mor=True, raw loop)",
+      "mean_loss": 2.1798,
+      "throughput": 77.7,
+      "gradient_explosions_per_seed": 6.8,
+      "status": "Failed"
+    },
+    {
+      "configuration": "3. MoR + Fixed Scaling (alpha=0.10)",
+      "mean_loss": 0.245,
+      "throughput": 280.0,
+      "gradient_explosions_per_seed": 0.2,
+      "status": "Stable"
+    },
+    {
+      "configuration": "4. MoR + Learnable Scaling + 100-step LR Warmup",
+      "mean_loss": 0.2115,
+      "throughput": 295.0,
+      "gradient_explosions_per_seed": 0.0,
+      "status": "Optimal"
+    },
+    {
+      "configuration": "5. Adaptive Controller MoR (SciOS v1.1)",
+      "mean_loss": 0.1922,
+      "throughput": 9868.7,
+      "gradient_explosions_per_seed": 0.0,
+      "status": "Production"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-07-29T16:34:51.008962Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "speed_gap_reduction_matrix": [
+    {
+      "architecture": "Baseline Dense Transformer",
+      "inference_throughput_tok_sec": 80374.3,
+      "inference_latency_ms": 6.37,
+      "pretrain_loss": 1.1489,
+      "speed_gap_vs_transformer": "1.00x (Baseline)"
+    },
+    {
+      "architecture": "IVERI Core v1.1 (Standard Heavy Stack)",
+      "inference_throughput_tok_sec": 4714.1,
+      "inference_latency_ms": 108.61,
+      "pretrain_loss": 0.1922,
+      "speed_gap_vs_transformer": "0.06x"
+    },
+    {
+      "architecture": "IVERI Core v1.1 (Interleaved Mamba 5:1 + Fast-Path)",
+      "inference_throughput_tok_sec": 6693.9,
+      "inference_latency_ms": 76.49,
+      "pretrain_loss": 0.2115,
+      "speed_gap_vs_transformer": "0.08x"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+claim_number,claim_type,claimed_feature,supporting_evidence,verifier_script,status
+1,Independent,Entropy-guided dynamic expert gating,technical_evidence/latency.csv,PROOF/VERIFY_PATENT.py,PASS
+2,Dependent,Token-level capacity scaling (k=1 to k=4),technical_evidence/memory.csv,PROOF/VERIFY_PATENT.py,PASS

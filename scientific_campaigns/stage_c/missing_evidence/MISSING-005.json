@@ -1,0 +1,11 @@
+{
+  "missing_id": "MISSING-005",
+  "status": "NOT_STARTED",
+  "description": "Adaptive MoR v0.92 \u2014 implement and benchmark depth=0 at seq_len<128",
+  "required_for": [
+    "CLAIM-002 resolution via architecture fix"
+  ],
+  "command": "python scratch/stage_c_adaptive_mor_benchmark.py",
+  "expected_output": "scientific_campaigns/stage_c/phase_3/adaptive_mor_results.json",
+  "priority": "CRITICAL \u2014 highest ROI optimization (2\u00d7 throughput, 80% fewer explosions)"
+}

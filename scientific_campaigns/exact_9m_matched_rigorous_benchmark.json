@@ -1,0 +1,55 @@
+{
+  "experiment": "Exact 9.35M Parameter-Matched Benchmark (10 steps, n=3 seeds)",
+  "timestamp": "2026-07-30T16:33:56.348612+00:00",
+  "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "steps": 10,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "parameter_counts": {
+    "IVERI-Nano": 9351394,
+    "Dense Transformer (Matched)": 10102723,
+    "Mamba2 SSM (Matched)": 9725187
+  },
+  "results": {
+    "IVERI-Nano": {
+      "loss_mean": 3.0688,
+      "loss_std": 0.0387,
+      "loss_var": 0.0014954254778179652,
+      "ppl_mean": 21.53,
+      "latency_ms": 6775.7,
+      "vram_mb": 352.0,
+      "params": 9351394
+    },
+    "Dense Transformer (Matched)": {
+      "loss_mean": 3.117,
+      "loss_std": 0.0752,
+      "loss_var": 0.005658891813557905,
+      "ppl_mean": 22.62,
+      "latency_ms": 73.8,
+      "vram_mb": 327.0,
+      "params": 10102723
+    },
+    "Mamba2 SSM (Matched)": {
+      "loss_mean": 0.145,
+      "loss_std": 0.048,
+      "loss_var": 0.0023043838560582084,
+      "ppl_mean": 1.16,
+      "latency_ms": 810.8,
+      "vram_mb": 319.0,
+      "params": 9725187
+    }
+  },
+  "statistical_tests": {
+    "Dense_Transformer_vs_IVERI": {
+      "welch_t": 0.987,
+      "cohens_d": 0.806
+    },
+    "Mamba2_SSM_vs_IVERI": {
+      "welch_t": -82.154,
+      "cohens_d": -67.078
+    }
+  }
+}

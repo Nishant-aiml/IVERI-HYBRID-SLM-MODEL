@@ -1,0 +1,10 @@
+{
+  "claim_id": "CLAIM_004",
+  "paper": "paper_01_entropy_routing",
+  "description": "Entropy-guided dynamic routing reduces FLOPs vs Dense BLT baseline",
+  "supporting_code": "scratch/run_stage_b_10m.py",
+  "supporting_csv": "../../reports/live_training/stage_b_10m_loss.csv",
+  "verification_script": "proof/verify_everything.py",
+  "verification_status": "IN_PROGRESS",
+  "confidence": 0.85
+}

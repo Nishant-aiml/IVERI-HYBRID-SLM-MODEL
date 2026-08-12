@@ -1,0 +1,22 @@
+{
+  "manifest_version": "1.0.0-STAGE19_FINAL",
+  "timestamp": "2026-07-30T09:58:12.004061Z",
+  "git_commit": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "compiled_reports": [
+    "data/processed/data_prep_report.md",
+    "training_campaign/pretraining_report.md",
+    "training_campaign/main_training_report.md",
+    "training_campaign/finetuning_report.md",
+    "benchmark_suite/validation_report.md",
+    "benchmark_suite/benchmark_report.md",
+    "benchmark_suite/robustness_report.md",
+    "production_opt/latency_breakdown.json",
+    "production_opt/engineering_changelog.md",
+    "production_opt/stability_report.md",
+    "scientific_campaigns/statistical_report.md",
+    "benchmark_suite/error_analysis.md",
+    "camera_ready/FINAL_SCIENTIFIC_AUDIT.md",
+    "camera_ready/FINAL_VERDICT.md",
+    "camera_ready/RESEARCH_LIMITATIONS.md"
+  ]
+}

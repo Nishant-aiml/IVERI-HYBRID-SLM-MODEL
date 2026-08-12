@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "kill_criteria": [
+    {
+      "module": "Adaptive MoR v0.92",
+      "failure_condition": "<5% throughput gain AND >2% accuracy drop after 10M tokens",
+      "action": "Revert to static baseline or redesign controller"
+    },
+    {
+      "module": "Titans Memory Update",
+      "failure_condition": "Memory state norm ||W_M|| NaN explosion across 3 consecutive seeds",
+      "action": "Apply mandatory RMSNorm and scale factor alpha=0.01"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "figure_id": "fig_loss_curve",
+  "source_csv": "csv/loss.csv",
+  "script": "paper/scripts/auto_populate_evidence.py",
+  "matplotlib_version": "3.11.0",
+  "generated_timestamp": "2026-07-26T03:11:39Z",
+  "dpi": 300
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "competitors": [
+    {
+      "model": "Dense Transformer",
+      "short_text_speed": "Winner",
+      "vram_scaling": "O(N^2) Fails at long context",
+      "tokenizer": "Subword (Fails OOV)",
+      "adaptive_compute": "None"
+    },
+    {
+      "model": "Sparse MoE (Mixtral/DeepSeek)",
+      "short_text_speed": "Fast",
+      "vram_scaling": "O(N^2) Heavy VRAM",
+      "tokenizer": "Subword",
+      "adaptive_compute": "Sparse Width Only"
+    },
+    {
+      "model": "Mamba-2 SSM",
+      "short_text_speed": "Fast",
+      "vram_scaling": "Linear O(N)",
+      "tokenizer": "Subword",
+      "adaptive_compute": "None"
+    },
+    {
+      "model": "IVERI Core (SciOS v1.1)",
+      "short_text_speed": "Requires depth=0",
+      "vram_scaling": "Flat Constant O(1)",
+      "tokenizer": "BLT Raw Byte (Robust)",
+      "adaptive_compute": "Global Dynamic Controller"
+    }
+  ]
+}

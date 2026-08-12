@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "title": "IVERI CORE \u2014 Machine-Readable Experiment Registry",
+    "last_updated": "2026-07-26T03:11:10Z",
+    "total_experiments": 5,
+    "reproducibility_policy": "Full Environment Fingerprint + SHA256 Checkpoint & Dataset Linkage"
+  },
+  "experiments": [
+    {
+      "experiment_id": "EXP-0001",
+      "timestamp": "2026-07-25T12:13:30Z",
+      "git_sha": "2f31069",
+      "stage": "Stage A (Nano CPU Baseline)",
+      "status": "completed",
+      "notes": "Initial 36-step CPU baseline run establishing monotonic loss reduction.",
+      "environment": {
+        "python_version": "3.12.10",
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": "90100",
+        "gpu_driver": "610.47",
+        "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+        "os": "Windows 11",
+        "vram_gb": 4.0
+      },
+      "randomness_seeds": {
+        "python_seed": 42,
+        "numpy_seed": 42,
+        "torch_seed": 42,
+        "cuda_seed": 42
+      },
+      "hyperparameters": {
+        "dataset": "TinyStories",
+        "tokens": 294912,
+        "batch_size": 8,
+        "seq_len": 128,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "precision": "fp32",
+        "grad_scaler": false,
+        "vocab_size": 259,
+        "train_val_split": "90/10"
+      },
+      "metrics": {
+        "wall_clock_sec": 547.2,
+        "wall_clock_hours": 0.152,
+        "tok_per_sec": 16.8,
+        "peak_vram_mb": 0.0,
+        "initial_loss": 5.54,
+        "final_loss": 2.97
+      },
+      "dataset_linkage": {
+        "dataset_name": "TinyStories",
+        "dataset_path": null,
+        "dataset_sha256": null
+      },
+      "checkpoint_linkage": {
+        "checkpoint_path": null,
+        "checkpoint_sha256": null,
+        "checkpoint_size_mb": null
+      },
+      "extra_metrics": {}
+    },
+    {
+      "experiment_id": "EXP-0002",
+      "timestamp": "2026-07-25T12:13:30Z",
+      "git_sha": "2f31069",
+      "stage": "Hardware Characterization Sweep",
+      "status": "completed",
+      "notes": "Empirical hardware characterization sweep across 10 batch x seq_len combos.",
+      "environment": {
+        "python_version": "3.12.10",
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": "90100",
+        "gpu_driver": "610.47",
+        "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+        "os": "Windows 11",
+        "vram_gb": 4.0
+      },
+      "randomness_seeds": {
+        "python_seed": 42,
+        "numpy_seed": 42,
+        "torch_seed": 42,
+        "cuda_seed": 42
+      },
+      "hyperparameters": {
+        "dataset": "Synthetic Byte Data",
+        "tokens": 512000,
+        "batch_size": 64,
+        "seq_len": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "precision": "fp32",
+        "grad_scaler": false,
+        "vocab_size": 259,
+        "train_val_split": "90/10"
+      },
+      "metrics": {
+        "wall_clock_sec": 320.0,
+        "wall_clock_hours": 0.089,
+        "tok_per_sec": 984.8,
+        "peak_vram_mb": 2853.5,
+        "initial_loss": 5.5,
+        "final_loss": 4.09
+      },
+      "dataset_linkage": {
+        "dataset_name": "Synthetic Byte Data",
+        "dataset_path": null,
+        "dataset_sha256": null
+      },
+      "checkpoint_linkage": {
+        "checkpoint_path": null,
+        "checkpoint_sha256": null,
+        "checkpoint_size_mb": null
+      },
+      "extra_metrics": {}
+    },
+    {
+      "experiment_id": "EXP-0003",
+      "timestamp": "2026-07-25T12:13:30Z",
+      "git_sha": "2f31069",
+      "stage": "Mixed Precision Benchmarking",
+      "status": "completed",
+      "notes": "Discovered 8.15x FP16 speedup over FP32 on RTX 3050 Tensor Cores.",
+      "environment": {
+        "python_version": "3.12.10",
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": "90100",
+        "gpu_driver": "610.47",
+        "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+        "os": "Windows 11",
+        "vram_gb": 4.0
+      },
+      "randomness_seeds": {
+        "python_seed": 42,
+        "numpy_seed": 42,
+        "torch_seed": 42,
+        "cuda_seed": 42
+      },
+      "hyperparameters": {
+        "dataset": "Synthetic Byte Data",
+        "tokens": 204800,
+        "batch_size": 32,
+        "seq_len": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "precision": "fp16",
+        "grad_scaler": true,
+        "vocab_size": 259,
+        "train_val_split": "90/10"
+      },
+      "metrics": {
+        "wall_clock_sec": 4.9,
+        "wall_clock_hours": 0.001,
+        "tok_per_sec": 4167.3,
+        "peak_vram_mb": 189.0,
+        "initial_loss": 5.5,
+        "final_loss": 4.12
+      },
+      "dataset_linkage": {
+        "dataset_name": "Synthetic Byte Data",
+        "dataset_path": null,
+        "dataset_sha256": null
+      },
+      "checkpoint_linkage": {
+        "checkpoint_path": null,
+        "checkpoint_sha256": null,
+        "checkpoint_size_mb": null
+      },
+      "extra_metrics": {}
+    },
+    {
+      "experiment_id": "EXP-0004",
+      "timestamp": "2026-07-25T12:13:30Z",
+      "git_sha": "2f31069",
+      "stage": "Stage A (100-Step Stable FP16 Pilot)",
+      "status": "completed",
+      "notes": "End-to-end 100-step stable FP16 pilot run. Monotonic loss 5.56 -> 0.81, zero NaNs, 1.72GB peak VRAM.",
+      "environment": {
+        "python_version": "3.12.10",
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": "90100",
+        "gpu_driver": "610.47",
+        "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+        "os": "Windows 11",
+        "vram_gb": 4.0
+      },
+      "randomness_seeds": {
+        "python_seed": 42,
+        "numpy_seed": 42,
+        "torch_seed": 42,
+        "cuda_seed": 42
+      },
+      "hyperparameters": {
+        "dataset": "Synthetic Byte Data",
+        "tokens": 409600,
+        "batch_size": 64,
+        "seq_len": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "precision": "fp16",
+        "grad_scaler": true,
+        "vocab_size": 259,
+        "train_val_split": "90/10"
+      },
+      "metrics": {
+        "wall_clock_sec": 356.38,
+        "wall_clock_hours": 0.099,
+        "tok_per_sec": 1149.3,
+        "peak_vram_mb": 1722.6,
+        "initial_loss": 5.5603,
+        "final_loss": 0.8143
+      },
+      "dataset_linkage": {
+        "dataset_name": "Synthetic Byte Data",
+        "dataset_path": null,
+        "dataset_sha256": null
+      },
+      "checkpoint_linkage": {
+        "checkpoint_path": "reports/checkpoints/pilot_step_100.pt",
+        "checkpoint_sha256": null,
+        "checkpoint_size_mb": null
+      },
+      "extra_metrics": {}
+    },
+    {
+      "experiment_id": "EXP-0005",
+      "timestamp": "2026-07-26T03:11:10Z",
+      "git_sha": "2f31069",
+      "stage": "Stage B (10M Token Pretraining Campaign)",
+      "status": "completed",
+      "notes": "Successfully completed 10M token empirical pretraining campaign on RTX 3050 GPU.",
+      "environment": {
+        "python_version": "3.12.10",
+        "torch_version": "2.5.1+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": "90100",
+        "gpu_driver": "610.47",
+        "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+        "os": "Windows 11",
+        "vram_gb": 4.0
+      },
+      "randomness_seeds": {
+        "python_seed": 42,
+        "numpy_seed": 42,
+        "torch_seed": 42,
+        "cuda_seed": 42
+      },
+      "hyperparameters": {
+        "dataset": "TinyStories Pretraining Stream",
+        "tokens": 10000000,
+        "batch_size": 64,
+        "seq_len": 64,
+        "optimizer": "AdamW",
+        "lr": 0.0003,
+        "precision": "fp16",
+        "grad_scaler": true,
+        "vocab_size": 259,
+        "train_val_split": "90/10"
+      },
+      "metrics": {
+        "wall_clock_sec": 2027.38,
+        "wall_clock_hours": 0.563,
+        "tok_per_sec": 4932.5,
+        "peak_vram_mb": 1754.8,
+        "initial_loss": 5.5649,
+        "final_loss": 0.0076
+      },
+      "dataset_linkage": {
+        "dataset_name": "TinyStories Pretraining Stream",
+        "dataset_path": "data/certified/tinystories_val.bin",
+        "dataset_sha256": null
+      },
+      "checkpoint_linkage": {
+        "checkpoint_path": "reports/checkpoints/stage_b_step_2441.pt",
+        "checkpoint_sha256": "c8c7ea8bb465bdc97320095b9c3af80b61ee1d901e756d1ac2a68d7084337728",
+        "checkpoint_size_mb": 107.12
+      },
+      "extra_metrics": {}
+    }
+  ]
+}

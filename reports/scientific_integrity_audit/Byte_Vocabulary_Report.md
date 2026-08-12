@@ -1,6 +1,6 @@
 # Byte Vocabulary Report (Phase 6.3.2 OBJ7)
 
-**Generated:** 2026-07-17T07:28:34Z  
+**Generated:** 2026-07-25T12:18:11Z  
 **Protocol:** Phase-6.3.2-OBJ7  
 **Architecture:** 0.2.0-byte-vocab  
 
@@ -36,7 +36,7 @@
 ```json
 {
   "protocol_version": "Phase-6.3.2-OBJ7",
-  "timestamp_utc": "2026-07-17T07:28:34Z",
+  "timestamp_utc": "2026-07-25T12:18:11Z",
   "production_verdict": "PASS",
   "architecture_version": "0.2.0-byte-vocab",
   "gates": [

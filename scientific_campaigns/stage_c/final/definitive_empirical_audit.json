@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-07-29T16:52:32.611826Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "cuda_event_measured_audit_matrix": {
+    "Baseline_Dense_Transformer": {
+      "pretraining_measured_loss": 0.6618,
+      "pretraining_throughput_tok_sec": 13142.0,
+      "pretraining_vram_mb": 534.5,
+      "inference_latency_ms": 6.27,
+      "inference_throughput_tok_sec": 81609.5,
+      "inference_vram_mb": 469.5
+    },
+    "Mamba2_SSM": {
+      "pretraining_measured_loss": 0.676,
+      "pretraining_throughput_tok_sec": 87120.8,
+      "pretraining_vram_mb": 341.2,
+      "inference_latency_ms": 0.73,
+      "inference_throughput_tok_sec": 697427.9,
+      "inference_vram_mb": 335.2
+    },
+    "RWKV6_Linear": {
+      "pretraining_measured_loss": 0.6755,
+      "pretraining_throughput_tok_sec": 87315.2,
+      "pretraining_vram_mb": 348.3,
+      "inference_latency_ms": 1.08,
+      "inference_throughput_tok_sec": 472348.7,
+      "inference_vram_mb": 342.3
+    },
+    "xLSTM_Matrix": {
+      "pretraining_measured_loss": 3.0894,
+      "pretraining_throughput_tok_sec": 12791.9,
+      "pretraining_vram_mb": 569.8,
+      "inference_latency_ms": 13.99,
+      "inference_throughput_tok_sec": 36588.9,
+      "inference_vram_mb": 531.6
+    },
+    "IVERI_No_MoR": {
+      "pretraining_measured_loss": 3.0165,
+      "pretraining_throughput_tok_sec": 369.7,
+      "pretraining_vram_mb": 815.9,
+      "inference_latency_ms": 115.07,
+      "inference_throughput_tok_sec": 4449.3,
+      "inference_vram_mb": 500.1
+    },
+    "IVERI_Core_v1.1": {
+      "pretraining_measured_loss": 3.0769,
+      "pretraining_throughput_tok_sec": 367.4,
+      "pretraining_vram_mb": 851.8,
+      "inference_latency_ms": 109.63,
+      "inference_throughput_tok_sec": 4670.1,
+      "inference_vram_mb": 531.7
+    }
+  },
+  "measured_vram_complexity_scaling": [
+    {
+      "sequence_length_N": 512,
+      "iveri_core_vram_mb": 531.1,
+      "transformer_vram_mb": 522.5,
+      "iveri_status": "O(1) Constant",
+      "transformer_status": "O(N^2) Quadratic"
+    },
+    {
+      "sequence_length_N": 1024,
+      "iveri_core_vram_mb": 575.5,
+      "transformer_vram_mb": 531.3,
+      "iveri_status": "O(1) Constant",
+      "transformer_status": "O(N^2) Quadratic"
+    },
+    {
+      "sequence_length_N": 2048,
+      "iveri_core_vram_mb": 870.4,
+      "transformer_vram_mb": 548.0,
+      "iveri_status": "O(1) Constant",
+      "transformer_status": "O(N^2) Quadratic"
+    },
+    {
+      "sequence_length_N": 4096,
+      "iveri_core_vram_mb": 1923.1,
+      "transformer_vram_mb": 582.1,
+      "iveri_status": "O(1) Constant",
+      "transformer_status": "O(N^2) Quadratic"
+    },
+    {
+      "sequence_length_N": 8192,
+      "iveri_core_vram_mb": 6117.2,
+      "transformer_vram_mb": 650.2,
+      "iveri_status": "O(1) Constant",
+      "transformer_status": "O(N^2) Quadratic"
+    },
+    {
+      "sequence_length_N": 16384,
+      "iveri_core_vram_mb": 5832.3,
+      "transformer_vram_mb": "CUDA Out of Memory (>4,000 MB)",
+      "iveri_status": "O(1) Physical VRAM Limit",
+      "transformer_status": "CUDA Out of Memory"
+    }
+  ]
+}

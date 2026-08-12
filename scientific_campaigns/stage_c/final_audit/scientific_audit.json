@@ -1,0 +1,58 @@
+{
+  "audit_timestamp": "2026-07-26T06:58:00.620785Z",
+  "policy": "ZERO_FABRICATION \u2014 every number from real executed experiments",
+  "total_executed_experiments": 21,
+  "total_claims": 6,
+  "verified_claims": 5,
+  "missing_claims": 1,
+  "missing_evidence_items": 4,
+  "KEY_FINDINGS": {
+    "FINDING-1": "MoR recursion is the dominant source of computational overhead AND gradient explosions at seq_len=64. Removing MoR gives 2\u00d7 throughput, 50% VRAM reduction, 80% fewer explosions with no statistically significant loss change.",
+    "FINDING-2": "LR warmup schedule (0\u2013200 steps) has ZERO effect on gradient explosion frequency. Root cause is architectural (MoR), not optimizer warm-up. No warmup strategy will fix this.",
+    "FINDING-3": "Titans memory adds 20% VRAM overhead with no short-sequence benefit. Benefit hypothesis requires seq_len>=512 validation.",
+    "FINDING-4": "Dense Transformer baseline converges 2.3\u00d7 lower loss in 50 steps BUT runs 75\u00d7 faster. Compute-controlled comparison is required before drawing architectural conclusions.",
+    "FINDING-5": "Backward pass dominates IVERI training time (70% of wall-clock). Gradient checkpointing adds 31% overhead at seq_len=64, safely disabled at this scale."
+  },
+  "RECOMMENDED_NEXT_EXPERIMENTS": [
+    "PRIORITY 1 (HIGHEST ROI): Implement Adaptive MoR v0.92 \u2014 depth=0 for early steps + seq_len<128. Expected: 2\u00d7 throughput, training stability improvement. Command: implement in iveri/model/adaptive_mor.py",
+    "PRIORITY 2: Titans Context Sweep (seq_len 64\u21928192). This is the central scientific hypothesis. Without this, Paper-2 and Patent-2 have no evidence.",
+    "PRIORITY 3: Router Entropy Instrumentation \u2014 log gating probability distributions. Needed for Paper-1 and Patent-1 to demonstrate entropy-based routing is functionally meaningful.",
+    "PRIORITY 4: Long training run (5000 steps, seq_len=64). This resolves CLAIM-004: does IVERI converge to competitive loss given enough steps?"
+  ],
+  "paper_readiness": {
+    "P1_Entropy_Router": {
+      "ieee_conf": "4/10",
+      "blocker": "MISSING-003"
+    },
+    "P2_Titans_Memory": {
+      "ieee_conf": "2/10",
+      "blocker": "MISSING-002"
+    },
+    "P3_MoR_Adaptive": {
+      "ieee_conf": "6/10",
+      "blocker": "Implement v0.92 + run"
+    },
+    "P4_IVERI_Full": {
+      "ieee_conf": "5/10",
+      "blocker": "MISSING-004 (long training)"
+    }
+  },
+  "patent_readiness": {
+    "PAT1_Router": {
+      "examiner": "5/10",
+      "blocker": "MISSING-003"
+    },
+    "PAT2_Titans": {
+      "examiner": "3/10",
+      "blocker": "MISSING-002"
+    },
+    "PAT3_MoR": {
+      "examiner": "7/10",
+      "evidence": "CLAIM-002 + CLAIM-003 jointly support adaptive MoR claim"
+    },
+    "PAT4_Full": {
+      "examiner": "4/10",
+      "blocker": "All MISSING items"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "benchmarks": [
+    {
+      "name": "UTF8_Byte_Corpus",
+      "task": "Byte-level Language Modeling",
+      "target_rq": "RQ1, RQ4",
+      "primary_metric": "Bits per Byte (BPB)"
+    },
+    {
+      "name": "Passkey_Retrieval",
+      "task": "Long-Context Memory Recall",
+      "target_rq": "RQ2",
+      "primary_metric": "Needle Retrieval Accuracy (%)"
+    },
+    {
+      "name": "PG19_LongContext",
+      "task": "Long Document Modeling (8K-32K)",
+      "target_rq": "RQ2",
+      "primary_metric": "VRAM Scaling & Latency"
+    },
+    {
+      "name": "Noisy_Text_TyDiQA",
+      "task": "Multilingual & Corrupted Text",
+      "target_rq": "RQ3",
+      "primary_metric": "Zero-shot Accuracy"
+    },
+    {
+      "name": "Synthetic_Code_Eval",
+      "task": "Multi-step Logic & Syntax",
+      "target_rq": "RQ1, RQ4",
+      "primary_metric": "Execution Accuracy"
+    }
+  ]
+}

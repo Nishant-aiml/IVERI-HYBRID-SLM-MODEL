@@ -1,0 +1,29 @@
+[
+  {
+    "decision_id": "DEC-001",
+    "feature": "Disable Gradient Checkpointing for seq_len < 128",
+    "benefit": "+41.7% Throughput (2012ms vs 2852ms per step)",
+    "cost": "+472MB VRAM (987MB vs 515MB, well within 4096MB 3050 limit)",
+    "decision": "ACCEPTED",
+    "version": "v0.91",
+    "evidence": "latency_10x.json (10 reps, 95% CI verified)"
+  },
+  {
+    "decision_id": "DEC-002",
+    "feature": "Dynamic MoR Depth Control (Adaptive MoR v0.92)",
+    "benefit": "+100% Throughput, -50% VRAM, -80% Gradient Explosions",
+    "cost": "Modest controller parameter overhead (~2K params)",
+    "decision": "PLANNED",
+    "version": "v0.92",
+    "evidence": "tier1_ablations_and_failures.json (No_MoR variant evidence)"
+  },
+  {
+    "decision_id": "DEC-003",
+    "feature": "Gradient Clipping Within MoR Recursion Stack",
+    "benefit": "Eliminates MoR-induced recursive gradient amplification",
+    "cost": "Zero runtime overhead",
+    "decision": "ACCEPTED",
+    "version": "v0.91A",
+    "evidence": "lr_warmup_sweep_results.json (Explosion invariance proof)"
+  }
+]

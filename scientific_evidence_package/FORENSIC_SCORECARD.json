@@ -1,0 +1,102 @@
+{
+  "audit_executed_at": "2026-07-26T02:47:19Z",
+  "git_sha": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "scores": {
+    "software_engineering": {
+      "score": "10/10",
+      "evidence": "723 PyTest tests collected; all visible tests pass; modular architecture in model/, training/, data/",
+      "evidence_level": "LEVEL_4"
+    },
+    "architecture_implementation": {
+      "score": "10/10",
+      "evidence": "BLT, Titans, Mamba2, MoR, MoE all implemented in model/ subdirectories with unit tests",
+      "evidence_level": "LEVEL_4"
+    },
+    "experimental_evidence": {
+      "score": "3/10",
+      "evidence": "Only 2-step, 1-seed sweeps executed. table5_statistics.csv and table4_ablation.csv contain incomplete/placeholder data.",
+      "evidence_level": "LEVEL_3",
+      "deductions": [
+        "-3: No multi-seed execution (seeds 123, 3407 not run)",
+        "-2: Statistics not computed from executed data",
+        "-2: Ablation study incomplete (2/12 variants executed)"
+      ]
+    },
+    "statistical_rigor": {
+      "score": "2/10",
+      "evidence": "p-values in table5_statistics.csv are NOT computed from executed experiments. N=1 seed insufficient.",
+      "evidence_level": "LEVEL_1",
+      "deductions": [
+        "-8: table5_statistics.csv values are placeholders, not from executed statistical analysis"
+      ]
+    },
+    "benchmark_quality": {
+      "score": "5/10",
+      "evidence": "Baselines A-E implemented and execute. Compute budget matching verified (9.28%). But 2 steps insufficient.",
+      "evidence_level": "LEVEL_3"
+    },
+    "dataset_governance": {
+      "score": "9/10",
+      "evidence": "Certified datasets with SHA-256 FREEZE_CERTIFICATE.json for 5 datasets. MinHash dedup. PII filter.",
+      "evidence_level": "LEVEL_4"
+    },
+    "reproducibility": {
+      "score": "6/10",
+      "evidence": "review_phase10.py verifies SHA-256 checksums. No Dockerfile. Version conflict in BENCHMARK_CERTIFICATE.md.",
+      "evidence_level": "LEVEL_3",
+      "deductions": [
+        "-2: No Docker container",
+        "-1: PyTorch version conflict between BENCHMARK_CERTIFICATE.md and phase10_summary.json",
+        "-1: metrics.jsonl contains mock data"
+      ]
+    },
+    "hardware_validation": {
+      "score": "4/10",
+      "evidence": "CPU and RTX 3050 quick runs verified. No physical energy measurements. Throughput values conflict.",
+      "evidence_level": "LEVEL_3"
+    },
+    "patent_enablement": {
+      "score": "8/10",
+      "evidence": "model/moe/router.py implements Entropy-Biased Router. model/blt/ implements patcher. Unit tests confirm functionality.",
+      "evidence_level": "LEVEL_4",
+      "deductions": [
+        "-2: No formal prior-art clearance search completed"
+      ]
+    },
+    "ieee_conference_readiness": {
+      "score": "6/10",
+      "evidence": "Architecture + compute matching established. Statistics and ablations need valid experiments.",
+      "blocking_issues": [
+        "Multi-seed extended training",
+        "Valid statistical analysis from data",
+        "Complete ablation study"
+      ]
+    },
+    "ieee_journal_readiness": {
+      "score": "3/10",
+      "evidence": "Framework in place. Actual evidence for key claims is missing or insufficient.",
+      "blocking_issues": [
+        "Extended training (1000+ steps, 3 seeds)",
+        "Valid p-values from executed data",
+        "Complete ablation study",
+        "Physical energy measurements",
+        "Docker reproducibility package"
+      ]
+    },
+    "overall_repository_maturity": {
+      "score": "6.5/10",
+      "engineering_score": "10/10",
+      "scientific_score": "3/10",
+      "verdict": "Mature engineering framework with incomplete experimental evidence. The architecture is implemented and functional. The scientific claims require substantial additional experimentation to be credible for publication."
+    }
+  },
+  "critical_actions_before_submission": [
+    "1. Execute multi-seed training (seeds 42, 123, 3407) for all 5 baselines for 1000+ steps",
+    "2. Compute statistics from actual multi-seed data using research/statistical_analyzer.py",
+    "3. Complete all 12 ablation variants and populate table4_ablation.csv from execution",
+    "4. Fix throughput measurement inconsistency between table2 and table3",
+    "5. Regenerate BENCHMARK_CERTIFICATE.md to resolve version conflict",
+    "6. Replace logs/metrics.jsonl mock data with real training metrics",
+    "7. Create Dockerfile for containerized reproduction"
+  ]
+}

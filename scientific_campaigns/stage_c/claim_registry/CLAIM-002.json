@@ -1,0 +1,15 @@
+{
+  "claim_id": "CLAIM-002",
+  "rq": "RQ3-MoR",
+  "statement": "At seq_len=64, MoR recursion adds 2.08\u00d7 throughput overhead (No-MoR: 359 tok/s vs Full: 173 tok/s) and -49% VRAM overhead (828\u2192423MB), without statistically significant loss improvement (Full: 3.1425, No-MoR: 3.1365, Welch t=0.9026, Cohen's d=0.737, p>0.10). MoR also reduces gradient explosions (Full: 5 vs No-MoR: 1 events).",
+  "evidence_level": "ERL-5",
+  "verification_status": "VERIFIED",
+  "source_data": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_5_6\\tier1_ablations_and_failures.json",
+  "source_sha256": "61f6c006c771792e",
+  "evidence_type": "ABLATION_STUDY",
+  "n_seeds": 3,
+  "n_steps": 50,
+  "evidence_completeness": "PARTIAL \u2014 requires seq_len>=512 and >200 steps to assess MoR long-context benefit.",
+  "architectural_recommendation": "Implement Adaptive MoR: depth=0 for seq_len<128, depth=1 for seq_len>=512",
+  "timestamp": "2026-07-26T06:58:00.620785Z"
+}

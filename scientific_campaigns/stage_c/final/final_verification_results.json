@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-07-29T16:45:15.540703Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "pretrain_loss": 0.1922,
+  "inference_throughput_tok_sec": 3950.6,
+  "inference_latency_ms": 129.6,
+  "peak_vram_mb": 63.5,
+  "status": "Verified High Speed & Low Loss"
+}

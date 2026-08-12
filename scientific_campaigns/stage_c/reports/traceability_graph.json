@@ -1,0 +1,53 @@
+{
+  "CLAIM-001": {
+    "raw_log": "scientific_campaigns/stage_c/profiling/latency_breakdown.json",
+    "computed_metric": "profiling_metrics.throughput_gain_pct",
+    "figure": "FIG-001 (subplot 2)",
+    "table": "tables/tier1_results.md",
+    "paper_section": "Section IV-B: Hardware Optimization",
+    "patent_claim": "Patent-3 Claim 7: gradient checkpointing control"
+  },
+  "CLAIM-002": {
+    "raw_log": "scientific_campaigns/stage_c/phase_5_6/tier1_ablations_and_failures.json",
+    "computed_metric": "computed_metrics.IVERI_No_MoR.throughput + IVERI_Full_v0.91.throughput",
+    "figure": "FIG-001 subplots 1,2,3",
+    "table": "tables/tier1_results.md",
+    "paper_section": "Section IV-C: Mixture-of-Recursions Analysis",
+    "patent_claim": "Patent-3 Claim 1: Adaptive MoR depth scheduling"
+  },
+  "CLAIM-003": {
+    "raw_log": [
+      "scientific_campaigns/stage_c/phase_5_6/tier1_ablations_and_failures.json",
+      "scientific_campaigns/stage_c/phase_7/lr_warmup_sweep_results.json"
+    ],
+    "computed_metric": "warmup_metrics[*].explosion_events",
+    "figure": "FIG-002",
+    "table": null,
+    "paper_section": "Section IV-D: Training Stability Analysis",
+    "patent_claim": "Patent-3 Claim 4: architectural gradient stability"
+  },
+  "CLAIM-004": {
+    "raw_log": "scientific_campaigns/stage_c/phase_5_6/tier1_ablations_and_failures.json",
+    "computed_metric": "computed_metrics.Baseline_Dense_Transformer.final_loss + throughput",
+    "figure": "FIG-001",
+    "table": "tables/tier1_results.md",
+    "paper_section": "Section V: Comparative Analysis",
+    "patent_claim": "BLOCKED \u2014 cannot support superiority claims without compute-controlled comparison",
+    "WARNING": "Compute budget confounding must be resolved before this can appear in any paper"
+  },
+  "CLAIM-005": {
+    "raw_log": "scientific_campaigns/stage_c/phase_5_6/tier1_ablations_and_failures.json",
+    "computed_metric": "computed_metrics.IVERI_No_Titans.vram_mb + throughput",
+    "figure": "FIG-001 subplot 3",
+    "paper_section": "Section IV-E: Titans Memory Analysis",
+    "patent_claim": "Patent-2 Claim 1: persistent memory PARTIALLY_ENABLED (needs long-context data)",
+    "BLOCKER": "Long-context sweep not executed"
+  },
+  "CLAIM-006": {
+    "raw_log": "MISSING_EVIDENCE",
+    "computed_metric": "MISSING_EVIDENCE",
+    "figure": "MISSING_EVIDENCE",
+    "paper_section": "Section VI: Long-Context Evaluation \u2014 NOT YET EXECUTABLE",
+    "patent_claim": "Patent-2 All Claims \u2014 NOT_YET_ENABLED"
+  }
+}

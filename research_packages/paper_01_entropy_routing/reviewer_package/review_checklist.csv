@@ -1,0 +1,6 @@
+Criterion,Satisfied,Evidence Location,Verification Command
+Code Reproducibility,Yes,proof/verify_everything.py,python proof/verify_everything.py
+Hardware Characterization,Yes,claim_registry/CLAIM_001.json,python proof/verify_everything.py
+FP16 Speedup Verification,Yes,claim_registry/CLAIM_002.json,python proof/verify_everything.py
+10M Pretraining Loss Curve,In Progress,claim_registry/CLAIM_004.json,python proof/verify_everything.py
+Ablation Suite,Awaiting Stage C,missing_evidence/missing_evidence.json,python proof/verify_everything.py

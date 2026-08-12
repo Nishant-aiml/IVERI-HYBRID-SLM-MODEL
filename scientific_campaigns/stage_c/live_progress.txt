@@ -1,0 +1,2 @@
+PROGRESS: 15/15 runs complete.
+[15/15] Model: Baseline_Dense_Transformer | Seed: 3407 | Loss: 2.6960 | Throughput: 17029.6 tok/s

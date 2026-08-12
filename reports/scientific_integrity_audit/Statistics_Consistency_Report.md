@@ -1,6 +1,6 @@
 # Statistics Consistency Report (Phase 6.3.1G)
 
-**Generated:** 2026-07-17T07:36:44Z  
+**Generated:** 2026-07-24T18:04:53Z  
 **Protocol:** Phase-6.3.1G  
 
 ## Executive Verdict
@@ -39,7 +39,7 @@ No duplicated inline statistics calculations detected in consumer modules.
 ```json
 {
   "protocol_version": "Phase-6.3.1G",
-  "timestamp_utc": "2026-07-17T07:36:44Z",
+  "timestamp_utc": "2026-07-24T18:04:53Z",
   "production_verdict": "PASS",
   "canonical_methods": [
     "shapiro_wilk",

@@ -1,0 +1,80 @@
+{
+  "source": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_7\\lr_warmup_sweep_results.json",
+  "sha256": "0329955c94e95ef5",
+  "timestamp": "2026-07-26T06:58:00.620785Z",
+  "key_finding": "LR warmup schedule (0-200 steps) does NOT reduce gradient explosions \u2014 all candidates produce exactly 2 explosions. Explosions are architectural (MoR recursion), not LR-schedule-related.",
+  "candidates": [
+    {
+      "warmup_steps": 0,
+      "explosions": 2,
+      "final_loss": 3.140556,
+      "loss_variance": 0.348511,
+      "mean_grad_norm": 1.3248,
+      "throughput_tok_s": 177.3
+    },
+    {
+      "warmup_steps": 25,
+      "explosions": 2,
+      "final_loss": 3.142124,
+      "loss_variance": 0.581905,
+      "mean_grad_norm": 1.9581,
+      "throughput_tok_s": 188.7
+    },
+    {
+      "warmup_steps": 50,
+      "explosions": 2,
+      "final_loss": 3.143753,
+      "loss_variance": 0.714859,
+      "mean_grad_norm": 2.517,
+      "throughput_tok_s": 185.8
+    },
+    {
+      "warmup_steps": 75,
+      "explosions": 2,
+      "final_loss": 3.142014,
+      "loss_variance": 0.790475,
+      "mean_grad_norm": 2.8324,
+      "throughput_tok_s": 181.0
+    },
+    {
+      "warmup_steps": 100,
+      "explosions": 2,
+      "final_loss": 3.14299,
+      "loss_variance": 0.838236,
+      "mean_grad_norm": 3.1184,
+      "throughput_tok_s": 198.3
+    },
+    {
+      "warmup_steps": 200,
+      "explosions": 2,
+      "final_loss": 3.142467,
+      "loss_variance": 0.894533,
+      "mean_grad_norm": 4.0586,
+      "throughput_tok_s": 192.6
+    }
+  ],
+  "analysis": {
+    "all_explosions_identical": true,
+    "explosion_count_per_candidate": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "conclusion": "Gradient explosions INVARIANT to LR warmup (0-200 steps). Root cause is MoR recursive gradient amplification (Phase 5/6: No-MoR has 1 explosion vs Full 5 explosions). Fix is architectural: gradient clipping within MoR recursion, or Adaptive MoR depth=0 for early training steps.",
+    "optimal_warmup_by_loss": 0,
+    "optimal_warmup_by_tp": 100,
+    "loss_range": [
+      3.140556,
+      3.143753
+    ],
+    "loss_spread_pct": 0.1018,
+    "throughput_range": [
+      177.3,
+      198.3
+    ],
+    "grad_norm_increases_with_warmup": "CONFIRMED \u2014 longer warmup means LR still rising, so larger gradient norms at steps 1-3 when explosions occur"
+  }
+}

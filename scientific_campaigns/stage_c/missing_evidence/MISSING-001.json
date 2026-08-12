@@ -1,0 +1,8 @@
+{
+  "missing_id": "MISSING-001",
+  "status": "COMPLETED",
+  "description": "LR Warmup Sensitivity Sweep",
+  "completed_by": "task-3292",
+  "output": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_7\\lr_warmup_sweep_results.json",
+  "resolved_claim": "CLAIM-003"
+}

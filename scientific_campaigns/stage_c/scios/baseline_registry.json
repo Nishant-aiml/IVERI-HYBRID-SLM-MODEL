@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "baselines": [
+    {
+      "name": "Baseline_Dense_Transformer",
+      "params": 9347282,
+      "hidden_dim": 512,
+      "layers": 6,
+      "heads": 8,
+      "tokenizer": "Subword Vocabulary (259)",
+      "optimizer": "AdamW (lr=3e-4)",
+      "reference_paper": "Vaswani et al. (2017) Attention Is All You Need"
+    },
+    {
+      "name": "Standard_Mamba_SSM",
+      "params": 9500000,
+      "hidden_dim": 512,
+      "layers": 6,
+      "heads": 1,
+      "tokenizer": "Subword",
+      "optimizer": "AdamW (lr=3e-4)",
+      "reference_paper": "Gu & Dao (2023) Mamba: Linear-Time Sequence Modeling"
+    }
+  ]
+}

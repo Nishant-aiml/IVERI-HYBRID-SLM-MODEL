@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-07-30T10:32:33.841141Z",
+  "results": {
+    "IVERI-Nano (~9M)": {
+      "parameters": 9351394,
+      "final_loss": 5.046,
+      "step_latency_ms": 4164.32,
+      "throughput_tok_sec": 61.5,
+      "vram_mb": 242.8
+    },
+    "IVERI-Small (~35M)": {
+      "parameters": 34948692,
+      "final_loss": 4.4364,
+      "step_latency_ms": 7101.75,
+      "throughput_tok_sec": 36.0,
+      "vram_mb": 743.8
+    },
+    "IVERI-Medium (~45M)": {
+      "parameters": 69153298,
+      "final_loss": 4.2565,
+      "step_latency_ms": 5397.96,
+      "throughput_tok_sec": 47.4,
+      "vram_mb": 1366.8
+    }
+  }
+}

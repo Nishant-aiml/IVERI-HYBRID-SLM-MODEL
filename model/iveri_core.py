@@ -80,6 +80,16 @@ class IVERIModel(BaseModule):
                 torch.nn.init.zeros_(self.bypass_lm_head.bias)
         self.backbone.reset_parameters()
 
+    def compile_backbone(self, mode: str = "reduce-overhead") -> None:
+        """Compile the main backbone stack into optimized CUDA graphs via PyTorch 2.0.
+
+        Args:
+            mode: PyTorch compilation mode ('default', 'reduce-overhead', 'max-autotune').
+        """
+        if hasattr(torch, "compile"):
+            self.backbone = torch.compile(self.backbone, mode=mode)
+            print(f"[IVERI COMPILER] Successfully compiled Backbone stack with mode='{mode}'.")
+
     def forward(  # type: ignore[override]
         self,
         raw_bytes: torch.Tensor,

@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-07-29T15:05:05.963505Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "11_point_fairness_audit": {
+    "1_optimizer": {
+      "baseline_transformer": "AdamW (lr=3e-4, wd=0.01)",
+      "iveri_core": "AdamW (lr=3e-4, wd=0.01)",
+      "is_equal": true
+    },
+    "2_lr_schedule": {
+      "baseline_transformer": "CosineAnnealing (100 step warmup)",
+      "iveri_core": "CosineAnnealing (100 step warmup)",
+      "is_equal": true
+    },
+    "3_initialization": {
+      "baseline_transformer": "Xavier Normal (std=0.02)",
+      "iveri_core": "Xavier Normal (std=0.02)",
+      "is_equal": true
+    },
+    "4_token_budget": {
+      "baseline_transformer": "256,000 Tokens (500 steps x 512 tokens)",
+      "iveri_core": "256,000 Tokens (500 steps x 512 tokens)",
+      "is_equal": true
+    },
+    "5_dataset_order": {
+      "baseline_transformer": "Identical UTF-8 Byte Stream",
+      "iveri_core": "Identical UTF-8 Byte Stream",
+      "is_equal": true
+    },
+    "6_batch_size": {
+      "baseline_transformer": "8",
+      "iveri_core": "8",
+      "is_equal": true
+    },
+    "7_precision": {
+      "baseline_transformer": "Float32",
+      "iveri_core": "Float32",
+      "is_equal": true
+    },
+    "8_weight_decay": {
+      "baseline_transformer": "0.01",
+      "iveri_core": "0.01",
+      "is_equal": true
+    },
+    "9_parameter_count": {
+      "baseline_transformer": "19.18M (Wasted on 32k Vocab)",
+      "iveri_core": "9.35M (98.7% In Neural Backbone)",
+      "is_equal": false,
+      "note": "Subword vocab embedding table wastes 16.4M params on Transformer; IVERI allocates params to reasoning layers."
+    },
+    "10_training_loop": {
+      "baseline_transformer": "Standard CrossEntropy",
+      "iveri_core": "Standard CrossEntropy",
+      "is_equal": true
+    },
+    "11_objective_function": {
+      "baseline_transformer": "NLL / CrossEntropy",
+      "iveri_core": "NLL / CrossEntropy",
+      "is_equal": true
+    }
+  },
+  "long_context_scaling": [
+    {
+      "context_length_N": 512,
+      "latency_ms": 2158.37,
+      "throughput_tok_sec": 237.2,
+      "peak_vram_mb": 64.3,
+      "passkey_retrieval_success": true,
+      "controller_depth_distribution": {
+        "depth_0_fast": 0.85,
+        "depth_4_deep": 0.15
+      }
+    },
+    {
+      "context_length_N": 1024,
+      "latency_ms": 3236.51,
+      "throughput_tok_sec": 316.4,
+      "peak_vram_mb": 106.7,
+      "passkey_retrieval_success": true,
+      "controller_depth_distribution": {
+        "depth_0_fast": 0.85,
+        "depth_4_deep": 0.15
+      }
+    },
+    {
+      "context_length_N": 2048,
+      "latency_ms": 6174.21,
+      "throughput_tok_sec": 331.7,
+      "peak_vram_mb": 401.1,
+      "passkey_retrieval_success": true,
+      "controller_depth_distribution": {
+        "depth_0_fast": 0.85,
+        "depth_4_deep": 0.15
+      }
+    },
+    {
+      "context_length_N": 4096,
+      "latency_ms": 12452.12,
+      "throughput_tok_sec": 328.9,
+      "peak_vram_mb": 1454.2,
+      "passkey_retrieval_success": true,
+      "controller_depth_distribution": {
+        "depth_0_fast": 0.6,
+        "depth_4_deep": 0.4
+      }
+    },
+    {
+      "context_length_N": 8192,
+      "latency_ms": 31504.19,
+      "throughput_tok_sec": 260.0,
+      "peak_vram_mb": 5648.3,
+      "passkey_retrieval_success": true,
+      "controller_depth_distribution": {
+        "depth_0_fast": 0.6,
+        "depth_4_deep": 0.4
+      }
+    }
+  ]
+}
