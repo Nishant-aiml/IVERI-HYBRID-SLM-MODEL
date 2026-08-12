@@ -1,0 +1,12 @@
+{
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "batch_size": 64,
+  "seq_len": 64,
+  "n_steps": 100,
+  "tok_per_sec": 12562.7,
+  "ms_per_step": 326.0,
+  "peak_vram_mb": 1626.2,
+  "initial_loss": 5.5667,
+  "final_loss": NaN,
+  "projected_hours_10m": 0.22
+}

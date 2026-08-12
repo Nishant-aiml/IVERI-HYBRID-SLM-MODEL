@@ -1,0 +1,23 @@
+{
+  "missing_claims": [
+    {
+      "id": "CLAIM_005",
+      "description": "Titans neural memory long-context retrieval > 128k bytes",
+      "status": "AWAITING_STAGE_C"
+    },
+    {
+      "id": "CLAIM_006",
+      "description": "Mixture of Recursions 18-25% latency reduction",
+      "status": "AWAITING_STAGE_C"
+    }
+  ],
+  "missing_baselines": [
+    "Mamba2_10M_Matched",
+    "Transformer_Dense_10M_Matched"
+  ],
+  "missing_ablations": [
+    "No_Entropy_Routing",
+    "No_Titans_Memory",
+    "No_MoR_Recursion"
+  ]
+}

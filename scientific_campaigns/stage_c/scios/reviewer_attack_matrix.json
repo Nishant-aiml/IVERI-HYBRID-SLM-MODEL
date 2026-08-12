@@ -1,0 +1,47 @@
+[
+  {
+    "reviewer_id": "REV-001",
+    "question": "Step-controlled comparison vs Dense baseline is confounded because Dense runs 75x faster per step.",
+    "experiment": "EXP-004 (Stage C Compute Accounting)",
+    "status": "OPEN",
+    "confidence": "HIGH (Problem identified, compute-matched run scheduled)",
+    "source_file": "scientific_campaigns/stage_c/reports/statistical_validation_report.md",
+    "paper_section": "Paper 1 Section V: Baselines & Compute Accounting"
+  },
+  {
+    "reviewer_id": "REV-002",
+    "question": "n=3 seeds is statistically underpowered for Welch t-tests and Cohen's d.",
+    "experiment": "EXP-005 (n=8 Extended Seeds Run)",
+    "status": "IN_PROGRESS",
+    "confidence": "HIGH (stage_c_extended_runs.py actively executing 8 seeds)",
+    "source_file": "scratch/stage_c_extended_runs.py",
+    "paper_section": "Paper 1 Section IV: Statistical Methodology"
+  },
+  {
+    "reviewer_id": "REV-003",
+    "question": "50 training steps is in transient phase, not reflecting long-run convergence.",
+    "experiment": "EXP-006 (500-Step Extended Training)",
+    "status": "IN_PROGRESS",
+    "confidence": "HIGH (stage_c_extended_runs.py actively executing 500 steps)",
+    "source_file": "scientific_campaigns/stage_c/extended/extended_results.json",
+    "paper_section": "Paper 1 Section IV-C: Convergence Analysis"
+  },
+  {
+    "reviewer_id": "REV-004",
+    "question": "Single profiling measurement is non-reproducible due to GPU thermal/kernel startup variance.",
+    "experiment": "EXP-007 (10x Profiling Repetitions)",
+    "status": "CLOSED",
+    "confidence": "VERIFIED (10 reps completed: with_ckpt=2852ms+-480ms, wo_ckpt=2012ms+-61ms, overhead=1.417x)",
+    "source_file": "scientific_campaigns/stage_c/profiling/latency_10x.json",
+    "paper_section": "Paper 1 Section IV-B: Profiling & Hardware Latency"
+  },
+  {
+    "reviewer_id": "REV-005",
+    "question": "Titans memory long-context advantage is completely untested (seq_len=64 only).",
+    "experiment": "EXP-008 (Titans Context Length Sweep 64->8192)",
+    "status": "OPEN",
+    "confidence": "CRITICAL_MISSING (Required for Paper 2 & Patent 2)",
+    "source_file": "scientific_campaigns/stage_c/reports/missing_evidence_registry.md",
+    "paper_section": "Paper 2 Section III: Context Scaling"
+  }
+]

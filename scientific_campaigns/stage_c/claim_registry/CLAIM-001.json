@@ -1,0 +1,13 @@
+{
+  "claim_id": "CLAIM-001",
+  "rq": "RQ7-PROFILING",
+  "statement": "For IVERI v0.91 at seq_len=64 (batch=8), disabling gradient checkpointing increases training throughput by 31.6% (154\u2192203 tok/s). Backward pass dominates at 1762ms vs forward 759ms. VRAM remains within 4GB budget (peak 825MB).",
+  "evidence_level": "ERL-6",
+  "verification_status": "VERIFIED",
+  "source_data": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\profiling\\latency_breakdown.json",
+  "source_sha256": "a98274acc7ade0f8",
+  "evidence_type": "HARDWARE_PROFILING",
+  "n_measurements": 1,
+  "evidence_completeness": "COMPLETE for seq_len=64. Requires replication at seq_len=512+ to generalize.",
+  "timestamp": "2026-07-26T06:58:00.620785Z"
+}

@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "project": "IVERI CORE",
+    "version": "v1.0-scientific-freeze",
+    "date": "2026-07-24"
+  },
+  "claims": [
+    {
+      "id": "C-001",
+      "claim": "Baseline Transformer Multi-Seed Loss Convergence",
+      "evidence": "EXP-0001, EXP-0002, EXP-0003",
+      "confidence": "HIGH CONFIDENCE",
+      "status": "VERIFIED",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-002",
+      "claim": "Mamba2 Multi-Seed Loss & Perplexity Trajectory",
+      "evidence": "EXP-0004, EXP-0005, EXP-0006",
+      "confidence": "HIGH CONFIDENCE",
+      "status": "VERIFIED",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-003",
+      "claim": "Transformer+MoE Multi-Seed Evaluation",
+      "evidence": "EXP-0007, EXP-0008, EXP-0009",
+      "confidence": "HIGH CONFIDENCE",
+      "status": "VERIFIED",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-004",
+      "claim": "Transformer+Mamba Multi-Seed Perplexity Comparison",
+      "evidence": "EXP-0010, EXP-0011, EXP-0012",
+      "confidence": "HIGH CONFIDENCE",
+      "status": "VERIFIED",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-005",
+      "claim": "IVERI Hybrid Baseline Execution",
+      "evidence": "EXP-0013, EXP-0014, EXP-0015",
+      "confidence": "HIGH CONFIDENCE",
+      "status": "VERIFIED",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-006",
+      "claim": "Component Ablation Matrix (7 Variants)",
+      "evidence": "EXP-0016 .. EXP-0022",
+      "confidence": "HIGH CONFIDENCE",
+      "status": "VERIFIED",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-007",
+      "claim": "IEEE Conference Package Readiness",
+      "evidence": "Gates 1\u201317 & Stage 1 Baseline",
+      "confidence": "MEDIUM CONFIDENCE",
+      "status": "CONDITIONALLY READY (Stage 1 Nano)",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    },
+    {
+      "id": "C-008",
+      "claim": "IEEE Journal Package Readiness",
+      "evidence": "Requires Tier 3 (256M+ tokens)",
+      "confidence": "LOW CONFIDENCE",
+      "status": "NOT READY (Pending Tier 3 Pretraining)",
+      "dataset_tier": "Tier 3 Required"
+    },
+    {
+      "id": "C-009",
+      "claim": "Patent Novelty & Technical Effect Claims",
+      "evidence": "NOVELTY_VALIDATION.md & EXP-0016",
+      "confidence": "MEDIUM CONFIDENCE",
+      "status": "CONDITIONALLY READY",
+      "dataset_tier": "Tier 0 (Engineering Validation)"
+    }
+  ]
+}

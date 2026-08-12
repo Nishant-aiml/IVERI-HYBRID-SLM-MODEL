@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-07-29T09:55:48.603716Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "n_reps": 15,
+  "experiments": [
+    {
+      "experiment": "1. Controller ON (Adaptive)",
+      "avg_latency_ms": 666.38,
+      "throughput_tok_sec": 768.3,
+      "peak_vram_mb": 1524.7
+    },
+    {
+      "experiment": "2. Controller OFF (Static Full)",
+      "avg_latency_ms": 605.24,
+      "throughput_tok_sec": 845.9,
+      "peak_vram_mb": 1524.7
+    },
+    {
+      "experiment": "3. Random Controller Baseline",
+      "avg_latency_ms": 571.54,
+      "throughput_tok_sec": 895.8,
+      "peak_vram_mb": 1524.7
+    },
+    {
+      "experiment": "4. Static Rule Heuristic (seq_len<128)",
+      "avg_latency_ms": 51.88,
+      "throughput_tok_sec": 9868.7,
+      "peak_vram_mb": 1524.7
+    }
+  ],
+  "decision_quality_match_vs_oracle": 0.8667,
+  "multi_dimensional_ace": {
+    "ace_latency": 0.312,
+    "ace_memory": 0.0023,
+    "ace_compute": 0.415
+  }
+}

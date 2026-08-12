@@ -1,0 +1,23 @@
+{
+  "kaplan_power_law_fits": {
+    "IVERI_Core": {
+      "alpha": 0.142,
+      "beta": 0.088,
+      "adjusted_r2": 0.9842,
+      "aic": 23.63,
+      "fit_model": "Power-Law"
+    },
+    "Dense_Transformer": {
+      "alpha": 0.088,
+      "beta": 0.112,
+      "adjusted_r2": 0.9368,
+      "aic": 34.01,
+      "fit_model": "Quadratic"
+    }
+  },
+  "emergent_breakpoints": {
+    "BLT_representation_breakpoint": "10M Tokens",
+    "Titans_memory_breakpoint": "30M Tokens",
+    "MoR_recursion_breakpoint": "50M Tokens"
+  }
+}

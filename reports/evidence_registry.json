@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "title": "IVERI CORE \u2014 Scientific Evidence Registry",
+    "last_updated": "2026-07-25T13:18:13Z",
+    "total_evidence_items": 4
+  },
+  "evidence_items": [
+    {
+      "evidence_id": "EVID-0001",
+      "generated_by_experiment": "EXP-0002",
+      "supports_claims": [
+        "CLAIM_001"
+      ],
+      "used_in_paper": "paper_01_entropy_routing",
+      "used_in_patent": "patent_01_entropy_routing",
+      "artifact_path": "reports/HARDWARE_CHARACTERIZATION_SWEEP.json",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "evidence_id": "EVID-0002",
+      "generated_by_experiment": "EXP-0003",
+      "supports_claims": [
+        "CLAIM_002"
+      ],
+      "used_in_paper": "paper_01_entropy_routing",
+      "used_in_patent": "patent_01_entropy_routing",
+      "artifact_path": "reports/OPTIMIZATION_BENCHMARKS.json",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "evidence_id": "EVID-0003",
+      "generated_by_experiment": "EXP-0004",
+      "supports_claims": [
+        "CLAIM_003"
+      ],
+      "used_in_paper": "paper_01_entropy_routing",
+      "used_in_patent": "patent_01_entropy_routing",
+      "artifact_path": "reports/PILOT_FP16_BENCHMARK.json",
+      "status": "VERIFIED_PASS"
+    },
+    {
+      "evidence_id": "EVID-0004",
+      "generated_by_experiment": "EXP-0005",
+      "supports_claims": [
+        "CLAIM_004"
+      ],
+      "used_in_paper": "paper_01_entropy_routing",
+      "used_in_patent": "patent_01_entropy_routing",
+      "artifact_path": "reports/live_training/stage_b_10m_loss.csv",
+      "status": "IN_PROGRESS"
+    }
+  ]
+}

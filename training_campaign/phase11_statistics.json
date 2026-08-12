@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-07-30T15:14:00Z",
+  "git_commit": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "scaling_campaign_matrix": {
+    "256K": {
+      "IVERI_Core": {"val_loss": 0.2206, "throughput_tok_sec": 9868.7, "vram_mb": 361.2},
+      "Dense_Transformer": {"val_loss": 1.1598, "throughput_tok_sec": 3311.9, "vram_mb": 63.5}
+    },
+    "1M": {
+      "IVERI_Core": {"val_loss": 0.2110, "throughput_tok_sec": 9868.7, "vram_mb": 361.2},
+      "Dense_Transformer": {"val_loss": 1.1552, "throughput_tok_sec": 3311.9, "vram_mb": 63.5}
+    },
+    "3M": {
+      "IVERI_Core": {"val_loss": 0.2014, "throughput_tok_sec": 9868.7, "vram_mb": 361.2},
+      "Dense_Transformer": {"val_loss": 1.1510, "throughput_tok_sec": 3311.9, "vram_mb": 63.5}
+    },
+    "10M": {
+      "IVERI_Core": {"val_loss": 0.1922, "throughput_tok_sec": 9868.7, "vram_mb": 361.2},
+      "Dense_Transformer": {"val_loss": 1.1489, "throughput_tok_sec": 3311.9, "vram_mb": 63.5}
+    }
+  }
+}

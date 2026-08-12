@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "timestamp": "2026-07-25T17:43:43.022935",
+    "script": "scratch/verify_everything.py",
+    "git_sha": "2f31069",
+    "policy": "No Human Override Rule Enforced \u2014 Single Source of Truth"
+  },
+  "verdicts": {
+    "engineering": "PASS",
+    "research_infrastructure": "PASS",
+    "research_pipeline_execution": "PASS",
+    "research_scale": "TIER_0_VALIDATION_ONLY",
+    "research_evidence": "CONDITIONAL (Stage 1 Nano Baseline Active)",
+    "publication_conference": "CONDITIONAL (Pending Stage D/E Scaled Runs)",
+    "publication_journal": "NOT READY (Requires Tier 3 256M+ Scaled Campaign)",
+    "patent": "CONDITIONAL (Novelty Validated, Scaled Evidence Pending)",
+    "ready_for_production_deployment": false
+  },
+  "metrics": {
+    "dataset_tier": 0,
+    "dataset_tier_code": "TIER_0_VALIDATION_ONLY",
+    "dataset_tier_description": "Tier 0 (Engineering Validation Scale < 1MB)",
+    "certified_dataset_size_bytes": 25800,
+    "experiments_verified": 4,
+    "total_registered_experiments": 4,
+    "pytest_passed": 640
+  },
+  "evidence_coverage": {
+    "claims_with_direct_evidence": 7,
+    "claims_with_indirect_evidence": 2,
+    "claims_without_evidence": 0,
+    "coverage_percent": 100.0
+  },
+  "claims_audit": {
+    "files_scanned": 1252,
+    "claims_detected": 9,
+    "claims_verified": 7,
+    "claims_downgraded": 2,
+    "claims_removed": 0,
+    "unsupported_claims": 0
+  },
+  "figure_table_audit": {
+    "figures": {
+      "figures_existing": 14,
+      "verified_from_raw_logs": 14,
+      "verified_from_raw_metrics": 14,
+      "verified_from_existing_png": 14
+    },
+    "tables": {
+      "tables_existing": 6,
+      "verified_from_raw_logs": 6,
+      "verified_from_raw_metrics": 6
+    }
+  },
+  "domain_certificates": {
+    "engineering_certificate": "reports/ENGINEERING_CERTIFICATE.md",
+    "research_certificate": "reports/RESEARCH_CERTIFICATE.md",
+    "publication_certificate": "reports/PUBLICATION_CERTIFICATE.md",
+    "patent_certificate": "reports/PATENT_CERTIFICATE.md"
+  }
+}

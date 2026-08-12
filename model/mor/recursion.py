@@ -20,6 +20,8 @@ from core.interfaces import BaseModule
 from core.registry import register
 from utils.validation import validate_shape
 
+from model.norms import RMSNorm
+
 
 @register("recursion_engine")
 class RecursionEngine(BaseModule):
@@ -33,10 +35,10 @@ class RecursionEngine(BaseModule):
     stats: dict[str, typing.Any]
 
     def __init__(self, block: nn.Module, config: IVERIConfig) -> None:
-        """Initialize the recursion engine.
+        """Initialize the RecursionEngine.
 
         Args:
-            block: The module layer to run recursively.
+            block: Target PyTorch module/sub-block to execute recursively.
             config: Configuration object containing model parameters.
         """
         super().__init__()
@@ -44,6 +46,11 @@ class RecursionEngine(BaseModule):
         self.config = config
         self.max_depth = config.model.max_recursion_depth
         self.hidden_dim = config.model.hidden_dim
+
+        # Learnable & Depth-Decaying Residual Scaling Parameters (alpha_1=0.05, alpha_2=0.025, alpha_3=0.0125, alpha_4=0.00625)
+        init_alphas = [0.05 / (2.0 ** d) for d in range(self.max_depth)]
+        self.alpha_scales = nn.Parameter(torch.tensor(init_alphas, dtype=torch.float32))
+        self.step_norms = nn.ModuleList([RMSNorm(self.hidden_dim) for _ in range(self.max_depth)])
 
         # Telemetry statistics counters
         self.reset_statistics()
@@ -164,16 +171,16 @@ class RecursionEngine(BaseModule):
             if not active_mask.any():
                 break
 
+            alpha_t = self.alpha_scales[step]
+            norm_x = self.step_norms[step](x)
             if block_accepts_mask:
-                # Target block handles masking internally (e.g. Mamba2/Attention cache filtration)
-                x_next = self.block(x, active_mask=active_mask, **block_kwargs)
+                x_next = self.block(norm_x, active_mask=active_mask, **block_kwargs)
             else:
-                # External Masking: execute block and conditionally update active indices
-                x_next = self.block(x, **block_kwargs)
-                x_next = torch.where(active_mask.unsqueeze(-1), x_next, x)
-
-            # Preserve gradients but apply bypassing
-            x = x_next
+                x_next = self.block(norm_x, **block_kwargs)
+            
+            # Apply residual scaling (x + alpha_t * f(norm_x))
+            x_step = x + alpha_t * (x_next - norm_x)
+            x = torch.where(active_mask.unsqueeze(-1), x_step, x)
 
         validate_shape(x, (depths.shape[0], depths.shape[1], self.hidden_dim), name="output x")
         return x

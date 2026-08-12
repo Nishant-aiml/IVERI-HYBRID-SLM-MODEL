@@ -1,0 +1,125 @@
+{
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "total_vram_mb": 4095,
+  "n_steps": 10,
+  "seq_len": 64,
+  "benchmarks": {
+    "batch_ceiling": {
+      "40": {
+        "ms_per_step": 4162.5,
+        "tok_per_sec": 615.0,
+        "speedup_vs_cpu": 3.65,
+        "peak_vram_mb": 1843.0,
+        "peak_vram_pct": 45.0,
+        "gpu_util_pct": 22.0,
+        "gpu_power_w": 28.51,
+        "final_loss": 5.0401
+      },
+      "48": {
+        "ms_per_step": 3304.7,
+        "tok_per_sec": 929.6,
+        "speedup_vs_cpu": 4.6,
+        "peak_vram_mb": 2205.6,
+        "peak_vram_pct": 53.9,
+        "gpu_util_pct": 47.0,
+        "gpu_power_w": 50.79,
+        "final_loss": 5.4084
+      },
+      "56": {
+        "ms_per_step": 3718.4,
+        "tok_per_sec": 963.8,
+        "speedup_vs_cpu": 4.09,
+        "peak_vram_mb": 2558.8,
+        "peak_vram_pct": 62.5,
+        "gpu_util_pct": 29.0,
+        "gpu_power_w": 47.79,
+        "final_loss": 5.4927
+      },
+      "64": {
+        "ms_per_step": 4159.1,
+        "tok_per_sec": 984.8,
+        "speedup_vs_cpu": 3.65,
+        "peak_vram_mb": 2853.5,
+        "peak_vram_pct": 69.7,
+        "gpu_util_pct": 41.0,
+        "gpu_power_w": 47.01,
+        "final_loss": 5.493
+      }
+    },
+    "torch_compile": {
+      "eager": {
+        "ms_per_step": 4631.5,
+        "tok_per_sec": 442.2,
+        "speedup_vs_cpu": 3.28,
+        "peak_vram_mb": 1506.3,
+        "peak_vram_pct": 36.8,
+        "gpu_util_pct": 21.0,
+        "gpu_power_w": 16.4,
+        "final_loss": 5.0101
+      },
+      "compile(default)": {
+        "status": "ERROR",
+        "error": "backend='inductor' raised:\nRuntimeError: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at https://github.com/openai/triton\n\nSet TORCH_LOGS=\"+dynamo\" and TORCHDYNAMO_VERBOSE=1 for more information\n\n\nYou can suppress this exception and fall back to eager by setting:\n    import torch._dynamo\n    torch._dynamo.config.suppress_errors = True\n"
+      },
+      "compile(reduce-overhead)": {
+        "status": "ERROR",
+        "error": "backend='inductor' raised:\nRuntimeError: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at https://github.com/openai/triton\n\nSet TORCH_LOGS=\"+dynamo\" and TORCHDYNAMO_VERBOSE=1 for more information\n\n\nYou can suppress this exception and fall back to eager by setting:\n    import torch._dynamo\n    torch._dynamo.config.suppress_errors = True\n"
+      }
+    },
+    "precision": {
+      "fp32": {
+        "ms_per_step": 4006.8,
+        "tok_per_sec": 511.1,
+        "speedup_vs_cpu": 3.79,
+        "peak_vram_mb": 1506.3,
+        "peak_vram_pct": 36.8,
+        "gpu_util_pct": 28.0,
+        "gpu_power_w": 27.7,
+        "final_loss": 5.0344
+      },
+      "fp16": {
+        "ms_per_step": 491.4,
+        "tok_per_sec": 4167.3,
+        "speedup_vs_cpu": 30.93,
+        "peak_vram_mb": 189.1,
+        "peak_vram_pct": 4.6,
+        "gpu_util_pct": 30.0,
+        "gpu_power_w": 13.43,
+        "final_loss": NaN
+      },
+      "fp16_vs_fp32_speedup": 8.154
+    },
+    "matmul_precision": {
+      "highest": {
+        "ms_per_step": 4281.8,
+        "tok_per_sec": 478.3,
+        "speedup_vs_cpu": 3.55,
+        "peak_vram_mb": 1506.3,
+        "peak_vram_pct": 36.8,
+        "gpu_util_pct": 33.0,
+        "gpu_power_w": 39.63,
+        "final_loss": 4.9783
+      },
+      "high": {
+        "ms_per_step": 4223.4,
+        "tok_per_sec": 484.9,
+        "speedup_vs_cpu": 3.6,
+        "peak_vram_mb": 1506.3,
+        "peak_vram_pct": 36.8,
+        "gpu_util_pct": 39.0,
+        "gpu_power_w": 38.2,
+        "final_loss": 4.9981
+      },
+      "medium": {
+        "ms_per_step": 4065.9,
+        "tok_per_sec": 503.7,
+        "speedup_vs_cpu": 3.74,
+        "peak_vram_mb": 1506.3,
+        "peak_vram_pct": 36.8,
+        "gpu_util_pct": 26.0,
+        "gpu_power_w": 35.83,
+        "final_loss": 5.0931
+      }
+    }
+  }
+}

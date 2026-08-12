@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "prioritized_queue": [
+    {
+      "rank": 1,
+      "exp_id": "EXP-001",
+      "name": "Resumable n=8 Extended Runs",
+      "scientific_impact": "Critical",
+      "roi_score": 9.8
+    },
+    {
+      "rank": 2,
+      "exp_id": "EXP-002",
+      "name": "Titans Long-Context VRAM Sweep",
+      "scientific_impact": "High",
+      "roi_score": 9.5
+    },
+    {
+      "rank": 3,
+      "exp_id": "EXP-003",
+      "name": "Multi-Signal Controller ACE Benchmark",
+      "scientific_impact": "High",
+      "roi_score": 9.2
+    },
+    {
+      "rank": 4,
+      "exp_id": "EXP-004",
+      "name": "BLT GPU Tensor Patch Refactor",
+      "scientific_impact": "Medium",
+      "roi_score": 8.5
+    }
+  ]
+}

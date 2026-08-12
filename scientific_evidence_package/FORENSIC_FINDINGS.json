@@ -1,0 +1,100 @@
+[
+  {
+    "finding_id": "FF-001",
+    "severity": "CRITICAL",
+    "category": "FABRICATED_DATA",
+    "title": "table5_statistics.csv contains p-value and Cohen's d NOT computed from executed experiments",
+    "raw_file": "reports/phase_10/tables/table5_statistics.csv",
+    "raw_content": "Comparison,p_value,cohen_d,verdict\nIVERI vs Transformer,0.012,0.65,WIN",
+    "evidence_basis": "No bootstrap.py execution log exists. Only seed=42 ran. N=1 cannot produce p=0.012.",
+    "affected_claims": [
+      "Multi-seed statistical validation",
+      "p<0.05 significance claim"
+    ],
+    "verdict": "NOT_PROVEN",
+    "action_required": "Execute seeds 42, 123, 3407 for all 5 baselines (100+ steps each), then run research/statistical_analyzer.py"
+  },
+  {
+    "finding_id": "FF-002",
+    "severity": "CRITICAL",
+    "category": "MISSING_EXPERIMENTS",
+    "title": "table4_ablation.csv has 2 rows; 12 ablation variants claimed but 10 not executed",
+    "raw_file": "reports/phase_10/tables/table4_ablation.csv",
+    "raw_content": "Variant,Loss,Delta\nFull IVERI,5.56,0.0\nNo BLT,5.80,+0.24",
+    "evidence_basis": "File inspection shows only 2 rows. No ablation execution scripts exist.",
+    "affected_claims": [
+      "Ablation study completeness"
+    ],
+    "missing_ablations": [
+      "No Titans",
+      "No MoR",
+      "No MoE",
+      "No Entropy Routing",
+      "No Mamba2",
+      "No Titans+No BLT",
+      "and 5 more cumulative combinations"
+    ],
+    "verdict": "NOT_PROVEN",
+    "action_required": "Execute each ablation variant and measure final loss"
+  },
+  {
+    "finding_id": "FF-003",
+    "severity": "CRITICAL",
+    "category": "MOCK_DATA",
+    "title": "logs/metrics.jsonl contains mock data (loss values 0.0, 1.0, 2.0, 3.0, 4.0)",
+    "raw_file": "logs/metrics.jsonl",
+    "raw_content": "loss values: 0.0, 1.0, 2.0, 3.0, 4.0 (sequential integers \u2014 not real training)",
+    "evidence_basis": "File inspection. Real training loss at step 1 is ~5.5, not 0.0.",
+    "verdict": "MOCK_DATA_DETECTED",
+    "action_required": "Replace with real training metrics from benchmark execution"
+  },
+  {
+    "finding_id": "FF-004",
+    "severity": "HIGH",
+    "category": "VERSION_CONFLICT",
+    "title": "PyTorch version conflict: BENCHMARK_CERTIFICATE.md reports 2.12.1+cpu; phase10_summary.json reports 2.5.1+cu121",
+    "files": [
+      "reports/phase_10/BENCHMARK_CERTIFICATE.md",
+      "reports/phase_10/phase10_summary.json"
+    ],
+    "evidence_basis": "BENCHMARK_CERTIFICATE.md: 'PyTorch: 2.12.1+cpu'. phase10_summary.json: 'pytorch_version: 2.5.1+cu121'",
+    "verdict": "CLAIM_CONTRADICTED",
+    "action_required": "Regenerate BENCHMARK_CERTIFICATE.md from current venv312 environment"
+  },
+  {
+    "finding_id": "FF-005",
+    "severity": "HIGH",
+    "category": "DATA_INCONSISTENCY",
+    "title": "table2_efficiency.csv throughput values conflict with table3_loss.csv measured throughput",
+    "evidence_basis": "table2_efficiency.csv: IVERI=1100 tok/sec. table3_loss.csv (executed): IVERI=38.3 tok/sec on CPU. 28x discrepancy.",
+    "verdict": "CLAIM_CONTRADICTED",
+    "action_required": "Measure throughput from actual benchmark execution and update table2_efficiency.csv"
+  },
+  {
+    "finding_id": "FF-006",
+    "severity": "HIGH",
+    "category": "RESULT_INVERSION",
+    "title": "In executed benchmark, Mamba2 outperforms IVERI Hybrid (lower loss in 2-step run)",
+    "evidence_basis": "table3_loss.csv: Mamba2=5.5630, IVERI=5.5662. IVERI does NOT rank #1 in executed data.",
+    "verdict": "CLAIM_NOT_SUPPORTED_BY_EXECUTED_DATA",
+    "action_required": "Run extended 1000+ step training to determine if IVERI converges to lower loss"
+  },
+  {
+    "finding_id": "FF-007",
+    "severity": "MEDIUM",
+    "category": "INCOMPLETE_EXPERIMENTS",
+    "title": "Only 1 of 3 claimed random seeds (42, 123, 3407) was executed in Phase 10 benchmark",
+    "evidence_basis": "table3_loss.csv shows seed=42 only. Phase 10 ran 2 steps per model.",
+    "verdict": "PARTIAL_EVIDENCE",
+    "action_required": "Execute all 3 seeds for statistically valid comparison"
+  },
+  {
+    "finding_id": "FF-008",
+    "severity": "LOW",
+    "category": "MISSING_INFRASTRUCTURE",
+    "title": "No Dockerfile exists for containerized reproduction",
+    "evidence_basis": "Repository search: no Dockerfile or docker-compose.yml found",
+    "verdict": "MISSING_ARTIFACT",
+    "action_required": "Create Dockerfile for isolated reproduction"
+  }
+]

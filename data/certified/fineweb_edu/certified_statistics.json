@@ -1,0 +1,62 @@
+{
+    "name": "fineweb_edu",
+    "stage": "11.0",
+    "num_documents": 3,
+    "total_bytes": 248,
+    "total_gb": 2.3096799850463867e-07,
+    "avg_bytes": 82.66666666666667,
+    "median_bytes": 83.0,
+    "min_bytes": 79,
+    "max_bytes": 86,
+    "p25_bytes": 81.0,
+    "p75_bytes": 84.5,
+    "p95_bytes": 85.7,
+    "p99_bytes": 85.94,
+    "language_distribution": {
+        "en": 3
+    },
+    "license": "Permissive",
+    "mixing_weight": 0.0,
+    "duplicate_rate": null,
+    "filter_rate": null,
+    "creation_time": "2026-07-25T09:54:10.613332",
+    "length_histogram": {
+        "bins": [
+            79,
+            79,
+            80,
+            81,
+            81,
+            82,
+            83,
+            83,
+            84,
+            85,
+            86
+        ],
+        "counts": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+        ],
+        "bin_labels": [
+            "79 - 79",
+            "79 - 80",
+            "80 - 81",
+            "81 - 81",
+            "81 - 82",
+            "82 - 83",
+            "83 - 83",
+            "83 - 84",
+            "84 - 85",
+            "85 - 86"
+        ]
+    }
+}

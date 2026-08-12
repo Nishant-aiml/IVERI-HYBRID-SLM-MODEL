@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "research_questions": [
+    {
+      "id": "RQ1",
+      "question": "Does Adaptive MoR reduce compute and FLOP overhead without reducing model reasoning quality?",
+      "target_paper": "Paper 1 (Adaptive MoR)",
+      "status": "In Progress"
+    },
+    {
+      "id": "RQ2",
+      "question": "Does Titans Memory achieve constant-memory O(1) VRAM scaling and superior long-context retrieval compared to KV cache?",
+      "target_paper": "Paper 2 (Titans Memory)",
+      "status": "Queued"
+    },
+    {
+      "id": "RQ3",
+      "question": "Does tokenizer-free byte-level processing (BLT) improve robustness on noisy, corrupted, and multilingual text?",
+      "target_paper": "Paper 4 (Byte Patching)",
+      "status": "In Progress"
+    },
+    {
+      "id": "RQ4",
+      "question": "Can a multi-signal Global Adaptive Controller optimize the multi-dimensional ACE (Accuracy / Latency) ratio?",
+      "target_paper": "Paper 1 & Paper 5",
+      "status": "Implemented"
+    }
+  ]
+}

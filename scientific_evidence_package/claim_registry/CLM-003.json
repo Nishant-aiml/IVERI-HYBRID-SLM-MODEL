@@ -1,0 +1,26 @@
+{
+  "claim_id": "CLM-003",
+  "statement": "IVERI Hybrid shows lower final loss than Transformer in seed=42 2-step quick sweep.",
+  "evidence_type": "DIRECTLY_MEASURED",
+  "evidence_source": "reports/phase_10/tables/table3_loss.csv",
+  "evidence_value": {
+    "IVERI_final": 5.5662,
+    "Transformer_final": 5.5976,
+    "lower": true
+  },
+  "source_file_sha256": "93e28130fd02671f48aa5f8696fb310c1e044de2b36ad4d96521b01ce8e4fe77",
+  "caveats": [
+    "Only 2 training steps \u2014 insufficient for convergence assessment",
+    "Only 1 seed (42) \u2014 cannot compute variance or statistical significance",
+    "Mamba2 (5.5630) outperforms IVERI (5.5662) in this run",
+    "Result may reverse with extended training"
+  ],
+  "verification_command": "python scripts/run_phase10_benchmarks.py --quick",
+  "git_sha": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "seeds": [
+    42
+  ],
+  "evidence_completeness": "PARTIAL \u2014 2 STEPS ONLY, 1 SEED ONLY",
+  "broken_chain": false,
+  "evidence_level": "LEVEL_3"
+}

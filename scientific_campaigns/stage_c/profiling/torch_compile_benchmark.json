@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-29T05:47:46.928452Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "batch": 8,
+  "seq": 64,
+  "reps": 20,
+  "results": [
+    {
+      "mode": "Eager",
+      "avg_fwd_ms": 2222.34,
+      "avg_bwd_ms": 4219.0,
+      "avg_total_ms": 6470.5,
+      "throughput_tok_sec": 79.1,
+      "peak_vram_mb": 921.1
+    },
+    {
+      "mode": "torch.compile(aot_eager)",
+      "error": "torch.compile with aot_autograd does not currently support double backward"
+    },
+    {
+      "mode": "torch.compile(inductor_suppressed)",
+      "avg_fwd_ms": 3085.51,
+      "avg_bwd_ms": 6113.1,
+      "avg_total_ms": 9361.03,
+      "throughput_tok_sec": 54.7,
+      "peak_vram_mb": 1229.1
+    }
+  ]
+}

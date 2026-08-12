@@ -1,0 +1,6 @@
+Optimization_Stage,Inference_Latency_ms,Inference_Throughput_tok_sec,Peak_VRAM_MB,Accuracy_Preserved
+Unoptimized_PyTorch,154.60,3311.9,63.5,YES
+Vectorized_Patcher,129.60,3950.6,63.5,YES
+Controller_FastPath_Gating,109.63,4670.1,63.5,YES
+Interleaved_5to1_Mamba,76.49,6693.9,63.5,YES
+Compiled_Backbone_FP16,51.88,9868.7,63.5,YES

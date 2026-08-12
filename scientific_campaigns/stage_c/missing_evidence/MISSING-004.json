@@ -1,0 +1,11 @@
+{
+  "missing_id": "MISSING-004",
+  "status": "NOT_STARTED",
+  "description": "Long Training Run (5000+ steps) convergence comparison at seq_len=64 and 512",
+  "required_for": [
+    "CLAIM-004 resolution"
+  ],
+  "command": "python scratch/stage_c_long_run.py",
+  "expected_output": "scientific_campaigns/stage_c/long_training/loss_curves.json",
+  "priority": "CRITICAL \u2014 needed for any journal submission"
+}

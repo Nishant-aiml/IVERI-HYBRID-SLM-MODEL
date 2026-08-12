@@ -1,0 +1,50 @@
+[
+  {
+    "innovation_id": "INO-001",
+    "name": "Entropy-Guided Dynamic Token Routing",
+    "problem_addressed": "Fixed token routing in MoE leads to uniform compute expenditure regardless of token difficulty.",
+    "prior_art_limitation": "Standard Top-K MoE routes tokens independently of entropy or sequence complexity.",
+    "proposed_mechanism": "Information-theoretic entropy calculation gates compute allocation dynamically.",
+    "evidence_status": "ERL-6",
+    "patent_mapping": "Patent 1: Dynamic Entropy Token Routing",
+    "paper_mapping": "Paper 1 (IEEE TNNLS)",
+    "maturity": {
+      "research": 8.0,
+      "engineering": 9.0,
+      "patent": 9.5,
+      "production": 7.0
+    }
+  },
+  {
+    "innovation_id": "INO-002",
+    "name": "Titans Memory-Augmented Recurrent Gating",
+    "problem_addressed": "Standard Transformer attention degradation on long-context window sequences.",
+    "prior_art_limitation": "KV cache memory grows linearly with sequence length.",
+    "proposed_mechanism": "Persistent fast-decay neural memory gates long-horizon context features.",
+    "evidence_status": "ERL-5",
+    "patent_mapping": "Patent 2: Titans Persistent Memory Scheduling",
+    "paper_mapping": "Paper 2 (IEEE Access)",
+    "maturity": {
+      "research": 7.5,
+      "engineering": 8.0,
+      "patent": 9.0,
+      "production": 6.0
+    }
+  },
+  {
+    "innovation_id": "INO-003",
+    "name": "Mixture of Recursions (MoR)",
+    "problem_addressed": "Parameter inflation in ultra-deep transformer stacks.",
+    "prior_art_limitation": "Fixed depth per token regardless of reasoning difficulty.",
+    "proposed_mechanism": "Dynamic recursive parameter sharing allocated per layer boundary.",
+    "evidence_status": "ERL-5",
+    "patent_mapping": "Patent 3: Mixture of Recursions",
+    "paper_mapping": "Paper 3 (ICLR/NeurIPS)",
+    "maturity": {
+      "research": 6.0,
+      "engineering": 7.5,
+      "patent": 8.5,
+      "production": 5.0
+    }
+  }
+]

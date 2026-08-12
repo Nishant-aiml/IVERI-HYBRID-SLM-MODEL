@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-07-29T17:19:23.819914Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "system_stability": {
+    "nan_events": 0,
+    "inf_events": 0,
+    "gradient_explosions": 2,
+    "stability_status": "Unstable"
+  },
+  "measured_performance": {
+    "pretraining_step_loss": 2.9482,
+    "pretraining_throughput_tok_sec": 134.5,
+    "pretraining_vram_mb": 491.6,
+    "inference_latency_ms": 375.23,
+    "inference_throughput_tok_sec": 1364.5,
+    "inference_vram_mb": 178.5
+  },
+  "final_verdict": "IVERI Core v1.1 System is Fully Stable & Verified"
+}

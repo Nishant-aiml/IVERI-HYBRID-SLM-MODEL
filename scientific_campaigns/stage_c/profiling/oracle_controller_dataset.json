@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-29T10:01:44.386424Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "n_samples": 40,
+  "oracle_optimal_depth_distribution": {
+    "0": 40,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+  },
+  "supervised_controller_mse": 0.7672,
+  "utility_ratio": 1.0,
+  "total_regret": 0.0,
+  "action_match_pct": 100.0,
+  "controller_model_comparison": [
+    {
+      "model": "Decision Tree Baseline",
+      "utility_ratio": 0.9412,
+      "match_pct": 82.5
+    },
+    {
+      "model": "Small MLP (~35K params)",
+      "utility_ratio": 1.0,
+      "match_pct": 100.0
+    },
+    {
+      "model": "Tiny Transformer Head",
+      "utility_ratio": 0.9855,
+      "match_pct": 92.5
+    }
+  ]
+}

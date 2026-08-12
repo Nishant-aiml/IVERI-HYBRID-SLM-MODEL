@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-07-30T13:58:34.896909Z",
+  "exact_35m_results": {
+    "IVERI-Small (34.95M)": {
+      "parameters": 34948692,
+      "parameters_m": 34.95,
+      "loss": 3.958,
+      "perplexity": 52.3509,
+      "latency_ms": 8879.35,
+      "throughput_tok_sec": 28.8,
+      "vram_mb": 951.8
+    },
+    "Dense_Transformer (35.7M)": {
+      "parameters": 35837443,
+      "parameters_m": 35.84,
+      "loss": 2.6644,
+      "perplexity": 14.3587,
+      "latency_ms": 44.38,
+      "throughput_tok_sec": 5768.4,
+      "vram_mb": 1049.5
+    },
+    "Mamba2_SSM (35.6M)": {
+      "parameters": 18115843,
+      "parameters_m": 18.12,
+      "loss": 2.4,
+      "perplexity": 11.0227,
+      "latency_ms": 314.0,
+      "throughput_tok_sec": 815.3,
+      "vram_mb": 915.8
+    }
+  }
+}

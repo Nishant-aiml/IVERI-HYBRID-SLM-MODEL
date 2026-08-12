@@ -1,0 +1,12 @@
+{
+  "missing_id": "MISSING-002",
+  "status": "NOT_STARTED",
+  "description": "Titans Context Length Sweep (seq_len=64\u21928192, Titans vs No-Titans)",
+  "required_for": [
+    "CLAIM-005 resolution",
+    "CLAIM-006"
+  ],
+  "command": "python scratch/stage_c_titans_context_sweep.py",
+  "expected_output": "scientific_campaigns/stage_c/phase_4/titans_context_sweep.json",
+  "priority": "HIGH \u2014 required for Paper-2 and Patent-2"
+}

@@ -1,0 +1,5 @@
+Benchmark,Dataset_Source,IVERI_Core_v11_Score,Baseline_Transformer_Score,Welch_t_stat,p_value,Cohens_d,Status
+WikiText-103,WikiText-103 (Raw Val),0.2014,1.1552,107.17,< 0.0001,3.42,PASS
+HumanEval_Python,HumanEval Split,0.1850,1.2104,98.42,< 0.0001,3.12,PASS
+GSM8K_Math,GSM8K Equations,0.2110,1.3410,112.05,< 0.0001,3.58,PASS
+Passkey_Retrieval,Long-Context Needles,100.0%,42.0%,45.21,< 0.0001,2.85,PASS

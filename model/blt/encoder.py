@@ -99,8 +99,8 @@ class BLTByteEncoder(BaseEncoder):
         # Shape: (B, S) - patch_ids[b, i] represents the 0-indexed patch number of byte i
         patch_ids = torch.cumsum(boundary_map.long(), dim=-1) - 1
 
-        # Determine maximum number of patches in this batch
-        p_max = int(patch_ids.max().item() + 1)
+        # Determine maximum number of patches in this batch without Python scalar graph break
+        p_max = seq_len
 
         # 3. Within-patch causal self-attention
         # Mask True = disallowed. Block cross-patch keys and future byte positions (j > i).

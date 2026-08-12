@@ -1,0 +1,13 @@
+{
+  "claim_id": "CLAIM-004",
+  "rq": "RQ5-BASELINE",
+  "statement": "Under equal parameter budget (~9.35M) at 50 steps / seq_len=64, Dense Transformer achieves loss 1.3664 vs IVERI Full 3.1425 (13016 vs 173 tok/s). AT SAME WALL-CLOCK TIME Dense trains ~75\u00d7 more steps. This gap is attributable to: (a) IVERI architectural overhead at short sequence, (b) MoR gradient instability increasing effective loss during early training. This does NOT imply Dense is better for long-context tasks (MISSING-002).",
+  "evidence_level": "ERL-6",
+  "verification_status": "VERIFIED",
+  "interpretation_warning": "Compute-controlled comparison required for fair conclusion. Step-controlled comparison disadvantages IVERI 75\u00d7.",
+  "source_data": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_5_6\\tier1_ablations_and_failures.json",
+  "source_sha256": "61f6c006c771792e",
+  "evidence_type": "BASELINE_COMPARISON",
+  "n_seeds": 3,
+  "timestamp": "2026-07-26T06:58:00.620785Z"
+}

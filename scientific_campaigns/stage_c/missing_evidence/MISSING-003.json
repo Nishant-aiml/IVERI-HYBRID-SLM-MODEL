@@ -1,0 +1,12 @@
+{
+  "missing_id": "MISSING-003",
+  "status": "NOT_STARTED",
+  "description": "Router Entropy Instrumentation (router probability distributions, utilization vs load)",
+  "required_for": [
+    "CLAIM-001 extension",
+    "Paper-1"
+  ],
+  "command": "python scratch/stage_c_router_instrumentation.py",
+  "expected_output": "scientific_campaigns/stage_c/router_analysis/router_entropy_log.json",
+  "priority": "HIGH \u2014 required for Patent-1"
+}

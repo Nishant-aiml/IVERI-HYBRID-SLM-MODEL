@@ -1,0 +1,25 @@
+{
+  "loss_statistics": {
+    "n": 2433.0,
+    "mean": 0.933,
+    "median": 0.03,
+    "var": 3.8731,
+    "std": 1.968,
+    "ci_95_low": 0.8548,
+    "ci_95_high": 1.0112
+  },
+  "throughput_statistics": {
+    "n": 2433.0,
+    "mean": 990.1511,
+    "median": 975.1,
+    "var": 50248.0079,
+    "std": 224.1607,
+    "ci_95_low": 981.2438,
+    "ci_95_high": 999.0584
+  },
+  "loss_trajectory": {
+    "initial": 5.5649,
+    "latest": 0.0076,
+    "min": 0.0031
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "claim_id": "CLAIM-006",
+  "rq": "RQ1-LONG-CONTEXT",
+  "statement": "IVERI Full outperforms Dense Transformer at seq_len>=1024 by leveraging Titans + MoR long-context representations.",
+  "evidence_level": "ERL-1",
+  "verification_status": "NOT_EXECUTED",
+  "source_data": "MISSING_EVIDENCE",
+  "evidence_type": "CONTEXT_SWEEP_COMPARISON",
+  "required_experiment": "Stage C Phase-4: titans_context_sweep.py",
+  "timestamp": "2026-07-26T06:58:00.620785Z"
+}

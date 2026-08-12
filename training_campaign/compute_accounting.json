@@ -1,0 +1,6 @@
+{
+  "total_gpu_hours": 0.45,
+  "nvml_total_energy_joules": 184200.0,
+  "estimated_co2_grams": 12.4,
+  "total_flops_computed": "2.5 x 10^14 FLOPs"
+}

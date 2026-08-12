@@ -1,0 +1,107 @@
+[
+  {
+    "evidence_id": "ME-001",
+    "missing_item": "Multi-seed training campaigns (seeds 42, 123, 3407) for all 5 baselines",
+    "affected_claims": [
+      "CLM-003",
+      "CLM-005"
+    ],
+    "affected_paper_sections": [
+      "Results",
+      "Statistical Analysis"
+    ],
+    "why_missing": "Phase 10 quick mode runs only 2 steps with seed=42",
+    "execution_command": "python scripts/run_phase10_benchmarks.py --seeds 42 123 3407 --steps 1000",
+    "expected_outputs": [
+      "table3_loss_multiseed.csv",
+      "per_seed_loss_curves.png"
+    ],
+    "priority": "CRITICAL",
+    "estimated_runtime_hours": "4-12h on CPU, 0.5-2h on GPU"
+  },
+  {
+    "evidence_id": "ME-002",
+    "missing_item": "Complete ablation study: 10 missing variants (No Titans, No MoR, No MoE, No Entropy, No Mamba2, + combinations)",
+    "affected_claims": [
+      "CLM-006"
+    ],
+    "affected_paper_sections": [
+      "Ablation Study"
+    ],
+    "why_missing": "table4_ablation.csv has only 2 rows",
+    "execution_command": "python scripts/run_phase10_benchmarks.py --ablation-full",
+    "expected_outputs": [
+      "table4_ablation_complete.csv",
+      "fig_ablation_complete.png"
+    ],
+    "priority": "CRITICAL"
+  },
+  {
+    "evidence_id": "ME-003",
+    "missing_item": "Statistically valid p-values and effect sizes computed from multi-seed data",
+    "affected_claims": [
+      "CLM-005"
+    ],
+    "affected_paper_sections": [
+      "Statistical Significance"
+    ],
+    "why_missing": "table5_statistics.csv contains placeholder values not from executed experiments",
+    "execution_command": "python research/statistical_analyzer.py --input table3_loss_multiseed.csv",
+    "expected_outputs": [
+      "table5_statistics_real.csv",
+      "bootstrap_results.json"
+    ],
+    "priority": "CRITICAL",
+    "depends_on": [
+      "ME-001"
+    ]
+  },
+  {
+    "evidence_id": "ME-004",
+    "missing_item": "Physical GPU energy measurements (Joules per token via NVML/RAPL)",
+    "affected_claims": [
+      "Energy efficiency claims"
+    ],
+    "affected_paper_sections": [
+      "Efficiency"
+    ],
+    "why_missing": "No power measurement script executed",
+    "execution_command": "python scripts/profile_memory.py --device cuda --energy-log",
+    "expected_outputs": [
+      "energy_joules_per_token.csv"
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "evidence_id": "ME-005",
+    "missing_item": "Consistent throughput measurement (table2_efficiency.csv values conflict with table3_loss.csv)",
+    "affected_claims": [
+      "RQ4 Throughput"
+    ],
+    "why_missing": "table2_efficiency.csv was not regenerated from current execution (shows 1100 tok/sec vs measured 38.3)",
+    "execution_command": "python scripts/run_phase10_benchmarks.py --quick (and fix table2 generation)",
+    "priority": "HIGH"
+  },
+  {
+    "evidence_id": "ME-006",
+    "missing_item": "Docker container for independent reproduction",
+    "affected_claims": [
+      "Reproducibility"
+    ],
+    "why_missing": "No Dockerfile exists in repository",
+    "execution_command": "Create Dockerfile based on requirements.txt and Python 3.12 + CUDA 12.1",
+    "priority": "MEDIUM"
+  },
+  {
+    "evidence_id": "ME-007",
+    "missing_item": "Extended training runs (1000+ steps) to assess convergence",
+    "affected_claims": [
+      "CLM-003",
+      "CLM-005"
+    ],
+    "why_missing": "Phase 10 only runs 2 training steps in quick mode",
+    "execution_command": "python scripts/run_phase10_benchmarks.py --steps 1000 --all-seeds",
+    "priority": "CRITICAL",
+    "estimated_runtime_hours": "8-24h on CPU"
+  }
+]

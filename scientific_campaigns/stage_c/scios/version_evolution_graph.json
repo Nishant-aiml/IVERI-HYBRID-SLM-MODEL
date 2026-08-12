@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "version": "v0.90",
+      "status": "LEGACY",
+      "desc": "Initial IVERI baseline with enabled gradient checkpointing and static MoR."
+    },
+    {
+      "version": "v0.91",
+      "status": "ACTIVE",
+      "desc": "Disabled gradient checkpointing for short context (+41.7% throughput)."
+    },
+    {
+      "version": "v0.91A",
+      "status": "STABLE_PATCH",
+      "desc": "Added recursive gradient norm clipping within MoR layers."
+    },
+    {
+      "version": "v0.92",
+      "status": "TARGET",
+      "desc": "Adaptive MoR depth scheduling (depth=0 for seq_len < 128)."
+    },
+    {
+      "version": "v1.0",
+      "status": "RELEASE_GOAL",
+      "desc": "Fully integrated and statistically validated IVERI architecture."
+    }
+  ],
+  "edges": [
+    {
+      "from": "v0.90",
+      "to": "v0.91",
+      "reason": "Profiling evidence showed 41.7% checkpointing overhead at short seq_len",
+      "evidence": "latency_10x.json"
+    },
+    {
+      "from": "v0.91",
+      "to": "v0.91A",
+      "reason": "Failure analysis traced explosions to MoR recursive accumulation",
+      "evidence": "lr_warmup_sweep_results.json"
+    },
+    {
+      "from": "v0.91A",
+      "to": "v0.92",
+      "reason": "Ablations proved No-MoR gives 2x throughput at short context without loss penalty",
+      "evidence": "tier1_results.md"
+    }
+  ]
+}

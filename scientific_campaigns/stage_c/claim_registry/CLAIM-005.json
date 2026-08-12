@@ -1,0 +1,13 @@
+{
+  "claim_id": "CLAIM-005",
+  "rq": "RQ2-TITANS",
+  "statement": "At seq_len=64, Titans persistent memory adds 20% VRAM overhead (691\u2192828MB) and reduces throughput 1.57\u00d7 (271\u2192173 tok/s), with no statistically significant loss benefit (Full: 3.1425, No-Titans: 3.1420, t=0.1211). Titans expected to provide benefit only at seq_len>=512 where memory state accumulates meaning.",
+  "evidence_level": "ERL-5",
+  "verification_status": "VERIFIED_SHORT_ONLY",
+  "source_data": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_5_6\\tier1_ablations_and_failures.json",
+  "source_sha256": "61f6c006c771792e",
+  "evidence_type": "ABLATION_STUDY",
+  "n_seeds": 3,
+  "evidence_completeness": "PARTIAL \u2014 long-context benefit NOT YET tested (MISSING-002).",
+  "timestamp": "2026-07-26T06:58:00.620785Z"
+}

@@ -1,0 +1,19 @@
+{
+  "claim_id": "CLM-002",
+  "statement": "Active parameter delta vs Baseline A Transformer is 9.28%, within <=10.0% gate.",
+  "evidence_type": "DIRECTLY_MEASURED",
+  "evidence_source": "reports/phase_10/compute_matching_audit.json",
+  "evidence_value": {
+    "baseline_A_active": 3421440,
+    "iveri_active": 3738912,
+    "delta_pct": 9.28,
+    "status": "PASS"
+  },
+  "source_file_sha256": "070696338a28ca8ba4601d32feedc93d41e0730354457c66e21f021f3f95b015",
+  "verification_command": "python scripts/run_phase10_benchmarks.py --quick",
+  "git_sha": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "seeds": "N/A",
+  "evidence_completeness": "COMPLETE",
+  "broken_chain": false,
+  "evidence_level": "LEVEL_4"
+}

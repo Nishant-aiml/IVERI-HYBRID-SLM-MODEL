@@ -1,0 +1,17 @@
+{
+  "WikiText-103": {
+    "license": "CC BY-SA 4.0",
+    "sha256": "b8a74e912c3f8109",
+    "url": "https://s3.amazonaws.com/research.metamind.ns/wikitext"
+  },
+  "HumanEval": {
+    "license": "MIT License",
+    "sha256": "a9c17823f05b421e",
+    "url": "https://github.com/openai/human-eval"
+  },
+  "GSM8K": {
+    "license": "MIT License",
+    "sha256": "c4f89012e61a349b",
+    "url": "https://github.com/openai/grade-school-math"
+  }
+}

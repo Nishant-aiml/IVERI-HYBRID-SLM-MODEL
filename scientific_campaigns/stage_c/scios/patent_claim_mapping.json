@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "claims": [
+    {
+      "claim": "Independent Claim 1: Multi-signal dynamic depth selection",
+      "patent": "Patent 1",
+      "supporting_exp": "EXP-0015",
+      "evidence_level": "E3"
+    },
+    {
+      "claim": "Independent Claim 2: Recurrent neural memory state update",
+      "patent": "Patent 2",
+      "supporting_exp": "EXP-0004",
+      "evidence_level": "E3"
+    },
+    {
+      "claim": "Independent Claim 3: Tokenizer-free byte patcher",
+      "patent": "Patent 3",
+      "supporting_exp": "EXP-0002",
+      "evidence_level": "E4"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-07-24T17:20:00Z",
+  "issues": [
+    {
+      "id": "ISSUE-ENG-001",
+      "severity": "CRITICAL",
+      "category": "Engineering",
+      "summary": "Golden Checkpoint file checkpoint_golden.pt is 0 bytes",
+      "root_cause": "Placeholder checkpoint created as empty file during Phase 3.6 run",
+      "affected_files": [
+        "reports/phase_3_6/Paper_Figures/checkpoint_golden.pt",
+        "research/experiments_run.db"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Delete 0-byte file and enforce validation check in checkpoint loader against 0-byte files"
+    },
+    {
+      "id": "ISSUE-ENG-002",
+      "severity": "CRITICAL",
+      "category": "Engineering",
+      "summary": "Datasets in data/raw/ and data/certified/ are toy mock files (~142 KB total)",
+      "root_cause": "Synthetic generators created tiny mock samples for pipeline verification",
+      "affected_files": [
+        "data/raw/",
+        "data/certified/",
+        "data/curriculum/phase_a_manifest.json"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Execute Phase 8 data pipeline on full datasets and enforce Dataset Scale Gate"
+    },
+    {
+      "id": "ISSUE-ENG-003",
+      "severity": "HIGH",
+      "category": "Engineering",
+      "summary": "Parameter count mismatch: default config produces 36.6M/455K vs 10M spec",
+      "root_cause": "Base config defaults differ between Nano (455K test / 10M base) and Full scaling specs",
+      "affected_files": [
+        "configs/base_config.py",
+        "IVERI_PROJECT_MASTER.md"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Document parameter breakdown for each tier (Nano 455K/10M, Scaled 300M) in config and docs"
+    },
+    {
+      "id": "ISSUE-ENG-004",
+      "severity": "HIGH",
+      "category": "Engineering",
+      "summary": "Requirements.txt lists unused packages (mamba-ssm, flash-attn, rotary-emb)",
+      "root_cause": "Requirements file contains optional C++/CUDA packages not required by pure PyTorch fallbacks",
+      "affected_files": [
+        "requirements.txt"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Clean requirements.txt to list exact required dependencies and mark optional CUDA packages"
+    },
+    {
+      "id": "ISSUE-SCI-001",
+      "severity": "CRITICAL",
+      "category": "Scientific Integrity",
+      "summary": "BENCHMARK_SUMMARY.md claims 100% PASS while 7 Phase 10 reports are 2-line stubs",
+      "root_cause": "Automated report generator formatted pass card over stub reports",
+      "affected_files": [
+        "reports/phase_10/BENCHMARK_SUMMARY.md",
+        "reports/phase_10/BENCHMARK_CERTIFICATE.md"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Replace summary card with honest Scientific Status: NOT GENERATED header"
+    },
+    {
+      "id": "ISSUE-SCI-002",
+      "severity": "CRITICAL",
+      "category": "Scientific Integrity",
+      "summary": "04_training_curves.md reports std +- 0.0000 across seeds",
+      "root_cause": "Single-seed run formatted into multi-seed template",
+      "affected_files": [
+        "reports/phase_10/04_training_curves.md"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Replace false multi-seed claims with Single-seed engineering run only"
+    },
+    {
+      "id": "ISSUE-SCI-003",
+      "severity": "CRITICAL",
+      "category": "Scientific Integrity",
+      "summary": "12 of 13 publication figures in paper/paper_figures/ are placeholder y=5-x plots",
+      "root_cause": "Script generated diagonal line placeholders",
+      "affected_files": [
+        "paper/paper_figures/fig01_benchmark_chart.png"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Replace placeholders with visual notice until measured CSV plot generation"
+    },
+    {
+      "id": "ISSUE-SCI-004",
+      "severity": "CRITICAL",
+      "category": "Scientific Integrity",
+      "summary": "table4_ablation.csv and table5_statistics.csv contain only 1 row each",
+      "root_cause": "Minimal demo rows written by paper tables script",
+      "affected_files": [
+        "paper/paper_tables/table4_ablation.csv",
+        "paper/paper_tables/table5_statistics.csv"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Mark tables as Engineering Verification Only until campaign completes"
+    },
+    {
+      "id": "ISSUE-SCI-005",
+      "severity": "CRITICAL",
+      "category": "Scientific Integrity",
+      "summary": "RESEARCH_LOG.md claims p=0.0003, ECE=0.0452, HumanEval 100% without raw data files",
+      "root_cause": "Narrative log recorded qualitative claims without backing raw observation files",
+      "affected_files": [
+        "research_log/RESEARCH_LOG.md"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Label claims in log as conceptual/preliminary until raw log traceability is built"
+    },
+    {
+      "id": "ISSUE-DOC-001",
+      "severity": "HIGH",
+      "category": "Documentation",
+      "summary": "Test count claim in task.md (683 pass) contradicts actual pytest output (640 pass)",
+      "root_cause": "Documentation drift from test suite updates",
+      "affected_files": [
+        "task.md",
+        "README.md"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Update all docs to state exact pytest metrics (640 pass, 4 skip, 11 deselected)"
+    },
+    {
+      "id": "ISSUE-DOC-002",
+      "severity": "HIGH",
+      "category": "Documentation",
+      "summary": "Version mismatch (VERSION: 1.0.0, pyproject.toml: 0.1.0, README.md: 0.2.0-byte-vocab)",
+      "root_cause": "Inconsistent version updates across components",
+      "affected_files": [
+        "VERSION",
+        "pyproject.toml",
+        "README.md"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Synchronize all version references to 1.0.0"
+    },
+    {
+      "id": "ISSUE-DOC-003",
+      "severity": "HIGH",
+      "category": "Documentation",
+      "summary": "QUICKSTART.md claims Python 3.11+ minimum while pyproject.toml defines >=3.10",
+      "root_cause": "Documentation inconsistency",
+      "affected_files": [
+        "QUICKSTART.md",
+        "pyproject.toml"
+      ],
+      "status": "OPEN",
+      "proposed_fix": "Align QUICKSTART.md to state Python >= 3.10"
+    }
+  ]
+}

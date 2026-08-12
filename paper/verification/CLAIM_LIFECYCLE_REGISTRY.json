@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "title": "IVERI CORE \u2014 Master Claim Lifecycle Registry",
+    "last_updated": "2026-07-26T02:51:43Z"
+  },
+  "claims": [
+    {
+      "claim_id": "CLAIM-001",
+      "wording": "RTX 3050 hardware supports batch=64 FP16 pretraining without OOM",
+      "lifecycle_state": "Reproduced",
+      "engineering_status": "PASS",
+      "scientific_status": "Empirically Measured",
+      "confidence": 1.0,
+      "evidence_path": "reports/HARDWARE_CHARACTERIZATION_SWEEP.json"
+    },
+    {
+      "claim_id": "CLAIM-002",
+      "wording": "FP16 + GradScaler provides 8.15x speedup over FP32 on Tensor Cores",
+      "lifecycle_state": "Reproduced",
+      "engineering_status": "PASS",
+      "scientific_status": "Empirically Measured",
+      "confidence": 1.0,
+      "evidence_path": "reports/OPTIMIZATION_BENCHMARKS.json"
+    },
+    {
+      "claim_id": "CLAIM-003",
+      "wording": "100-step FP16 pilot exhibits monotonic loss convergence (5.56 -> 0.81)",
+      "lifecycle_state": "Reproduced",
+      "engineering_status": "PASS",
+      "scientific_status": "Empirically Measured",
+      "confidence": 1.0,
+      "evidence_path": "reports/PILOT_FP16_BENCHMARK.json"
+    },
+    {
+      "claim_id": "CLAIM-004",
+      "wording": "Entropy-guided dynamic routing reduces FLOPs vs Dense BLT baseline",
+      "lifecycle_state": "Empirically Measured",
+      "engineering_status": "IN_PROGRESS",
+      "scientific_status": "Executing (Step 2,100 / 2,441 \u2014 86.0%)",
+      "confidence": 0.85,
+      "evidence_path": "reports/live_training/stage_b_10m_loss.csv"
+    },
+    {
+      "claim_id": "CLAIM-005",
+      "wording": "Titans neural memory improves long-context retrieval > 128k bytes",
+      "lifecycle_state": "Concept",
+      "engineering_status": "Implemented",
+      "scientific_status": "Awaiting Stage C",
+      "confidence": 0.4,
+      "evidence_path": "scientific_campaigns/stage_c/"
+    },
+    {
+      "claim_id": "CLAIM-006",
+      "wording": "Mixture of Recursions (MoR) lowers step latency by 18-25%",
+      "lifecycle_state": "Concept",
+      "engineering_status": "Implemented",
+      "scientific_status": "Awaiting Stage C",
+      "confidence": 0.4,
+      "evidence_path": "scientific_campaigns/stage_c/"
+    }
+  ]
+}

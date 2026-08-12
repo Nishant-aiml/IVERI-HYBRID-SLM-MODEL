@@ -1,0 +1,50 @@
+[
+  {
+    "architecture": "Dense Transformer Baseline",
+    "params": "~9.4M",
+    "throughput_tok_sec": 13016.3,
+    "mean_final_loss_50step": 1.3664,
+    "failure_events": 0,
+    "peak_vram_mb": 393.6,
+    "memory_overhead": "Low",
+    "strengths": "Ultra-fast execution, zero gradient explosions, simple optimization landscape",
+    "weaknesses": "Quadratic attention scaling on long sequence contexts",
+    "addressed_rqs": ["RQ1", "RQ5"]
+  },
+  {
+    "architecture": "IVERI Core v0.91 (Full)",
+    "params": "~9.35M",
+    "throughput_tok_sec": 172.5,
+    "mean_final_loss_50step": 3.1425,
+    "failure_events": 5,
+    "peak_vram_mb": 828.4,
+    "memory_overhead": "Medium",
+    "strengths": "Byte-level processing, persistent memory gating, dynamic entropy routing",
+    "weaknesses": "Higher per-step compute latency; early gradient explosions require LR warmup",
+    "addressed_rqs": ["RQ1", "RQ2", "RQ3", "RQ4", "RQ5", "RQ6", "RQ7", "RQ8"]
+  },
+  {
+    "architecture": "IVERI Core v0.91 (No MoR)",
+    "params": "~9.35M",
+    "throughput_tok_sec": 359.2,
+    "mean_final_loss_50step": 3.1365,
+    "failure_events": 1,
+    "peak_vram_mb": 422.7,
+    "memory_overhead": "Low-Medium",
+    "strengths": "2.08x faster throughput than Full v0.91, lower VRAM, virtually zero failures",
+    "weaknesses": "Lacks depth-wise dynamic recursion at short sequences",
+    "addressed_rqs": ["RQ3", "RQ6", "RQ7"]
+  },
+  {
+    "architecture": "IVERI Core v0.91 (No Titans)",
+    "params": "~9.35M",
+    "throughput_tok_sec": 271.2,
+    "mean_final_loss_50step": 3.1420,
+    "failure_events": 7,
+    "peak_vram_mb": 691.0,
+    "memory_overhead": "Medium",
+    "strengths": "Faster short-sequence throughput",
+    "weaknesses": "Lacks long-context persistent memory state",
+    "addressed_rqs": ["RQ2", "RQ6", "RQ7"]
+  }
+]

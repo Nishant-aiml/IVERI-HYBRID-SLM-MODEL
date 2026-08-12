@@ -1,0 +1,168 @@
+{
+  "campaign": "Stage C Real-Dataset Master Campaign",
+  "dataset": "Real Language UTF-8 Byte Stream (Flat GPU Tensor)",
+  "timestamp": "2026-07-26T05:38:16Z",
+  "seeds": [
+    42,
+    123,
+    3407
+  ],
+  "iveri_vs_dense": {
+    "t_statistic": 11.3308,
+    "p_value": 0.0,
+    "cohens_d": 9.2516,
+    "verdict": "STATISTICALLY_SIGNIFICANT"
+  },
+  "all_results": [
+    {
+      "model_type": "IVERI_Full",
+      "seed": 42,
+      "final_loss": 3.227428436279297,
+      "min_loss": 3.175466537475586,
+      "mean_loss": 4.269032669067383,
+      "avg_throughput_tok_sec": 138.66247451008948,
+      "peak_vram_mb": 330.98193359375,
+      "runtime_sec": 75.73124694824219
+    },
+    {
+      "model_type": "IVERI_Full",
+      "seed": 123,
+      "final_loss": 3.188671112060547,
+      "min_loss": 3.1791210174560547,
+      "mean_loss": 4.239919567108155,
+      "avg_throughput_tok_sec": 139.63965791654252,
+      "peak_vram_mb": 331.05859375,
+      "runtime_sec": 75.38633346557617
+    },
+    {
+      "model_type": "IVERI_Full",
+      "seed": 3407,
+      "final_loss": 3.2493972778320312,
+      "min_loss": 3.2112960815429688,
+      "mean_loss": 4.38269739151001,
+      "avg_throughput_tok_sec": 132.41781885419255,
+      "peak_vram_mb": 330.32763671875,
+      "runtime_sec": 80.49644947052002
+    },
+    {
+      "model_type": "IVERI_No_Entropy",
+      "seed": 42,
+      "final_loss": 3.2263336181640625,
+      "min_loss": 3.174013137817383,
+      "mean_loss": 4.266995143890381,
+      "avg_throughput_tok_sec": 148.5289727402125,
+      "peak_vram_mb": 329.92626953125,
+      "runtime_sec": 70.05629444122314
+    },
+    {
+      "model_type": "IVERI_No_Entropy",
+      "seed": 123,
+      "final_loss": 3.1888961791992188,
+      "min_loss": 3.179229736328125,
+      "mean_loss": 4.237825393676758,
+      "avg_throughput_tok_sec": 143.41435155456355,
+      "peak_vram_mb": 329.92626953125,
+      "runtime_sec": 72.26353311538696
+    },
+    {
+      "model_type": "IVERI_No_Entropy",
+      "seed": 3407,
+      "final_loss": 3.2487564086914062,
+      "min_loss": 3.212108612060547,
+      "mean_loss": 4.384413051605224,
+      "avg_throughput_tok_sec": 131.4861250542699,
+      "peak_vram_mb": 331.05126953125,
+      "runtime_sec": 81.72473049163818
+    },
+    {
+      "model_type": "IVERI_No_Titans",
+      "seed": 42,
+      "final_loss": 3.2491111755371094,
+      "min_loss": 3.1492366790771484,
+      "mean_loss": 4.337744045257568,
+      "avg_throughput_tok_sec": 185.4623697579076,
+      "peak_vram_mb": 193.3935546875,
+      "runtime_sec": 58.61721086502075
+    },
+    {
+      "model_type": "IVERI_No_Titans",
+      "seed": 123,
+      "final_loss": 3.1814041137695312,
+      "min_loss": 3.1791343688964844,
+      "mean_loss": 4.278552055358887,
+      "avg_throughput_tok_sec": 210.75378953696577,
+      "peak_vram_mb": 193.8740234375,
+      "runtime_sec": 49.17086362838745
+    },
+    {
+      "model_type": "IVERI_No_Titans",
+      "seed": 3407,
+      "final_loss": 3.2198944091796875,
+      "min_loss": 3.2198944091796875,
+      "mean_loss": 4.3564637184143065,
+      "avg_throughput_tok_sec": 205.1746503305448,
+      "peak_vram_mb": 193.14306640625,
+      "runtime_sec": 50.3213267326355
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 42,
+      "final_loss": 3.22296142578125,
+      "min_loss": 3.1464672088623047,
+      "mean_loss": 4.203762722015381,
+      "avg_throughput_tok_sec": 306.62092094613723,
+      "peak_vram_mb": 327.77734375,
+      "runtime_sec": 34.68485975265503
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 123,
+      "final_loss": 3.188678741455078,
+      "min_loss": 3.1838760375976562,
+      "mean_loss": 4.220720291137695,
+      "avg_throughput_tok_sec": 322.6004155434358,
+      "peak_vram_mb": 327.77734375,
+      "runtime_sec": 32.99194550514221
+    },
+    {
+      "model_type": "IVERI_No_MoR",
+      "seed": 3407,
+      "final_loss": 3.227691650390625,
+      "min_loss": 3.1714706420898438,
+      "mean_loss": 4.248223114013672,
+      "avg_throughput_tok_sec": 365.0494802631482,
+      "peak_vram_mb": 327.77734375,
+      "runtime_sec": 29.46231698989868
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 42,
+      "final_loss": 2.536813735961914,
+      "min_loss": 2.501096248626709,
+      "mean_loss": 3.168999123573303,
+      "avg_throughput_tok_sec": 16865.314666082544,
+      "peak_vram_mb": 394.0126953125,
+      "runtime_sec": 0.6155095100402832
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 123,
+      "final_loss": 2.53812313079834,
+      "min_loss": 2.53812313079834,
+      "mean_loss": 3.1660831809043883,
+      "avg_throughput_tok_sec": 17375.34916871135,
+      "peak_vram_mb": 394.0126953125,
+      "runtime_sec": 0.595667839050293
+    },
+    {
+      "model_type": "Baseline_Dense_Transformer",
+      "seed": 3407,
+      "final_loss": 2.6959638595581055,
+      "min_loss": 2.6846399307250977,
+      "mean_loss": 3.3359260082244875,
+      "avg_throughput_tok_sec": 17029.579457189666,
+      "peak_vram_mb": 394.0126953125,
+      "runtime_sec": 0.6073741912841797
+    }
+  ]
+}

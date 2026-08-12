@@ -1,17 +1,17 @@
 # IVERI CORE — Evaluation Report
-**Generated:** 2026-07-17T13:01:45
+**Generated:** 2026-07-24T23:31:16
 **Reproduction Seed:** 42
 
 ## 1. Run Metadata
 | Attribute | Value |
 |---|---|
-| Git Commit | `4d1e203` |
+| Git Commit | `2f31069` |
 | Architecture Version | `0.2.0-byte-vocab` |
 | Device / Hardware | `cpu` |
 | Dtype | `float32` |
-| PyTorch Version | `2.5.1+cu121` |
-| CUDA Version | `12.1` |
-| Evaluation Duration | `0.63s` |
+| PyTorch Version | `2.12.1+cpu` |
+| CUDA Version | `N/A` |
+| Evaluation Duration | `0.19s` |
 
 ## 2. Language Modeling Performance
 | Metric | Value |
@@ -24,33 +24,33 @@
 ## 3. Generative Decoding Performance
 | Metric | Value |
 |---|---|
-| Latency (s) | `0.1253s` |
-| Throughput (bytes/s) | `63.82 bytes/sec` |
+| Latency (s) | `0.0359s` |
+| Throughput (bytes/s) | `222.55 bytes/sec` |
 | Average length | `4.0 bytes` |
 | Early exit ratio | `0.00%` |
 
 ## 4. Inference Performance Benchmarks
 | Metric | Latency / Throughput |
 |---|---|
-| Warmup Latency | `31.80 ms` |
-| Average Latency | `32.87 ms` |
-| Median Latency | `33.21 ms` |
-| P90 / P95 / P99 | `33.82 / 33.90 / 33.96 ms` |
-| Min / Max Latency | `31.41 / 33.97 ms` |
-| Samples / sec | `60.85 samples/sec` |
-| Tokens / sec | `912.80 tokens/sec` |
+| Warmup Latency | `8.90 ms` |
+| Average Latency | `9.05 ms` |
+| Median Latency | `8.93 ms` |
+| P90 / P95 / P99 | `9.50 / 9.57 / 9.63 ms` |
+| Min / Max Latency | `8.58 / 9.64 ms` |
+| Samples / sec | `220.97 samples/sec` |
+| Tokens / sec | `3314.50 tokens/sec` |
 | Estimated FLOPs | `5.50e+07 FLOPs` |
 | Model Parameter Count | `305,612` |
 
 ## 5. Memory Consumption Benchmarks
 | Resource | Allocated | Reserved / Peak |
 |---|---|---|
-| GPU Memory | `16.2 MB` | `24.0 MB / 16.2 MB` |
-| CPU System RAM | `1184.4 MB` | `1187.0 MB` |
+| GPU Memory | `0.0 MB` | `0.0 MB / 0.0 MB` |
+| CPU System RAM | `509.6 MB` | `513.7 MB` |
 | Parameter Memory | `1.17 MB` | - |
 | Activation Memory (Est) | `0.00 MB` | - |
-| Memory Fragmentation Ratio | `47.69%` | - |
-| Memory Growth Delta | `2.67 MB` | - |
+| Memory Fragmentation Ratio | `0.00%` | - |
+| Memory Growth Delta | `2.27 MB` | - |
 
 ## 6. Architecture Subsystem Telemetry
 ### Mixture of Recursions (MoR)
@@ -83,11 +83,11 @@
 ### Mamba2 Structured State Space Duality (SSD)
 - Hidden State Norm (mean): `7.9998`
 - State Update Norm: `1.0000`
-- State Variance: `3.4584e-10`
-- SSM throughput: `1399.00 tokens/sec`
+- State Variance: `3.3702e-10`
+- SSM throughput: `5675.47 tokens/sec`
 
 ### Attention & Backbone stack
 - Attention Backend Selected: `SDPA (PyTorch)`
-- Backbone layer latency (list of layer runtimes): `[0.013358250005694572]`
+- Backbone layer latency (list of layer runtimes): `[0.0041969999992943485]`
 - Backbone residual norm (mean): `7.9996`
 - Backbone activation norm (mean): `7.9998`

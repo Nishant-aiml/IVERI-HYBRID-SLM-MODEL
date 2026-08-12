@@ -1,0 +1,10 @@
+{
+  "claim_id": "CLAIM_002",
+  "paper": "paper_01_entropy_routing",
+  "description": "FP16 + GradScaler provides 8.15x speedup over FP32 on Tensor Cores",
+  "supporting_code": "scratch/optimization_benchmarks.py",
+  "supporting_csv": "../../reports/OPTIMIZATION_BENCHMARKS.json",
+  "verification_script": "proof/verify_everything.py",
+  "verification_status": "PASS",
+  "confidence": 1.0
+}

@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-008",
+  "statement": "Training stability: 0 NaN events, 0 OOM recoveries across all 5 models.",
+  "evidence_type": "DIRECTLY_MEASURED",
+  "evidence_source": "reports/phase_10/tables/training_stability.csv",
+  "evidence_value": {
+    "nan_events": 0,
+    "oom_recoveries": 0,
+    "steps": 2
+  },
+  "source_file_sha256": "97a727b1bfcc0759be61d61e453476ceaa2076e346945dcfb012dc7db46f8fc4",
+  "caveats": [
+    "Only 2 training steps \u2014 long-run stability is not demonstrated"
+  ],
+  "verification_command": "python scripts/run_phase10_benchmarks.py --quick",
+  "git_sha": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "seeds": [
+    42
+  ],
+  "evidence_completeness": "PARTIAL \u2014 2 STEPS ONLY",
+  "broken_chain": false,
+  "evidence_level": "LEVEL_3"
+}

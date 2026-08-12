@@ -1,0 +1,15 @@
+{
+  "claim_id": "CLM-007",
+  "statement": "IVERI achieves superior scaling performance at 500M parameters.",
+  "evidence_type": "PROJECTION_ONLY",
+  "evidence_source": "reports/phase_10/12_research_validity.md \u2014 text only",
+  "evidence_value": "NO EXPERIMENTAL EVIDENCE",
+  "caveats": [
+    "No 500M checkpoint exists",
+    "No 500M training run was executed",
+    "Mathematical extrapolation only"
+  ],
+  "evidence_completeness": "BROKEN EVIDENCE CHAIN",
+  "broken_chain": true,
+  "evidence_level": "LEVEL_0"
+}

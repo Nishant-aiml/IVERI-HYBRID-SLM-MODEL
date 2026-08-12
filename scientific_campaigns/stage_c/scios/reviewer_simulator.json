@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "reviewers": [
+    {
+      "id": "Reviewer A",
+      "focus": "Architectural Novelty",
+      "status": "PARTIAL",
+      "action": "Demonstrate multi-signal controller advantage"
+    },
+    {
+      "id": "Reviewer B",
+      "focus": "Statistical Rigor",
+      "status": "OPEN",
+      "action": "Require n=8 seeds & 95% CIs on all benchmarks"
+    },
+    {
+      "id": "Reviewer C",
+      "focus": "Scaling Boundaries",
+      "status": "OPEN",
+      "action": "Execute 64 to 16,384 sequence length sweep"
+    },
+    {
+      "id": "Reviewer D",
+      "focus": "Reproducibility",
+      "status": "CLOSED",
+      "action": "Complete docker/resumable json logging ready"
+    },
+    {
+      "id": "Reviewer E",
+      "focus": "Ablation Completeness",
+      "status": "PARTIAL",
+      "action": "Isolate MoR vs No-MoR vs Adaptive MoR"
+    },
+    {
+      "id": "Reviewer F",
+      "focus": "Related Work Fairness",
+      "status": "OPEN",
+      "action": "Build Competition Matrix vs Mamba/RWKV/BLT"
+    },
+    {
+      "id": "Reviewer G",
+      "focus": "Compute Fairness",
+      "status": "PARTIAL",
+      "action": "Compare under FLOP-matched & wall-clock matched regimes"
+    },
+    {
+      "id": "Reviewer H",
+      "focus": "Threats to Validity",
+      "status": "CLOSED",
+      "action": "Preserve negative results (NR-001)"
+    }
+  ]
+}

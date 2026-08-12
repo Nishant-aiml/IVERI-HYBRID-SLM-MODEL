@@ -1,6 +1,6 @@
 # Documentation Discrepancies Report (Phase 6.3.1H)
 
-**Generated:** 2026-07-17T07:31:40Z  
+**Generated:** 2026-07-24T18:01:13Z  
 **Protocol:** Phase-6.3.1H  
 **Mode:** Audit-only — scientific claims in publication artifacts are not modified
 
@@ -51,7 +51,7 @@
 ```json
 {
   "protocol_version": "Phase-6.3.1H",
-  "timestamp_utc": "2026-07-17T07:31:40Z",
+  "timestamp_utc": "2026-07-24T18:01:13Z",
   "production_verdict": "PASS",
   "items": [
     {

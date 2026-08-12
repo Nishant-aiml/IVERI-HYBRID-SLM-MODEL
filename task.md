@@ -5,7 +5,7 @@
   - [x] Verify imports of IVERIModel, BaselineTransformer, TinyMamba, pretrain_runner, sft_runner, IVERIInferenceEngine
   - [x] Run forward pass smoke test (nano config, B=2, S=64, check logits, no NaNs, finite loss, telemetry)
   - [x] Verify checkpoint save/load round-trip
-  - [x] Verify pyproject.toml version is 0.1.0
+  - [x] Verify pyproject.toml version is 1.0.0
 
 - [x] **Phase 7.2: Configuration Validation**
   - [x] Add factory presets to configs/base_config.py: get_nano_config, get_small_config, get_medium_config, get_large_config, get_xlarge_config, get_max_config

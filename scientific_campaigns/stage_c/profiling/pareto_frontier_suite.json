@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-07-29T13:50:48.442356Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "data_split": {
+    "train": 80,
+    "val": 10,
+    "unseen_test": 10
+  },
+  "unseen_test_results": {
+    "action_match_pct": 100.0,
+    "utility_ratio": 1.0,
+    "total_regret": 0.0,
+    "mean_oracle_decision_margin": 1.6861
+  },
+  "pareto_frontier_matrix": [
+    {
+      "policy": "Static Depth 0 (Always Fast)",
+      "avg_loss": 0.261,
+      "avg_latency_ms": 51.88,
+      "vram_mb": 428.0,
+      "is_pareto_optimal": true
+    },
+    {
+      "policy": "Static Depth 1",
+      "avg_loss": 0.354,
+      "avg_latency_ms": 266.3,
+      "vram_mb": 836.0,
+      "is_pareto_optimal": false
+    },
+    {
+      "policy": "Static Depth 2",
+      "avg_loss": 0.314,
+      "avg_latency_ms": 420.5,
+      "vram_mb": 836.0,
+      "is_pareto_optimal": false
+    },
+    {
+      "policy": "Static Depth 3",
+      "avg_loss": 0.284,
+      "avg_latency_ms": 560.1,
+      "vram_mb": 836.0,
+      "is_pareto_optimal": false
+    },
+    {
+      "policy": "Static Depth 4 (Always Deep)",
+      "avg_loss": 0.226,
+      "avg_latency_ms": 625.22,
+      "vram_mb": 836.0,
+      "is_pareto_optimal": true
+    },
+    {
+      "policy": "Adaptive Controller (SciOS v1.1)",
+      "avg_loss": 0.231,
+      "avg_latency_ms": 112.4,
+      "vram_mb": 428.0,
+      "is_pareto_optimal": true
+    }
+  ]
+}

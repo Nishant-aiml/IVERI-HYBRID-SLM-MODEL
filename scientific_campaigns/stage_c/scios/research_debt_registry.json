@@ -1,0 +1,42 @@
+[
+  {
+    "debt_id": "DEBT-001",
+    "problem": "Titans memory evaluation missing for long sequences (seq_len >= 512).",
+    "priority": "CRITICAL",
+    "affected_papers": [
+      "Paper 2"
+    ],
+    "affected_patents": [
+      "Patent 2"
+    ],
+    "required_experiment": "stage_c_titans_context_sweep.py",
+    "est_gpu_hours": 8.0
+  },
+  {
+    "debt_id": "DEBT-002",
+    "problem": "Router entropy logs not saved during training.",
+    "priority": "HIGH",
+    "affected_papers": [
+      "Paper 3"
+    ],
+    "affected_patents": [
+      "Patent 1"
+    ],
+    "required_experiment": "stage_c_router_instrumentation.py",
+    "est_gpu_hours": 2.0
+  },
+  {
+    "debt_id": "DEBT-003",
+    "problem": "Step-controlled baseline comparison is confounded by 75x throughput mismatch.",
+    "priority": "CRITICAL",
+    "affected_papers": [
+      "Paper 1",
+      "Paper 5"
+    ],
+    "affected_patents": [
+      "Patent 4"
+    ],
+    "required_experiment": "stage_c_wallclock_comparison.py",
+    "est_gpu_hours": 4.0
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "Full_IVERI": {
+    "val_loss": 0.1922,
+    "latency_ms": 51.88,
+    "status": "BEST"
+  },
+  "No_BLT": {
+    "val_loss": 0.6132,
+    "latency_ms": 52.28,
+    "status": "DEGRADED"
+  },
+  "No_Titans": {
+    "val_loss": 0.5072,
+    "latency_ms": 49.78,
+    "status": "DEGRADED"
+  },
+  "No_MoR": {
+    "val_loss": 0.3902,
+    "latency_ms": 37.68,
+    "status": "DEGRADED"
+  },
+  "No_Router": {
+    "val_loss": 0.2742,
+    "latency_ms": 51.08,
+    "status": "DEGRADED"
+  }
+}

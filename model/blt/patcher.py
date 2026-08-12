@@ -59,26 +59,17 @@ class DynamicPatcher:
             entropy = entropy.squeeze(-1)
         validate_shape(entropy, (batch_size, seq_len), name="entropy")
 
-        # Initialize boundary map. Index 0 is always True (first patch starts)
+        # Vectorized boundary computation via PyTorch tensor operations
         boundary_map = torch.zeros(batch_size, seq_len, device=raw_bytes.device, dtype=torch.bool)
         boundary_map[:, 0] = True
 
-        # Keep track of current patch lengths per batch item
-        current_len = torch.ones(batch_size, device=raw_bytes.device, dtype=torch.long)
-
-        # Traverse the sequence sequentially to enforce length constraints deterministically
-        for i in range(1, seq_len):
-            # Check length constraint triggers
-            max_len_triggered = current_len >= self.patch_size_max
-            entropy_triggered = (entropy[:, i] >= self.entropy_threshold) & (
-                current_len >= self.patch_size_min
-            )
-
-            boundary_today = max_len_triggered | entropy_triggered
-            boundary_map[:, i] = boundary_today
-
-            # Increment lengths where boundary is False, reset to 1 where boundary is True
-            current_len = torch.where(boundary_today, torch.ones_like(current_len), current_len + 1)
+        # Vectorized entropy threshold mask
+        entropy_mask = entropy >= self.entropy_threshold
+        
+        # Enforce max patch size boundary strides deterministically
+        max_stride_indices = torch.arange(0, seq_len, self.patch_size_max, device=raw_bytes.device)
+        boundary_map[:, max_stride_indices] = True
+        boundary_map |= entropy_mask
 
         validate_shape(boundary_map, (batch_size, seq_len), name="boundary_map")
         return boundary_map

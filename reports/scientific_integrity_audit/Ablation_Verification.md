@@ -1,6 +1,6 @@
 # Ablation Verification Report (Phase 6.3.1F)
 
-**Generated:** 2026-07-17T07:28:30Z  
+**Generated:** 2026-07-25T12:18:05Z  
 **Protocol:** Phase-6.3.1F  
 **Device:** cpu  
 
@@ -54,7 +54,7 @@ No unused flags, dead configuration, or silent fallback detected.
 ```json
 {
   "protocol_version": "Phase-6.3.1F",
-  "timestamp_utc": "2026-07-17T07:28:30Z",
+  "timestamp_utc": "2026-07-25T12:18:05Z",
   "device": "cpu",
   "production_verdict": "PASS",
   "probes": [

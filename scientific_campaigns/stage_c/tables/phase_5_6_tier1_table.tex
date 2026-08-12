@@ -1,0 +1,16 @@
+\begin{table}[h]
+\centering
+\caption{Stage C Phase 5 \& 6: Tier 1 Core Ablation Metrics and Failure Analysis (3 Seeds, 50 Steps)}
+\label{tab:stage_c_tier1}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model Architecture} & \textbf{Final Loss (Mean)} & \textbf{Throughput (tok/s)} & \textbf{Peak VRAM (MB)} & \textbf{Failure Events} \\
+\hline
+IVERI\_Full\_v0.91             & 3.1425 &   172.5 &  828.4 & 5 \\
+IVERI\_No\_Entropy             & 3.1420 &   186.3 &  827.8 & 5 \\
+IVERI\_No\_Titans              & 3.1420 &   271.2 &  691.0 & 7 \\
+IVERI\_No\_MoR                 & 3.1365 &   359.2 &  422.7 & 1 \\
+Baseline\_Dense\_Transformer   & 1.3664 & 13016.3 &  393.6 & 0 \\
+\hline
+\end{tabular}
+\end{table}

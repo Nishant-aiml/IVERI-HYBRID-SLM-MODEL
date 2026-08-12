@@ -1,0 +1,11 @@
+{
+  "registry_version": "1.0",
+  "timestamp": "2026-07-25T10:18:55.189944",
+  "benchmarks": {
+    "tinystories": "v1.2",
+    "fineweb_edu": "v2.0",
+    "wikipedia": "2026-07-01",
+    "finemath": "v4.0",
+    "dclm": "v1.0"
+  }
+}

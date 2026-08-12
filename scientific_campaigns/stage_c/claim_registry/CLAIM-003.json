@@ -1,0 +1,21 @@
+{
+  "claim_id": "CLAIM-003",
+  "rq": "RQ6-STABILITY",
+  "statement": "IVERI gradient explosions are architectural (MoR recursion), NOT LR warmup related. Evidence: Phase-7 warmup sweep (0\u2013200 steps) produces exactly 2 explosions at every warmup value. Evidence: Phase-5/6 No-MoR variant has 1 explosion vs Full 5 explosions across 3 seeds. Root cause: MoR recursive gradient amplification during steps 1\u20133 before AdamW moment stabilization. Fix: gradient clipping WITHIN MoR recursion depth, not LR schedule change.",
+  "evidence_level": "ERL-5",
+  "verification_status": "VERIFIED",
+  "source_data": [
+    "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_5_6\\tier1_ablations_and_failures.json",
+    "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_7\\lr_warmup_sweep_results.json"
+  ],
+  "source_sha256": [
+    "61f6c006c771792e",
+    "0329955c94e95ef5"
+  ],
+  "evidence_type": "FAILURE_ANALYSIS+ABLATION",
+  "supporting_experiments": [
+    "Phase-5/6 Tier-1 Ablations (n=15)",
+    "Phase-7 Warmup Sweep (n=6)"
+  ],
+  "timestamp": "2026-07-26T06:58:00.620785Z"
+}

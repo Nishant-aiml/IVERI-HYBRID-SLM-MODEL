@@ -1,0 +1,15 @@
+{
+  "claim_id": "CLM-004",
+  "statement": "Byte entropy causal convolution causes zero future token information leakage.",
+  "evidence_type": "PROVEN_BY_UNIT_TEST",
+  "evidence_source": "tests/test_causality_runtime.py::test_byte_entropy_causal_conv_no_future_leak",
+  "evidence_value": {
+    "test_result": "PASSED"
+  },
+  "verification_command": "python -m pytest tests/test_causality_runtime.py -v",
+  "git_sha": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "seeds": "N/A (deterministic)",
+  "evidence_completeness": "COMPLETE",
+  "broken_chain": false,
+  "evidence_level": "LEVEL_4"
+}

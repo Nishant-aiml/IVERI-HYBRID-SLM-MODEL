@@ -8,7 +8,7 @@
 
 | Requirement | Minimum | Recommended |
 |---|---|---|
-| Python | 3.11+ | 3.12+ |
+| Python | 3.10+ | 3.12+ |
 | RAM | 8 GB | 16 GB |
 | Storage | 2 GB | 10 GB |
 | GPU | CPU (slow) | CUDA 11.8+ |

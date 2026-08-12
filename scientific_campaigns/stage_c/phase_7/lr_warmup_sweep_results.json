@@ -1,0 +1,74 @@
+[
+  {
+    "warmup_steps": 0,
+    "steps_run": 100,
+    "explosion_events": 2,
+    "final_loss": 3.1405563354492188,
+    "min_loss": 3.138103485107422,
+    "mean_loss": 3.3758857345581053,
+    "loss_variance": 0.34851127219755873,
+    "mean_valid_grad_norm": 1.3247587978839874,
+    "avg_throughput_tok_sec": 177.26044636976553,
+    "runtime_sec": 303.2044427394867
+  },
+  {
+    "warmup_steps": 25,
+    "steps_run": 100,
+    "explosion_events": 2,
+    "final_loss": 3.1421241760253906,
+    "min_loss": 3.1368026733398438,
+    "mean_loss": 3.5418094635009765,
+    "loss_variance": 0.581905415936344,
+    "mean_valid_grad_norm": 1.958116656359361,
+    "avg_throughput_tok_sec": 188.65453692583907,
+    "runtime_sec": 281.11361360549927
+  },
+  {
+    "warmup_steps": 50,
+    "steps_run": 100,
+    "explosion_events": 2,
+    "final_loss": 3.1437530517578125,
+    "min_loss": 3.137908935546875,
+    "mean_loss": 3.678807411193848,
+    "loss_variance": 0.7148587068863839,
+    "mean_valid_grad_norm": 2.5169700292908415,
+    "avg_throughput_tok_sec": 185.794118910578,
+    "runtime_sec": 288.74375462532043
+  },
+  {
+    "warmup_steps": 75,
+    "steps_run": 100,
+    "explosion_events": 2,
+    "final_loss": 3.1420135498046875,
+    "min_loss": 3.1392593383789062,
+    "mean_loss": 3.781475791931152,
+    "loss_variance": 0.7904754908946618,
+    "mean_valid_grad_norm": 2.832405315369976,
+    "avg_throughput_tok_sec": 181.04741870412326,
+    "runtime_sec": 293.1563160419464
+  },
+  {
+    "warmup_steps": 100,
+    "steps_run": 100,
+    "explosion_events": 2,
+    "final_loss": 3.1429901123046875,
+    "min_loss": 3.13787841796875,
+    "mean_loss": 3.8655646896362303,
+    "loss_variance": 0.838236089092416,
+    "mean_valid_grad_norm": 3.118396294968469,
+    "avg_throughput_tok_sec": 198.34570443919915,
+    "runtime_sec": 259.8823552131653
+  },
+  {
+    "warmup_steps": 200,
+    "steps_run": 100,
+    "explosion_events": 2,
+    "final_loss": 3.142467498779297,
+    "min_loss": 3.1401748657226562,
+    "mean_loss": 4.116455612182617,
+    "loss_variance": 0.8945326971894305,
+    "mean_valid_grad_norm": 4.058575354364454,
+    "avg_throughput_tok_sec": 192.5612578033328,
+    "runtime_sec": 268.808714389801
+  }
+]

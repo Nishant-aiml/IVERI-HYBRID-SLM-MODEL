@@ -1,0 +1,15 @@
+{
+  "registry_version": "1.0",
+  "timestamp": "2026-07-25T10:18:55.184811",
+  "artifacts": {
+    "checkpoints": "reports/checkpoint_lineage.json",
+    "evidence_ledger": "reports/EVIDENCE_LEDGER.md",
+    "trace_graph": "reports/EVIDENCE_TRACE_GRAPH.json",
+    "certificates": [
+      "reports/ENGINEERING_CERTIFICATE.md",
+      "reports/RESEARCH_CERTIFICATE.md",
+      "reports/PUBLICATION_CERTIFICATE.md",
+      "reports/PATENT_CERTIFICATE.md"
+    ]
+  }
+}

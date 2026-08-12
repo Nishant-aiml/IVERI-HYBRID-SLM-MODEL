@@ -1,0 +1,1683 @@
+# IVERI Core Repository Audit
+
+## reports/
+- **reports\evaluation\eval_summary.csv** | 17491 B | Type: CSV Data | Evidence: `Metric,Value architecture/attention/backend_selected,SDPA (PyTorch) architecture...`
+- **reports\evaluation\eval_summary.json** | 21992 B | Type: JSON Data | Evidence: `{   "metadata": {     "timestamp": "2026-07-17T13:01:45",     "git_commit": "4d1...`
+- **reports\evaluation\eval_summary.md** | 2868 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Evaluation Report **Generated:** 2026-07-17T13:01:45 **Reproducti...`
+- **reports\final_engineering_freeze\00_FREEZE_VERDICT.md** | 5145 B | Type: Generated Report/Audit Text | Evidence: `# IVERI CORE — Final Engineering Freeze Verdict  **Audit Date:** 2026-07-07   **...`
+- **reports\final_engineering_freeze\01_architecture_validation.md** | 2942 B | Type: Generated Report/Audit Text | Evidence: `# Architecture Validation Report  **Audit Date:** 2026-07-07   **Auditor:** Inde...`
+- **reports\final_engineering_freeze\02_numerical_stability.md** | 2275 B | Type: Generated Report/Audit Text | Evidence: `# Numerical Stability Report  **Audit Date:** 2026-07-07   **Auditor:** Independ...`
+- **reports\final_engineering_freeze\03_security_audit.md** | 2115 B | Type: Generated Report/Audit Text | Evidence: `# Security Audit Report  **Audit Date:** 2026-07-07   **Auditor:** Independent A...`
+- **reports\final_engineering_freeze\04_performance_profiling.md** | 3062 B | Type: Generated Report/Audit Text | Evidence: `# Performance Profiling Report  **Audit Date:** 2026-07-07   **Auditor:** Indepe...`
+- **reports\final_engineering_freeze\05_checkpoint_system.md** | 2191 B | Type: Generated Report/Audit Text | Evidence: `# Checkpoint System Report  **Audit Date:** 2026-07-07   **Auditor:** Independen...`
+- **reports\final_engineering_freeze\06_config_system.md** | 2416 B | Type: Generated Report/Audit Text | Evidence: `# Configuration System Report  **Audit Date:** 2026-07-07   **Auditor:** Indepen...`
+- **reports\final_engineering_freeze\07_integration_testing.md** | 2822 B | Type: Generated Report/Audit Text | Evidence: `# Integration Testing Report  **Audit Date:** 2026-07-07   **Auditor:** Independ...`
+- **reports\final_engineering_freeze\08_documentation_audit.md** | 1037 B | Type: Generated Report/Audit Text | Evidence: `# Documentation & Version Consistency Report  **Audit Date:** 2026-07-07   **Aud...`
+- **reports\final_engineering_freeze\09_repository_integrity.md** | 804 B | Type: Generated Report/Audit Text | Evidence: `# Repository Integrity Report  **Audit Date:** 2026-07-07   **Auditor:** Indepen...`
+- **reports\final_engineering_freeze\10_training_pipeline.md** | 3460 B | Type: Generated Report/Audit Text | Evidence: `# Training Pipeline Report  **Audit Date:** 2026-07-07   **Auditor:** Independen...`
+- **reports\final_engineering_freeze\11_evaluation_pipeline.md** | 3345 B | Type: Generated Report/Audit Text | Evidence: `# Evaluation Pipeline Report  **Audit Date:** 2026-07-07   **Auditor:** Independ...`
+- **reports\final_engineering_freeze\12_inference_engine.md** | 1532 B | Type: Generated Report/Audit Text | Evidence: `# Inference Engine Report  **Audit Date:** 2026-07-07   **Auditor:** Independent...`
+- **reports\final_engineering_freeze\13_research_campaign.md** | 3834 B | Type: Generated Report/Audit Text | Evidence: `# Research Campaign Infrastructure Report  **Audit Date:** 2026-07-07   **Audito...`
+- **reports\final_engineering_freeze\14_determinism.md** | 1634 B | Type: Generated Report/Audit Text | Evidence: `# Determinism Report  **Audit Date:** 2026-07-07   **Auditor:** Independent AI A...`
+- **reports\final_engineering_freeze\15_dependency_environment.md** | 737 B | Type: Generated Report/Audit Text | Evidence: `# Dependency & Environment Report  **Audit Date:** 2026-07-07   **Auditor:** Ind...`
+- **reports\final_engineering_freeze\16_test_suite.md** | 1038 B | Type: Generated Report/Audit Text | Evidence: `# Test Suite Report  **Audit Date:** 2026-07-07   **Auditor:** Independent AI Ar...`
+- **reports\final_engineering_freeze\freeze_state.json** | 1304 B | Type: JSON Data | Evidence: `{   "audit_version": "1.0",   "timestamp": "2026-07-07T12:05:00+05:30",   "audit...`
+- **reports\final_repository_status_audit\01_executive_summary.md** | 3023 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Executive Summary  **Audit Date**: 2026-07-08 ...`
+- **reports\final_repository_status_audit\02_architecture_audit.md** | 4179 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Repository Architecture Audit  ## Spec vs Impl...`
+- **reports\final_repository_status_audit\03_runtime_validation.md** | 1775 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Runtime Validation  ## Independent Runtime Tes...`
+- **reports\final_repository_status_audit\04_product_validation.md** | 2638 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Product Validation  ## Product Readiness Check...`
+- **reports\final_repository_status_audit\05_integration_validation.md** | 2658 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Integration Validation  ## End-to-End Data Flo...`
+- **reports\final_repository_status_audit\06_optimization_validation.md** | 3043 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Optimization Validation  ## Implemented Optimi...`
+- **reports\final_repository_status_audit\07_cuda_validation.md** | 2042 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — CUDA Validation  ## Environment  | Property | ...`
+- **reports\final_repository_status_audit\08_training_validation.md** | 2897 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Training Pipeline Validation  ## Training Stag...`
+- **reports\final_repository_status_audit\09_inference_validation.md** | 1933 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Inference Validation  ## Inference Pipeline  |...`
+- **reports\final_repository_status_audit\10_data_pipeline_validation.md** | 2501 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Data Pipeline Validation  ## Pipeline Componen...`
+- **reports\final_repository_status_audit\11_test_suite_validation.md** | 4554 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Test Suite Validation  ## Test Results Summary...`
+- **reports\final_repository_status_audit\12_numerical_stability.md** | 1726 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Numerical Stability Validation  ## Verificatio...`
+- **reports\final_repository_status_audit\13_checkpointing_determinism.md** | 2182 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Checkpointing & Determinism  ## Checkpoint Con...`
+- **reports\final_repository_status_audit\14_dependency_audit.md** | 2521 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Dependency Audit  ## Requirements File Analysi...`
+- **reports\final_repository_status_audit\15_security_audit.md** | 2069 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Security Audit  ## Security Findings  ### 1. C...`
+- **reports\final_repository_status_audit\16_research_infrastructure.md** | 3067 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Research Infrastructure Validation  ## Researc...`
+- **reports\final_repository_status_audit\17_readiness_assessment.md** | 2623 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Readiness Assessment  ## Phase Completion Stat...`
+- **reports\final_repository_status_audit\18_risk_assessment.md** | 3455 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Risk Assessment  ## Critical Risks (Blocking) ...`
+- **reports\final_repository_status_audit\19_remaining_issues.md** | 4306 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Remaining Issues & Action Plan  This document ...`
+- **reports\final_repository_status_audit\20_phase_determination.md** | 3028 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Phase Determination  This report provides an o...`
+- **reports\final_repository_status_audit\21_final_verdict.md** | 4321 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Final Verdict & Engineering Certificate  **Dat...`
+- **reports\final_repository_status_audit\22_bug_fix_record.md** | 3399 B | Type: Generated Report/Audit Text | Evidence: `# Final Repository Status Audit — Bug Fix Record  This document records the crit...`
+- **reports\final_repository_validation\Architecture_Validation.md** | 879 B | Type: Generated Report/Audit Text | Evidence: `# Architecture — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit...`
+- **reports\final_repository_validation\CUDA_Report.md** | 787 B | Type: Generated Report/Audit Text | Evidence: `# CUDA / Mixed Precision — Final Validation  **Generated:** 2026-07-06T18:39:39Z...`
+- **reports\final_repository_validation\Database_Report.md** | 747 B | Type: Generated Report/Audit Text | Evidence: `# Database — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit mod...`
+- **reports\final_repository_validation\Documentation_Report.md** | 712 B | Type: Generated Report/Audit Text | Evidence: `# Documentation — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audi...`
+- **reports\final_repository_validation\Engineering_Validation.md** | 758 B | Type: Generated Report/Audit Text | Evidence: `# Engineering — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit ...`
+- **reports\final_repository_validation\Evaluation_Report.md** | 704 B | Type: Generated Report/Audit Text | Evidence: `# Evaluation — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit m...`
+- **reports\final_repository_validation\Executive_Summary.md** | 1847 B | Type: Generated Report/Audit Text | Evidence: `# Executive Summary — Final Repository Validation  **Generated:** 2026-07-06T18:...`
+- **reports\final_repository_validation\Final_Project_Status.md** | 660 B | Type: Generated Report/Audit Text | Evidence: `# Final Project Status  **Generated:** 2026-07-06T18:39:39Z   **Audit mode:** In...`
+- **reports\final_repository_validation\Inference_Report.md** | 740 B | Type: Generated Report/Audit Text | Evidence: `# Inference — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit mo...`
+- **reports\final_repository_validation\Performance_Report.md** | 792 B | Type: Generated Report/Audit Text | Evidence: `# Performance — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit ...`
+- **reports\final_repository_validation\Production_Readiness.md** | 809 B | Type: Generated Report/Audit Text | Evidence: `# Production Readiness — Final Validation  **Generated:** 2026-07-06T18:39:39Z  ...`
+- **reports\final_repository_validation\Publication_Report.md** | 868 B | Type: Generated Report/Audit Text | Evidence: `# Publication — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit ...`
+- **reports\final_repository_validation\Recommendations.md** | 660 B | Type: Generated Report/Audit Text | Evidence: `# Recommendations  **Generated:** 2026-07-06T18:39:39Z   **Audit mode:** Indepen...`
+- **reports\final_repository_validation\Regression_Report.md** | 719 B | Type: Generated Report/Audit Text | Evidence: `# Regression — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit m...`
+- **reports\final_repository_validation\Remaining_Issues.md** | 700 B | Type: Generated Report/Audit Text | Evidence: `# Remaining Issues  **Generated:** 2026-07-06T18:39:39Z   **Audit mode:** Indepe...`
+- **reports\final_repository_validation\Replay_Report.md** | 661 B | Type: Generated Report/Audit Text | Evidence: `# Replay — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit mode:...`
+- **reports\final_repository_validation\Scientific_Integrity.md** | 779 B | Type: Generated Report/Audit Text | Evidence: `# Scientific Integrity — Final Validation  **Generated:** 2026-07-06T18:39:39Z  ...`
+- **reports\final_repository_validation\Security_Report.md** | 755 B | Type: Generated Report/Audit Text | Evidence: `# Security — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit mod...`
+- **reports\final_repository_validation\Testing_Report.md** | 705 B | Type: Generated Report/Audit Text | Evidence: `# Testing — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit mode...`
+- **reports\final_repository_validation\Training_Report.md** | 754 B | Type: Generated Report/Audit Text | Evidence: `# Training — Final Validation  **Generated:** 2026-07-06T18:39:39Z   **Audit mod...`
+- **reports\final_repository_validation\validation_state.json** | 1947 B | Type: JSON Data | Evidence: `{   "timestamp_utc": "2026-07-06T18:39:39Z",   "integrity_tests_passed": 68,   "...`
+- **reports\live_training\checkpoint_history.md** | 656 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Checkpoint History Summary  | Step | Train Loss | Val Loss | Perp...`
+- **reports\live_training\generation_samples.md** | 77446 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Pretraining Generation Inspection Log  This file documents the ev...`
+- **reports\live_training\learning_rate.csv** | 311 B | Type: CSV Data | Evidence: `step,learning_rate 1,0.00030000 2,0.00030000 3,0.00030000 4,0.00030000 5,0.00030...`
+- **reports\live_training\loss.csv** | 457 B | Type: CSV Data | Evidence: `step,train_loss,val_loss 1,5.550947,5.557775 2,5.554518,5.557775 3,5.559911,5.55...`
+- **reports\live_training\perplexity.csv** | 549 B | Type: CSV Data | Evidence: `step,train_perplexity,val_perplexity 1,257.481201,259.245391 2,258.402442,259.24...`
+- **reports\live_training\preference_live_metrics.csv** | 1165 B | Type: CSV Data | Evidence: `step,loss,chosen_avg_reward,rejected_avg_reward,reward_margin,kl,entropy,prefere...`
+- **reports\live_training\sft_checkpoint_history.md** | 644 B | Type: Documentation/Text | Evidence: `# IVERI CORE — SFT Checkpoint History  | Step | Train Loss | Val Loss | Perplexi...`
+- **reports\live_training\sft_loss.csv** | 457 B | Type: CSV Data | Evidence: `step,train_loss,val_loss 1,5.558314,5.560238 2,5.545294,5.560238 3,5.561249,5.56...`
+- **reports\live_training\sft_lr.csv** | 311 B | Type: CSV Data | Evidence: `step,learning_rate 1,0.00030000 2,0.00030000 3,0.00030000 4,0.00030000 5,0.00030...`
+- **reports\live_training\sft_perplexity.csv** | 549 B | Type: CSV Data | Evidence: `step,train_perplexity,val_perplexity 1,259.385228,259.884747 2,256.029791,259.88...`
+- **reports\live_training\throughput.csv** | 671 B | Type: CSV Data | Evidence: `step,tokens_per_sec,bytes_per_sec,patches_per_sec,samples_per_sec 1,194.68,194.6...`
+- **reports\phase_0\completion_report.md** | 4817 B | Type: Generated Report/Audit Text | Evidence: `# Phase 0 Completion Report — Project Foundation & Infrastructure  **Date:** 202...`
+- **reports\phase_0\quality\.gitkeep** | 51 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_0\quality\report.md** | 34880 B | Type: Generated Report/Audit Text | Evidence: `# Quality Assurance Report — Phase 0  **Date:** 2026-06-30 23:32:48 **Overall St...`
+- **reports\phase_0\tests\.gitkeep** | 48 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_0\validation\.gitkeep** | 54 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_10\00_baseline_selection.md** | 768 B | Type: Documentation/Text | Evidence: `# 00 Baseline Selection Justification  This document details the scientific rati...`
+- **reports\phase_10\01_environment.md** | 77 B | Type: Documentation/Text | Evidence: `# 01 Environment Lock  - PyTorch: 2.5.1 - Revision: v0.9.0-phase9-freeze`
+- **reports\phase_10\02_baselines.md** | 74 B | Type: Documentation/Text | Evidence: `# 02 Baseline Model Specifications  Documents Baselines A, B, C, D, E.`
+- **reports\phase_10\03_compute_matching.md** | 86 B | Type: Generated Report/Audit Text | Evidence: `# 03 Compute Budget Matching Audit  Active parameter delta: 9.28% (<= 10.0% PASS...`
+- **reports\phase_10\04_training_curves.md** | 439 B | Type: Documentation/Text | Evidence: `# 04 Training Curves & Milestone Evaluation  ## Summary Table across Random Seed...`
+- **reports\phase_10\05_efficiency.md** | 67 B | Type: Generated Report/Audit Text | Evidence: `# 05 Efficiency & Latency Audit  Tokens/sec and VRAM profiling.`
+- **reports\phase_10\06_ablation.md** | 91 B | Type: Documentation/Text | Evidence: `# 06 Component Ablation & Contribution Matrix  Single and cumulative ablation an...`
+- **reports\phase_10\07_statistics.md** | 92 B | Type: Documentation/Text | Evidence: `# 07 Statistical Significance Analysis  Paired t-tests, Wilcoxon signed-rank, Co...`
+- **reports\phase_10\08_generation.md** | 88 B | Type: Documentation/Text | Evidence: `# 08 Automated Text Quality Evaluation  Perplexity, BPB, Distinct-1/2, EOS behav...`
+- **reports\phase_10\09_negative_results.md** | 90 B | Type: Documentation/Text | Evidence: `# 09 Negative Results & Baseline Advantages  Documented baseline wins and limita...`
+- **reports\phase_10\10_research_conclusions.md** | 541 B | Type: Generated Report/Audit Text | Evidence: `# 10 Research Conclusions  ## Final Decision Matrix  | Research Question | Verdi...`
+- **reports\phase_10\11_reproducibility.md** | 78 B | Type: Documentation/Text | Evidence: `# 11 Reproducibility Bundle  Hashes, seeds, and reproduction instructions.`
+- **reports\phase_10\12_research_validity.md** | 1136 B | Type: Documentation/Text | Evidence: `# 12 Research Validity & Threats Analysis  This report categorizes all potential...`
+- **reports\phase_10\BENCHMARK_CERTIFICATE.md** | 4157 B | Type: Documentation/Text | Evidence: `# Benchmark Integrity Certificate  - **Timestamp**: 2026-07-24T16:45:38Z - **Git...`
+- **reports\phase_10\benchmark_diff.md** | 78 B | Type: Documentation/Text | Evidence: `# Benchmark Drift Analysis  Zero drift detected vs baseline manifest v1.0.`
+- **reports\phase_10\benchmark_environment.md** | 452 B | Type: Documentation/Text | Evidence: `# Benchmark Environment Lock  ```json {   "git_commit": "165f162f8886e48b126cf5a...`
+- **reports\phase_10\benchmark_manifest_v1.0.json** | 568 B | Type: JSON Data | Evidence: `{   "version": "v1.0",   "environment": {     "git_commit": "165f162f8886e48b126...`
+- **reports\phase_10\BENCHMARK_SUMMARY.md** | 618 B | Type: Generated Report/Audit Text | Evidence: `# Benchmark Summary Card  | Attribute | Specification | |---|---| | **Overall St...`
+- **reports\phase_10\compute_matching_audit.json** | 1367 B | Type: JSON Data | Evidence: `{   "models": {     "Baseline A (Transformer)": {       "total_parameters": 3421...`
+- **reports\phase_10\phase10_summary.json** | 2133 B | Type: JSON Data | Evidence: `{   "status": "SUCCESS",   "phase": "10A_and_10B",   "campaign_duration_minutes"...`
+- **reports\phase_10\figures\fig01_benchmark_chart.png** | 20037 B | Type: Image Data (20037 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig02_benchmark_chart.png** | 20150 B | Type: Image Data (20150 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig02_loss_curves.png** | 38851 B | Type: Image Data (38851 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig03_benchmark_chart.png** | 20113 B | Type: Image Data (20113 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig04_benchmark_chart.png** | 20123 B | Type: Image Data (20123 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig05_benchmark_chart.png** | 20145 B | Type: Image Data (20145 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig06_benchmark_chart.png** | 20213 B | Type: Image Data (20213 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig07_benchmark_chart.png** | 20095 B | Type: Image Data (20095 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig08_benchmark_chart.png** | 20171 B | Type: Image Data (20171 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig09_benchmark_chart.png** | 20190 B | Type: Image Data (20190 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig10_benchmark_chart.png** | 20315 B | Type: Image Data (20315 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig11_benchmark_chart.png** | 19971 B | Type: Image Data (19971 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\figures\fig12_benchmark_chart.png** | 20161 B | Type: Image Data (20161 bytes) | Evidence: `[Binary]`
+- **reports\phase_10\tables\table1_parameters.csv** | 92 B | Type: CSV Data | Evidence: `Model,Total_Params,Active_Params Baseline A,3421440,3421440 IVERI Hybrid,9347282...`
+- **reports\phase_10\tables\table2_efficiency.csv** | 74 B | Type: CSV Data | Evidence: `Model,Tokens_Per_Sec,VRAM_MB Baseline A,1200,512 IVERI Hybrid,1100,680`
+- **reports\phase_10\tables\table3_loss.csv** | 333 B | Type: CSV Data | Evidence: `Model,Seed,Initial_Loss,Final_Loss,Perplexity,BPB,Tokens_Per_Sec Transformer,42,...`
+- **reports\phase_10\tables\table4_ablation.csv** | 60 B | Type: CSV Data | Evidence: `Variant,Loss,Delta Full IVERI,5.56,0.0 No BLT,5.80,+0.24`
+- **reports\phase_10\tables\table5_statistics.csv** | 73 B | Type: CSV Data | Evidence: `Comparison,p_value,cohen_d,verdict IVERI vs Transformer,0.012,0.65,WIN`
+- **reports\phase_10\tables\training_stability.csv** | 222 B | Type: CSV Data | Evidence: `Model,Seed,NaN_Events,Grad_Clipping_Events,OOM_Recoveries,Status Transformer,42,...`
+- **reports\phase_1_1\completion_report.md** | 4348 B | Type: Generated Report/Audit Text | Evidence: `# Phase 1.1 Completion Report — Core Mathematical Layers  **Date:** 2026-06-29 *...`
+- **reports\phase_1_2\benchmark_report.md** | 2599 B | Type: Documentation/Text | Evidence: `# Phase 1.2 Benchmark Report — Mixture of Experts (MoE)  This report profiles Mo...`
+- **reports\phase_1_2\completion_report.md** | 2955 B | Type: Generated Report/Audit Text | Evidence: `# Phase 1.2 Completion Report — Sparse Mixture of Experts (MoE)  **Date:** 2026-...`
+- **reports\phase_1_2\validation_report.md** | 2785 B | Type: Documentation/Text | Evidence: `# Phase 1.2 Validation Report — Mixture of Experts (MoE)  ## 1. Test Suite Execu...`
+- **reports\phase_1_3\benchmark_report.md** | 2531 B | Type: Documentation/Text | Evidence: `# Phase 1.3 Benchmark Report — Mamba2 (Structured State Space Duality)  This rep...`
+- **reports\phase_1_3\completion_report.md** | 1492 B | Type: Generated Report/Audit Text | Evidence: `# Phase 1.3 Completion Report — Mamba2 (Structured State Space Duality)  **Date:...`
+- **reports\phase_1_3\validation_report.md** | 1287 B | Type: Documentation/Text | Evidence: `# Phase 1.3 Validation Report — Mamba2 (Structured State Space Duality)  ## 1. T...`
+- **reports\phase_1_3\wave_2_benchmark.md** | 1574 B | Type: Documentation/Text | Evidence: `# Phase 1.3 Wave 2 Benchmark Report — Selective Scan  This report profiles the p...`
+- **reports\phase_1_3\wave_2_completion.md** | 1407 B | Type: Generated Report/Audit Text | Evidence: `# Phase 1.3 Wave 2 Completion Report — Selective Scan  **Date:** 2026-06-29 **St...`
+- **reports\phase_1_3\wave_2_validation.md** | 1684 B | Type: Documentation/Text | Evidence: `# Phase 1.3 Wave 2 Validation Report — Selective Scan  ## 1. Test Suite Results ...`
+- **reports\phase_1_3\wave_3_benchmark.md** | 1289 B | Type: Documentation/Text | Evidence: `# Phase 1.3 Wave 3 Benchmark Report — Full Mamba2 Block  This report profiles th...`
+- **reports\phase_1_3\wave_3_completion.md** | 1476 B | Type: Generated Report/Audit Text | Evidence: `# Phase 1.3 Wave 3 Completion Report — Full Mamba2 Block  **Date:** 2026-06-29 *...`
+- **reports\phase_1_3\wave_3_validation.md** | 1578 B | Type: Documentation/Text | Evidence: `# Phase 1.3 Wave 3 Validation Report — Full Mamba2 Block  ## 1. Test Suite Resul...`
+- **reports\phase_1_4\completion_report.md** | 1566 B | Type: Generated Report/Audit Text | Evidence: `# Phase 1.4 Completion Report — Flash Attention Wrapper  **Date:** 2026-06-30 **...`
+- **reports\phase_1_4\validation_report.md** | 1197 B | Type: Documentation/Text | Evidence: `# Phase 1.4 Validation Report — Flash Attention Wrapper  ## 1. Test Suite Result...`
+- **reports\phase_1_5\completion_report.md** | 2820 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.5 Completion Report  ## Mixture of Recursions (MoR)  --- ...`
+- **reports\phase_1_5\Phase_1_5_Report.md** | 4816 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.5 Research & Validation Report ## Mixture of Recursions (...`
+- **reports\phase_1_5\validation_report.md** | 2575 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.5 Validation & Verification Report  ## Mixture of Recursi...`
+- **reports\phase_1_6\Phase_1_6_Report.md** | 5105 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.6 Completion Report ## Byte Latent Transformer (BLT) Subs...`
+- **reports\phase_1_7\Phase_1_7_Report.md** | 10444 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.7 Completion Report ## Titans Neural Memory Subsystem Imp...`
+- **reports\phase_1_8\Phase_1_8_Report.md** | 12476 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.8 Completion Report ## Backbone Assembly  ---  ## 1. Arch...`
+- **reports\phase_1_9\Phase_1_9_Report.md** | 10322 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 1.9 Completion Report ## Full Model Integration  ---  ## 1....`
+- **reports\phase_1_9_1\Architecture_Verification_Report.md** | 3231 B | Type: Documentation/Text | Evidence: `# Architecture Verification Report — Phase 1.9.1 ## Verification of Math & Tenso...`
+- **reports\phase_1_9_1\Bug_Audit_Report.md** | 2906 B | Type: Generated Report/Audit Text | Evidence: `# Bug Audit Report — Phase 1.9.1 ## Engineering Audit for Static and Implementat...`
+- **reports\phase_1_9_1\Documentation_Audit.md** | 2072 B | Type: Generated Report/Audit Text | Evidence: `# Documentation Audit — Phase 1.9.1 ## Summary of Documentation Consistency and ...`
+- **reports\phase_1_9_1\Final_Architecture_Freeze.md** | 3199 B | Type: Documentation/Text | Evidence: `# Final Architecture Freeze Report — Phase 1.9.1 ## Official Freeze of Phase 1 C...`
+- **reports\phase_1_9_1\Quality_Report.md** | 1360 B | Type: Documentation/Text | Evidence: `# Quality Report — Phase 1.9.1 ## Code Quality, Type Safety, and Style Complianc...`
+- **reports\phase_1_9_1\Regression_Report.md** | 2962 B | Type: Documentation/Text | Evidence: `# Regression Report — Phase 1.9.1 ## Test Suite Execution Metrics & Verification...`
+- **reports\phase_2_1\Dataset_Performance_Report.md** | 1714 B | Type: Documentation/Text | Evidence: `# Dataset Performance Report — Phase 2.1 ## Throughput, Preprocessing Speeds, an...`
+- **reports\phase_2_1\Dataset_Verification_Report.md** | 2237 B | Type: Documentation/Text | Evidence: `# Dataset Verification Report — Phase 2.1 ## Validation of Byte Conversion and T...`
+- **reports\phase_2_1\Phase_2_1_Report.md** | 3612 B | Type: Documentation/Text | Evidence: `# Phase 2.1 Completion Report — Raw Byte Dataset Pipeline & DataLoader Infrastru...`
+- **reports\phase_2_1\Quality_Report.md** | 1293 B | Type: Documentation/Text | Evidence: `# Quality Report — Phase 2.1 ## Static Code Quality, Style, and Type Checking Co...`
+- **reports\phase_2_1\Regression_Report.md** | 1360 B | Type: Generated Report/Audit Text | Evidence: `# Regression Report — Phase 2.1 ## Verification of Codebase Invariant Properties...`
+- **reports\phase_2_1\Stress_Test_Report.md** | 2033 B | Type: Documentation/Text | Evidence: `# Stress Test Report — Phase 2.1 ## DataLoader Robustness and Boundary Testing  ...`
+- **reports\phase_2_2\Checkpoint_Report.md** | 1956 B | Type: Documentation/Text | Evidence: `# Checkpoint Report — Phase 2.2 ## State Serialization, Seed Preservation, and V...`
+- **reports\phase_2_2\Performance_Report.md** | 1610 B | Type: Documentation/Text | Evidence: `# Performance Report — Phase 2.2 ## Telemetry logging, Step Latencies, and Resou...`
+- **reports\phase_2_2\Phase_2_2_Report.md** | 2908 B | Type: Documentation/Text | Evidence: `# Phase 2.2 Completion Report — Training Engine & Optimization Infrastructure ##...`
+- **reports\phase_2_2\Quality_Report.md** | 1276 B | Type: Documentation/Text | Evidence: `# Quality Report — Phase 2.2 ## Static Code Quality, Style, and Type Checking Co...`
+- **reports\phase_2_2\Regression_Report.md** | 1338 B | Type: Documentation/Text | Evidence: `# Regression Report — Phase 2.2 ## Verification of Codebase Invariant Properties...`
+- **reports\phase_2_2\Training_Verification_Report.md** | 2118 B | Type: Documentation/Text | Evidence: `# Training Verification Report — Phase 2.2 ## Verification of Forward/Backward O...`
+- **reports\phase_2_3\Phase_2_3_Report.md** | 2587 B | Type: Documentation/Text | Evidence: `# Phase 2.3 Completion Report — Learning Rate Scheduler & Training Control Infra...`
+- **reports\phase_2_3\Quality_Report.md** | 1277 B | Type: Documentation/Text | Evidence: `# Quality Report — Phase 2.3 ## Static Code Quality, Style, and Type Checking Co...`
+- **reports\phase_2_3\Regression_Report.md** | 1323 B | Type: Documentation/Text | Evidence: `# Regression Report — Phase 2.3 ## Verification of Codebase Invariant Properties...`
+- **reports\phase_2_3\Scheduler_Performance_Report.md** | 1536 B | Type: Documentation/Text | Evidence: `# Scheduler Performance Report — Phase 2.3 ## Step Latency, Memory Footprint, an...`
+- **reports\phase_2_3\Scheduler_Verification_Report.md** | 2441 B | Type: Documentation/Text | Evidence: `# Scheduler Verification Report — Phase 2.3 ## Verification of Warmup and Decay ...`
+- **reports\phase_2_4\Logging_Verification_Report.md** | 1763 B | Type: Documentation/Text | Evidence: `# Logging Verification Report — Phase 2.4 **IVERI CORE v1.0 | Phase 2.4** **Date...`
+- **reports\phase_2_4\Performance_Report.md** | 1687 B | Type: Documentation/Text | Evidence: `# Performance Report — Phase 2.4 **IVERI CORE v1.0 | Phase 2.4** **Date:** 2026-...`
+- **reports\phase_2_4\Phase_2_4_Report.md** | 2694 B | Type: Generated Report/Audit Text | Evidence: `# Phase 2.4 Report — Experiment Logging & Telemetry Infrastructure **IVERI CORE ...`
+- **reports\phase_2_4\Quality_Report.md** | 2148 B | Type: Generated Report/Audit Text | Evidence: `# Quality Report — Phase 2.4 **IVERI CORE v1.0 | Phase 2.4** **Date:** 2026-06-3...`
+- **reports\phase_2_4\Recovery_Report.md** | 1671 B | Type: Documentation/Text | Evidence: `# Recovery Report — Phase 2.4 **IVERI CORE v1.0 | Phase 2.4** **Date:** 2026-06-...`
+- **reports\phase_2_4\Regression_Report.md** | 1608 B | Type: Documentation/Text | Evidence: `# Regression Report — Phase 2.4 **IVERI CORE v1.0 | Phase 2.4** **Date:** 2026-0...`
+- **reports\phase_2_4\Telemetry_Report.md** | 4291 B | Type: Documentation/Text | Evidence: `# Telemetry Report — Phase 2.4 **IVERI CORE v1.0 | Phase 2.4** **Date:** 2026-06...`
+- **reports\phase_2_5\Architecture_Report.md** | 1767 B | Type: Documentation/Text | Evidence: `# Architecture Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Date:** 2026...`
+- **reports\phase_2_5\Benchmark_Report.md** | 1665 B | Type: Documentation/Text | Evidence: `# Benchmark Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Date:** 2026-06...`
+- **reports\phase_2_5\Checkpoint_Comparison_Report.md** | 1310 B | Type: Documentation/Text | Evidence: `# Checkpoint Comparison Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Dat...`
+- **reports\phase_2_5\Evaluation_Verification_Report.md** | 1749 B | Type: Documentation/Text | Evidence: `# Evaluation Verification Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **D...`
+- **reports\phase_2_5\Memory_Report.md** | 1332 B | Type: Documentation/Text | Evidence: `# Memory Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Date:** 2026-06-30...`
+- **reports\phase_2_5\Performance_Report.md** | 1363 B | Type: Documentation/Text | Evidence: `# Performance Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Date:** 2026-...`
+- **reports\phase_2_5\Phase_2_5_Report.md** | 3055 B | Type: Generated Report/Audit Text | Evidence: `# Phase 2.5 Report — Evaluation Pipeline & Benchmark Infrastructure **IVERI CORE...`
+- **reports\phase_2_5\Quality_Report.md** | 1497 B | Type: Documentation/Text | Evidence: `# Quality Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Date:** 2026-06-3...`
+- **reports\phase_2_5\Regression_Report.md** | 2470 B | Type: Documentation/Text | Evidence: `# Regression Report — Phase 2.5 **IVERI CORE v1.0 | Phase 2.5** **Date:** 2026-0...`
+- **reports\phase_2_6\CHANGELOG_2_6.md** | 1293 B | Type: Generated Report/Audit Text | Evidence: `## Phase 2.6 — Distributed Training Infrastructure **Status:** ✅ COMPLETE **Date...`
+- **reports\phase_2_6\Phase_2_6_Report.md** | 3894 B | Type: Generated Report/Audit Text | Evidence: `# Phase 2.6 — Distributed Training Infrastructure ## Executive Summary Report  *...`
+- **reports\phase_3_0\Dataset_Report.md** | 2042 B | Type: Documentation/Text | Evidence: `# Dataset Registry & Plugin Specification Report  This report summarizes the dat...`
+- **reports\phase_3_0\License_Report.md** | 1360 B | Type: Documentation/Text | Evidence: `# License Compliance & Compatibility Report  This report summarizes license perm...`
+- **reports\phase_3_0\Phase_3_0_Report.md** | 2002 B | Type: Documentation/Text | Evidence: `# Phase 3.0 — Data Engineering Pipeline Completion Report  ## 1. Executive Summa...`
+- **reports\phase_3_0\Pipeline_Performance_Report.md** | 1180 B | Type: Documentation/Text | Evidence: `# Pipeline Performance Report  This report details resource utilization, through...`
+- **reports\phase_3_0\Pipeline_Verification.md** | 3790 B | Type: Documentation/Text | Evidence: `# Data Engineering Pipeline Verification Report  This document verifies the oper...`
+- **reports\phase_3_0\Quality_Report.md** | 1798 B | Type: Documentation/Text | Evidence: `# Quality Filtering & Cleaning Report  This report documents the filtering and r...`
+- **reports\phase_3_0\Regression_Report.md** | 1016 B | Type: Documentation/Text | Evidence: `# Regression Testing Report  This report confirms that the implementation of Pha...`
+- **reports\phase_3_0\Statistics_Report.md** | 1102 B | Type: Documentation/Text | Evidence: `# Dataset Statistics Reporting Specification  This report details how size stats...`
+- **reports\phase_3_1\Checkpoint_Report.md** | 1047 B | Type: Documentation/Text | Evidence: `# Checkpoint Selector Report — IVERI CORE Phase 3.1  This report documents the c...`
+- **reports\phase_3_1\Convergence_Comparison_Report.md** | 2163 B | Type: Documentation/Text | Evidence: `# Convergence Comparison Report — IVERI CORE Phase 3.1  This report presents a h...`
+- **reports\phase_3_1\Curriculum_Report.md** | 977 B | Type: Documentation/Text | Evidence: `# Curriculum Scheduler Report — IVERI CORE Phase 3.1  This report documents the ...`
+- **reports\phase_3_1\Generation_Inspection_Report.md** | 921 B | Type: Documentation/Text | Evidence: `# Generation Inspection Report — IVERI CORE Phase 3.1  This report documents the...`
+- **reports\phase_3_1\Gradient_Health_Report.md** | 1009 B | Type: Documentation/Text | Evidence: `# Gradient Health Report — IVERI CORE Phase 3.1  This report documents the layer...`
+- **reports\phase_3_1\License_Check_Report.md** | 1027 B | Type: Documentation/Text | Evidence: `# License Compliance Report — IVERI CORE Phase 3.1  This report documents the co...`
+- **reports\phase_3_1\Numerical_Stability_Report.md** | 1179 B | Type: Documentation/Text | Evidence: `# Numerical Stability Report — IVERI CORE Phase 3.1  This report documents the n...`
+- **reports\phase_3_1\Phase_3_1_Report.md** | 2056 B | Type: Documentation/Text | Evidence: `# Phase 3.1 Report — Foundation Pretraining (Stage 1)  This report compiles the ...`
+- **reports\phase_3_1\Pretraining_Verification.md** | 872 B | Type: Documentation/Text | Evidence: `# Pretraining Verification Log — IVERI CORE Phase 3.1  This log documents the pr...`
+- **reports\phase_3_1\Regression_Report.md** | 1044 B | Type: Documentation/Text | Evidence: `# Regression Report — IVERI CORE Phase 3.1  This report documents the full codeb...`
+- **reports\phase_3_2\Checkpoint_Report.md** | 1250 B | Type: Documentation/Text | Evidence: `# Checkpoint Report — Serialization Layout and Quality Ranking  This report vali...`
+- **reports\phase_3_2\Conversation_Report.md** | 982 B | Type: Template | Evidence: `# Conversation Report — Templates and Format Verification  This report validates...`
+- **reports\phase_3_2\Dataset_Report.md** | 1172 B | Type: Documentation/Text | Evidence: `# Dataset Report — SFT Ingestion and In-Memory Statistics  This report documents...`
+- **reports\phase_3_2\Generation_Report.md** | 1006 B | Type: Documentation/Text | Evidence: `# Generation Report — Qualitative Generation & Prompt Suite Evaluation  This rep...`
+- **reports\phase_3_2\Instruction_Verification_Report.md** | 1453 B | Type: Documentation/Text | Evidence: `# Instruction Verification Report — SFT Mathematical & Functional Validation  Th...`
+- **reports\phase_3_2\Performance_Report.md** | 808 B | Type: Documentation/Text | Evidence: `# Performance Report — Decoding Throughput & Resource Overhead  This report deta...`
+- **reports\phase_3_2\Phase_3_2_Report.md** | 4032 B | Type: Documentation/Text | Evidence: `# Phase 3.2 Report — Supervised Fine-Tuning (SFT) Instruction Tuning  **IVERI CO...`
+- **reports\phase_3_2\Quality_Report.md** | 982 B | Type: Documentation/Text | Evidence: `# Quality Report — Code Integrity & Linter Metrics  This report documents code q...`
+- **reports\phase_3_2\Regression_Report.md** | 1026 B | Type: Documentation/Text | Evidence: `# Regression Report — SFT Module Compatibility and Impact Analysis  This report ...`
+- **reports\phase_3_3\Ablation_Report.md** | 405 B | Type: Documentation/Text | Evidence: `# Ablation and Curriculum Report  ## Curriculum Stage Log  | Step | Stage Index ...`
+- **reports\phase_3_3\Benchmark_Comparison.md** | 178 B | Type: Documentation/Text | Evidence: `# Benchmark Comparison Report  ## pass@1 Results - **HumanEval pass@1:** 0.00% -...`
+- **reports\phase_3_3\coding_checkpoint_history.md** | 858 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Coding Checkpoint History  | Step | Train Loss | Val Loss | Perpl...`
+- **reports\phase_3_3\coding_loss.csv** | 652 B | Type: CSV Data | Evidence: `step,train_loss,val_loss 1,5.550494,nan 2,5.562835,nan 3,5.550211,nan 4,5.565732...`
+- **reports\phase_3_3\coding_lr.csv** | 461 B | Type: CSV Data | Evidence: `step,learning_rate 1,0.00030000 2,0.00030000 3,0.00030000 4,0.00030000 5,0.00030...`
+- **reports\phase_3_3\coding_perplexity.csv** | 774 B | Type: CSV Data | Evidence: `step,train_perplexity,val_perplexity 1,257.364590,nan 2,260.560411,nan 3,257.291...`
+- **reports\phase_3_3\coding_phase_report.md** | 213 B | Type: Documentation/Text | Evidence: `# Phase 3.3 Coding Specialization Summary  - **Final Training Loss:** 5.557323 -...`
+- **reports\phase_3_3\Coding_Quality_Report.md** | 262 B | Type: Documentation/Text | Evidence: `# Coding Quality Report  ## Metrics Overview - **Syntax Valid Ratio:** 0.00% - *...`
+- **reports\phase_3_3\Instruction_Retention_Report.md** | 225 B | Type: Documentation/Text | Evidence: `# Instruction Retention Report  ## Summary - **Pass Rate:** 0.00% - **Average Qu...`
+- **reports\phase_3_4\Alignment_Report.md** | 843 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Alignment Report  - **Policy Model Checkp...`
+- **reports\phase_3_4\alignment_samples_step_0.json** | 2302 B | Type: JSON Data | Evidence: `[   {     "prompt_id": "reasoning_01",     "category": "general_reasoning",     ...`
+- **reports\phase_3_4\alignment_samples_step_10.json** | 2302 B | Type: JSON Data | Evidence: `[   {     "prompt_id": "reasoning_01",     "category": "general_reasoning",     ...`
+- **reports\phase_3_4\alignment_samples_step_20.json** | 2302 B | Type: JSON Data | Evidence: `[   {     "prompt_id": "reasoning_01",     "category": "general_reasoning",     ...`
+- **reports\phase_3_4\Benchmark_Report.md** | 843 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Benchmark Report  - **Policy Model Checkp...`
+- **reports\phase_3_4\Checkpoint_Report.md** | 844 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Checkpoint Report  - **Policy Model Check...`
+- **reports\phase_3_4\Experiment_Report.md** | 844 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Experiment Report  - **Policy Model Check...`
+- **reports\phase_3_4\Phase_3_4_Report.md** | 843 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Phase 3 4 Report  - **Policy Model Checkp...`
+- **reports\phase_3_4\Preference_Report.md** | 844 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Preference Report  - **Policy Model Check...`
+- **reports\phase_3_4\Quality_Report.md** | 841 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Quality Report  - **Policy Model Checkpoi...`
+- **reports\phase_3_4\Regression_Report.md** | 844 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Regression Report  - **Policy Model Check...`
+- **reports\phase_3_4\Retention_Report.md** | 843 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Retention Report  - **Policy Model Checkp...`
+- **reports\phase_3_4\Reward_Report.md** | 840 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Preference Optimization Reward Report  - **Policy Model Checkpoin...`
+- **reports\phase_3_5\Ablation_Report.md** | 922 B | Type: Documentation/Text | Evidence: `# Architectural Ablation Study Report  Evaluates the contribution of each indivi...`
+- **reports\phase_3_5\Baseline_Report.md** | 323 B | Type: Documentation/Text | Evidence: `# Baseline Models Match and Parity Verification Report  Details standard configu...`
+- **reports\phase_3_5\Benchmark_Report.md** | 995 B | Type: Documentation/Text | Evidence: `# Downstream Capability Benchmark Report  Evaluates the model across standard re...`
+- **reports\phase_3_5\Calibration_Report.md** | 322 B | Type: Documentation/Text | Evidence: `# Confidence Calibration and Reliability Report  Verifies correlation between mo...`
+- **reports\phase_3_5\Claim_Validation_Report.md** | 329 B | Type: Documentation/Text | Evidence: `# Claim Validation Scorecard Report  Evaluates scientific statements and integri...`
+- **reports\phase_3_5\Efficiency_Report.md** | 949 B | Type: Documentation/Text | Evidence: `# Operational and Hardware Efficiency Report  Summarizes FLOP counts, parameter ...`
+- **reports\phase_3_5\Energy_Report.md** | 338 B | Type: Documentation/Text | Evidence: `# Power Draw and Energy Footprint Report  Logs GPU wattage draws, Joules/token, ...`
+- **reports\phase_3_5\Failure_Report.md** | 302 B | Type: Documentation/Text | Evidence: `# Failure Analysis and Diagnostic Report  Logs worst-case perplexity instances, ...`
+- **reports\phase_3_5\Hardware_Report.md** | 289 B | Type: Documentation/Text | Evidence: `# Hardware Telemetry and Throughput Report  Details processing latency, TTFT, de...`
+- **reports\phase_3_5\Memory_Report.md** | 270 B | Type: Documentation/Text | Evidence: `# Peak VRAM and Memory Footprint Report  Evaluates memory allocations, host RAM ...`
+- **reports\phase_3_5\Publication_Artifacts_Report.md** | 1980 B | Type: Documentation/Text | Evidence: `# Publication Helpers and LaTeX Tables Report  Compiles text discussion items an...`
+- **reports\phase_3_5\Reproducibility_Report.md** | 322 B | Type: Documentation/Text | Evidence: `# Reproducibility package Manifest Report  Details metadata inside the exported ...`
+- **reports\phase_3_5\Research_Report.md** | 745 B | Type: Documentation/Text | Evidence: `# Phase 3.5 Scientific Research Validation Report  This report summarizes the sc...`
+- **reports\phase_3_5\Scaling_Report.md** | 373 B | Type: Documentation/Text | Evidence: `# Model and Data Scaling Report  Evaluates power-law parameters and loss project...`
+- **reports\phase_3_5\Statistical_Report.md** | 336 B | Type: Generated Report/Audit Text | Evidence: `# Statistical Significance Audit Report  Compiles p-values, Wilcoxon signed-rank...`
+- **reports\phase_3_5\Training_Stability_Report.md** | 247 B | Type: Documentation/Text | Evidence: `# Training Stability and Gradient Norm Report  Logs convergence paths, gradient ...`
+- **reports\phase_3_5\artifacts\reproducibility_package.zip** | 12771 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\capability_radar_chart.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\capability_radar_chart.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\capability_radar_chart.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\throughput_context_scaling.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\throughput_context_scaling.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_5\figures\throughput_context_scaling.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_6\Artifact_Manifest.md** | 371 B | Type: Generated Report/Audit Text | Evidence: `# IVERI CORE — Artifact Manifest Report  This report tracks the status and depen...`
+- **reports\phase_3_6\Executive_Summary.md** | 897 B | Type: Documentation/Text | Evidence: `# Phase 3.6 — Executive Summary  This report completes Phase 3.6 validation for ...`
+- **reports\phase_3_6\Experiment_Database.md** | 633 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Experiment Database Schema  This document details the SQLite data...`
+- **reports\phase_3_6\Experiment_Log.md** | 336 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Experiment Log  This log lists all registered campaign runs.  ###...`
+- **reports\phase_3_6\Experiment_Timeline.md** | 643 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Experiment Execution Timeline  **Date:** 2026-07-04  | Time | Eve...`
+- **reports\phase_3_6\Failure_Replay_Report.md** | 403 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Failure Replay Report  This document outlines the failure capture...`
+- **reports\phase_3_6\paper_manifest.json** | 612 B | Type: JSON Data | Evidence: `{   "assets": {     "Figure_1_loss_curves": {       "type": "figure",       "fil...`
+- **reports\phase_3_6\Publication_Status.md** | 271 B | Type: Generated Report/Audit Text | Evidence: `# IVERI CORE — Publication Status  This report checks general paper submission r...`
+- **reports\phase_3_6\Regression_Report.md** | 804 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Regression Report  This report checks the current candidate metri...`
+- **reports\phase_3_6\Research_Scorecard.md** | 4055 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Research Scorecard  This document presents a unified, single-page...`
+- **reports\phase_3_6\Paper_Figures\checkpoint_golden.pt** | 0 B | Type: Empty | Evidence: `[Binary]`
+- **reports\phase_3_6\Paper_Figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_3_6\Paper_Figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_6\Paper_Figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_3_6\Paper_Tables\benchmarks_table.tex** | 650 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Ablation_Report.md** | 740 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Alignment_Report.md** | 731 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Architecture_Validation_Report.md** | 782 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\artifact_dag.json** | 935 B | Type: JSON Data | Evidence: `{   "nodes": [     {       "id": "dataset",       "type": "data"     },     {   ...`
+- **reports\phase_4_0\Baseline_Report.md** | 752 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Calibration_Report.md** | 717 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Campaign_Certificate.md** | 1141 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Campaign Certificate  ## Core Summary - **Campaign ID:** IVERI_CA...`
+- **reports\phase_4_0\campaign_manifest.json** | 1686 B | Type: JSON Data | Evidence: `{   "campaign_id": "IVERI_CAMPAIGN_2026_001",   "protocol_version": "Phase4.1-v1...`
+- **reports\phase_4_0\Campaign_Report.md** | 733 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Coding_Report.md** | 753 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Efficiency_Report.md** | 742 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Energy_Report.md** | 751 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\environment.txt** | 5037 B | Type: Data | Evidence: `=== IVERI CORE SYSTEM ENVIRONMENT LOCK === OS: Windows 11 Python version: 3.14.4...`
+- **reports\phase_4_0\evidence_graph.json** | 472 B | Type: JSON Data | Evidence: `{   "H1": {     "statistics_report": "reports/phase_4_1/Statistics_Report.md",  ...`
+- **reports\phase_4_0\Evidence_Index.md** | 2735 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Executive_Summary.md** | 735 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\experiment_manifest.json** | 727 B | Type: JSON Data | Evidence: `{   "experiment_id": "IVERI_2026_07_04_Seed42_IVERI_Run001",   "git_sha": "unkno...`
+- **reports\phase_4_0\Hypothesis_Report.md** | 1750 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Instruction_Report.md** | 745 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Long_Context_Report.md** | 783 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\manifest.json** | 712 B | Type: JSON Data | Evidence: `{   "experiment_id": "exp_campaign_Nano_10M",   "git_sha": "unknown",   "git_bra...`
+- **reports\phase_4_0\paper_manifest.json** | 914 B | Type: JSON Data | Evidence: `{   "assets": {     "Figure_1_loss_curves": {       "type": "figure",       "fil...`
+- **reports\phase_4_0\Phase_4_1_Freeze.md** | 457 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 4.1 Freeze Summary  - **Campaign ID:** IVERI_CAMPAIGN_2026_...`
+- **reports\phase_4_0\publication_manifest.json** | 1177 B | Type: JSON Data | Evidence: `{   "figures": [     {       "id": "Figure_1_loss_curves",       "path": "Paper_...`
+- **reports\phase_4_0\reproducibility_package.zip** | 1055 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Reproducibility_Report.md** | 1009 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Statistics_Report.md** | 765 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Training_Report.md** | 757 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_001 Protocol Version: Phase4.1-v1.4 Git SHA...`
+- **reports\phase_4_0\Paper_Figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\ablation_table.tex** | 662 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\benchmarks_table.tex** | 650 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\calibration_table.tex** | 486 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\efficiency_table.tex** | 488 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\long_context_table.tex** | 528 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\main_benchmark_comparison.tex** | 554 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_4_0\Paper_Tables\statistical_significance_table.tex** | 564 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Ablation_Report.md** | 758 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Alignment_Report.md** | 749 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Architecture_Validation_Report.md** | 800 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\artifact_dag.json** | 1762 B | Type: JSON Data | Evidence: `{   "nodes": [     {       "id": "dataset",       "type": "data"     },     {   ...`
+- **reports\phase_5_0\Baseline_Report.md** | 770 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Calibration_Report.md** | 735 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Campaign_Certificate.md** | 757 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 5.0 Campaign Certificate  ## Core Summary - **Campaign ID:*...`
+- **reports\phase_5_0\campaign_manifest.json** | 927 B | Type: JSON Data | Evidence: `{   "campaign_id": "IVERI_CAMPAIGN_2026_PHASE5",   "protocol_version": "Phase5.0...`
+- **reports\phase_5_0\Campaign_Report.md** | 751 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Coding_Report.md** | 771 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Efficiency_Report.md** | 760 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Energy_Report.md** | 769 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\environment.txt** | 5037 B | Type: Data | Evidence: `=== IVERI CORE SYSTEM ENVIRONMENT LOCK === OS: Windows 11 Python version: 3.14.4...`
+- **reports\phase_5_0\evidence_graph.json** | 499 B | Type: JSON Data | Evidence: `{   "H1": {     "statistics_report": "reports/phase_5_0/Statistics_Report.md",  ...`
+- **reports\phase_5_0\Evidence_Index.md** | 2752 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Executive_Summary.md** | 753 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\experiment_manifest.json** | 755 B | Type: JSON Data | Evidence: `{   "experiment_id": "IVERI_Phase5_Benchmarks_Only_Eval",   "git_sha": "unknown"...`
+- **reports\phase_5_0\FINAL_REPORT.md** | 4975 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 5.0 Final Report Index  **Campaign ID:** IVERI_CAMPAIGN_202...`
+- **reports\phase_5_0\Hypothesis_Report.md** | 1767 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Instruction_Report.md** | 763 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Long_Context_Report.md** | 801 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\paper_manifest.json** | 972 B | Type: JSON Data | Evidence: `{   "assets": {     "Figure_1_loss_curves": {       "type": "figure",       "fil...`
+- **reports\phase_5_0\Phase_5_0_Freeze.md** | 436 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 5.0 Freeze Summary  - **Campaign ID:** IVERI_CAMPAIGN_2026_...`
+- **reports\phase_5_0\publication_manifest.json** | 1215 B | Type: JSON Data | Evidence: `{   "figures": [     {       "id": "Figure_1_loss_curves",       "path": "Paper_...`
+- **reports\phase_5_0\reproducibility_package.zip** | 1063 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Reproducibility_Report.md** | 1027 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Statistics_Report.md** | 783 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Training_Report.md** | 775 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE5 Protocol Version: Phase4.1-v1.4 Git ...`
+- **reports\phase_5_0\Paper_Figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\ablation_table.tex** | 662 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\benchmarks_table.tex** | 650 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\calibration_table.tex** | 486 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\efficiency_table.tex** | 488 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\long_context_table.tex** | 528 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\main_benchmark_comparison.tex** | 554 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_5_0\Paper_Tables\statistical_significance_table.tex** | 564 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\artifact_dag.json** | 1762 B | Type: JSON Data | Evidence: `{   "nodes": [     {       "id": "dataset",       "type": "data"     },     {   ...`
+- **reports\phase_6_1\Campaign_Certificate.md** | 745 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 5.0 Campaign Certificate  ## Core Summary - **Campaign ID:*...`
+- **reports\phase_6_1\campaign_manifest.json** | 1535 B | Type: JSON Data | Evidence: `{   "campaign_id": "IVERI_CAMPAIGN_2026_PHASE5",   "protocol_version": "Phase5.0...`
+- **reports\phase_6_1\environment.txt** | 5037 B | Type: Data | Evidence: `=== IVERI CORE SYSTEM ENVIRONMENT LOCK === OS: Windows 11 Python version: 3.14.4...`
+- **reports\phase_6_1\evidence_graph.json** | 499 B | Type: JSON Data | Evidence: `{   "H1": {     "statistics_report": "reports/phase_5_0/Statistics_Report.md",  ...`
+- **reports\phase_6_1\experiment_manifest.json** | 1361 B | Type: JSON Data | Evidence: `{   "experiment_id": "IVERI_Phase5_pretrain_Seed42_IVERI_Run001",   "git_sha": "...`
+- **reports\phase_6_1\FINAL_REPORT.md** | 5485 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.2 Final Report Index  **Campaign ID:** IVERI_CAMPAIGN_202...`
+- **reports\phase_6_1\Phase_5_0_Freeze.md** | 425 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 5.0 Freeze Summary  - **Campaign ID:** IVERI_CAMPAIGN_2026_...`
+- **reports\phase_6_1\publication_manifest.json** | 1215 B | Type: JSON Data | Evidence: `{   "figures": [     {       "id": "Figure_1_loss_curves",       "path": "Paper_...`
+- **reports\phase_6_1\reproducibility_package.zip** | 1072 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\benchmarks\Alignment_Report.md** | 764 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\benchmarks\Coding_Report.md** | 786 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\benchmarks\Instruction_Report.md** | 778 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\benchmarks\Long_Context_Report.md** | 816 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\cards\Model_Card.md** | 842 B | Type: Documentation/Text | Evidence: `# Model Card — IVERI CORE (10M Nano)  ## Model Details - **Architecture Version:...`
+- **reports\phase_6_1\cards\Dataset_Cards\FineMath.md** | 327 B | Type: Documentation/Text | Evidence: `# Dataset Card — FineMath  - **Dataset Name:** FineMath - **License:** ODC-By - ...`
+- **reports\phase_6_1\cards\Dataset_Cards\FineWeb.md** | 331 B | Type: Documentation/Text | Evidence: `# Dataset Card — FineWeb-Edu  - **Dataset Name:** FineWeb-Edu - **License:** ODC...`
+- **reports\phase_6_1\cards\Dataset_Cards\Magpie.md** | 344 B | Type: Documentation/Text | Evidence: `# Dataset Card — Magpie-Pro-1M  - **Dataset Name:** Magpie-Pro-1M - **License:**...`
+- **reports\phase_6_1\cards\Dataset_Cards\UltraFeedback.md** | 359 B | Type: Documentation/Text | Evidence: `# Dataset Card — UltraFeedback Binarized  - **Dataset Name:** UltraFeedback Bina...`
+- **reports\phase_6_1\cards\Dataset_Cards\Wikipedia.md** | 345 B | Type: Documentation/Text | Evidence: `# Dataset Card — Wikipedia English  - **Dataset Name:** Wikipedia English - **Li...`
+- **reports\phase_6_1\experiments\Ablation_Report.md** | 773 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\experiments\Baseline_Report.md** | 785 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\experiments\Campaign_Report.md** | 766 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\experiments\Training_Report.md** | 790 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\integrity\benchmark_registry.json** | 796 B | Type: JSON Data | Evidence: `{   "HumanEval": {     "name": "HumanEval",     "version": "v1.0",     "source":...`
+- **reports\phase_6_1\integrity\Benchmark_Registry.md** | 476 B | Type: Documentation/Text | Evidence: `# Benchmark Registry  This registry records the locked versions, sources, and ha...`
+- **reports\phase_6_1\integrity\release_manifest.json** | 1460 B | Type: JSON Data | Evidence: `{   "release_id": "rel_IVERI_2026_Phase6_1_Seed42_IVERI_Run001",   "experiment_i...`
+- **reports\phase_6_1\integrity\Reproducibility_Report.md** | 1042 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\publication\Architecture_Validation_Report.md** | 815 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\publication\Efficiency_Report.md** | 775 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\publication\Energy_Report.md** | 784 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\publication\Evidence_Index.md** | 2643 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\publication\Executive_Summary.md** | 768 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\publication\paper_manifest.json** | 1018 B | Type: JSON Data | Evidence: `{   "assets": {     "Figure_1_loss_curves": {       "type": "figure",       "fil...`
+- **reports\phase_6_1\publication\Paper_Figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\ablation_table.tex** | 662 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\benchmarks_table.tex** | 650 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\calibration_table.tex** | 486 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\efficiency_table.tex** | 488 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\long_context_table.tex** | 528 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\main_benchmark_comparison.tex** | 554 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\publication\Paper_Tables\statistical_significance_table.tex** | 564 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_1\reviewer\Phase_6_1_Certificate.md** | 819 B | Type: Documentation/Text | Evidence: `# Campaign Sign-Off Certificate — Phase 6.1  ## Certificate Details - **Campaign...`
+- **reports\phase_6_1\reviewer\Phase_6_2_Certificate.md** | 819 B | Type: Documentation/Text | Evidence: `# Campaign Sign-Off Certificate — Phase 6.2  ## Certificate Details - **Campaign...`
+- **reports\phase_6_1\statistics\Calibration_Report.md** | 750 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\statistics\Hypothesis_Report.md** | 1782 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_1\statistics\Statistics_Report.md** | 798 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_1_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\artifact_dag.json** | 1762 B | Type: JSON Data | Evidence: `{   "nodes": [     {       "id": "dataset",       "type": "data"     },     {   ...`
+- **reports\phase_6_2\Campaign_Certificate.md** | 758 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.2 Campaign Certificate  ## Core Summary - **Campaign ID:*...`
+- **reports\phase_6_2\campaign_manifest.json** | 1746 B | Type: JSON Data | Evidence: `{   "campaign_id": "IVERI_CAMPAIGN_2026_PHASE5",   "protocol_version": "Phase5.0...`
+- **reports\phase_6_2\environment.txt** | 3763 B | Type: Data | Evidence: `=== IVERI CORE SYSTEM ENVIRONMENT LOCK === OS: Windows 11 Python version: 3.12.1...`
+- **reports\phase_6_2\evidence_graph.json** | 525 B | Type: JSON Data | Evidence: `{   "H1": {     "statistics_report": "reports/phase_6_2/statistics/Statistics_Re...`
+- **reports\phase_6_2\experiment_manifest.json** | 1394 B | Type: JSON Data | Evidence: `{   "experiment_id": "IVERI_Phase5_pretrain_Seed42_IVERI_Run001",   "git_sha": "...`
+- **reports\phase_6_2\FINAL_REPORT.md** | 5485 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.2 Final Report Index  **Campaign ID:** IVERI_CAMPAIGN_202...`
+- **reports\phase_6_2\Phase_6_2_Freeze.md** | 425 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.2 Freeze Summary  - **Campaign ID:** IVERI_CAMPAIGN_2026_...`
+- **reports\phase_6_2\publication_manifest.json** | 1215 B | Type: JSON Data | Evidence: `{   "figures": [     {       "id": "Figure_1_loss_curves",       "path": "Paper_...`
+- **reports\phase_6_2\reproducibility_package.zip** | 1064 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\benchmarks\Alignment_Report.md** | 764 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\benchmarks\Coding_Report.md** | 786 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\benchmarks\Instruction_Report.md** | 778 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\benchmarks\Long_Context_Report.md** | 816 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\cards\Model_Card.md** | 842 B | Type: Documentation/Text | Evidence: `# Model Card — IVERI CORE (10M Nano)  ## Model Details - **Architecture Version:...`
+- **reports\phase_6_2\cards\Dataset_Cards\FineMath.md** | 327 B | Type: Documentation/Text | Evidence: `# Dataset Card — FineMath  - **Dataset Name:** FineMath - **License:** ODC-By - ...`
+- **reports\phase_6_2\cards\Dataset_Cards\FineWeb.md** | 331 B | Type: Documentation/Text | Evidence: `# Dataset Card — FineWeb-Edu  - **Dataset Name:** FineWeb-Edu - **License:** ODC...`
+- **reports\phase_6_2\cards\Dataset_Cards\Magpie.md** | 344 B | Type: Documentation/Text | Evidence: `# Dataset Card — Magpie-Pro-1M  - **Dataset Name:** Magpie-Pro-1M - **License:**...`
+- **reports\phase_6_2\cards\Dataset_Cards\UltraFeedback.md** | 359 B | Type: Documentation/Text | Evidence: `# Dataset Card — UltraFeedback Binarized  - **Dataset Name:** UltraFeedback Bina...`
+- **reports\phase_6_2\cards\Dataset_Cards\Wikipedia.md** | 345 B | Type: Documentation/Text | Evidence: `# Dataset Card — Wikipedia English  - **Dataset Name:** Wikipedia English - **Li...`
+- **reports\phase_6_2\experiments\Ablation_Report.md** | 773 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\experiments\Baseline_Report.md** | 785 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\experiments\Campaign_Report.md** | 766 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\experiments\Training_Report.md** | 790 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\integrity\benchmark_registry.json** | 796 B | Type: JSON Data | Evidence: `{   "HumanEval": {     "name": "HumanEval",     "version": "v1.0",     "source":...`
+- **reports\phase_6_2\integrity\Benchmark_Registry.md** | 476 B | Type: Documentation/Text | Evidence: `# Benchmark Registry  This registry records the locked versions, sources, and ha...`
+- **reports\phase_6_2\integrity\release_manifest.json** | 1460 B | Type: JSON Data | Evidence: `{   "release_id": "rel_IVERI_2026_Phase6_2_Seed42_IVERI_Run001",   "experiment_i...`
+- **reports\phase_6_2\integrity\Reproducibility_Report.md** | 1042 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\publication\Architecture_Validation_Report.md** | 815 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\publication\Efficiency_Report.md** | 775 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\publication\Energy_Report.md** | 784 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\publication\Evidence_Index.md** | 2406 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\publication\Executive_Summary.md** | 768 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\publication\paper_manifest.json** | 1018 B | Type: JSON Data | Evidence: `{   "assets": {     "Figure_1_loss_curves": {       "type": "figure",       "fil...`
+- **reports\phase_6_2\publication\Paper_Figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\ablation_table.tex** | 662 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\benchmarks_table.tex** | 650 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\calibration_table.tex** | 486 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\efficiency_table.tex** | 488 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\long_context_table.tex** | 528 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\main_benchmark_comparison.tex** | 554 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\publication\Paper_Tables\statistical_significance_table.tex** | 564 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_2\reviewer\Phase_6_2_Certificate.md** | 819 B | Type: Documentation/Text | Evidence: `# Campaign Sign-Off Certificate — Phase 6.2  ## Certificate Details - **Campaign...`
+- **reports\phase_6_2\statistics\Calibration_Report.md** | 750 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\statistics\Hypothesis_Report.md** | 2224 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\statistics\Statistics_Report.md** | 798 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_2_PRETRAIN Protocol Version: Phase6....`
+- **reports\phase_6_2\validation\01_executive_summary.md** | 3332 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Executive Summary  ## 1. Scope This r...`
+- **reports\phase_6_2\validation\02_compliance_matrix.md** | 2806 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Compliance Matrix  ## 1. Scope This r...`
+- **reports\phase_6_2\validation\03_architecture_validation.md** | 2166 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Architecture Validation  ## 1. Scope ...`
+- **reports\phase_6_2\validation\04_data_pipeline_validation.md** | 2294 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Data Pipeline Validation  ## 1. Scope...`
+- **reports\phase_6_2\validation\05_blt_validation.md** | 2110 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — BLT Validation  ## 1. Scope This repo...`
+- **reports\phase_6_2\validation\06_titans_validation.md** | 2094 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Titans Validation  ## 1. Scope This r...`
+- **reports\phase_6_2\validation\07_mor_validation.md** | 2142 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — MoR Validation  ## 1. Scope This repo...`
+- **reports\phase_6_2\validation\08_mamba2_validation.md** | 2203 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Mamba2 Validation  ## 1. Scope This r...`
+- **reports\phase_6_2\validation\09_moe_validation.md** | 2154 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — MoE Validation  ## 1. Scope This repo...`
+- **reports\phase_6_2\validation\10_backbone_integration.md** | 2175 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Backbone Integration  ## 1. Scope Thi...`
+- **reports\phase_6_2\validation\11_end_to_end_integration.md** | 2210 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — End-to-End Integration  ## 1. Scope T...`
+- **reports\phase_6_2\validation\12_optimization_performance.md** | 2127 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Optimization & Performance  ## 1. Sco...`
+- **reports\phase_6_2\validation\13_cuda_memory.md** | 2085 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — CUDA & Memory Analysis  ## 1. Scope T...`
+- **reports\phase_6_2\validation\14_engineering_quality.md** | 2096 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Engineering Quality  ## 1. Scope This...`
+- **reports\phase_6_2\validation\15_stress_testing.md** | 2069 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Stress Testing  ## 1. Scope This repo...`
+- **reports\phase_6_2\validation\16_regression.md** | 1994 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Regression Report  ## 1. Scope This r...`
+- **reports\phase_6_2\validation\17_dependency_environment.md** | 1877 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Dependency & Environment Validation  ...`
+- **reports\phase_6_2\validation\18_remaining_issues.md** | 2348 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Remaining Issues Register  ## 1. Scop...`
+- **reports\phase_6_2\validation\19_risk_assessment.md** | 1627 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Risk Assessment  ## 1. Scope This rep...`
+- **reports\phase_6_2\validation\20_readiness_certificate.md** | 1809 B | Type: Generated Report/Audit Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Engineering Readiness Certificate  ##...`
+- **reports\phase_6_2\validation\21_validation_manifest.md** | 5867 B | Type: Documentation/Text | Evidence: `# IVERI Core Phase 6.2 Validation Report — Validation Manifest  - **Manifest Ver...`
+- **reports\phase_6_3\artifact_dag.json** | 1762 B | Type: JSON Data | Evidence: `{   "nodes": [     {       "id": "dataset",       "type": "data"     },     {   ...`
+- **reports\phase_6_3\Campaign_Certificate.md** | 755 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.2 Campaign Certificate  ## Core Summary - **Campaign ID:*...`
+- **reports\phase_6_3\campaign_manifest.json** | 3143 B | Type: JSON Data | Evidence: `{   "campaign_id": "IVERI_CAMPAIGN_2026_PHASE5",   "protocol_version": "Phase5.0...`
+- **reports\phase_6_3\environment.txt** | 3763 B | Type: Data | Evidence: `=== IVERI CORE SYSTEM ENVIRONMENT LOCK === OS: Windows 11 Python version: 3.12.1...`
+- **reports\phase_6_3\evidence_graph.json** | 525 B | Type: JSON Data | Evidence: `{   "H1": {     "statistics_report": "reports/phase_6_2/statistics/Statistics_Re...`
+- **reports\phase_6_3\experiment_manifest.json** | 1394 B | Type: JSON Data | Evidence: `{   "experiment_id": "IVERI_Phase5_pretrain_Seed42_IVERI_Run001",   "git_sha": "...`
+- **reports\phase_6_3\FINAL_REPORT.md** | 5482 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.3 Final Report Index  **Campaign ID:** IVERI_CAMPAIGN_202...`
+- **reports\phase_6_3\Phase_6_3_Freeze.md** | 426 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.3 Freeze Summary  - **Campaign ID:** IVERI_CAMPAIGN_2026_...`
+- **reports\phase_6_3\publication_manifest.json** | 1215 B | Type: JSON Data | Evidence: `{   "figures": [     {       "id": "Figure_1_loss_curves",       "path": "Paper_...`
+- **reports\phase_6_3\reproducibility_package.zip** | 1068 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\benchmarks\Alignment_Report.md** | 761 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\benchmarks\Coding_Report.md** | 783 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\benchmarks\Instruction_Report.md** | 775 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\benchmarks\Long_Context_Report.md** | 813 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\cards\Model_Card.md** | 844 B | Type: Documentation/Text | Evidence: `# Model Card — IVERI CORE (10M Nano)  ## Model Details - **Architecture Version:...`
+- **reports\phase_6_3\cards\Dataset_Cards\FineMath.md** | 327 B | Type: Documentation/Text | Evidence: `# Dataset Card — FineMath  - **Dataset Name:** FineMath - **License:** ODC-By - ...`
+- **reports\phase_6_3\cards\Dataset_Cards\FineWeb.md** | 331 B | Type: Documentation/Text | Evidence: `# Dataset Card — FineWeb-Edu  - **Dataset Name:** FineWeb-Edu - **License:** ODC...`
+- **reports\phase_6_3\cards\Dataset_Cards\Magpie.md** | 344 B | Type: Documentation/Text | Evidence: `# Dataset Card — Magpie-Pro-1M  - **Dataset Name:** Magpie-Pro-1M - **License:**...`
+- **reports\phase_6_3\cards\Dataset_Cards\UltraFeedback.md** | 359 B | Type: Documentation/Text | Evidence: `# Dataset Card — UltraFeedback Binarized  - **Dataset Name:** UltraFeedback Bina...`
+- **reports\phase_6_3\cards\Dataset_Cards\Wikipedia.md** | 345 B | Type: Documentation/Text | Evidence: `# Dataset Card — Wikipedia English  - **Dataset Name:** Wikipedia English - **Li...`
+- **reports\phase_6_3\experiments\Ablation_Report.md** | 770 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\experiments\Baseline_Report.md** | 782 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\experiments\Campaign_Report.md** | 763 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\experiments\Training_Report.md** | 787 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\integrity\benchmark_registry.json** | 796 B | Type: JSON Data | Evidence: `{   "HumanEval": {     "name": "HumanEval",     "version": "v1.0",     "source":...`
+- **reports\phase_6_3\integrity\Benchmark_Registry.md** | 476 B | Type: Documentation/Text | Evidence: `# Benchmark Registry  This registry records the locked versions, sources, and ha...`
+- **reports\phase_6_3\integrity\release_manifest.json** | 1471 B | Type: JSON Data | Evidence: `{   "release_id": "rel_IVERI_Phase5_pretrain_Seed42_iveri_Run001",   "experiment...`
+- **reports\phase_6_3\integrity\Reproducibility_Report.md** | 1039 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\publication\Architecture_Validation_Report.md** | 812 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\publication\Efficiency_Report.md** | 772 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\publication\Energy_Report.md** | 781 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\publication\Evidence_Index.md** | 2403 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\publication\Executive_Summary.md** | 765 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\publication\paper_manifest.json** | 1022 B | Type: JSON Data | Evidence: `{   "assets": {     "Figure_1_loss_curves": {       "type": "figure",       "fil...`
+- **reports\phase_6_3\publication\Paper_Figures\loss_convergence_comparison.pdf** | 23 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Figures\loss_convergence_comparison.png** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Figures\loss_convergence_comparison.svg** | 23 B | Type: Placeholder/Empty Image (23 bytes) | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\ablation_table.tex** | 662 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\benchmarks_table.tex** | 650 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\calibration_table.tex** | 486 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\efficiency_table.tex** | 488 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\long_context_table.tex** | 528 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\main_benchmark_comparison.tex** | 554 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\publication\Paper_Tables\statistical_significance_table.tex** | 564 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_6_3\reviewer\Phase_6_3_Certificate.md** | 816 B | Type: Documentation/Text | Evidence: `# Campaign Sign-Off Certificate — Phase 6.3  ## Certificate Details - **Campaign...`
+- **reports\phase_6_3\reviewer\Phase_6_3_Freeze.md** | 1595 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase 6.3 Scientific Freeze Certificate  | Field | Value | | :---...`
+- **reports\phase_6_3\statistics\Calibration_Report.md** | 747 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\statistics\Hypothesis_Report.md** | 2221 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3\statistics\Statistics_Report.md** | 795 B | Type: Documentation/Text | Evidence: `--- Campaign ID: IVERI_CAMPAIGN_2026_PHASE6_3_PAPER Protocol Version: Phase6.3-v...`
+- **reports\phase_6_3_3\Deployment_Report.md** | 266 B | Type: Documentation/Text | Evidence: `# Deployment Report  ## CLI  ```bash python -m inference.cli --prompt "..." --de...`
+- **reports\phase_6_3_3\Documentation_Report.md** | 205 B | Type: Documentation/Text | Evidence: `# Documentation Report  - README: Phase 6.3.3 + inference + Stage 3B ingest - CH...`
+- **reports\phase_6_3_3\Engineering_Fixes.md** | 731 B | Type: Documentation/Text | Evidence: `# Engineering Fixes  - BYTE_VOCAB_SIZE test migration (256 -> 259 logits) - loss...`
+- **reports\phase_6_3_3\Executive_Summary.md** | 394 B | Type: Generated Report/Audit Text | Evidence: `# Phase 6.3.3 Executive Summary  Tests: **615 passed**, 0 failed.  Verdict: **Pr...`
+- **reports\phase_6_3_3\Final_Product_Readiness.md** | 114 B | Type: Documentation/Text | Evidence: `# Final Product Readiness  ## Product Ready (Minor Non-Blocking Issues)  **Gener...`
+- **reports\phase_6_3_3\Inference_Architecture.md** | 287 B | Type: Documentation/Text | Evidence: `# Inference Architecture  Package: `inference/` with `InferenceEngine`, `ByteTok...`
+- **reports\phase_6_3_3\inference_benchmark.json** | 285 B | Type: JSON Data | Evidence: `{   "timestamp_utc": "2026-07-07T04:41:39Z",   "device": "cpu",   "model_profile...`
+- **reports\phase_6_3_3\Logging_Report.md** | 157 B | Type: Documentation/Text | Evidence: `# Logging Report  Structured logging preserved; W&B failures fall back to CSV/JS...`
+- **reports\phase_6_3_3\Performance_Report.md** | 364 B | Type: Documentation/Text | Evidence: `# Performance Report  ```json {   "timestamp_utc": "2026-07-07T04:41:39Z",   "de...`
+- **reports\phase_6_3_3\Recommendations.md** | 258 B | Type: Documentation/Text | Evidence: `# Recommendations  - Add proprietary JSON assets under `data/proprietary/` and r...`
+- **reports\phase_6_3_3\Regression_Report.md** | 86 B | Type: Documentation/Text | Evidence: `# Regression Report  615 passed / 0 failed.  **Generated:** 2026-07-07T04:41:49Z...`
+- **reports\phase_6_3_3\Remaining_Issues.md** | 143 B | Type: Documentation/Text | Evidence: `# Remaining Issues  - Stage 3B proprietary assets not yet added (ingest pipeline...`
+- **reports\phase_6_3_3\Repository_Health_Report.md** | 258 B | Type: Documentation/Text | Evidence: `# Repository Health  - loss_mask list padding fixed - logger PermissionError / W...`
+- **reports\phase_6_3_3\Test_Migration_Report.md** | 225 B | Type: Documentation/Text | Evidence: `# Test Migration Report  BYTE_VOCAB_SIZE=259 migration applied across pretrainin...`
+- **reports\phase_6_3_3\validation_state.json** | 1604 B | Type: JSON Data | Evidence: `{   "timestamp_utc": "2026-07-07T04:41:49Z",   "tests_passed": 615,   "tests_fai...`
+- **reports\phase_7\00_PHASE7_MASTER.md** | 5928 B | Type: Generated Report/Audit Text | Evidence: `# IVERI CORE — Phase 7 Master Report  **Product Readiness Phase** **Date**: 2026...`
+- **reports\phase_7\01_repository_health.md** | 2555 B | Type: Documentation/Text | Evidence: `# Phase 7.1 -- Repository Health Report  ## Summary The IVERI CORE repository is...`
+- **reports\phase_7\02_configuration_validation.md** | 3595 B | Type: Documentation/Text | Evidence: `# Phase 7.2 -- Configuration Validation Report  ## Summary Model parameter confi...`
+- **reports\phase_7\03_data_pipeline.md** | 3356 B | Type: Generated Report/Audit Text | Evidence: `# Phase 7.3 -- Data Pipeline Report  ## Summary The data engineering pipeline ha...`
+- **reports\phase_7\04_architecture_validation.md** | 2201 B | Type: Documentation/Text | Evidence: `# Phase 7.4 -- Architecture Validation Report  ## Summary The internal subsystem...`
+- **reports\phase_7\05_debugging.md** | 2227 B | Type: Documentation/Text | Evidence: `# Phase 7.5 -- Debugging Report  ## Summary To prevent silent or unlocalized tra...`
+- **reports\phase_7\06_real_training.md** | 2273 B | Type: Documentation/Text | Evidence: `# Phase 7.6 -- Real Training Report  ## Summary The pretraining orchestrators we...`
+- **reports\phase_7\07_optimization.md** | 2621 B | Type: Documentation/Text | Evidence: `# Phase 7.7 -- Optimization Report  ## Summary Training step execution speed, me...`
+- **reports\phase_7\08_inference.md** | 3307 B | Type: Documentation/Text | Evidence: `# Phase 7.8 — Inference Engine Verification Report  ## Summary  The IVERI CORE i...`
+- **reports\phase_7\09_product_validation.md** | 399 B | Type: Documentation/Text | Evidence: `# Phase 7.9 — Product Validation Report  **Total validation time:** 182.8s  ## S...`
+- **reports\phase_7\10_scaling_readiness.json** | 14468 B | Type: JSON Data | Evidence: `[   {     "preset": "large_150m",     "path": "C:\\Users\\datta.000\\Desktop\\iv...`
+- **reports\phase_7\10_scaling_readiness.md** | 4709 B | Type: Documentation/Text | Evidence: `# Phase 7.10 -- IVERI Scaling Readiness Report  Generated: 2026-07-10 12:34:19 U...`
+- **reports\phase_7\evidence_graph.json** | 5772 B | Type: JSON Data | Evidence: `{   "phase": "7",   "title": "IVERI CORE Phase 7 — Product Readiness Evidence Gr...`
+- **reports\phase_9\00_PHASE9_VERIFICATION_REPORT.md** | 7132 B | Type: Generated Report/Audit Text | Evidence: `# Phase 9 — Independent Verification Report (v1.0)  **Auditor role:** Independen...`
+- **reports\phase_9\architecture_health.json** | 463 B | Type: JSON Data | Evidence: `{   "score": 74.9,   "status": "PASS",   "components": {     "moe_balance": 9.89...`
+- **reports\phase_9\ARCHITECTURE_HEALTH_REPORT.md** | 1460 B | Type: Documentation/Text | Evidence: `# Phase 9 — Architecture Health Report  **Date:** 2026-07-11   **Script:** `scri...`
+- **reports\phase_9\architecture_validation_report.json** | 705 B | Type: JSON Data | Evidence: `{   "checks": {     "moe_active": true,     "titans_active": true,     "mor_acti...`
+- **reports\phase_9\BUG_REPORT.md** | 3857 B | Type: Generated Report/Audit Text | Evidence: `# Phase 9 — Bug Report  **Date:** 2026-07-11   **Source:** Independent ground-up...`
+- **reports\phase_9\campaign_manifest.json** | 371 B | Type: JSON Data | Evidence: `{   "python_version": "3.12.10",   "pytorch_version": "2.5.1+cu121",   "cuda_ava...`
+- **reports\phase_9\checkpoint_hash.sha256** | 88 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_9\CHECKPOINT_REPORT.md** | 1157 B | Type: Documentation/Text | Evidence: `# Phase 9 — Checkpoint Report  **Date:** 2026-07-11  ---  ## Isolated Checkpoint...`
+- **reports\phase_9\config.yaml** | 2 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_9\config_snapshot.json** | 8919 B | Type: JSON Data | Evidence: `{   "model": {     "hidden_dim": 64,     "num_layers": 2,     "num_heads": 2,   ...`
+- **reports\phase_9\dataset_fingerprint.json** | 41 B | Type: JSON Data | Evidence: `{   "fingerprint": "bec9d2c754c0b791" }`
+- **reports\phase_9\dataset_recipe.yaml** | 93 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_9\dataset_verification_report.json** | 220 B | Type: JSON Data | Evidence: `{   "recipe": "iveri_v1",   "datasets_verified": [     "tinystories",     "finew...`
+- **reports\phase_9\DATASET_VERIFICATION_REPORT.md** | 229 B | Type: Documentation/Text | Evidence: `# Dataset Verification Report Ã¢â‚¬â€ Phase 9.2 - **Curriculum Recipe**: `iveri...`
+- **reports\phase_9\env_report.md** | 273 B | Type: Documentation/Text | Evidence: `# Environment Report Ã¢â‚¬â€ Phase 9.1 Generated: 2026-07-17 12:59:38 - **Git C...`
+- **reports\phase_9\evaluation_results.json** | 275 B | Type: JSON Data | Evidence: `{   "val_loss": 1.256923,   "tokens_processed": 76800,   "architecture_health_sc...`
+- **reports\phase_9\experiment_log.md** | 344 B | Type: Documentation/Text | Evidence: `# Research Log Ã¢â‚¬â€ Phase 9 Objective: Pretrain IVERI 10M model. Recipe: ive...`
+- **reports\phase_9\FIX_LOG.md** | 956 B | Type: Documentation/Text | Evidence: `# Phase 9 — Fix Log  **Date:** 2026-07-11  ---  ## Applied Fixes  ### FIX-001 — ...`
+- **reports\phase_9\generation_history.md** | 6970 B | Type: Documentation/Text | Evidence: `## Milestone Checkpoint: Step 25600 Generated: 2026-07-17 12:22:29  ### Prompt 1...`
+- **reports\phase_9\hardware_report.md** | 187 B | Type: Documentation/Text | Evidence: `# Hardware Report Ã¢â‚¬â€ Phase 9.1 Generated: 2026-07-17 12:59:38 - **GPU Name...`
+- **reports\phase_9\IVERI_10M_Pretraining_Certificate.md** | 831 B | Type: Generated Report/Audit Text | Evidence: `# IVERI Phase 9 Pretraining Certificate  Campaign ID: IVERI_CAMPAIGN_2026_PHASE9...`
+- **reports\phase_9\IVERI_phase9_Pretraining_Certificate.md** | 831 B | Type: Generated Report/Audit Text | Evidence: `# IVERI Phase 9 Pretraining Certificate  Campaign ID: IVERI_CAMPAIGN_2026_PHASE9...`
+- **reports\phase_9\milestone_10K.json** | 720 B | Type: JSON Data | Evidence: `{   "label": "10K",   "token_target": 10000,   "tokens_processed": 25600,   "los...`
+- **reports\phase_9\milestone_25K.json** | 719 B | Type: JSON Data | Evidence: `{   "label": "25K",   "token_target": 25000,   "tokens_processed": 51200,   "los...`
+- **reports\phase_9\milestone_50K.json** | 717 B | Type: JSON Data | Evidence: `{   "label": "50K",   "token_target": 50000,   "tokens_processed": 76800,   "los...`
+- **reports\phase_9\model_init_report.json** | 201 B | Type: JSON Data | Evidence: `{   "total_parameters": 455262,   "trainable_parameters": 455262,   "frozen_para...`
+- **reports\phase_9\model_init_report.md** | 276 B | Type: Documentation/Text | Evidence: `# Model Initialization Report Ã¢â‚¬â€ Phase 9.3 - **Total Parameters**: 455,262...`
+- **reports\phase_9\PERFORMANCE_REPORT.md** | 1318 B | Type: Documentation/Text | Evidence: `# Phase 9 — Performance Report  **Date:** 2026-07-11   **Hardware:** CPU only (P...`
+- **reports\phase_9\pilot_training_report.json** | 799 B | Type: JSON Data | Evidence: `{   "pilot_steps": 30,   "initial_loss": 5.550940990447998,   "final_loss": 3.78...`
+- **reports\phase_9\REGRESSION_REPORT.md** | 1347 B | Type: Documentation/Text | Evidence: `# Phase 9 — Regression Report  **Date:** 2026-07-11   **Command:** `python -m py...`
+- **reports\phase_9\sanity_training_report.json** | 191 B | Type: JSON Data | Evidence: `{   "initial_loss": 5.473430633544922,   "final_loss": 0.8530160188674927,   "lo...`
+- **reports\phase_9\sanity_training_report.md** | 192 B | Type: Generated Report/Audit Text | Evidence: `# Sanity Training Report Ã¢â‚¬â€ Phase 9.4 - **Initial Loss**: 5.4734 - **Final...`
+- **reports\phase_9\stability_recovery_report.json** | 286 B | Type: JSON Data | Evidence: `{   "nan_injection": {     "recoverable": true,     "action": "RETRY_WITH_ROLLBA...`
+- **reports\phase_9\training_manifest.json** | 311 B | Type: JSON Data | Evidence: `{   "recipe": "iveri_v1",   "seed": 42,   "total_tokens_processed": 76800,   "mi...`
+- **reports\phase_9\failures\failure_20260717_113736_step5.json** | 224 B | Type: JSON Data | Evidence: `{   "timestamp": "2026-07-17T06:07:36.493365+00:00",   "step": 5,   "seed": 42, ...`
+- **reports\phase_9\failures\failure_20260717_114146_step5.json** | 224 B | Type: JSON Data | Evidence: `{   "timestamp": "2026-07-17T06:11:46.750507+00:00",   "step": 5,   "seed": 42, ...`
+- **reports\phase_9\failures\failure_20260717_124502_step5.json** | 224 B | Type: JSON Data | Evidence: `{   "timestamp": "2026-07-17T07:15:02.425867+00:00",   "step": 5,   "seed": 42, ...`
+- **reports\phase_9\failures\failure_20260717_124906_step5.json** | 224 B | Type: JSON Data | Evidence: `{   "timestamp": "2026-07-17T07:19:06.563335+00:00",   "step": 5,   "seed": 42, ...`
+- **reports\phase_9\failures\failure_20260717_131521_step5.json** | 224 B | Type: JSON Data | Evidence: `{   "timestamp": "2026-07-17T07:45:21.366645+00:00",   "step": 5,   "seed": 42, ...`
+- **reports\phase_9_audit\campaign_manifest.json** | 323 B | Type: JSON Data | Evidence: `{   "python_version": "3.14.4",   "pytorch_version": "2.12.1+cpu",   "cuda_avail...`
+- **reports\phase_9_audit\config_snapshot.json** | 8922 B | Type: JSON Data | Evidence: `{   "model": {     "hidden_dim": 256,     "num_layers": 4,     "num_heads": 4,  ...`
+- **reports\phase_9_audit\env_report.md** | 255 B | Type: Documentation/Text | Evidence: `# Environment Report — Phase 9.1 Generated: 2026-07-11 12:46:37 - **Git Commit**...`
+- **reports\phase_9_audit\hardware_report.md** | 143 B | Type: Documentation/Text | Evidence: `# Hardware Report — Phase 9.1 Generated: 2026-07-11 12:46:37 - **GPU Name**: Non...`
+- **reports\phase_9_audit\training_manifest.json** | 115 B | Type: JSON Data | Evidence: `{   "recipe": "iveri_v1",   "seed": 42,   "max_steps": 50000,   "batch_size": 32...`
+- **reports\phase_9_x\architecture_health.json** | 436 B | Type: JSON Data | Evidence: `{   "score": 86.63,   "status": "PASS",   "components": {     "moe_balance": 11....`
+- **reports\phase_9_x\architecture_validation_report.json** | 674 B | Type: JSON Data | Evidence: `{   "checks": {     "moe_active": true,     "titans_active": true,     "mor_acti...`
+- **reports\phase_9_x\campaign_manifest.json** | 329 B | Type: JSON Data | Evidence: `{   "python_version": "3.14.4",   "pytorch_version": "2.12.1+cpu",   "cuda_avail...`
+- **reports\phase_9_x\config_snapshot.json** | 8919 B | Type: JSON Data | Evidence: `{   "model": {     "hidden_dim": 64,     "num_layers": 2,     "num_heads": 2,   ...`
+- **reports\phase_9_x\dataset_verification_report.json** | 220 B | Type: JSON Data | Evidence: `{   "recipe": "iveri_v1",   "datasets_verified": [     "tinystories",     "finew...`
+- **reports\phase_9_x\dataset_verification_report.md** | 229 B | Type: Documentation/Text | Evidence: `# Dataset Verification Report Ã¢â‚¬â€ Phase 9.2 - **Curriculum Recipe**: `iveri...`
+- **reports\phase_9_x\env_report.md** | 270 B | Type: Documentation/Text | Evidence: `# Environment Report Ã¢â‚¬â€ Phase 9.1 Generated: 2026-07-17 11:19:29 - **Git C...`
+- **reports\phase_9_x\hardware_report.md** | 158 B | Type: Documentation/Text | Evidence: `# Hardware Report Ã¢â‚¬â€ Phase 9.1 Generated: 2026-07-17 11:19:29 - **GPU Name...`
+- **reports\phase_9_x\model_init_report.json** | 201 B | Type: JSON Data | Evidence: `{   "total_parameters": 455262,   "trainable_parameters": 455262,   "frozen_para...`
+- **reports\phase_9_x\model_init_report.md** | 276 B | Type: Documentation/Text | Evidence: `# Model Initialization Report Ã¢â‚¬â€ Phase 9.3 - **Total Parameters**: 455,262...`
+- **reports\phase_9_x\pilot_training_report.json** | 767 B | Type: JSON Data | Evidence: `{   "pilot_steps": 30,   "initial_loss": 5.550940990447998,   "final_loss": 3.78...`
+- **reports\phase_9_x\sanity_training_report.json** | 190 B | Type: JSON Data | Evidence: `{   "initial_loss": 5.47343111038208,   "final_loss": 0.8524997234344482,   "los...`
+- **reports\phase_9_x\sanity_training_report.md** | 192 B | Type: Generated Report/Audit Text | Evidence: `# Sanity Training Report Ã¢â‚¬â€ Phase 9.4 - **Initial Loss**: 5.4734 - **Final...`
+- **reports\phase_9_x\stability_recovery_report.json** | 286 B | Type: JSON Data | Evidence: `{   "nan_injection": {     "recoverable": true,     "action": "RETRY_WITH_ROLLBA...`
+- **reports\phase_9_x\training_manifest.json** | 114 B | Type: JSON Data | Evidence: `{   "recipe": "iveri_v1",   "seed": 42,   "max_steps": 50000,   "batch_size": 4,...`
+- **reports\phase_9_x\checkpoints\recovery_test_checkpoint.pt** | 1886065 B | Type: Checkpoint Data (1886065 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **reports\phase_9_x\checkpoints\resume_test_checkpoint.pt** | 1885901 B | Type: Checkpoint Data (1885901 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **reports\phase_9_x\checkpoints\training_recipe.yaml** | 16 B | Type: Data | Evidence: `[Binary]`
+- **reports\phase_9_x\failures\failure_20260717_113322_step5.json** | 224 B | Type: JSON Data | Evidence: `{   "timestamp": "2026-07-17T06:03:22.144941+00:00",   "step": 5,   "seed": 42, ...`
+- **reports\scientific_integrity_audit\Ablation_Verification.md** | 6807 B | Type: Documentation/Text | Evidence: `# Ablation Verification Report (Phase 6.3.1F)  **Generated:** 2026-07-24T16:49:1...`
+- **reports\scientific_integrity_audit\Architecture_Consistency_Report.md** | 6133 B | Type: Generated Report/Audit Text | Evidence: `# Architecture Consistency Report  **Audit Date:** 2026-07-06   **Repository:** ...`
+- **reports\scientific_integrity_audit\Byte_Vocabulary_Report.md** | 2617 B | Type: Documentation/Text | Evidence: `# Byte Vocabulary Report (Phase 6.3.2 OBJ7)  **Generated:** 2026-07-24T16:49:18Z...`
+- **reports\scientific_integrity_audit\Causality_Report.md** | 14134 B | Type: Generated Report/Audit Text | Evidence: `# Causality Report — Runtime Perturbation Audit (Phase 6.3.2 / Objective 1)  **G...`
+- **reports\scientific_integrity_audit\Checkpoint_Audit.md** | 5145 B | Type: Generated Report/Audit Text | Evidence: `# Checkpoint Integrity Audit  **Audit Date:** 2026-07-06   **Repository:** IVERI...`
+- **reports\scientific_integrity_audit\Database_Integrity_Report.md** | 5975 B | Type: Generated Report/Audit Text | Evidence: `# Database Integrity Report  **Audit Date:** 2026-07-06   **Repository:** IVERI ...`
+- **reports\scientific_integrity_audit\Documentation_Discrepancies.md** | 5943 B | Type: Generated Report/Audit Text | Evidence: `# Documentation Discrepancies Report (Phase 6.3.1H)  **Generated:** 2026-07-17T0...`
+- **reports\scientific_integrity_audit\Documentation_Sync_Report.md** | 2927 B | Type: Generated Report/Audit Text | Evidence: `# Documentation Sync Report (Phase 6.3.2 OBJ8)  **Generated:** 2026-07-17T07:31:...`
+- **reports\scientific_integrity_audit\Entropy_Routing_Report.md** | 6111 B | Type: Documentation/Text | Evidence: `# Entropy → Routing Verification Report (Phase 6.3.2 OBJ3)  **Generated:** 2026-...`
+- **reports\scientific_integrity_audit\Final_Summary.md** | 12129 B | Type: Generated Report/Audit Text | Evidence: `# Final Summary — IVERI CORE Scientific Integrity Audit  **Audit Date:** 2026-07...`
+- **reports\scientific_integrity_audit\Publication_Integrity_Report.md** | 2485 B | Type: Generated Report/Audit Text | Evidence: `# Publication Integrity Report (Phase 6.3.2 OBJ5)  **Generated:** 2026-07-17T07:...`
+- **reports\scientific_integrity_audit\Replay_Integrity_Report.md** | 1567 B | Type: Generated Report/Audit Text | Evidence: `# Replay Integrity Report (Phase 6.3.2 OBJ6)  **Generated:** 2026-07-17T07:36:34...`
+- **reports\scientific_integrity_audit\Scientific_Integrity_Audit.md** | 7259 B | Type: Generated Report/Audit Text | Evidence: `# Experiment Provenance & Scientific Statistics  **Audit Date:** 2026-07-06   **...`
+- **reports\scientific_integrity_audit\Statistics_Consistency_Report.md** | 1799 B | Type: Generated Report/Audit Text | Evidence: `# Statistics Consistency Report (Phase 6.3.1G)  **Generated:** 2026-07-17T07:36:...`
+- **reports\scientific_integrity_audit\Titans_Verification.md** | 12204 B | Type: Documentation/Text | Evidence: `# Titans Memory Verification Report (Phase 6.3.2 OBJ2)  **Generated:** 2026-07-1...`
+
+## logs/
+- **logs\campaign_stderr.txt** | 5310 B | Type: Data | Evidence: `. v e n v 3 1 2 \ S c r i p t s \ p y t h o n   :   2 0 2 6 - 0 7 - 1 7   1 1 : ...`
+- **logs\campaign_stdout.txt** | 76 B | Type: Data | Evidence: `L o a d e d   p y a r r o w / d a t a s e t s   m o d u l e s :   [ ]     `
+- **logs\debug_diagnostics.json** | 128 B | Type: JSON Data | Evidence: `[     {         "step": 1,         "hidden_state_norms": {},         "gradient_n...`
+- **logs\gradient_health.csv** | 1670 B | Type: CSV Data | Evidence: `global_grad_norm,grad_variance,max_grad,min_grad,nan_grad_count,step,zero_grad_r...`
+- **logs\iveri.log** | 22202 B | Type: Data | Evidence: `[2026-07-02 20:23:46,268] [INFO    ] [__main__] IVERI CORE v0.1.0 [2026-07-02 20...`
+- **logs\metrics.csv** | 1031926 B | Type: CSV Data | Evidence: `step,timestamp,train/loss,train/lr 1,1782833041.454873,0.5,0.0001 2,1782833041.4...`
+- **logs\metrics.jsonl** | 2308198 B | Type: JSONL Data | Evidence: `{"train/loss": 0.5, "train/lr": 0.0001, "timestamp": 1782833041.454873, "step": ...`
+- **logs\phase9_final_run.txt** | 4572 B | Type: Data | Evidence: `. v e n v 3 1 2 \ S c r i p t s \ p y t h o n   :   2 0 2 6 - 0 7 - 1 7   1 1 : ...`
+- **logs\iveri_stage1_lvl1\checkpoint_10.pt** | 749990 B | Type: Checkpoint Data (749990 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl1\checkpoint_15.pt** | 749990 B | Type: Checkpoint Data (749990 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl1\checkpoint_20.pt** | 749990 B | Type: Checkpoint Data (749990 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl1\checkpoint_5.pt** | 749771 B | Type: Checkpoint Data (749771 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl1\checkpoint_history.json** | 2419 B | Type: JSON Data | Evidence: `[     {         "path": "C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/...`
+- **logs\iveri_stage1_lvl1\config_snapshot.json** | 10395 B | Type: JSON Data | Evidence: `{     "model": {         "hidden_dim": 16,         "num_layers": 1,         "num...`
+- **logs\iveri_stage1_lvl1\experiment_metadata.json** | 688 B | Type: Mock JSON | Evidence: `{     "run_name": "iveri_stage1_lvl1",     "seed": 42,     "dataset_version": "m...`
+- **logs\iveri_stage1_lvl1\gradient_health.csv** | 38430 B | Type: CSV Data | Evidence: `global_grad_norm,grad_variance,max_grad,min_grad,nan_grad_count,step,zero_grad_r...`
+- **logs\iveri_stage1_lvl1\resume_metadata.json** | 202 B | Type: JSON Data | Evidence: `{     "step": 20,     "epoch": 1,     "latest_checkpoint": "C:/Users/datta.000/D...`
+- **logs\iveri_stage1_lvl1\resume_verification.json** | 444 B | Type: JSON Data | Evidence: `{   "checkpoint": "logs\\iveri_stage1_lvl1\\checkpoint_20.pt",   "success": true...`
+- **logs\iveri_stage1_lvl2\checkpoint_100.pt** | 2372204 B | Type: Checkpoint Data (2372204 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl2\checkpoint_50.pt** | 2371903 B | Type: Checkpoint Data (2371903 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl2\checkpoint_history.json** | 1307 B | Type: JSON Data | Evidence: `[     {         "path": "C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/...`
+- **logs\iveri_stage1_lvl2\config_snapshot.json** | 10398 B | Type: JSON Data | Evidence: `{     "model": {         "hidden_dim": 32,         "num_layers": 2,         "num...`
+- **logs\iveri_stage1_lvl2\experiment_metadata.json** | 719 B | Type: JSON Data | Evidence: `{     "run_name": "iveri_stage1_lvl2",     "seed": 42,     "dataset_version": "v...`
+- **logs\iveri_stage1_lvl2\gradient_health.csv** | 20057 B | Type: CSV Data | Evidence: `global_grad_norm,grad_variance,max_grad,min_grad,nan_grad_count,step,zero_grad_r...`
+- **logs\iveri_stage1_lvl2\resume_metadata.json** | 204 B | Type: JSON Data | Evidence: `{     "step": 100,     "epoch": 0,     "latest_checkpoint": "C:/Users/datta.000/...`
+- **logs\iveri_stage1_lvl3\checkpoint_1000.pt** | 2372505 B | Type: Checkpoint Data (2372505 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl3\checkpoint_500.pt** | 2372204 B | Type: Checkpoint Data (2372204 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage1_lvl3\checkpoint_history.json** | 1313 B | Type: JSON Data | Evidence: `[     {         "path": "C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/...`
+- **logs\iveri_stage1_lvl3\config_snapshot.json** | 10401 B | Type: JSON Data | Evidence: `{     "model": {         "hidden_dim": 32,         "num_layers": 2,         "num...`
+- **logs\iveri_stage1_lvl3\experiment_metadata.json** | 719 B | Type: JSON Data | Evidence: `{     "run_name": "iveri_stage1_lvl3",     "seed": 42,     "dataset_version": "v...`
+- **logs\iveri_stage1_lvl3\gradient_health.csv** | 66979 B | Type: CSV Data | Evidence: `global_grad_norm,grad_variance,max_grad,min_grad,nan_grad_count,step,zero_grad_r...`
+- **logs\iveri_stage1_lvl3\resume_metadata.json** | 206 B | Type: JSON Data | Evidence: `{     "step": 1000,     "epoch": 0,     "latest_checkpoint": "C:/Users/datta.000...`
+- **logs\iveri_stage1_lvl3\resume_verification.json** | 454 B | Type: JSON Data | Evidence: `{   "checkpoint": "logs\\iveri_stage1_lvl3\\checkpoint_1000.pt",   "success": tr...`
+- **logs\iveri_stage3a_coding_lvl1\checkpoint_history.json** | 2958 B | Type: JSON Data | Evidence: `[     {         "path": "C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/...`
+- **logs\iveri_stage3a_coding_lvl1\coding_checkpoint_10.pt** | 751423 B | Type: Checkpoint Data (751423 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage3a_coding_lvl1\coding_checkpoint_15.pt** | 751423 B | Type: Checkpoint Data (751423 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage3a_coding_lvl1\coding_checkpoint_20.pt** | 751423 B | Type: Checkpoint Data (751423 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage3a_coding_lvl1\coding_checkpoint_5.pt** | 751203 B | Type: Checkpoint Data (751203 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage3a_coding_lvl1\gradient_health.csv** | 41703 B | Type: CSV Data | Evidence: `global_grad_norm,grad_variance,max_grad,min_grad,nan_grad_count,step,zero_grad_r...`
+- **logs\iveri_stage3a_coding_lvl1\resume_metadata.json** | 217 B | Type: JSON Data | Evidence: `{     "step": 15,     "epoch": 7,     "latest_checkpoint": "C:/Users/datta.000/D...`
+- **logs\iveri_stage4_pref_lvl1\checkpoint_history.json** | 1270 B | Type: JSON Data | Evidence: `[     {         "path": "C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/...`
+- **logs\iveri_stage4_pref_lvl1\checkpoint_step_10.pt** | 755629 B | Type: Checkpoint Data (755629 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\iveri_stage4_pref_lvl1\checkpoint_step_20.pt** | 755629 B | Type: Checkpoint Data (755629 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **logs\wandb\run-20260705_174220-7c195100\run-7c195100.wandb** | 98304 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260705_174220-7c195100\files\requirements.txt** | 1830 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260705_174220-7c195100\files\wandb-metadata.json** | 1120 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260705_174220-7c195100\logs\debug-internal.log** | 34618 B | Type: Data | Evidence: `{"time":"2026-07-05T17:42:20.3104116+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260705_174220-7c195100\logs\debug.log** | 9023 B | Type: Data | Evidence: `2026-07-05 17:42:20,304 INFO    MainThread:21520 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260705_181620-0f1ddbf8\run-0f1ddbf8.wandb** | 7 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260705_181620-0f1ddbf8\files\output.log** | 570 B | Type: Data | Evidence: `2026-07-05 18:20:48,054 - training.pretrain_runner - INFO - [Initial Eval] val_l...`
+- **logs\wandb\run-20260705_181620-0f1ddbf8\files\requirements.txt** | 1830 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260705_181620-0f1ddbf8\files\wandb-metadata.json** | 1120 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260705_181620-0f1ddbf8\logs\debug-internal.log** | 6936 B | Type: Data | Evidence: `{"time":"2026-07-05T18:16:20.4749826+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260705_181620-0f1ddbf8\logs\debug.log** | 9001 B | Type: Data | Evidence: `2026-07-05 18:16:20,466 INFO    MainThread:7816 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260705_182329-9ce5bbea\run-9ce5bbea.wandb** | 7 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260705_182329-9ce5bbea\files\requirements.txt** | 1830 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260705_182329-9ce5bbea\files\wandb-metadata.json** | 1120 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260705_182329-9ce5bbea\logs\debug-internal.log** | 2982 B | Type: Data | Evidence: `{"time":"2026-07-05T18:23:29.4453113+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260705_182329-9ce5bbea\logs\debug.log** | 9020 B | Type: Data | Evidence: `2026-07-05 18:23:29,440 INFO    MainThread:32332 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260706_115135-410b49c3\run-410b49c3.wandb** | 327680 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_115135-410b49c3\files\output.log** | 119 B | Type: Data | Evidence: `2026-07-06 12:54:49,527 - training.pretrain_runner - INFO - [Initial Eval] val_l...`
+- **logs\wandb\run-20260706_115135-410b49c3\files\requirements.txt** | 1830 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260706_115135-410b49c3\files\wandb-metadata.json** | 1139 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260706_115135-410b49c3\logs\debug-internal.log** | 113589 B | Type: Data | Evidence: `{"time":"2026-07-06T11:51:35.5019388+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260706_115135-410b49c3\logs\debug.log** | 9007 B | Type: Data | Evidence: `2026-07-06 11:51:35,496 INFO    MainThread:2548 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260706_152621-41b38eb9\run-41b38eb9.wandb** | 8332 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_152621-41b38eb9\files\config.yaml** | 10578 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_152621-41b38eb9\files\output.log** | 447 B | Type: Data | Evidence: `Running warm-up iteration... Traceback (most recent call last):   File "C:\Users...`
+- **logs\wandb\run-20260706_152621-41b38eb9\files\requirements.txt** | 1812 B | Type: Data | Evidence: `absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aiohttp==3.14.1 aiosig...`
+- **logs\wandb\run-20260706_152621-41b38eb9\files\wandb-metadata.json** | 1062 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260706_152621-41b38eb9\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":0,"_wandb":{"runtime":0}}`
+- **logs\wandb\run-20260706_152621-41b38eb9\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-06T15:26:21.0515257+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260706_152621-41b38eb9\logs\debug.log** | 11365 B | Type: Data | Evidence: `2026-07-06 15:26:21,042 INFO    MainThread:19684 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260706_152651-da9de512\run-da9de512.wandb** | 32768 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_152651-da9de512\files\output.log** | 74 B | Type: Data | Evidence: `Running warm-up iteration... Warm-up complete. Starting timed iteration.`
+- **logs\wandb\run-20260706_152651-da9de512\files\requirements.txt** | 1812 B | Type: Data | Evidence: `absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aiohttp==3.14.1 aiosig...`
+- **logs\wandb\run-20260706_152651-da9de512\files\wandb-metadata.json** | 1062 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260706_152651-da9de512\logs\debug-internal.log** | 11355 B | Type: Data | Evidence: `{"time":"2026-07-06T15:26:51.5457953+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260706_152651-da9de512\logs\debug.log** | 9026 B | Type: Data | Evidence: `2026-07-06 15:26:51,538 INFO    MainThread:28204 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260706_190456-45c58791\run-45c58791.wandb** | 55135 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_190456-45c58791\files\config.yaml** | 10569 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_190456-45c58791\files\output.log** | 771 B | Type: Data | Evidence: ``trust_remote_code` is not supported anymore. Please check that the Hugging Face...`
+- **logs\wandb\run-20260706_190456-45c58791\files\requirements.txt** | 3008 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260706_190456-45c58791\files\wandb-metadata.json** | 897 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260706_190456-45c58791\files\wandb-summary.json** | 823 B | Type: JSON Data | Evidence: `{"timestamp":1.7833449732355654e+09,"coding/perplexity":212.86916307591292,"max_...`
+- **logs\wandb\run-20260706_190456-45c58791\logs\debug-internal.log** | 5616 B | Type: Data | Evidence: `{"time":"2026-07-06T19:04:56.2088298+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260706_190456-45c58791\logs\debug.log** | 9567 B | Type: Data | Evidence: `2026-07-06 19:04:56,204 INFO    MainThread:30180 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260706_191156-0b441902\logs\debug.log** | 7777 B | Type: Data | Evidence: `2026-07-06 19:11:56,725 INFO    MainThread:30180 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260706_231114-99713ee9\run-99713ee9.wandb** | 8455 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_231114-99713ee9\files\config.yaml** | 10684 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_231114-99713ee9\files\output.log** | 273 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260706_231114-99713ee9\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260706_231114-99713ee9\files\wandb-metadata.json** | 943 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260706_231114-99713ee9\files\wandb-summary.json** | 201 B | Type: JSON Data | Evidence: `{"_timestamp":1.7833596867152064e+09,"_step":0,"val/loss":5.797581195831299,"val...`
+- **logs\wandb\run-20260706_231114-99713ee9\logs\debug-internal.log** | 1705 B | Type: Data | Evidence: `{"time":"2026-07-06T23:11:14.0844331+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260706_231114-99713ee9\logs\debug.log** | 12790 B | Type: Data | Evidence: `2026-07-06 23:11:14,077 INFO    MainThread:35748 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260706_231126-24a2853e\logs\debug.log** | 7935 B | Type: Data | Evidence: `2026-07-06 23:11:26,708 INFO    MainThread:35748 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260706_234929-a7643ae8\run-a7643ae8.wandb** | 63410 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_234929-a7643ae8\files\config.yaml** | 10764 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260706_234929-a7643ae8\files\output.log** | 5723 B | Type: Data | Evidence: `[Performance Benchmark]   Preprocessing time: 0.0095s   Batch loading time: 0.03...`
+- **logs\wandb\run-20260706_234929-a7643ae8\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260706_234929-a7643ae8\files\wandb-metadata.json** | 931 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260706_234929-a7643ae8\files\wandb-summary.json** | 993 B | Type: JSON Data | Evidence: `{"sft/train_loss":5.555474758148193,"sft/masked_tokens":19,"_step":20,"_runtime"...`
+- **logs\wandb\run-20260706_234929-a7643ae8\logs\debug-internal.log** | 9028 B | Type: Data | Evidence: `{"time":"2026-07-06T23:49:29.3535971+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260706_234929-a7643ae8\logs\debug.log** | 9667 B | Type: Data | Evidence: `2026-07-06 23:49:29,348 INFO    MainThread:30884 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260706_235553-97272d43\logs\debug.log** | 7877 B | Type: Data | Evidence: `2026-07-06 23:55:53,994 INFO    MainThread:30884 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260706_235809-d12d8f10\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-06 23:58:09,176 INFO    MainThread:30884 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_000602-39aa44af\logs\debug.log** | 7884 B | Type: Data | Evidence: `2026-07-07 00:06:02,614 INFO    MainThread:30884 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_000603-d3ebd3f8\logs\debug.log** | 7935 B | Type: Data | Evidence: `2026-07-07 00:06:03,164 INFO    MainThread:30884 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_082419-c60372d4\run-c60372d4.wandb** | 65281 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_082419-c60372d4\files\config.yaml** | 11093 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_082419-c60372d4\files\output.log** | 693 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260707_082419-c60372d4\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_082419-c60372d4\files\wandb-metadata.json** | 1169 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_082419-c60372d4\files\wandb-summary.json** | 860 B | Type: JSON Data | Evidence: `{"performance/samples_per_sec":8.045388865830878,"sft/masked_tokens":19,"perform...`
+- **logs\wandb\run-20260707_082419-c60372d4\logs\debug-internal.log** | 8436 B | Type: Data | Evidence: `{"time":"2026-07-07T08:24:19.83909+05:30","level":"INFO","msg":"wandb-core"} {"t...`
+- **logs\wandb\run-20260707_082419-c60372d4\logs\debug.log** | 9644 B | Type: Data | Evidence: `2026-07-07 08:24:19,825 INFO    MainThread:1452 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260707_083342-c55ae326\run-c55ae326.wandb** | 56215 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_083342-c55ae326\files\config.yaml** | 11051 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_083342-c55ae326\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_083342-c55ae326\files\wandb-metadata.json** | 1169 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_083342-c55ae326\files\wandb-summary.json** | 819 B | Type: JSON Data | Evidence: `{"coding/train_loss":5.349335193634033,"coding/curriculum_stage":2,"_timestamp":...`
+- **logs\wandb\run-20260707_083342-c55ae326\logs\debug-internal.log** | 6121 B | Type: Data | Evidence: `{"time":"2026-07-07T08:33:42.9004588+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_083342-c55ae326\logs\debug.log** | 10946 B | Type: Data | Evidence: `2026-07-07 08:33:42,883 INFO    MainThread:1452 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260707_083617-9be6706a\run-9be6706a.wandb** | 16235 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_083617-9be6706a\files\config.yaml** | 11235 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_083617-9be6706a\files\output.log** | 388 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260707_083617-9be6706a\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_083617-9be6706a\files\wandb-metadata.json** | 1337 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_083617-9be6706a\files\wandb-summary.json** | 41 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":157},"_runtime":157}`
+- **logs\wandb\run-20260707_083617-9be6706a\logs\debug-internal.log** | 4361 B | Type: Data | Evidence: `{"time":"2026-07-07T08:36:17.4466254+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_083617-9be6706a\logs\debug.log** | 11283 B | Type: Data | Evidence: `2026-07-07 08:36:17,435 INFO    MainThread:2224 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260707_083621-325f58b1\logs\debug.log** | 7867 B | Type: Data | Evidence: `2026-07-07 08:36:21,997 INFO    MainThread:2224 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260707_084239-e9b508d4\run-e9b508d4.wandb** | 61020 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_084239-e9b508d4\files\config.yaml** | 11333 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_084239-e9b508d4\files\output.log** | 276 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260707_084239-e9b508d4\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_084239-e9b508d4\files\wandb-metadata.json** | 1379 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_084239-e9b508d4\files\wandb-summary.json** | 856 B | Type: JSON Data | Evidence: `{"sft/train_loss":5.555474758148193,"min_grad":-0.2645583152770996,"step":20,"pe...`
+- **logs\wandb\run-20260707_084239-e9b508d4\logs\debug-internal.log** | 7171 B | Type: Data | Evidence: `{"time":"2026-07-07T08:42:39.5337154+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_084239-e9b508d4\logs\debug.log** | 9644 B | Type: Data | Evidence: `2026-07-07 08:42:39,523 INFO    MainThread:2564 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260707_084243-c57520ee\logs\debug.log** | 7867 B | Type: Data | Evidence: `2026-07-07 08:42:43,776 INFO    MainThread:2564 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\run-7dfdf1f8.wandb** | 8255 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\files\config.yaml** | 11291 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\files\output.log** | 224 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\files\wandb-metadata.json** | 1379 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\files\wandb-summary.json** | 39 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":13},"_runtime":13}`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-07T08:50:01.9184509+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_085001-7dfdf1f8\logs\debug.log** | 10946 B | Type: Data | Evidence: `2026-07-07 08:50:01,910 INFO    MainThread:2564 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260707_085153-29b269e3\run-29b269e3.wandb** | 61116 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_085153-29b269e3\files\config.yaml** | 10742 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_085153-29b269e3\files\output.log** | 2407 B | Type: Data | Evidence: `[Performance Benchmark]   Preprocessing time: 0.0121s   Batch loading time: 0.05...`
+- **logs\wandb\run-20260707_085153-29b269e3\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_085153-29b269e3\files\wandb-metadata.json** | 929 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_085153-29b269e3\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"step":0,"_timestamp":1.7833954736173685e+09,"_wandb":{"runtime":961},"_runtime...`
+- **logs\wandb\run-20260707_085153-29b269e3\logs\debug-internal.log** | 18499 B | Type: Data | Evidence: `{"time":"2026-07-07T08:51:53.7318333+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_085153-29b269e3\logs\debug.log** | 12778 B | Type: Data | Evidence: `2026-07-07 08:51:53,722 INFO    MainThread:11672 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260707_085703-2e61a210\logs\debug.log** | 7877 B | Type: Data | Evidence: `2026-07-07 08:57:03,319 INFO    MainThread:11672 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_085726-bf8ba752\run-bf8ba752.wandb** | 21472 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_085726-bf8ba752\files\config.yaml** | 11141 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_085726-bf8ba752\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_085726-bf8ba752\files\wandb-metadata.json** | 1310 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_085726-bf8ba752\files\wandb-summary.json** | 41 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":279},"_runtime":279}`
+- **logs\wandb\run-20260707_085726-bf8ba752\logs\debug-internal.log** | 6299 B | Type: Data | Evidence: `{"time":"2026-07-07T08:57:26.121341+05:30","level":"INFO","msg":"wandb-core"} {"...`
+- **logs\wandb\run-20260707_085726-bf8ba752\logs\debug.log** | 11304 B | Type: Data | Evidence: `2026-07-07 08:57:26,113 INFO    MainThread:11620 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260707_085844-63bbacad\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-07 08:58:44,299 INFO    MainThread:11672 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_085845-30cb53d9\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-07 08:58:45,937 INFO    MainThread:11672 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_090752-762d4479\logs\debug.log** | 7884 B | Type: Data | Evidence: `2026-07-07 09:07:52,944 INFO    MainThread:11672 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_090753-99a7bdfe\logs\debug.log** | 7935 B | Type: Data | Evidence: `2026-07-07 09:07:53,580 INFO    MainThread:11672 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_093258-889b7ec4\run-889b7ec4.wandb** | 32868 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_093258-889b7ec4\files\config.yaml** | 10747 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_093258-889b7ec4\files\output.log** | 500 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260707_093258-889b7ec4\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260707_093258-889b7ec4\files\wandb-metadata.json** | 929 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260707_093258-889b7ec4\files\wandb-summary.json** | 202 B | Type: JSON Data | Evidence: `{"step":0,"_wandb":{"runtime":479},"_runtime":479.4896477,"_timestamp":1.7833974...`
+- **logs\wandb\run-20260707_093258-889b7ec4\logs\debug-internal.log** | 9780 B | Type: Data | Evidence: `{"time":"2026-07-07T09:32:58.7418865+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_093258-889b7ec4\logs\debug.log** | 12783 B | Type: Data | Evidence: `2026-07-07 09:32:58,736 INFO    MainThread:25608 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260707_093504-2cf580dd\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-07 09:35:04,668 INFO    MainThread:25608 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_093505-89ce64f1\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-07 09:35:05,944 INFO    MainThread:25608 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_094058-42abaa3b\logs\debug.log** | 7884 B | Type: Data | Evidence: `2026-07-07 09:40:58,805 INFO    MainThread:25608 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_094059-8fbe9759\logs\debug.log** | 7935 B | Type: Data | Evidence: `2026-07-07 09:40:59,347 INFO    MainThread:25608 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_113605-4e84be6e\run-4e84be6e.wandb** | 33636 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_113605-4e84be6e\files\config.yaml** | 10763 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260707_113605-4e84be6e\files\output.log** | 661 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260707_113605-4e84be6e\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260707_113605-4e84be6e\files\wandb-metadata.json** | 964 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260707_113605-4e84be6e\files\wandb-summary.json** | 202 B | Type: JSON Data | Evidence: `{"_runtime":480.1868131,"_wandb":{"runtime":480},"step":0,"_timestamp":1.7834048...`
+- **logs\wandb\run-20260707_113605-4e84be6e\logs\debug-internal.log** | 9809 B | Type: Data | Evidence: `{"time":"2026-07-07T11:36:05.6321847+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260707_113605-4e84be6e\logs\debug.log** | 13079 B | Type: Data | Evidence: `2026-07-07 11:36:05,626 INFO    MainThread:10244 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260707_113739-56b9b9e4\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-07 11:37:39,535 INFO    MainThread:10244 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_113740-335dadb9\logs\debug.log** | 7873 B | Type: Data | Evidence: `2026-07-07 11:37:40,813 INFO    MainThread:10244 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_114406-588872d9\logs\debug.log** | 7884 B | Type: Data | Evidence: `2026-07-07 11:44:06,736 INFO    MainThread:10244 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260707_114407-8904a2d2\logs\debug.log** | 7935 B | Type: Data | Evidence: `2026-07-07 11:44:07,253 INFO    MainThread:10244 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_105510-a96a38bc\run-a96a38bc.wandb** | 65059 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_105510-a96a38bc\files\config.yaml** | 10935 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_105510-a96a38bc\files\output.log** | 631 B | Type: Data | Evidence: `Running warm-up iteration... Warm-up complete. Starting timed iteration.  === TI...`
+- **logs\wandb\run-20260708_105510-a96a38bc\files\requirements.txt** | 1916 B | Type: Data | Evidence: `absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aiohttp==3.14.1 aiosig...`
+- **logs\wandb\run-20260708_105510-a96a38bc\files\wandb-metadata.json** | 1211 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260708_105510-a96a38bc\files\wandb-summary.json** | 198 B | Type: JSON Data | Evidence: `{"_timestamp":1.7834893602370813e+09,"_step":1,"train/loss":5.587823867797852,"t...`
+- **logs\wandb\run-20260708_105510-a96a38bc\logs\debug-internal.log** | 19913 B | Type: Data | Evidence: `{"time":"2026-07-08T10:55:10.8728654+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_105510-a96a38bc\logs\debug.log** | 13095 B | Type: Data | Evidence: `2026-07-08 10:55:10,862 INFO    MainThread:9724 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260708_111433-d05b693c\run-d05b693c.wandb** | 35974 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_111433-d05b693c\files\config.yaml** | 10974 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_111433-d05b693c\files\output.log** | 500 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260708_111433-d05b693c\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260708_111433-d05b693c\files\wandb-metadata.json** | 1113 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260708_111433-d05b693c\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"val/loss":5.797581195831299,"val/aux_loss":0.10000000149011612,"timestamp":1.7...`
+- **logs\wandb\run-20260708_111433-d05b693c\logs\debug-internal.log** | 10810 B | Type: Data | Evidence: `{"time":"2026-07-08T11:14:34.6985704+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_111433-d05b693c\logs\debug.log** | 11462 B | Type: Data | Evidence: `2026-07-08 11:14:33,607 INFO    MainThread:2824 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260708_111621-46f24f1b\logs\debug.log** | 7896 B | Type: Data | Evidence: `2026-07-08 11:16:21,184 INFO    MainThread:2824 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260708_111622-db34ad4d\logs\debug.log** | 7896 B | Type: Data | Evidence: `2026-07-08 11:16:22,559 INFO    MainThread:2824 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260708_112323-ecd3ec89\logs\debug.log** | 7907 B | Type: Data | Evidence: `2026-07-08 11:23:23,369 INFO    MainThread:2824 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260708_112325-8ad2b01a\logs\debug.log** | 7958 B | Type: Data | Evidence: `2026-07-08 11:23:25,303 INFO    MainThread:2824 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260708_121925-cc6b5b73\run-cc6b5b73.wandb** | 19829 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_121925-cc6b5b73\files\config.yaml** | 11035 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_121925-cc6b5b73\files\output.log** | 325 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260708_121925-cc6b5b73\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_121925-cc6b5b73\files\wandb-metadata.json** | 1150 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_121925-cc6b5b73\files\wandb-summary.json** | 41 B | Type: JSON Data | Evidence: `{"_runtime":234,"_wandb":{"runtime":234}}`
+- **logs\wandb\run-20260708_121925-cc6b5b73\logs\debug-internal.log** | 5579 B | Type: Data | Evidence: `{"time":"2026-07-08T12:19:25.9698335+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_121925-cc6b5b73\logs\debug.log** | 11334 B | Type: Data | Evidence: `2026-07-08 12:19:25,964 INFO    MainThread:30068 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_121934-7141ebd1\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-08 12:19:34,614 INFO    MainThread:30068 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_153708-25e62770\run-25e62770.wandb** | 33926 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_153708-25e62770\files\config.yaml** | 10912 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_153708-25e62770\files\output.log** | 661 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260708_153708-25e62770\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_153708-25e62770\files\wandb-metadata.json** | 1047 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_153708-25e62770\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"step":0,"_timestamp":1.7835057241242304e+09,"_step":0,"_runtime":494.6018181,"...`
+- **logs\wandb\run-20260708_153708-25e62770\logs\debug-internal.log** | 10036 B | Type: Data | Evidence: `{"time":"2026-07-08T15:37:08.2789707+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_153708-25e62770\logs\debug.log** | 12812 B | Type: Data | Evidence: `2026-07-08 15:37:08,272 INFO    MainThread:22524 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_153853-ff2579b0\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-08 15:38:53,169 INFO    MainThread:22524 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_153854-b742da29\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-08 15:38:54,675 INFO    MainThread:22524 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_154522-6b39824b\logs\debug.log** | 7913 B | Type: Data | Evidence: `2026-07-08 15:45:22,694 INFO    MainThread:22524 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_154524-80940c0c\logs\debug.log** | 7964 B | Type: Data | Evidence: `2026-07-08 15:45:24,116 INFO    MainThread:22524 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_155024-57ebf0f4\run-57ebf0f4.wandb** | 8331 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_155024-57ebf0f4\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_155024-57ebf0f4\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_155024-57ebf0f4\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_155024-57ebf0f4\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_155024-57ebf0f4\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_155024-57ebf0f4\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-08T15:50:24.4595106+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_155024-57ebf0f4\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 15:50:24,454 INFO    MainThread:23664 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_160636-28aeb353\run-28aeb353.wandb** | 8102 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_160636-28aeb353\files\config.yaml** | 10264 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_160636-28aeb353\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_160636-28aeb353\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_160636-28aeb353\files\wandb-metadata.json** | 645 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_160636-28aeb353\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_160636-28aeb353\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-08T16:06:36.8404503+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_160636-28aeb353\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 16:06:36,836 INFO    MainThread:13692 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\run-fb1e4fd1.wandb** | 18824 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\files\config.yaml** | 10928 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\files\output.log** | 164 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\files\wandb-metadata.json** | 1088 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\files\wandb-summary.json** | 41 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":217},"_runtime":217}`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\logs\debug-internal.log** | 5325 B | Type: Data | Evidence: `{"time":"2026-07-08T16:11:39.5451918+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_161139-fb1e4fd1\logs\debug.log** | 11334 B | Type: Data | Evidence: `2026-07-08 16:11:39,540 INFO    MainThread:28728 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_161142-9c89ae7d\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-08 16:11:42,808 INFO    MainThread:28728 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260708_163547-46b34991\run-46b34991.wandb** | 8326 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_163547-46b34991\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_163547-46b34991\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_163547-46b34991\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_163547-46b34991\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_163547-46b34991\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":5,"_wandb":{"runtime":5}}`
+- **logs\wandb\run-20260708_163547-46b34991\logs\debug-internal.log** | 1651 B | Type: Data | Evidence: `{"time":"2026-07-08T16:35:47.9153305+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_163547-46b34991\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 16:35:47,838 INFO    MainThread:23480 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_165549-f6a82051\run-f6a82051.wandb** | 8094 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_165549-f6a82051\files\config.yaml** | 10264 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_165549-f6a82051\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_165549-f6a82051\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_165549-f6a82051\files\wandb-metadata.json** | 645 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_165549-f6a82051\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_165549-f6a82051\logs\debug-internal.log** | 1682 B | Type: Data | Evidence: `{"time":"2026-07-08T16:55:49.660277+05:30","level":"INFO","msg":"wandb-core"} {"...`
+- **logs\wandb\run-20260708_165549-f6a82051\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 16:55:49,645 INFO    MainThread:17812 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_165832-b0c63bb8\run-b0c63bb8.wandb** | 10244 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_165832-b0c63bb8\files\config.yaml** | 10870 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_165832-b0c63bb8\files\output.log** | 1327 B | Type: Data | Evidence: `Subsystems Audit: Model & Trainer ready. Running training steps... Step 1: Loss ...`
+- **logs\wandb\run-20260708_165832-b0c63bb8\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_165832-b0c63bb8\files\wandb-metadata.json** | 1166 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_165832-b0c63bb8\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":5},"_runtime":5}`
+- **logs\wandb\run-20260708_165832-b0c63bb8\logs\debug-internal.log** | 1686 B | Type: Data | Evidence: `{"time":"2026-07-08T16:58:32.2653655+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_165832-b0c63bb8\logs\debug.log** | 11345 B | Type: Data | Evidence: `2026-07-08 16:58:32,259 INFO    MainThread:30452 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_165954-03bb947d\run-03bb947d.wandb** | 11111 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_165954-03bb947d\files\config.yaml** | 10870 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_165954-03bb947d\files\output.log** | 1158 B | Type: Data | Evidence: `Subsystems Audit: Model & Trainer ready. Running training steps... Step 1: Loss ...`
+- **logs\wandb\run-20260708_165954-03bb947d\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_165954-03bb947d\files\wandb-metadata.json** | 1166 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_165954-03bb947d\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":8,"_wandb":{"runtime":8}}`
+- **logs\wandb\run-20260708_165954-03bb947d\logs\debug-internal.log** | 1688 B | Type: Data | Evidence: `{"time":"2026-07-08T16:59:54.6622853+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_165954-03bb947d\logs\debug.log** | 11345 B | Type: Data | Evidence: `2026-07-08 16:59:54,651 INFO    MainThread:27684 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_170318-af39db91\run-af39db91.wandb** | 8324 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_170318-af39db91\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_170318-af39db91\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_170318-af39db91\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_170318-af39db91\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_170318-af39db91\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_170318-af39db91\logs\debug-internal.log** | 1688 B | Type: Data | Evidence: `{"time":"2026-07-08T17:03:18.6506307+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_170318-af39db91\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 17:03:18,643 INFO    MainThread:19524 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_170907-a0392d53\run-a0392d53.wandb** | 50938 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_170907-a0392d53\files\config.yaml** | 11071 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_170907-a0392d53\files\output.log** | 249 B | Type: Data | Evidence: `C:\Users\datta.000\AppData\Roaming\Python\Python314\site-packages\torch\utils\da...`
+- **logs\wandb\run-20260708_170907-a0392d53\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_170907-a0392d53\files\wandb-metadata.json** | 1177 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_170907-a0392d53\files\wandb-summary.json** | 833 B | Type: JSON Data | Evidence: `{"global_grad_norm":0.999999859286846,"train/learning_rate":0.0003,"train/perple...`
+- **logs\wandb\run-20260708_170907-a0392d53\logs\debug-internal.log** | 4300 B | Type: Data | Evidence: `{"time":"2026-07-08T17:09:07.8378371+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_170907-a0392d53\logs\debug.log** | 9678 B | Type: Data | Evidence: `2026-07-08 17:09:07,833 INFO    MainThread:6408 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260708_171933-30f2e2dc\run-30f2e2dc.wandb** | 49377 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_171933-30f2e2dc\files\config.yaml** | 11071 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_171933-30f2e2dc\files\output.log** | 249 B | Type: Data | Evidence: `C:\Users\datta.000\AppData\Roaming\Python\Python314\site-packages\torch\utils\da...`
+- **logs\wandb\run-20260708_171933-30f2e2dc\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_171933-30f2e2dc\files\wandb-metadata.json** | 1177 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_171933-30f2e2dc\files\wandb-summary.json** | 825 B | Type: JSON Data | Evidence: `{"step":20,"_wandb":{"runtime":95},"performance/flops_per_sec":4.071058667856521...`
+- **logs\wandb\run-20260708_171933-30f2e2dc\logs\debug-internal.log** | 3543 B | Type: Data | Evidence: `{"time":"2026-07-08T17:19:33.1595561+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_171933-30f2e2dc\logs\debug.log** | 9702 B | Type: Data | Evidence: `2026-07-08 17:19:33,150 INFO    MainThread:14052 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_172228-7cde952b\run-7cde952b.wandb** | 8323 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172228-7cde952b\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172228-7cde952b\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_172228-7cde952b\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_172228-7cde952b\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_172228-7cde952b\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":0,"_wandb":{"runtime":0}}`
+- **logs\wandb\run-20260708_172228-7cde952b\logs\debug-internal.log** | 1687 B | Type: Data | Evidence: `{"time":"2026-07-08T17:22:28.371664+05:30","level":"INFO","msg":"wandb-core"} {"...`
+- **logs\wandb\run-20260708_172228-7cde952b\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 17:22:28,365 INFO    MainThread:20060 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_172411-04f390a1\run-04f390a1.wandb** | 205292 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172411-04f390a1\files\config.yaml** | 11072 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172411-04f390a1\files\output.log** | 249 B | Type: Data | Evidence: `C:\Users\datta.000\AppData\Roaming\Python\Python314\site-packages\torch\utils\da...`
+- **logs\wandb\run-20260708_172411-04f390a1\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_172411-04f390a1\files\wandb-metadata.json** | 1177 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_172411-04f390a1\files\wandb-summary.json** | 833 B | Type: JSON Data | Evidence: `{"step":100,"performance/flops_per_sec":3.9628395650870323e+08,"performance/patc...`
+- **logs\wandb\run-20260708_172411-04f390a1\logs\debug-internal.log** | 7061 B | Type: Data | Evidence: `{"time":"2026-07-08T17:24:11.1930002+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_172411-04f390a1\logs\debug.log** | 9703 B | Type: Data | Evidence: `2026-07-08 17:24:11,188 INFO    MainThread:24492 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_172917-f3e856e4\run-f3e856e4.wandb** | 8331 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172917-f3e856e4\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172917-f3e856e4\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_172917-f3e856e4\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_172917-f3e856e4\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_172917-f3e856e4\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_172917-f3e856e4\logs\debug-internal.log** | 1687 B | Type: Data | Evidence: `{"time":"2026-07-08T17:29:17.0710945+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_172917-f3e856e4\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 17:29:17,067 INFO    MainThread:10676 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_172952-85e45785\run-85e45785.wandb** | 1981230 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172952-85e45785\files\config.yaml** | 11075 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_172952-85e45785\files\output.log** | 249 B | Type: Data | Evidence: `C:\Users\datta.000\AppData\Roaming\Python\Python314\site-packages\torch\utils\da...`
+- **logs\wandb\run-20260708_172952-85e45785\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_172952-85e45785\files\wandb-metadata.json** | 1177 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_172952-85e45785\files\wandb-summary.json** | 841 B | Type: JSON Data | Evidence: `{"performance/tokens_per_sec":447.38174638545775,"performance/patches_per_sec":4...`
+- **logs\wandb\run-20260708_172952-85e45785\logs\debug-internal.log** | 55129 B | Type: Data | Evidence: `{"time":"2026-07-08T17:29:52.7961549+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_172952-85e45785\logs\debug.log** | 9682 B | Type: Data | Evidence: `2026-07-08 17:29:52,791 INFO    MainThread:2548 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260708_173642-bcf3850e\run-bcf3850e.wandb** | 8331 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_173642-bcf3850e\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_173642-bcf3850e\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_173642-bcf3850e\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_173642-bcf3850e\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_173642-bcf3850e\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":0,"_wandb":{"runtime":0}}`
+- **logs\wandb\run-20260708_173642-bcf3850e\logs\debug-internal.log** | 1687 B | Type: Data | Evidence: `{"time":"2026-07-08T17:36:42.2353542+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_173642-bcf3850e\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 17:36:42,228 INFO    MainThread:24304 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_193003-d141bc5b\run-d141bc5b.wandb** | 8331 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_193003-d141bc5b\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_193003-d141bc5b\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_193003-d141bc5b\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_193003-d141bc5b\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_193003-d141bc5b\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":0,"_wandb":{"runtime":0}}`
+- **logs\wandb\run-20260708_193003-d141bc5b\logs\debug-internal.log** | 1688 B | Type: Data | Evidence: `{"time":"2026-07-08T19:30:03.4668074+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_193003-d141bc5b\logs\debug.log** | 11321 B | Type: Data | Evidence: `2026-07-08 19:30:03,462 INFO    MainThread:5364 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260708_193815-1cbb992f\run-1cbb992f.wandb** | 7571 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_193815-1cbb992f\files\config.yaml** | 10079 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_193815-1cbb992f\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_193815-1cbb992f\files\wandb-metadata.json** | 485 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_193815-1cbb992f\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":0,"_wandb":{"runtime":0}}`
+- **logs\wandb\run-20260708_193815-1cbb992f\logs\debug-internal.log** | 1715 B | Type: Data | Evidence: `{"time":"2026-07-08T19:38:16.0027533+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_193815-1cbb992f\logs\debug.log** | 9736 B | Type: Data | Evidence: `2026-07-08 19:38:15,995 INFO    MainThread:8012 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260708_193850-356c8cb3\run-356c8cb3.wandb** | 8331 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_193850-356c8cb3\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_193850-356c8cb3\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_193850-356c8cb3\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_193850-356c8cb3\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_193850-356c8cb3\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_193850-356c8cb3\logs\debug-internal.log** | 1688 B | Type: Data | Evidence: `{"time":"2026-07-08T19:38:50.2036616+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_193850-356c8cb3\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 19:38:50,196 INFO    MainThread:24080 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_194316-8902da28\run-8902da28.wandb** | 9604 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194316-8902da28\files\config.yaml** | 10450 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194316-8902da28\files\output.log** | 1244 B | Type: Data | Evidence: `Resuming from checkpoint (step=1000)... Resumed training from checkpoint at step...`
+- **logs\wandb\run-20260708_194316-8902da28\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_194316-8902da28\files\wandb-metadata.json** | 772 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_194316-8902da28\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260708_194316-8902da28\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-08T19:43:16.5227949+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_194316-8902da28\logs\debug.log** | 11394 B | Type: Data | Evidence: `2026-07-08 19:43:16,517 INFO    MainThread:15844 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_194415-85d32a1e\run-85d32a1e.wandb** | 8700 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194415-85d32a1e\files\config.yaml** | 11149 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194415-85d32a1e\files\output.log** | 220 B | Type: Data | Evidence: `Resuming from checkpoint (step=1000)... Resumed training from checkpoint at step...`
+- **logs\wandb\run-20260708_194415-85d32a1e\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_194415-85d32a1e\files\wandb-metadata.json** | 1284 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_194415-85d32a1e\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":9,"_wandb":{"runtime":9}}`
+- **logs\wandb\run-20260708_194415-85d32a1e\logs\debug-internal.log** | 1789 B | Type: Data | Evidence: `{"time":"2026-07-08T19:44:15.1474883+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_194415-85d32a1e\logs\debug.log** | 9757 B | Type: Data | Evidence: `2026-07-08 19:44:15,143 INFO    MainThread:30996 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_194534-a500b87c\run-a500b87c.wandb** | 8771 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194534-a500b87c\files\config.yaml** | 11149 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194534-a500b87c\files\output.log** | 287 B | Type: Data | Evidence: `Resuming from checkpoint (step=1000)... Resumed training from checkpoint at step...`
+- **logs\wandb\run-20260708_194534-a500b87c\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260708_194534-a500b87c\files\wandb-metadata.json** | 1284 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_194534-a500b87c\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":9},"_runtime":9}`
+- **logs\wandb\run-20260708_194534-a500b87c\logs\debug-internal.log** | 1789 B | Type: Data | Evidence: `{"time":"2026-07-08T19:45:34.5260355+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_194534-a500b87c\logs\debug.log** | 9757 B | Type: Data | Evidence: `2026-07-08 19:45:34,521 INFO    MainThread:20700 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260708_194835-f165a457\run-f165a457.wandb** | 8094 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194835-f165a457\files\config.yaml** | 10264 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260708_194835-f165a457\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260708_194835-f165a457\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260708_194835-f165a457\files\wandb-metadata.json** | 645 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260708_194835-f165a457\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_runtime":0,"_wandb":{"runtime":0}}`
+- **logs\wandb\run-20260708_194835-f165a457\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-08T19:48:35.8954317+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260708_194835-f165a457\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-08 19:48:35,885 INFO    MainThread:33280 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260709_082053-de7f28e5\run-de7f28e5.wandb** | 20732 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082053-de7f28e5\files\config.yaml** | 10947 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082053-de7f28e5\files\output.log** | 661 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260709_082053-de7f28e5\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260709_082053-de7f28e5\files\wandb-metadata.json** | 1067 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260709_082053-de7f28e5\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"_runtime":234.0826999,"val/loss":5.797581195831299,"val/aux_loss":0.1000000014...`
+- **logs\wandb\run-20260709_082053-de7f28e5\logs\debug-internal.log** | 5633 B | Type: Data | Evidence: `{"time":"2026-07-09T08:20:53.6395792+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260709_082053-de7f28e5\logs\debug.log** | 11316 B | Type: Data | Evidence: `2026-07-09 08:20:53,635 INFO    MainThread:2108 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260709_082102-8ecd8daa\run-8ecd8daa.wandb** | 8331 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082102-8ecd8daa\files\config.yaml** | 10943 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082102-8ecd8daa\files\output.log** | 222 B | Type: Data | Evidence: `Trainer single step: OK ========================================================...`
+- **logs\wandb\run-20260709_082102-8ecd8daa\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260709_082102-8ecd8daa\files\wandb-metadata.json** | 1157 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260709_082102-8ecd8daa\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260709_082102-8ecd8daa\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-09T08:21:02.3980961+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260709_082102-8ecd8daa\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-09 08:21:02,393 INFO    MainThread:19524 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260709_082208-05340ee1\logs\debug.log** | 7896 B | Type: Data | Evidence: `2026-07-09 08:22:08,908 INFO    MainThread:2108 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260709_082210-4eb941e8\logs\debug.log** | 7896 B | Type: Data | Evidence: `2026-07-09 08:22:10,262 INFO    MainThread:2108 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260709_082219-69965096\run-69965096.wandb** | 50770 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082219-69965096\files\config.yaml** | 11071 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082219-69965096\files\output.log** | 249 B | Type: Data | Evidence: `C:\Users\datta.000\AppData\Roaming\Python\Python314\site-packages\torch\utils\da...`
+- **logs\wandb\run-20260709_082219-69965096\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260709_082219-69965096\files\wandb-metadata.json** | 1177 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260709_082219-69965096\files\wandb-summary.json** | 830 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":127},"train/loss":5.277640342712402,"nan_grad_count":0,"tra...`
+- **logs\wandb\run-20260709_082219-69965096\logs\debug-internal.log** | 4059 B | Type: Data | Evidence: `{"time":"2026-07-09T08:22:19.3163906+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260709_082219-69965096\logs\debug.log** | 9678 B | Type: Data | Evidence: `2026-07-09 08:22:19,311 INFO    MainThread:9712 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260709_082445-4cd9c255\run-4cd9c255.wandb** | 51222 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082445-4cd9c255\files\config.yaml** | 11196 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_082445-4cd9c255\files\output.log** | 34459 B | Type: Data | Evidence: `Resuming from checkpoint (step=20)... Traceback (most recent call last):   File ...`
+- **logs\wandb\run-20260709_082445-4cd9c255\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260709_082445-4cd9c255\files\wandb-metadata.json** | 1355 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260709_082445-4cd9c255\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260709_082445-4cd9c255\logs\debug-internal.log** | 1690 B | Type: Data | Evidence: `{"time":"2026-07-09T08:24:45.048457+05:30","level":"INFO","msg":"wandb-core"} {"...`
+- **logs\wandb\run-20260709_082445-4cd9c255\logs\debug.log** | 11398 B | Type: Data | Evidence: `2026-07-09 08:24:45,040 INFO    MainThread:33276 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260709_082449-08e24fe8\logs\debug.log** | 7906 B | Type: Data | Evidence: `2026-07-09 08:24:49,042 INFO    MainThread:2108 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260709_082449-2b348866\logs\debug.log** | 7957 B | Type: Data | Evidence: `2026-07-09 08:24:49,631 INFO    MainThread:2108 [wandb_init.py:setup_run_log_dir...`
+- **logs\wandb\run-20260709_083215-6bb45558\run-6bb45558.wandb** | 19768 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_083215-6bb45558\files\config.yaml** | 10947 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_083215-6bb45558\files\output.log** | 500 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260709_083215-6bb45558\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260709_083215-6bb45558\files\wandb-metadata.json** | 1067 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260709_083215-6bb45558\files\wandb-summary.json** | 201 B | Type: JSON Data | Evidence: `{"val/loss":5.797581195831299,"val/aux_loss":0.10000000149011612,"timestamp":1.7...`
+- **logs\wandb\run-20260709_083215-6bb45558\logs\debug-internal.log** | 5371 B | Type: Data | Evidence: `{"time":"2026-07-09T08:32:15.8454931+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260709_083215-6bb45558\logs\debug.log** | 11338 B | Type: Data | Evidence: `2026-07-09 08:32:15,839 INFO    MainThread:18296 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260709_083247-049af41e\run-049af41e.wandb** | 9528 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_083247-049af41e\files\config.yaml** | 11143 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260709_083247-049af41e\files\output.log** | 279 B | Type: Data | Evidence: `Resuming from checkpoint (step=20)... Resumed training from checkpoint at step=2...`
+- **logs\wandb\run-20260709_083247-049af41e\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260709_083247-049af41e\files\wandb-metadata.json** | 1282 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260709_083247-049af41e\files\wandb-summary.json** | 39 B | Type: JSON Data | Evidence: `{"_runtime":16,"_wandb":{"runtime":16}}`
+- **logs\wandb\run-20260709_083247-049af41e\logs\debug-internal.log** | 2101 B | Type: Data | Evidence: `{"time":"2026-07-09T08:32:47.5028812+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260709_083247-049af41e\logs\debug.log** | 9729 B | Type: Data | Evidence: `2026-07-09 08:32:47,493 INFO    MainThread:5760 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260709_083402-5ea14a4e\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-09 08:34:02,707 INFO    MainThread:18296 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260709_083404-8b5cf71c\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-09 08:34:04,192 INFO    MainThread:18296 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260709_083553-e32039f2\logs\debug.log** | 7912 B | Type: Data | Evidence: `2026-07-09 08:35:53,690 INFO    MainThread:18296 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260709_083554-6514fd66\logs\debug.log** | 7963 B | Type: Data | Evidence: `2026-07-09 08:35:54,477 INFO    MainThread:18296 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260711_124548-79f01a45\run-79f01a45.wandb** | 25499 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_124548-79f01a45\files\config.yaml** | 10936 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_124548-79f01a45\files\output.log** | 661 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260711_124548-79f01a45\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260711_124548-79f01a45\files\wandb-metadata.json** | 1056 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260711_124548-79f01a45\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"val/loss":5.797581195831299,"val/aux_loss":0.10000000149011612,"timestamp":1.7...`
+- **logs\wandb\run-20260711_124548-79f01a45\logs\debug-internal.log** | 7192 B | Type: Data | Evidence: `{"time":"2026-07-11T12:45:48.2886017+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260711_124548-79f01a45\logs\debug.log** | 11338 B | Type: Data | Evidence: `2026-07-11 12:45:48,281 INFO    MainThread:36176 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260711_124750-ce1f8b4a\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-11 12:47:50,712 INFO    MainThread:36176 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260711_124752-7a65b638\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-11 12:47:52,313 INFO    MainThread:36176 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260711_124845-16052360\run-16052360.wandb** | 10743 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_124845-16052360\files\config.yaml** | 10870 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_124845-16052360\files\output.log** | 1038 B | Type: Data | Evidence: `Subsystems Audit: Model & Trainer ready. Running training steps... Step 1: Loss ...`
+- **logs\wandb\run-20260711_124845-16052360\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260711_124845-16052360\files\wandb-metadata.json** | 1166 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260711_124845-16052360\files\wandb-summary.json** | 39 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":28},"_runtime":28}`
+- **logs\wandb\run-20260711_124845-16052360\logs\debug-internal.log** | 1965 B | Type: Data | Evidence: `{"time":"2026-07-11T12:48:45.0417896+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260711_124845-16052360\logs\debug.log** | 12796 B | Type: Data | Evidence: `2026-07-11 12:48:45,011 INFO    MainThread:2556 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260711_125112-3c9c0a35\logs\debug.log** | 7912 B | Type: Data | Evidence: `2026-07-11 12:51:12,529 INFO    MainThread:36176 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260711_125113-c1aca151\logs\debug.log** | 7963 B | Type: Data | Evidence: `2026-07-11 12:51:13,135 INFO    MainThread:36176 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260711_125204-a5fc8283\run-a5fc8283.wandb** | 8180 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_125204-a5fc8283\files\config.yaml** | 10690 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_125204-a5fc8283\files\output.log** | 299 B | Type: Data | Evidence: `Traceback (most recent call last):   File "<string>", line 29, in <module>     l...`
+- **logs\wandb\run-20260711_125204-a5fc8283\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260711_125204-a5fc8283\files\wandb-metadata.json** | 997 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260711_125204-a5fc8283\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":1},"_runtime":1}`
+- **logs\wandb\run-20260711_125204-a5fc8283\logs\debug-internal.log** | 1689 B | Type: Data | Evidence: `{"time":"2026-07-11T12:52:04.1528325+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260711_125204-a5fc8283\logs\debug.log** | 11343 B | Type: Data | Evidence: `2026-07-11 12:52:04,145 INFO    MainThread:30348 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260711_125301-3520a275\run-3520a275.wandb** | 8028 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_125301-3520a275\files\config.yaml** | 10693 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260711_125301-3520a275\files\output.log** | 47 B | Type: Data | Evidence: `Checkpoint max logit diff: 0.0 Resume OK: True`
+- **logs\wandb\run-20260711_125301-3520a275\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260711_125301-3520a275\files\wandb-metadata.json** | 997 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260711_125301-3520a275\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260711_125301-3520a275\logs\debug-internal.log** | 1687 B | Type: Data | Evidence: `{"time":"2026-07-11T12:53:01.295588+05:30","level":"INFO","msg":"wandb-core"} {"...`
+- **logs\wandb\run-20260711_125301-3520a275\logs\debug.log** | 11346 B | Type: Data | Evidence: `2026-07-11 12:53:01,289 INFO    MainThread:11920 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260712_120002-8f416b0d\run-8f416b0d.wandb** | 24650 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260712_120002-8f416b0d\files\config.yaml** | 10883 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260712_120002-8f416b0d\files\output.log** | 661 B | Type: Data | Evidence: `wandb: Currently logged in as: dattanishant2 (models-priyadarshini-college-of-en...`
+- **logs\wandb\run-20260712_120002-8f416b0d\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260712_120002-8f416b0d\files\wandb-metadata.json** | 1106 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260712_120002-8f416b0d\files\wandb-summary.json** | 202 B | Type: JSON Data | Evidence: `{"timestamp":1.7838381081946332e+09,"step":0,"_timestamp":1.783838108195639e+09,...`
+- **logs\wandb\run-20260712_120002-8f416b0d\logs\debug-internal.log** | 6706 B | Type: Data | Evidence: `{"time":"2026-07-12T12:00:02.1017517+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260712_120002-8f416b0d\logs\debug.log** | 11484 B | Type: Data | Evidence: `2026-07-12 12:00:02,087 INFO    MainThread:16504 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260712_120200-32c55219\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-12 12:02:00,632 INFO    MainThread:16504 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_120202-ec3bc250\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-12 12:02:02,574 INFO    MainThread:16504 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_120507-3a15f0cd\logs\debug.log** | 7912 B | Type: Data | Evidence: `2026-07-12 12:05:07,380 INFO    MainThread:16504 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_120508-ab0bcef3\logs\debug.log** | 7963 B | Type: Data | Evidence: `2026-07-12 12:05:08,188 INFO    MainThread:16504 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_120702-f2ceec4c\run-f2ceec4c.wandb** | 25899 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260712_120702-f2ceec4c\files\config.yaml** | 10947 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260712_120702-f2ceec4c\files\output.log** | 500 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260712_120702-f2ceec4c\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260712_120702-f2ceec4c\files\wandb-metadata.json** | 1155 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260712_120702-f2ceec4c\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"_step":0,"val/loss":5.797581195831299,"_wandb":{"runtime":337},"_runtime":337....`
+- **logs\wandb\run-20260712_120702-f2ceec4c\logs\debug-internal.log** | 7448 B | Type: Data | Evidence: `{"time":"2026-07-12T12:07:02.8134244+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260712_120702-f2ceec4c\logs\debug.log** | 11484 B | Type: Data | Evidence: `2026-07-12 12:07:02,799 INFO    MainThread:20428 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260712_120905-bc7c2673\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-12 12:09:05,585 INFO    MainThread:20428 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_120908-bc5c6194\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-12 12:09:08,171 INFO    MainThread:20428 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_121240-27167ec9\logs\debug.log** | 7912 B | Type: Data | Evidence: `2026-07-12 12:12:40,817 INFO    MainThread:20428 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260712_121241-8bf6cdf7\logs\debug.log** | 7963 B | Type: Data | Evidence: `2026-07-12 12:12:41,463 INFO    MainThread:20428 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_110714-ac9f55ef\run-ac9f55ef.wandb** | 32768 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_110714-ac9f55ef\files\output.log** | 348 B | Type: Data | Evidence: `2026-07-17 11:07:20,041 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_110714-ac9f55ef\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_110714-ac9f55ef\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_110714-ac9f55ef\logs\debug-internal.log** | 58175 B | Type: Data | Evidence: `{"time":"2026-07-17T11:07:14.2281824+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_110714-ac9f55ef\logs\debug.log** | 9147 B | Type: Data | Evidence: `2026-07-17 11:07:14,223 INFO    MainThread:19196 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_110928-bf80fcd8\run-bf80fcd8.wandb** | 7860 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_110928-bf80fcd8\files\config.yaml** | 10077 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_110928-bf80fcd8\files\output.log** | 55 B | Type: Data | Evidence: `Has scheduler: True scheduler type: <class 'NoneType'>`
+- **logs\wandb\run-20260717_110928-bf80fcd8\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_110928-bf80fcd8\files\wandb-metadata.json** | 551 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_110928-bf80fcd8\files\wandb-summary.json** | 37 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":0},"_runtime":0}`
+- **logs\wandb\run-20260717_110928-bf80fcd8\logs\debug-internal.log** | 1688 B | Type: Data | Evidence: `{"time":"2026-07-17T11:09:28.408247+05:30","level":"INFO","msg":"wandb-core"} {"...`
+- **logs\wandb\run-20260717_110928-bf80fcd8\logs\debug.log** | 11493 B | Type: Data | Evidence: `2026-07-17 11:09:28,403 INFO    MainThread:14508 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_111612-48f4199d\run-48f4199d.wandb** | 32768 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111612-48f4199d\files\output.log** | 348 B | Type: Data | Evidence: `2026-07-17 11:16:14,022 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_111612-48f4199d\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_111612-48f4199d\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_111612-48f4199d\logs\debug-internal.log** | 51481 B | Type: Data | Evidence: `{"time":"2026-07-17T11:16:12.4391623+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_111612-48f4199d\logs\debug.log** | 9128 B | Type: Data | Evidence: `2026-07-17 11:16:12,430 INFO    MainThread:9688 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260717_111722-4c220b25\run-4c220b25.wandb** | 11847 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111722-4c220b25\files\config.yaml** | 10870 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111722-4c220b25\files\output.log** | 1158 B | Type: Data | Evidence: `Subsystems Audit: Model & Trainer ready. Running training steps... Step 1: Loss ...`
+- **logs\wandb\run-20260717_111722-4c220b25\files\requirements.txt** | 3127 B | Type: Data | Evidence: `absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeballs==2.6.2 aiohtt...`
+- **logs\wandb\run-20260717_111722-4c220b25\files\wandb-metadata.json** | 1166 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260717_111722-4c220b25\files\wandb-summary.json** | 39 B | Type: JSON Data | Evidence: `{"_runtime":16,"_wandb":{"runtime":16}}`
+- **logs\wandb\run-20260717_111722-4c220b25\logs\debug-internal.log** | 1725 B | Type: Data | Evidence: `{"time":"2026-07-17T11:17:22.6470617+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_111722-4c220b25\logs\debug.log** | 11345 B | Type: Data | Evidence: `2026-07-17 11:17:22,638 INFO    MainThread:13096 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_111814-c7c9a988\run-c7c9a988.wandb** | 65536 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111814-c7c9a988\files\output.log** | 3194 B | Type: Data | Evidence: `2026-07-17 11:18:16,334 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_111814-c7c9a988\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_111814-c7c9a988\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_111814-c7c9a988\logs\debug-internal.log** | 29118 B | Type: Data | Evidence: `{"time":"2026-07-17T11:18:14.85595+05:30","level":"INFO","msg":"wandb-core"} {"t...`
+- **logs\wandb\run-20260717_111814-c7c9a988\logs\debug.log** | 13453 B | Type: Data | Evidence: `2026-07-17 11:18:14,850 INFO    MainThread:19916 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_111845-add61d18\run-add61d18.wandb** | 29299 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111845-add61d18\files\config.yaml** | 10862 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111845-add61d18\files\output.log** | 579 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260717_111845-add61d18\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260717_111845-add61d18\files\wandb-metadata.json** | 1066 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260717_111845-add61d18\files\wandb-summary.json** | 202 B | Type: JSON Data | Evidence: `{"val/loss":5.797581195831299,"val/aux_loss":0.10000000149011612,"timestamp":1.7...`
+- **logs\wandb\run-20260717_111845-add61d18\logs\debug-internal.log** | 8300 B | Type: Data | Evidence: `{"time":"2026-07-17T11:18:45.1222575+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_111845-add61d18\logs\debug.log** | 11338 B | Type: Data | Evidence: `2026-07-17 11:18:45,116 INFO    MainThread:27380 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_111934-37f5bfcf\run-37f5bfcf.wandb** | 65536 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_111934-37f5bfcf\files\output.log** | 2857 B | Type: Data | Evidence: `2026-07-17 11:19:36,618 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_111934-37f5bfcf\files\requirements.txt** | 3127 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.4.0 accelerate==1.14.0 aiofile==3.11.1 aiohappyeyeb...`
+- **logs\wandb\run-20260717_111934-37f5bfcf\files\wandb-metadata.json** | 1264 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.14.4",   "startedA...`
+- **logs\wandb\run-20260717_111934-37f5bfcf\logs\debug-internal.log** | 27529 B | Type: Data | Evidence: `{"time":"2026-07-17T11:19:34.8061577+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_111934-37f5bfcf\logs\debug.log** | 11011 B | Type: Data | Evidence: `2026-07-17 11:19:34,799 INFO    MainThread:30372 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_112041-3fa390c0\run-3fa390c0.wandb** | 65536 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_112041-3fa390c0\files\output.log** | 2734 B | Type: Data | Evidence: `2026-07-17 11:21:21,288 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_112041-3fa390c0\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_112041-3fa390c0\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_112041-3fa390c0\logs\debug-internal.log** | 26087 B | Type: Data | Evidence: `{"time":"2026-07-17T11:20:41.7883394+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_112041-3fa390c0\logs\debug.log** | 13453 B | Type: Data | Evidence: `2026-07-17 11:20:41,778 INFO    MainThread:25360 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_112052-32be530f\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-17 11:20:52,224 INFO    MainThread:27380 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_112103-7292e086\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-17 11:21:03,688 INFO    MainThread:27380 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_112517-a7eb1f33\logs\debug.log** | 7912 B | Type: Data | Evidence: `2026-07-17 11:25:17,299 INFO    MainThread:27380 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_112517-bac19fb9\logs\debug.log** | 7963 B | Type: Data | Evidence: `2026-07-17 11:25:17,907 INFO    MainThread:27380 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113032-72052f0a\run-72052f0a.wandb** | 32768 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_113032-72052f0a\files\output.log** | 78 B | Type: Data | Evidence: `2026-07-17 11:30:34,608 [INFO] phase9_campaign: Executing 100 sanity steps...`
+- **logs\wandb\run-20260717_113032-72052f0a\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_113032-72052f0a\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_113032-72052f0a\logs\debug-internal.log** | 16175 B | Type: Data | Evidence: `{"time":"2026-07-17T11:30:32.9072951+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_113032-72052f0a\logs\debug.log** | 13453 B | Type: Data | Evidence: `2026-07-17 11:30:32,895 INFO    MainThread:33580 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_113122-e5eb5616\logs\debug.log** | 9496 B | Type: Data | Evidence: `2026-07-17 11:31:22,994 INFO    MainThread:30372 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113322-a6642baa\logs\debug.log** | 9496 B | Type: Data | Evidence: `2026-07-17 11:33:22,073 INFO    MainThread:30372 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113322-f91699a5\logs\debug.log** | 9496 B | Type: Data | Evidence: `2026-07-17 11:33:22,759 INFO    MainThread:30372 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113324-a4f1effe\logs\debug.log** | 9496 B | Type: Data | Evidence: `2026-07-17 11:33:24,154 INFO    MainThread:30372 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113432-f8837b01\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:34:32,569 INFO    MainThread:19916 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113506-0dcd62f4\run-0dcd62f4.wandb** | 32768 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_113506-0dcd62f4\files\output.log** | 78 B | Type: Data | Evidence: `2026-07-17 11:35:08,769 [INFO] phase9_campaign: Executing 100 sanity steps...`
+- **logs\wandb\run-20260717_113506-0dcd62f4\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_113506-0dcd62f4\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_113506-0dcd62f4\logs\debug-internal.log** | 11242 B | Type: Data | Evidence: `{"time":"2026-07-17T11:35:06.5595099+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_113506-0dcd62f4\logs\debug.log** | 13431 B | Type: Data | Evidence: `2026-07-17 11:35:06,546 INFO    MainThread:7880 [wandb_setup.py:_flush():81] Cur...`
+- **logs\wandb\run-20260717_113734-0a536421\run-0a536421.wandb** | 7 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_113734-0a536421\files\output.log** | 78 B | Type: Data | Evidence: `2026-07-17 11:37:36,441 [INFO] phase9_campaign: Executing 100 sanity steps...`
+- **logs\wandb\run-20260717_113734-0a536421\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_113734-0a536421\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_113734-0a536421\logs\debug-internal.log** | 8990 B | Type: Data | Evidence: `{"time":"2026-07-17T11:37:34.4495775+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_113734-0a536421\logs\debug.log** | 13453 B | Type: Data | Evidence: `2026-07-17 11:37:34,433 INFO    MainThread:22264 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_113736-104298cb\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:37:36,409 INFO    MainThread:19916 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113737-deeb7189\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:37:37,719 INFO    MainThread:19916 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113739-007a3ec2\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:37:39,229 INFO    MainThread:19916 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113843-76668ac8\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:38:43,786 INFO    MainThread:25360 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_113937-1a8ad47c\run-1a8ad47c.wandb** | 7 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_113937-1a8ad47c\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_113937-1a8ad47c\files\wandb-metadata.json** | 1165 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_113937-1a8ad47c\logs\debug-internal.log** | 6893 B | Type: Data | Evidence: `{"time":"2026-07-17T11:39:37.0538344+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_113937-1a8ad47c\logs\debug.log** | 13451 B | Type: Data | Evidence: `2026-07-17 11:39:37,033 INFO    MainThread:13120 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_114146-9ac11a15\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:41:46,584 INFO    MainThread:25360 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_114148-19c02f6c\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:41:48,076 INFO    MainThread:25360 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_114149-266821a7\logs\debug.log** | 9875 B | Type: Data | Evidence: `2026-07-17 11:41:49,808 INFO    MainThread:25360 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_122308-bba8d6e8\run-bba8d6e8.wandb** | 7 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_122308-bba8d6e8\files\output.log** | 78 B | Type: Data | Evidence: `2026-07-17 12:23:13,895 [INFO] phase9_campaign: Executing 100 sanity steps...`
+- **logs\wandb\run-20260717_122308-bba8d6e8\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_122308-bba8d6e8\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_122308-bba8d6e8\logs\debug-internal.log** | 1966 B | Type: Data | Evidence: `{"time":"2026-07-17T12:23:08.2322479+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_122308-bba8d6e8\logs\debug.log** | 13453 B | Type: Data | Evidence: `2026-07-17 12:23:08,200 INFO    MainThread:26392 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_122849-9cab4b1e\run-9cab4b1e.wandb** | 95224 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_122849-9cab4b1e\files\config.yaml** | 11057 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_122849-9cab4b1e\files\output.log** | 5218 B | Type: Data | Evidence: `2026-07-17 12:28:51,255 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_122849-9cab4b1e\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_122849-9cab4b1e\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_122849-9cab4b1e\files\wandb-summary.json** | 43 B | Type: JSON Data | Evidence: `{"_runtime":1559,"_wandb":{"runtime":1559}}`
+- **logs\wandb\run-20260717_122849-9cab4b1e\logs\debug-internal.log** | 28969 B | Type: Data | Evidence: `{"time":"2026-07-17T12:28:49.7358662+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_122849-9cab4b1e\logs\debug.log** | 13110 B | Type: Data | Evidence: `2026-07-17 12:28:49,728 INFO    MainThread:32512 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_123358-8cf613f6\run-8cf613f6.wandb** | 88322 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_123358-8cf613f6\files\config.yaml** | 11057 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_123358-8cf613f6\files\output.log** | 5420 B | Type: Data | Evidence: `2026-07-17 12:34:00,216 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_123358-8cf613f6\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_123358-8cf613f6\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_123358-8cf613f6\files\wandb-summary.json** | 43 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":1416},"_runtime":1416}`
+- **logs\wandb\run-20260717_123358-8cf613f6\logs\debug-internal.log** | 26412 B | Type: Data | Evidence: `{"time":"2026-07-17T12:33:58.6356685+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_123358-8cf613f6\logs\debug.log** | 11486 B | Type: Data | Evidence: `2026-07-17 12:33:58,627 INFO    MainThread:33076 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_124311-03e67cd8\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:43:11,216 INFO    MainThread:32512 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124502-51cbf666\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:45:02,346 INFO    MainThread:32512 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124503-63357348\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:45:03,374 INFO    MainThread:32512 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124504-d05daffe\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:45:04,458 INFO    MainThread:32512 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124708-36c535c2\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:47:08,281 INFO    MainThread:33076 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124906-033ed8f0\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:49:06,502 INFO    MainThread:33076 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124907-1c9e1b99\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:49:07,563 INFO    MainThread:33076 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_124908-55da82e8\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 12:49:08,582 INFO    MainThread:33076 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_125248-c77eb738\run-c77eb738.wandb** | 12386 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_125248-c77eb738\files\config.yaml** | 10755 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_125248-c77eb738\files\output.log** | 2188 B | Type: Data | Evidence: `=== TELEMETRY KEYS === ['total_parameters', 'parameters_per_module', 'flops_per_...`
+- **logs\wandb\run-20260717_125248-c77eb738\files\requirements.txt** | 1952 B | Type: Data | Evidence: `iveri-core==0.1.0 iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyey...`
+- **logs\wandb\run-20260717_125248-c77eb738\files\wandb-metadata.json** | 1063 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_125248-c77eb738\files\wandb-summary.json** | 39 B | Type: JSON Data | Evidence: `{"_runtime":11,"_wandb":{"runtime":11}}`
+- **logs\wandb\run-20260717_125248-c77eb738\logs\debug-internal.log** | 1667 B | Type: Data | Evidence: `{"time":"2026-07-17T12:52:48.0377974+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_125248-c77eb738\logs\debug.log** | 11492 B | Type: Data | Evidence: `2026-07-17 12:52:48,032 INFO    MainThread:17160 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_125942-8266372a\run-8266372a.wandb** | 93957 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_125942-8266372a\files\config.yaml** | 11057 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_125942-8266372a\files\output.log** | 5531 B | Type: Data | Evidence: `2026-07-17 12:59:44,889 [INFO] phase9_campaign: Executing 100 sanity steps... 20...`
+- **logs\wandb\run-20260717_125942-8266372a\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_125942-8266372a\files\wandb-metadata.json** | 1290 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_125942-8266372a\files\wandb-summary.json** | 43 B | Type: JSON Data | Evidence: `{"_wandb":{"runtime":1525},"_runtime":1525}`
+- **logs\wandb\run-20260717_125942-8266372a\logs\debug-internal.log** | 28224 B | Type: Data | Evidence: `{"time":"2026-07-17T12:59:42.75817+05:30","level":"INFO","msg":"wandb-core"} {"t...`
+- **logs\wandb\run-20260717_125942-8266372a\logs\debug.log** | 11486 B | Type: Data | Evidence: `2026-07-17 12:59:42,753 INFO    MainThread:22720 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_130259-0cee6359\run-0cee6359.wandb** | 22972 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_130259-0cee6359\files\config.yaml** | 10972 B | Type: Data | Evidence: `[Binary]`
+- **logs\wandb\run-20260717_130259-0cee6359\files\output.log** | 500 B | Type: Data | Evidence: `wandb: wandb.init() called while a run is active and reinit is set to 'default',...`
+- **logs\wandb\run-20260717_130259-0cee6359\files\requirements.txt** | 1934 B | Type: Data | Evidence: `iveri-core==0.1.0 absl-py==2.5.0 accelerate==1.14.0 aiohappyeyeballs==2.7.1 aioh...`
+- **logs\wandb\run-20260717_130259-0cee6359\files\wandb-metadata.json** | 1165 B | Type: JSON Data | Evidence: `{   "os": "Windows-11-10.0.26200-SP0",   "python": "CPython 3.12.10",   "started...`
+- **logs\wandb\run-20260717_130259-0cee6359\files\wandb-summary.json** | 203 B | Type: JSON Data | Evidence: `{"val/aux_loss":0.10000000149011612,"timestamp":1.7842738519836433e+09,"_wandb":...`
+- **logs\wandb\run-20260717_130259-0cee6359\logs\debug-internal.log** | 6188 B | Type: Data | Evidence: `{"time":"2026-07-17T13:02:59.2979465+05:30","level":"INFO","msg":"wandb-core"} {...`
+- **logs\wandb\run-20260717_130259-0cee6359\logs\debug.log** | 11484 B | Type: Data | Evidence: `2026-07-17 13:02:59,290 INFO    MainThread:20496 [wandb_setup.py:_flush():81] Cu...`
+- **logs\wandb\run-20260717_130451-cca8f2da\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-17 13:04:51,589 INFO    MainThread:20496 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_130453-79e29eb1\logs\debug.log** | 7902 B | Type: Data | Evidence: `2026-07-17 13:04:53,527 INFO    MainThread:20496 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_130731-145b5bfa\logs\debug.log** | 7912 B | Type: Data | Evidence: `2026-07-17 13:07:31,294 INFO    MainThread:20496 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_130731-4226da15\logs\debug.log** | 7963 B | Type: Data | Evidence: `2026-07-17 13:07:31,975 INFO    MainThread:20496 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_131327-432086fd\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 13:13:27,884 INFO    MainThread:22720 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_131521-12dd2cb5\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 13:15:21,289 INFO    MainThread:22720 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_131522-aa03aed6\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 13:15:22,370 INFO    MainThread:22720 [wandb_init.py:setup_run_log_di...`
+- **logs\wandb\run-20260717_131523-17e9d287\logs\debug.log** | 7908 B | Type: Data | Evidence: `2026-07-17 13:15:23,494 INFO    MainThread:22720 [wandb_init.py:setup_run_log_di...`
+
+## paper/
+- **paper\paper_figures\fig01_benchmark_chart.png** | 20037 B | Type: Image Data (20037 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig02_benchmark_chart.png** | 20150 B | Type: Image Data (20150 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig02_loss_curves.png** | 38851 B | Type: Image Data (38851 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig03_benchmark_chart.png** | 20113 B | Type: Image Data (20113 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig04_benchmark_chart.png** | 20123 B | Type: Image Data (20123 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig05_benchmark_chart.png** | 20145 B | Type: Image Data (20145 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig06_benchmark_chart.png** | 20213 B | Type: Image Data (20213 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig07_benchmark_chart.png** | 20095 B | Type: Image Data (20095 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig08_benchmark_chart.png** | 20171 B | Type: Image Data (20171 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig09_benchmark_chart.png** | 20190 B | Type: Image Data (20190 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig10_benchmark_chart.png** | 20315 B | Type: Image Data (20315 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig11_benchmark_chart.png** | 19971 B | Type: Image Data (19971 bytes) | Evidence: `[Binary]`
+- **paper\paper_figures\fig12_benchmark_chart.png** | 20161 B | Type: Image Data (20161 bytes) | Evidence: `[Binary]`
+- **paper\paper_tables\table1_parameters.csv** | 92 B | Type: CSV Data | Evidence: `Model,Total_Params,Active_Params Baseline A,3421440,3421440 IVERI Hybrid,9347282...`
+- **paper\paper_tables\table2_efficiency.csv** | 74 B | Type: CSV Data | Evidence: `Model,Tokens_Per_Sec,VRAM_MB Baseline A,1200,512 IVERI Hybrid,1100,680`
+- **paper\paper_tables\table3_loss.csv** | 333 B | Type: CSV Data | Evidence: `Model,Seed,Initial_Loss,Final_Loss,Perplexity,BPB,Tokens_Per_Sec Transformer,42,...`
+- **paper\paper_tables\table4_ablation.csv** | 60 B | Type: CSV Data | Evidence: `Variant,Loss,Delta Full IVERI,5.56,0.0 No BLT,5.80,+0.24`
+- **paper\paper_tables\table5_statistics.csv** | 73 B | Type: CSV Data | Evidence: `Comparison,p_value,cohen_d,verdict IVERI vs Transformer,0.012,0.65,WIN`
+- **paper\paper_tables\training_stability.csv** | 222 B | Type: CSV Data | Evidence: `Model,Seed,NaN_Events,Grad_Clipping_Events,OOM_Recoveries,Status Transformer,42,...`
+
+## research/
+- **research\ablation.py** | 3075 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Ablatio...`
+- **research\ablation_audit.py** | 18209 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Physica...`
+- **research\artifacts.py** | 4052 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Researc...`
+- **research\artifacts_graph.py** | 3554 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Artifac...`
+- **research\baselines.py** | 12552 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Vanilla...`
+- **research\benchmark_engineering.py** | 6281 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Enginee...`
+- **research\benchmark_integrity.py** | 7391 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Benchma...`
+- **research\benchmark_research.py** | 7856 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Researc...`
+- **research\byte_vocab_audit.py** | 6795 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Byte vo...`
+- **research\calibration.py** | 3832 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Confide...`
+- **research\campaign_config.py** | 2846 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Declara...`
+- **research\campaign_dataset_validator.py** | 4226 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Campaig...`
+- **research\campaign_health_monitor.py** | 2399 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Campaig...`
+- **research\campaign_lock.json** | 858 B | Type: JSON Data | Evidence: `{   "config_hash": "fe12de98d498ce0be38e504594f17bf91a78689000e67cd706d4b0a8e5da...`
+- **research\campaign_lock.py** | 3797 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Campaig...`
+- **research\campaign_runner.py** | 45915 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Campaig...`
+- **research\causality_probe.py** | 18114 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Runtime...`
+- **research\checkpoint_manager.py** | 5795 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Baselin...`
+- **research\claim_validator.py** | 3611 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Claim V...`
+- **research\compare_runs.py** | 5352 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Run Com...`
+- **research\cost_estimator.py** | 2509 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Cost Es...`
+- **research\dashboard.py** | 4226 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Researc...`
+- **research\documentation_audit.py** | 6702 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Documen...`
+- **research\documentation_discrepancies_audit.py** | 13252 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Documen...`
+- **research\energy_profiler.py** | 3911 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Energy ...`
+- **research\entropy_routing_audit.py** | 14081 B | Type: Python Source | Evidence: `#!/usr/bin/env python # Copyright 2026 IVERI Project # SPDX-License-Identifier: ...`
+- **research\execution_backend.py** | 2459 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Executi...`
+- **research\experiments.db** | 626688 B | Type: Data | Evidence: `[Binary]`
+- **research\experiments_run.db** | 65536 B | Type: Data | Evidence: `[Binary]`
+- **research\experiment_manifest.py** | 4969 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Experim...`
+- **research\experiment_registry.py** | 33839 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """SQLite-...`
+- **research\experiment_runner.py** | 5993 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Experim...`
+- **research\experiment_scheduler.py** | 5831 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Experim...`
+- **research\external_eval.py** | 2702 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Provide...`
+- **research\failure_replay.py** | 6215 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Failure...`
+- **research\final_repository_validation.py** | 21215 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Final r...`
+- **research\flops.py** | 5641 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Flop Pr...`
+- **research\generate_phase_3_6_reports.py** | 11015 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Orchest...`
+- **research\generate_reports.py** | 16261 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Scratch...`
+- **research\golden.py** | 7612 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Golden ...`
+- **research\hypothesis.py** | 6802 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Researc...`
+- **research\multi_seed.py** | 3326 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Multi-s...`
+- **research\paper_artifact_generator.py** | 5584 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Paper A...`
+- **research\paper_figures.py** | 6882 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Publica...`
+- **research\paper_summary.py** | 2305 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Discuss...`
+- **research\paper_tables.py** | 4164 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """LaTeX t...`
+- **research\phase_6_3_3_validation.py** | 10309 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Phase 6...`
+- **research\profiler.py** | 8628 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Profile...`
+- **research\publication_audit.py** | 8795 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Publica...`
+- **research\publication_manager.py** | 49851 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Publica...`
+- **research\registry_integrity.py** | 8999 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Databas...`
+- **research\regression_detector.py** | 4877 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Regress...`
+- **research\replay_audit.py** | 5437 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Replay ...`
+- **research\replay_integrity.py** | 9676 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Replay ...`
+- **research\scaling.py** | 3317 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Scaling...`
+- **research\scorecard.py** | 3863 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Researc...`
+- **research\statistics.py** | 14008 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Statist...`
+- **research\statistics_consistency_audit.py** | 6679 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Statist...`
+- **research\titans_audit.py** | 23660 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """Runtime...`
+- **research\__init__.py** | 1708 B | Type: Python Source | Evidence: `# Copyright 2026 IVERI Project # SPDX-License-Identifier: Apache-2.0  """IVERI P...`
+- **research\__pycache__\ablation.cpython-312.pyc** | 3707 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\ablation.cpython-314.pyc** | 4117 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\ablation_audit.cpython-312.pyc** | 26856 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\ablation_audit.cpython-314.pyc** | 31486 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\artifacts.cpython-312.pyc** | 5662 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\artifacts.cpython-314.pyc** | 6549 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\artifacts_graph.cpython-312.pyc** | 4808 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\artifacts_graph.cpython-314.pyc** | 5853 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\baselines.cpython-312.pyc** | 16017 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\baselines.cpython-314.pyc** | 18549 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\benchmark_engineering.cpython-312.pyc** | 7952 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\benchmark_engineering.cpython-314.pyc** | 8988 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\benchmark_integrity.cpython-312.pyc** | 10172 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\benchmark_integrity.cpython-314.pyc** | 11594 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\benchmark_research.cpython-312.pyc** | 10159 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\benchmark_research.cpython-314.pyc** | 11074 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\byte_vocab_audit.cpython-312.pyc** | 8972 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\byte_vocab_audit.cpython-314.pyc** | 10616 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\calibration.cpython-312.pyc** | 4321 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\calibration.cpython-314.pyc** | 4756 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_config.cpython-312.pyc** | 2444 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_config.cpython-314.pyc** | 3045 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_dataset_validator.cpython-312.pyc** | 5102 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_dataset_validator.cpython-314.pyc** | 5814 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_health_monitor.cpython-312.pyc** | 2700 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_health_monitor.cpython-314.pyc** | 3106 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_lock.cpython-312.pyc** | 5209 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_lock.cpython-314.pyc** | 6044 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_runner.cpython-312.pyc** | 44801 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\campaign_runner.cpython-314.pyc** | 48428 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\causality_probe.cpython-312.pyc** | 23317 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\causality_probe.cpython-314.pyc** | 26248 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\checkpoint_manager.cpython-312.pyc** | 8795 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\checkpoint_manager.cpython-314.pyc** | 10400 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\claim_validator.cpython-312.pyc** | 3765 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\claim_validator.cpython-314.pyc** | 4429 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\compare_runs.cpython-312.pyc** | 5481 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\compare_runs.cpython-314.pyc** | 6297 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\cost_estimator.cpython-312.pyc** | 2594 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\cost_estimator.cpython-314.pyc** | 3015 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\dashboard.cpython-312.pyc** | 5080 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\dashboard.cpython-314.pyc** | 5844 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\documentation_audit.cpython-312.pyc** | 8864 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\documentation_audit.cpython-314.pyc** | 11054 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\documentation_discrepancies_audit.cpython-312.pyc** | 13068 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\documentation_discrepancies_audit.cpython-314.pyc** | 14459 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\energy_profiler.cpython-312.pyc** | 4365 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\energy_profiler.cpython-314.pyc** | 5256 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\entropy_routing_audit.cpython-312.pyc** | 17930 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\entropy_routing_audit.cpython-314.pyc** | 19394 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\execution_backend.cpython-312.pyc** | 2020 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\execution_backend.cpython-314.pyc** | 2509 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_manifest.cpython-312.pyc** | 7177 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_manifest.cpython-314.pyc** | 7826 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_registry.cpython-312.pyc** | 34090 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_registry.cpython-314.pyc** | 37263 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_runner.cpython-312.pyc** | 7538 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_runner.cpython-314.pyc** | 8296 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_scheduler.cpython-312.pyc** | 8165 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\experiment_scheduler.cpython-314.pyc** | 9051 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\external_eval.cpython-312.pyc** | 2811 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\external_eval.cpython-314.pyc** | 3220 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\failure_replay.cpython-312.pyc** | 7700 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\failure_replay.cpython-314.pyc** | 8542 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\flops.cpython-312.pyc** | 6370 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\flops.cpython-314.pyc** | 7944 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\generate_phase_3_6_reports.cpython-314.pyc** | 13445 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\generate_reports.cpython-314.pyc** | 21004 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\golden.cpython-312.pyc** | 9456 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\golden.cpython-314.pyc** | 11104 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\hypothesis.cpython-312.pyc** | 5450 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\hypothesis.cpython-314.pyc** | 6077 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\multi_seed.cpython-312.pyc** | 3938 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\multi_seed.cpython-314.pyc** | 4367 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_artifact_generator.cpython-312.pyc** | 6220 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_artifact_generator.cpython-314.pyc** | 6865 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_figures.cpython-312.pyc** | 9141 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_figures.cpython-314.pyc** | 9962 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_summary.cpython-312.pyc** | 2916 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_summary.cpython-314.pyc** | 3326 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_tables.cpython-312.pyc** | 6089 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\paper_tables.cpython-314.pyc** | 6753 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\profiler.cpython-312.pyc** | 9659 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\profiler.cpython-314.pyc** | 10922 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\publication_audit.cpython-312.pyc** | 11800 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\publication_audit.cpython-314.pyc** | 13613 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\publication_manager.cpython-312.pyc** | 56683 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\publication_manager.cpython-314.pyc** | 61859 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\registry_integrity.cpython-312.pyc** | 10209 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\registry_integrity.cpython-314.pyc** | 12352 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\regression_detector.cpython-312.pyc** | 3619 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\regression_detector.cpython-314.pyc** | 4236 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\replay_audit.cpython-312.pyc** | 6435 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\replay_audit.cpython-314.pyc** | 7144 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\replay_integrity.cpython-312.pyc** | 11725 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\replay_integrity.cpython-314.pyc** | 13388 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\scaling.cpython-312.pyc** | 5498 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\scaling.cpython-314.pyc** | 6160 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\scorecard.cpython-312.pyc** | 5453 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\scorecard.cpython-314.pyc** | 5833 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\statistics.cpython-312.pyc** | 15615 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\statistics.cpython-314.pyc** | 18005 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\statistics_consistency_audit.cpython-312.pyc** | 8572 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\statistics_consistency_audit.cpython-314.pyc** | 9888 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\titans_audit.cpython-312.pyc** | 32995 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\titans_audit.cpython-314.pyc** | 36190 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\__init__.cpython-312.pyc** | 1614 B | Type: Data | Evidence: `[Binary]`
+- **research\__pycache__\__init__.cpython-314.pyc** | 1611 B | Type: Data | Evidence: `[Binary]`
+
+## research_log/
+- **research_log\RESEARCH_LOG.md** | 32233 B | Type: Template | Evidence: `# IVERI CORE — Research Log  > Every experiment recorded here. No exceptions.  -...`
+
+## experiments/
+- **experiments\phase_1_1_benchmarks.json** | 1275 B | Type: JSON Data | Evidence: `{   "rmsnorm": {     "forward_latency_ms": 3.8096765000082087,     "backward_lat...`
+- **experiments\README.md** | 2654 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Experiment Tracking  > **Note (Phase 3.6+):** Primary experiment ...`
+- **experiments\checkpoints\IVERI_10M_v1.0.pt** | 5589594 B | Type: Checkpoint Data (5589594 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **experiments\checkpoints\IVERI_phase9_v1.0.pt** | 5589594 B | Type: Checkpoint Data (5589594 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **experiments\checkpoints\recovery_test_checkpoint.pt** | 1886288 B | Type: Checkpoint Data (1886288 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **experiments\checkpoints\resume_test_checkpoint.pt** | 1886126 B | Type: Checkpoint Data (1886126 bytes - looks small for a real large model) | Evidence: `[Binary]`
+- **experiments\checkpoints\training_recipe.yaml** | 16 B | Type: Data | Evidence: `[Binary]`
+- **experiments\phase_0\.gitkeep** | 45 B | Type: Data | Evidence: `[Binary]`
+- **experiments\phase_1_1\benchmark_config.json** | 128 B | Type: JSON Data | Evidence: `{   "batch_size": 32,   "seq_len": 512,   "hidden_dim": 256,   "num_warmup": 100...`
+- **experiments\phase_1_1\results.json** | 1275 B | Type: JSON Data | Evidence: `{   "rmsnorm": {     "forward_latency_ms": 3.8096765000082087,     "backward_lat...`
+- **experiments\phase_1_1\system_info.json** | 324 B | Type: JSON Data | Evidence: `{   "os": "Windows",   "os_release": "11",   "python_version": "3.14.4 (tags/v3....`
+- **experiments\phase_1_2\benchmark_config.json** | 142 B | Type: JSON Data | Evidence: `{   "batch_size": 32,   "seq_len": 512,   "hidden_dim": 256,   "num_experts": 4,...`
+- **experiments\phase_1_2\expert_utilization.json** | 118 B | Type: JSON Data | Evidence: `{   "imbalance_variance": 2.413243055343628e-05,   "routing_entropy": 1.34591090...`
+- **experiments\phase_1_2\gradient_statistics.json** | 133 B | Type: JSON Data | Evidence: `{   "expert_0": 42503.3076171875,   "expert_1": 41699.1103515625,   "expert_2": ...`
+- **experiments\phase_1_2\results.json** | 1091 B | Type: JSON Data | Evidence: `{   "moe_forward_ms": 185.0268020000658,   "dense_forward_ms": 75.83468900003936...`
+- **experiments\phase_1_2\results_experts.json** | 296 B | Type: JSON Data | Evidence: `{   "moe_fwd_ms": 185.84474549992592,   "moe_bwd_ms": 243.71521950000897,   "den...`
+- **experiments\phase_1_2\results_router.json** | 370 B | Type: JSON Data | Evidence: `{   "forward_latency_ms": 3.8126488999987487,   "backward_latency_ms": 3.6676784...`
+- **experiments\phase_1_2\routing_histogram.json** | 128 B | Type: JSON Data | Evidence: `{   "utilization_histogram": [     0.50335693359375,     0.5013427734375,     0....`
+- **experiments\phase_1_2\system_info.json** | 324 B | Type: JSON Data | Evidence: `{   "os": "Windows",   "os_release": "11",   "python_version": "3.14.4 (tags/v3....`
+- **experiments\phase_1_2\system_info_experts.json** | 324 B | Type: JSON Data | Evidence: `{   "os": "Windows",   "os_release": "11",   "python_version": "3.14.4 (tags/v3....`
+- **experiments\phase_1_2\system_info_router.json** | 324 B | Type: JSON Data | Evidence: `{   "os": "Windows",   "os_release": "11",   "python_version": "3.14.4 (tags/v3....`
+- **experiments\phase_1_3\benchmark_config.json** | 122 B | Type: JSON Data | Evidence: `{   "batch_size": 2,   "seq_len": 512,   "hidden_dim": 256,   "num_heads": 4,   ...`
+- **experiments\phase_1_3\environment.json** | 188 B | Type: JSON Data | Evidence: `{   "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC...`
+- **experiments\phase_1_3\git_revision.json** | 54 B | Type: JSON Data | Evidence: `{   "git_commit": "pre-push",   "random_seed": 42 }`
+- **experiments\phase_1_3\results.json** | 1803 B | Type: JSON Data | Evidence: `{   "stages": {     "input_projection_ms": 3.2119450002210215,     "causal_conv1...`
+- **experiments\phase_1_3\system_info.json** | 324 B | Type: JSON Data | Evidence: `{   "os": "Windows",   "os_release": "11",   "python_version": "3.14.4 (tags/v3....`
+
+## archives/
+- **archives\experiments_PHASE6_3_FINAL.db** | 143360 B | Type: Data | Evidence: `[Binary]`
+
+## docs/
+- **docs\dependency_graph.md** | 2652 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Phase Dependency Graph  > This document defines the dependency re...`
+- **docs\TRAINING_GUIDE.md** | 8172 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Training Guide  A comprehensive guide to training IVERI CORE mode...`
+- **docs\architecture\attention.md** | 2037 B | Type: Documentation/Text | Evidence: `# Flash Attention Wrapper Architecture  This document details the unified, backe...`
+- **docs\architecture\build_order.md** | 1858 B | Type: Documentation/Text | Evidence: `# Component Build Order — Phase 1  This document specifies the sequence in which...`
+- **docs\architecture\mamba2_block.md** | 3203 B | Type: Documentation/Text | Evidence: `# Mamba2 Block Assembly Architecture  This document details the complete module ...`
+- **docs\architecture\mamba2_ssd.md** | 2424 B | Type: Documentation/Text | Evidence: `# Mamba2 Structured State Space Duality (SSD) Specification  This document detai...`
+- **docs\architecture\math_layers.md** | 3382 B | Type: Documentation/Text | Evidence: `# Mathematical Derivation & Design Notes — Phase 1.1 Core Math Layers  This docu...`
+- **docs\architecture\module_dependencies.md** | 1753 B | Type: Documentation/Text | Evidence: `# Module Dependency Specifications  This document defines internal import constr...`
+- **docs\architecture\moe_routing.md** | 3134 B | Type: Documentation/Text | Evidence: `# Mixture of Experts (MoE) Routing Architecture  This document details the mathe...`
+- **docs\architecture\mor.md** | 2026 B | Type: Documentation/Text | Evidence: `# Mixture of Recursions (MoR) Architecture  This document details the dynamic co...`
+- **docs\architecture\overview.md** | 2305 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Architectural Overview  This document provides a high-level overv...`
+- **docs\architecture\README.md** | 430 B | Type: Documentation/Text | Evidence: `# Architecture Decision Records  This directory contains Architecture Decision R...`
+- **docs\architecture\selective_scan.md** | 2600 B | Type: Documentation/Text | Evidence: `# Mamba2 Selective Scan Architecture  This document details the mathematical log...`
+- **docs\architecture\tensor_interfaces.md** | 6089 B | Type: Documentation/Text | Evidence: `# Tensor Interfaces & Signature Contracts  This document formalizes the tensor s...`
+- **docs\benchmarks\.gitkeep** | 64 B | Type: Data | Evidence: `[Binary]`
+- **docs\decisions\.gitkeep** | 45 B | Type: Data | Evidence: `[Binary]`
+- **docs\deployment\INFERENCE.md** | 2740 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Inference Deployment Guide  Phase 6.3.3 production inference uses...`
+- **docs\migrations\PHASE_6_3_1B_MIGRATION.md** | 4232 B | Type: Documentation/Text | Evidence: `# Phase 6.3.1B — Database Integrity Migration Notes  **Date:** 2026-07-06   **Sc...`
+- **docs\migrations\PHASE_6_3_2_OBJ1_CAUSALITY.md** | 1377 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 1 — BLT Causality Restoration  **Date:** 2026-07-06   **...`
+- **docs\migrations\PHASE_6_3_2_OBJ2_TITANS.md** | 1719 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 2 — Titans Production Integration  **Date:** 2026-07-06 ...`
+- **docs\migrations\PHASE_6_3_2_OBJ3_ENTROPY_MOE.md** | 1524 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 3 — Entropy-Conditioned MoE Routing  **Date:** 2026-07-0...`
+- **docs\migrations\PHASE_6_3_2_OBJ4_ABLATION.md** | 1672 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 4 — Real Ablation Framework  **Date:** 2026-07-06   **Sc...`
+- **docs\migrations\PHASE_6_3_2_OBJ5_PUBLICATION.md** | 1549 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 5 — Publication Integrity (Fail-Closed)  **Date:** 2026-...`
+- **docs\migrations\PHASE_6_3_2_OBJ6_REPLAY.md** | 1413 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 6 — Replay Integrity (Fail-Closed)  **Date:** 2026-07-06...`
+- **docs\migrations\PHASE_6_3_2_OBJ7_BYTE_VOCAB.md** | 2050 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 7 — Byte Vocabulary (Collision-Free)  **Date:** 2026-07-...`
+- **docs\migrations\PHASE_6_3_2_OBJ8_DOCUMENTATION.md** | 1517 B | Type: Documentation/Text | Evidence: `# Phase 6.3.2 Objective 8 — Documentation Sync  **Date:** 2026-07-06   **Scope:*...`
+- **docs\phases\INDEX.md** | 2602 B | Type: Generated Report/Audit Text | Evidence: `# IVERI CORE — Phase Index  Canonical links to phase completion reports. Enginee...`
+- **docs\phases\phase_0_plan.md** | 1098 B | Type: Documentation/Text | Evidence: `# Phase 0 — Implementation Plan  *(This is a copy of the frozen Phase 0 plan for...`
+- **docs\reports\.gitkeep** | 49 B | Type: Data | Evidence: `[Binary]`
+- **docs\research\.gitkeep** | 39 B | Type: Data | Evidence: `[Binary]`
+- **docs\research\awesome_skills_mapping.md** | 2427 B | Type: Documentation/Text | Evidence: `# Awesome Skills Mapping for IVERI CORE  This document outlines how specialized ...`
+- **docs\research\Benchmark_Protocol.md** | 1182 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Benchmark Protocol  This document defines execution parameters fo...`
+- **docs\research\Experiment_Guidelines.md** | 876 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Experiment Guidelines  This document details protocol controls fo...`
+- **docs\research\Hypothesis_Register.md** | 2372 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Hypothesis Register  This register establishes the null ($H_0$) a...`
+- **docs\research\Reproducibility_Guide.md** | 809 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Reproducibility Guide  This document describes how to execute the...`
+- **docs\research\Research_Methodology.md** | 1621 B | Type: Documentation/Text | Evidence: `# IVERI CORE — Research Methodology  This document outlines the rigorous scienti...`
+
+## data/certified/
+- **data\certified\certified_statistics.json** | 1326 B | Type: JSON Data | Evidence: `{     "name": "dclm",     "stage": "certified",     "num_documents": 60,     "to...`
+- **data\certified\certified_statistics.md** | 891 B | Type: Documentation/Text | Evidence: `# Dataset Quality Report: dclm  - **Stage**: certified - **License**: unknown - ...`
+- **data\certified\DATASET_CARD.json** | 644 B | Type: JSON Data | Evidence: `{   "name": "dclm",   "version": "1.0",   "license": "cc-by-4.0",   "license_url...`
+- **data\certified\DATASET_CARD.md** | 1617 B | Type: Documentation/Text | Evidence: `--- dataset_name: dclm_certified_v1.0 license: cc-by-4.0 language: en task_categ...`
+- **data\certified\dclm\.FROZEN** | 135 B | Type: Data | Evidence: `[Binary]`
+- **data\certified\dclm\FREEZE_CERTIFICATE.json** | 816 B | Type: JSON Data | Evidence: `{     "byte_count": 24830,     "certification_stages": 24,     "certified_path":...`
+- **data\certified\dclm\manifest.json** | 459 B | Type: JSON Data | Evidence: `[     {         "dataset_name": "dclm",         "version": "1.0",         "licen...`
+- **data\certified\dclm\train.jsonl** | 31840 B | Type: JSONL Data | Evidence: `{"text": "Machine learning systems improve their performance on tasks through ex...`
+- **data\certified\dclm\VERSION.json** | 1254 B | Type: JSON Data | Evidence: `{     "version_id": "v_20260712_121904_d7cc2774",     "dataset_name": "dclm",   ...`
+- **data\certified\finemath\.FROZEN** | 135 B | Type: Data | Evidence: `[Binary]`
+- **data\certified\finemath\FREEZE_CERTIFICATE.json** | 824 B | Type: JSON Data | Evidence: `{     "byte_count": 24410,     "certification_stages": 24,     "certified_path":...`
+- **data\certified\finemath\manifest.json** | 463 B | Type: JSON Data | Evidence: `[     {         "dataset_name": "finemath",         "version": "1.0",         "l...`
+- **data\certified\finemath\train.jsonl** | 31670 B | Type: JSONL Data | Evidence: `{"text": "Mathematics provides tools for understanding patterns, relationships, ...`
+- **data\certified\finemath\VERSION.json** | 1262 B | Type: JSON Data | Evidence: `{     "version_id": "v_20260712_121904_f9e4d223",     "dataset_name": "finemath"...`
+- **data\certified\fineweb_edu\.FROZEN** | 135 B | Type: Data | Evidence: `[Binary]`
+- **data\certified\fineweb_edu\FREEZE_CERTIFICATE.json** | 830 B | Type: JSON Data | Evidence: `{     "byte_count": 22670,     "certification_stages": 24,     "certified_path":...`
+- **data\certified\fineweb_edu\manifest.json** | 466 B | Type: JSON Data | Evidence: `[     {         "dataset_name": "fineweb_edu",         "version": "1.0",        ...`
+- **data\certified\fineweb_edu\train.jsonl** | 30110 B | Type: JSONL Data | Evidence: `{"text": "Plants use sunlight, water, and carbon dioxide to produce glucose and ...`
+- **data\certified\fineweb_edu\VERSION.json** | 1268 B | Type: JSON Data | Evidence: `{     "version_id": "v_20260712_121904_8def56af",     "dataset_name": "fineweb_e...`
+- **data\certified\tinystories\.FROZEN** | 135 B | Type: Data | Evidence: `[Binary]`
+- **data\certified\tinystories\FREEZE_CERTIFICATE.json** | 830 B | Type: JSON Data | Evidence: `{     "byte_count": 20870,     "certification_stages": 24,     "certified_path":...`
+- **data\certified\tinystories\manifest.json** | 466 B | Type: JSON Data | Evidence: `[     {         "dataset_name": "tinystories",         "version": "1.0",        ...`
+- **data\certified\tinystories\train.jsonl** | 28310 B | Type: JSONL Data | Evidence: `{"text": "Once upon a time, a little robot named Rex learned to read books in th...`
+- **data\certified\tinystories\VERSION.json** | 1268 B | Type: JSON Data | Evidence: `{     "version_id": "v_20260712_121903_346737e8",     "dataset_name": "tinystori...`
+- **data\certified\wikipedia\.FROZEN** | 135 B | Type: Data | Evidence: `[Binary]`
+- **data\certified\wikipedia\FREEZE_CERTIFICATE.json** | 826 B | Type: JSON Data | Evidence: `{     "byte_count": 23390,     "certification_stages": 24,     "certified_path":...`
+- **data\certified\wikipedia\manifest.json** | 464 B | Type: JSON Data | Evidence: `[     {         "dataset_name": "wikipedia",         "version": "1.0",         "...`
+- **data\certified\wikipedia\train.jsonl** | 30660 B | Type: JSONL Data | Evidence: `{"text": "The Python programming language was created by Guido van Rossum and fi...`
+- **data\certified\wikipedia\VERSION.json** | 1264 B | Type: JSON Data | Evidence: `{     "version_id": "v_20260712_121904_48a97c93",     "dataset_name": "wikipedia...`
+
+## data/curriculum/
+- **data\curriculum\phase_a_manifest.json** | 1688 B | Type: JSON Data | Evidence: `{     "version": "1.0",     "phase": "A",     "description": "IVERI Phase A curr...`
+
+## data/raw/
+- **data\raw\.gitkeep** | 42 B | Type: Data | Evidence: `[Binary]`
+- **data\raw\dclm\dclm.jsonl** | 25670 B | Type: JSONL Data | Evidence: `{"text": "Machine learning systems improve their performance on tasks through ex...`
+- **data\raw\finemath\finemath.jsonl** | 25250 B | Type: JSONL Data | Evidence: `{"text": "Mathematics provides tools for understanding patterns, relationships, ...`
+- **data\raw\fineweb_edu\fineweb_edu.jsonl** | 23510 B | Type: JSONL Data | Evidence: `{"text": "Plants use sunlight, water, and carbon dioxide to produce glucose and ...`
+- **data\raw\tinystories\tinystories.jsonl** | 21710 B | Type: JSONL Data | Evidence: `{"text": "Once upon a time, a little robot named Rex learned to read books in th...`
+- **data\raw\wikipedia\wikipedia.jsonl** | 24230 B | Type: JSONL Data | Evidence: `{"text": "The Python programming language was created by Guido van Rossum and fi...`
+
+## Checkpoints (.pt)
+- experiments\checkpoints\IVERI_10M_v1.0.pt: 5589594 bytes
+- experiments\checkpoints\IVERI_phase9_v1.0.pt: 5589594 bytes
+- experiments\checkpoints\recovery_test_checkpoint.pt: 1886288 bytes
+- experiments\checkpoints\resume_test_checkpoint.pt: 1886126 bytes
+- logs\iveri_stage1_lvl1\checkpoint_10.pt: 749990 bytes
+- logs\iveri_stage1_lvl1\checkpoint_15.pt: 749990 bytes
+- logs\iveri_stage1_lvl1\checkpoint_20.pt: 749990 bytes
+- logs\iveri_stage1_lvl1\checkpoint_5.pt: 749771 bytes
+- logs\iveri_stage1_lvl2\checkpoint_100.pt: 2372204 bytes
+- logs\iveri_stage1_lvl2\checkpoint_50.pt: 2371903 bytes
+- logs\iveri_stage1_lvl3\checkpoint_1000.pt: 2372505 bytes
+- logs\iveri_stage1_lvl3\checkpoint_500.pt: 2372204 bytes
+- logs\iveri_stage3a_coding_lvl1\coding_checkpoint_10.pt: 751423 bytes
+- logs\iveri_stage3a_coding_lvl1\coding_checkpoint_15.pt: 751423 bytes
+- logs\iveri_stage3a_coding_lvl1\coding_checkpoint_20.pt: 751423 bytes
+- logs\iveri_stage3a_coding_lvl1\coding_checkpoint_5.pt: 751203 bytes
+- logs\iveri_stage4_pref_lvl1\checkpoint_step_10.pt: 755629 bytes
+- logs\iveri_stage4_pref_lvl1\checkpoint_step_20.pt: 755629 bytes
+- reports\phase_3_6\Paper_Figures\checkpoint_golden.pt: 0 bytes
+- reports\phase_9_x\checkpoints\recovery_test_checkpoint.pt: 1886065 bytes
+- reports\phase_9_x\checkpoints\resume_test_checkpoint.pt: 1885901 bytes
+- scratch\test_checkpoint.pt: 146695836 bytes
+
+## Figures (.png, .svg)
+- paper\paper_figures\fig01_benchmark_chart.png: 20037 bytes
+- paper\paper_figures\fig02_benchmark_chart.png: 20150 bytes
+- paper\paper_figures\fig02_loss_curves.png: 38851 bytes
+- paper\paper_figures\fig03_benchmark_chart.png: 20113 bytes
+- paper\paper_figures\fig04_benchmark_chart.png: 20123 bytes
+- paper\paper_figures\fig05_benchmark_chart.png: 20145 bytes
+- paper\paper_figures\fig06_benchmark_chart.png: 20213 bytes
+- paper\paper_figures\fig07_benchmark_chart.png: 20095 bytes
+- paper\paper_figures\fig08_benchmark_chart.png: 20171 bytes
+- paper\paper_figures\fig09_benchmark_chart.png: 20190 bytes
+- paper\paper_figures\fig10_benchmark_chart.png: 20315 bytes
+- paper\paper_figures\fig11_benchmark_chart.png: 19971 bytes
+- paper\paper_figures\fig12_benchmark_chart.png: 20161 bytes
+- reports\phase_10\figures\fig01_benchmark_chart.png: 20037 bytes
+- reports\phase_10\figures\fig02_benchmark_chart.png: 20150 bytes
+- reports\phase_10\figures\fig02_loss_curves.png: 38851 bytes
+- reports\phase_10\figures\fig03_benchmark_chart.png: 20113 bytes
+- reports\phase_10\figures\fig04_benchmark_chart.png: 20123 bytes
+- reports\phase_10\figures\fig05_benchmark_chart.png: 20145 bytes
+- reports\phase_10\figures\fig06_benchmark_chart.png: 20213 bytes
+- reports\phase_10\figures\fig07_benchmark_chart.png: 20095 bytes
+- reports\phase_10\figures\fig08_benchmark_chart.png: 20171 bytes
+- reports\phase_10\figures\fig09_benchmark_chart.png: 20190 bytes
+- reports\phase_10\figures\fig10_benchmark_chart.png: 20315 bytes
+- reports\phase_10\figures\fig11_benchmark_chart.png: 19971 bytes
+- reports\phase_10\figures\fig12_benchmark_chart.png: 20161 bytes
+- reports\phase_3_5\figures\capability_radar_chart.png: 23 bytes
+- reports\phase_3_5\figures\capability_radar_chart.svg: 23 bytes
+- reports\phase_3_5\figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_3_5\figures\loss_convergence_comparison.svg: 23 bytes
+- reports\phase_3_5\figures\throughput_context_scaling.png: 23 bytes
+- reports\phase_3_5\figures\throughput_context_scaling.svg: 23 bytes
+- reports\phase_3_6\Paper_Figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_3_6\Paper_Figures\loss_convergence_comparison.svg: 23 bytes
+- reports\phase_4_0\Paper_Figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_4_0\Paper_Figures\loss_convergence_comparison.svg: 23 bytes
+- reports\phase_5_0\Paper_Figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_5_0\Paper_Figures\loss_convergence_comparison.svg: 23 bytes
+- reports\phase_6_1\publication\Paper_Figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_6_1\publication\Paper_Figures\loss_convergence_comparison.svg: 23 bytes
+- reports\phase_6_2\publication\Paper_Figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_6_2\publication\Paper_Figures\loss_convergence_comparison.svg: 23 bytes
+- reports\phase_6_3\publication\Paper_Figures\loss_convergence_comparison.png: 23 bytes
+- reports\phase_6_3\publication\Paper_Figures\loss_convergence_comparison.svg: 23 bytes

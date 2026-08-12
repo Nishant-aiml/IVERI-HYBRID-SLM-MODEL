@@ -1,0 +1,84 @@
+{
+  "graph_metadata": {
+    "title": "IVERI CORE \u2014 Evidence Dependency Graph (DAG)",
+    "timestamp": "2026-07-26T02:51:43Z",
+    "policy": "ZERO_FABRICATION_STRICT_AUDIT"
+  },
+  "nodes": [
+    {
+      "id": "RQ1",
+      "type": "Research Question",
+      "description": "Does entropy-guided dynamic routing reduce FLOPs without degrading perplexity?",
+      "downstream": [
+        "H1"
+      ]
+    },
+    {
+      "id": "H1",
+      "type": "Hypothesis",
+      "description": "Tokens with low Shannon entropy require fewer active experts (k=1) than high-entropy transitions (k=4).",
+      "downstream": [
+        "EXP-0005"
+      ]
+    },
+    {
+      "id": "EXP-0005",
+      "type": "Experiment",
+      "description": "Stage B 10M-token empirical pretraining campaign on RTX 3050 GPU",
+      "downstream": [
+        "CKPT-2441",
+        "CSV-STAGE-B"
+      ]
+    },
+    {
+      "id": "CKPT-2441",
+      "type": "Checkpoint",
+      "path": "reports/checkpoints/stage_b_step_2441.pt",
+      "downstream": [
+        "EVID-0004"
+      ]
+    },
+    {
+      "id": "CSV-STAGE-B",
+      "type": "CSV Metric Log",
+      "path": "reports/live_training/stage_b_10m_loss.csv",
+      "downstream": [
+        "FIG-LOSS",
+        "TBL-METRICS",
+        "EVID-0004"
+      ]
+    },
+    {
+      "id": "FIG-LOSS",
+      "type": "Vector Figure",
+      "path": "research_packages/paper_01_entropy_routing/figures/loss_curve.svg",
+      "downstream": [
+        "CLAIM-004"
+      ]
+    },
+    {
+      "id": "TBL-METRICS",
+      "type": "Publication Table",
+      "path": "research_packages/paper_01_entropy_routing/tables/table1_training_metrics.tex",
+      "downstream": [
+        "CLAIM-004"
+      ]
+    },
+    {
+      "id": "CLAIM-004",
+      "type": "Paper Scientific Claim",
+      "paper": "paper_01_entropy_routing",
+      "description": "Entropy-guided dynamic routing achieves stable 10M pretraining convergence",
+      "downstream": [
+        "PAT-CLAIM-01"
+      ]
+    },
+    {
+      "id": "PAT-CLAIM-01",
+      "type": "Patent Claim",
+      "patent": "patent_01_entropy_routing",
+      "description": "System and method for entropy-guided dynamic expert allocation",
+      "downstream": []
+    }
+  ]
+}

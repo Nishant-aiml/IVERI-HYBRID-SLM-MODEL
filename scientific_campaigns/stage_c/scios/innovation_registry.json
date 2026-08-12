@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-29T09:44:18.934733Z",
+  "innovations": [
+    {
+      "id": "INV-001",
+      "name": "Multi-Signal Dynamic Compute Controller",
+      "hypothesis": "Joint signal routing improves ACE",
+      "patent_mapping": "Patent 1",
+      "paper_mapping": "Paper 1",
+      "novelty_score": "High"
+    },
+    {
+      "id": "INV-002",
+      "name": "Constant-Memory Neural State Recurrence",
+      "hypothesis": "O(1) VRAM long context",
+      "patent_mapping": "Patent 2",
+      "paper_mapping": "Paper 2",
+      "novelty_score": "High"
+    },
+    {
+      "id": "INV-003",
+      "name": "Tokenizer-Free UTF8 Byte Patcher",
+      "hypothesis": "OOV & noise immunity",
+      "patent_mapping": "Patent 3",
+      "paper_mapping": "Paper 4",
+      "novelty_score": "High"
+    }
+  ]
+}

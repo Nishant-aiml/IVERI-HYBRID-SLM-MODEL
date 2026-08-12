@@ -1,0 +1,17 @@
+{
+  "with_grad_checkpoint": {
+    "fwd_ms": 961.306840000907,
+    "bwd_ms": 2357.9248199996073,
+    "opt_ms": 7.88001999608241,
+    "total_ms": 3327.1116799965966
+  },
+  "without_grad_checkpoint": {
+    "fwd_ms": 758.851000003051,
+    "bwd_ms": 1761.6030399920419,
+    "opt_ms": 7.735460007097572,
+    "total_ms": 2528.1895000021905
+  },
+  "grad_checkpoint_overhead_x": 1.3160056554280104,
+  "batch": 8,
+  "seq": 64
+}

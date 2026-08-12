@@ -1,0 +1,154 @@
+{
+  "source": "C:\\Users\\datta.000\\Desktop\\iveri core nexus\\iveri-core\\scientific_campaigns\\stage_c\\phase_5_6\\tier1_ablations_and_failures.json",
+  "sha256": "61f6c006c771792e",
+  "timestamp": "2026-07-26T06:58:00.620785Z",
+  "model_summaries": {
+    "Baseline_Dense_Transformer": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        123,
+        3407
+      ],
+      "mean_final_loss": 1.366366,
+      "std_final_loss": 0.015824,
+      "ci95_loss": [
+        1.34846,
+        1.384273
+      ],
+      "mean_throughput": 13016.27,
+      "std_throughput": 2345.84,
+      "mean_vram_mb": 393.59,
+      "total_grad_explosions": 0
+    },
+    "IVERI_Full_v0.91": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        123,
+        3407
+      ],
+      "mean_final_loss": 3.142507,
+      "std_final_loss": 0.005465,
+      "ci95_loss": [
+        3.136323,
+        3.148691
+      ],
+      "mean_throughput": 172.55,
+      "std_throughput": 12.98,
+      "mean_vram_mb": 828.39,
+      "total_grad_explosions": 5
+    },
+    "IVERI_No_Entropy": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        123,
+        3407
+      ],
+      "mean_final_loss": 3.141993,
+      "std_final_loss": 0.005717,
+      "ci95_loss": [
+        3.135524,
+        3.148462
+      ],
+      "mean_throughput": 186.34,
+      "std_throughput": 18.35,
+      "mean_vram_mb": 827.77,
+      "total_grad_explosions": 5
+    },
+    "IVERI_No_Titans": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        123,
+        3407
+      ],
+      "mean_final_loss": 3.141953,
+      "std_final_loss": 0.005744,
+      "ci95_loss": [
+        3.135453,
+        3.148452
+      ],
+      "mean_throughput": 271.18,
+      "std_throughput": 14.64,
+      "mean_vram_mb": 691.01,
+      "total_grad_explosions": 7
+    },
+    "IVERI_No_MoR": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        123,
+        3407
+      ],
+      "mean_final_loss": 3.136476,
+      "std_final_loss": 0.010201,
+      "ci95_loss": [
+        3.124932,
+        3.14802
+      ],
+      "mean_throughput": 359.2,
+      "std_throughput": 23.96,
+      "mean_vram_mb": 422.69,
+      "total_grad_explosions": 1
+    }
+  },
+  "pairwise_tests": {
+    "Full_vs_Dense": {
+      "t_statistic": 183.7662,
+      "cohens_d": 150.0445,
+      "p_value_approx": "<0.01",
+      "mean_loss_Full": 3.142507,
+      "mean_loss_Comp": 1.366366,
+      "delta_loss_comp_minus_full": -1.77614,
+      "throughput_delta_pct": 7443.6,
+      "vram_delta_pct": -52.5,
+      "note": "n=3 seeds each, Welch t-test (\u03b1=0.05)"
+    },
+    "Full_vs_Entropy": {
+      "t_statistic": 0.1125,
+      "cohens_d": 0.0919,
+      "p_value_approx": ">0.10",
+      "mean_loss_Full": 3.142507,
+      "mean_loss_Comp": 3.141993,
+      "delta_loss_comp_minus_full": -0.000514,
+      "throughput_delta_pct": 8.0,
+      "vram_delta_pct": -0.1,
+      "note": "n=3 seeds each, Welch t-test (\u03b1=0.05)"
+    },
+    "Full_vs_Titans": {
+      "t_statistic": 0.1211,
+      "cohens_d": 0.0989,
+      "p_value_approx": ">0.10",
+      "mean_loss_Full": 3.142507,
+      "mean_loss_Comp": 3.141953,
+      "delta_loss_comp_minus_full": -0.000554,
+      "throughput_delta_pct": 57.2,
+      "vram_delta_pct": -16.6,
+      "note": "n=3 seeds each, Welch t-test (\u03b1=0.05)"
+    },
+    "Full_vs_MoR": {
+      "t_statistic": 0.9026,
+      "cohens_d": 0.737,
+      "p_value_approx": ">0.10",
+      "mean_loss_Full": 3.142507,
+      "mean_loss_Comp": 3.136476,
+      "delta_loss_comp_minus_full": -0.006031,
+      "throughput_delta_pct": 108.2,
+      "vram_delta_pct": -49.0,
+      "note": "n=3 seeds each, Welch t-test (\u03b1=0.05)"
+    }
+  },
+  "profiling_summary": {
+    "seq_len": 64,
+    "batch_size": 8,
+    "with_grad_checkpoint_tok_per_s": 153.9,
+    "without_grad_checkpoint_tok_per_s": 202.5,
+    "throughput_gain_pct": 31.6,
+    "speedup_factor": 1.316,
+    "fwd_ms": 758.851000003051,
+    "bwd_ms": 1761.6030399920419,
+    "bwd_dominates": "bwd_ms is 70% of total"
+  }
+}

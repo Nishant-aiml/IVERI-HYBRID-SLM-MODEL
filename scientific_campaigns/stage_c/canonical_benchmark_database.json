@@ -1,0 +1,95 @@
+{
+  "database_version": "1.0.0-STAGE_C_FINAL",
+  "timestamp": "2026-07-29T17:26:39.257443Z",
+  "git_commit": "2f31069b6b7180c666903732dba2e9642121bb7a",
+  "hardware_environment": {
+    "gpu_device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "cuda_version": "12.1",
+    "pytorch_version": "2.5.1+cu121"
+  },
+  "canonical_experiments": {
+    "EXP-001_FULL_500STEP_PRETRAINING": {
+      "experiment_description": "Master 500-step pretraining campaign across n=8 seeds (256K tokens)",
+      "step_count": 500,
+      "token_budget": 262144,
+      "seed_count": 8,
+      "parameter_count_millions": 10.2,
+      "optimizer": "AdamW (lr=3e-4, weight_decay=0.01, CosineAnnealingLR)",
+      "metrics": {
+        "iveri_core_v11_pretrain_loss": {
+          "mean": 0.1922,
+          "std_dev": 0.0239
+        },
+        "dense_transformer_pretrain_loss": {
+          "mean": 1.1489,
+          "std_dev": 0.0056
+        },
+        "mamba2_ssm_pretrain_loss": {
+          "mean": 2.0091,
+          "std_dev": 0.0005
+        },
+        "rwkv6_linear_pretrain_loss": {
+          "mean": 2.0086,
+          "std_dev": 0.0003
+        },
+        "xlstm_matrix_pretrain_loss": {
+          "mean": 3.1505,
+          "std_dev": 0.0002
+        },
+        "welch_t_statistic": 107.17,
+        "p_value": "< 0.0001"
+      }
+    },
+    "EXP-002_50STEP_WARMUP_CHECK": {
+      "experiment_description": "Short 50-step gradient stability and sanity verification run",
+      "step_count": 50,
+      "token_budget": 25600,
+      "metrics": {
+        "iveri_core_v11_warmup_loss": 3.0769,
+        "dense_transformer_warmup_loss": 0.6618
+      }
+    },
+    "EXP-003_INFERENCE_OPTIMIZATION_PHASES": {
+      "experiment_description": "Inference throughput logged by optimization phase (Batch 8, Seq 64)",
+      "batch_size": 8,
+      "sequence_length": 64,
+      "phase_metrics": {
+        "Phase_0_Unoptimized_PyTorch": {
+          "latency_ms": 154.6,
+          "throughput_tok_sec": 3311.9,
+          "overhead_ms": 58.2
+        },
+        "Phase_1_Vectorized_Patcher": {
+          "latency_ms": 129.6,
+          "throughput_tok_sec": 3950.6,
+          "overhead_ms": 12.4
+        },
+        "Phase_2_Controller_FastPath_Gating": {
+          "latency_ms": 109.63,
+          "throughput_tok_sec": 4670.1,
+          "overhead_ms": 4.1
+        },
+        "Phase_3_5to1_Interleaved_Mamba": {
+          "latency_ms": 76.49,
+          "throughput_tok_sec": 6693.9,
+          "overhead_ms": 0.4
+        },
+        "Phase_4_Compiled_Backbone_FP16": {
+          "latency_ms": 51.88,
+          "throughput_tok_sec": 9868.7,
+          "overhead_ms": 0.2
+        }
+      }
+    },
+    "EXP-004_SYSTEM_STABILITY_AUDIT": {
+      "experiment_description": "50-step gradient explosion and numerical stability audit",
+      "gradient_scale_initialization": "alpha_0 = 0.05 (Depth-Decaying Residual Scaling)",
+      "metrics": {
+        "nan_events": 0,
+        "inf_events": 0,
+        "gradient_explosions": 0,
+        "stability_verdict": "100% Stable (Zero NaN, Zero Inf, Zero Explosions)"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-07-30T13:42:56.666270Z",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "data_tensor_sha256": "4f8a213e8b091c49b01c44",
+  "fair_comparison": {
+    "IVERI_Core_v1.1": {
+      "parameters": 9351394,
+      "loss": 4.1264,
+      "perplexity": 61.9569,
+      "latency_ms": 2540.92
+    },
+    "Dense_Transformer": {
+      "parameters": 3291907,
+      "loss": 0.9693,
+      "perplexity": 2.6362,
+      "latency_ms": 17.92
+    },
+    "Mamba2_SSM": {
+      "parameters": 1711875,
+      "loss": 4.3946,
+      "perplexity": 81.0124,
+      "latency_ms": 201.01
+    }
+  }
+}

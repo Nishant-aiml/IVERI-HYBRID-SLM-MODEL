@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "pipeline_version": "Phase8-CertificationPipeline-v1",
+  "generated_at": "2026-07-24T17:23:00Z",
+  "certified_datasets": {
+    "tinystories": {
+      "source": "HuggingFace / roneneldan/TinyStories",
+      "version": "v1.0",
+      "license": "Apache-2.0",
+      "sha256_manifest_hash": "3e75da6c0c38bae74a6c0b9e3414a0d998dacd65083e7a5857e725d23c5bb6c6",
+      "raw_byte_count": 21710,
+      "document_count": 60,
+      "curriculum_weight": 0.35,
+      "split_distribution": {
+        "train": 0.80,
+        "validation": 0.10,
+        "held_out": 0.10
+      }
+    },
+    "fineweb_edu": {
+      "source": "HuggingFace / HuggingFaceFW/fineweb-edu",
+      "version": "sample-10B",
+      "license": "CC-BY-4.0",
+      "sha256_manifest_hash": "dfa8c917f3f2287029e7fa605be32b9bf48cf0a9e81e7c37273452b3bdb44d65",
+      "raw_byte_count": 23510,
+      "document_count": 60,
+      "curriculum_weight": 0.40,
+      "split_distribution": {
+        "train": 0.80,
+        "validation": 0.10,
+        "held_out": 0.10
+      }
+    },
+    "wikipedia": {
+      "source": "Wikimedia Foundation / English Wikipedia Dump",
+      "version": "2026-06-01",
+      "license": "CC-BY-SA-3.0",
+      "sha256_manifest_hash": "98804c504fb35c1169e5660c278845b5e0ceef099d8078b8671757b1fb1245c3",
+      "raw_byte_count": 24230,
+      "document_count": 60,
+      "curriculum_weight": 0.15,
+      "split_distribution": {
+        "train": 0.80,
+        "validation": 0.10,
+        "held_out": 0.10
+      }
+    },
+    "finemath": {
+      "source": "HuggingFace / HuggingFaceFW/finemath",
+      "version": "v1.0",
+      "license": "Apache-2.0",
+      "sha256_manifest_hash": "366897bec2e7483ef6b3cdcd84d0e4c27056923552bf222014193d1a5f30eef9",
+      "raw_byte_count": 25250,
+      "document_count": 60,
+      "curriculum_weight": 0.05,
+      "split_distribution": {
+        "train": 0.80,
+        "validation": 0.10,
+        "held_out": 0.10
+      }
+    },
+    "dclm": {
+      "source": "MLFoundations / DCLM-Baseline",
+      "version": "v1.0",
+      "license": "Apple Sample Code / CC-BY-NC-4.0",
+      "sha256_manifest_hash": "e5dcaf5acb090852b8f5cc3143c1de2922df23788eadc17616e339ca9765aedc",
+      "raw_byte_count": 25670,
+      "document_count": 60,
+      "curriculum_weight": 0.05,
+      "split_distribution": {
+        "train": 0.80,
+        "validation": 0.10,
+        "held_out": 0.10
+      }
+    }
+  }
+}

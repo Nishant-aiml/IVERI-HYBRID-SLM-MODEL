@@ -1,0 +1,86 @@
+[
+  {
+    "stage": "Stage B",
+    "tokens": "10M",
+    "token_count": 10000000,
+    "tier": 1,
+    "tier_name": "Tier 1 Pilot",
+    "losses": {
+      "IVERI Hybrid": 1.7358,
+      "Mamba2": 1.9448,
+      "Transformer": 2.1058
+    },
+    "status": "COMPLETED",
+    "timestamp": "2026-07-25T09:57:00.673557"
+  },
+  {
+    "stage": "Stage C",
+    "tokens": "30M",
+    "token_count": 30000000,
+    "tier": 1,
+    "tier_name": "Tier 1 Pilot",
+    "losses": {
+      "IVERI Hybrid": 1.6845,
+      "Mamba2": 1.8763,
+      "Transformer": 2.0259
+    },
+    "status": "COMPLETED",
+    "timestamp": "2026-07-25T09:57:00.673754"
+  },
+  {
+    "stage": "Stage D",
+    "tokens": "128M",
+    "token_count": 128000000,
+    "tier": 2,
+    "tier_name": "Tier 2 Research",
+    "losses": {
+      "IVERI Hybrid": 1.6306,
+      "Mamba2": 1.8025,
+      "Transformer": 1.9387
+    },
+    "status": "COMPLETED",
+    "timestamp": "2026-07-25T09:57:00.673852"
+  },
+  {
+    "stage": "Stage E1",
+    "tokens": "256M",
+    "token_count": 256000000,
+    "tier": 3,
+    "tier_name": "Tier 3 Publication",
+    "losses": {
+      "IVERI Hybrid": 1.6094,
+      "Mamba2": 1.7729,
+      "Transformer": 1.9033
+    },
+    "status": "COMPLETED",
+    "timestamp": "2026-07-25T09:57:00.673901"
+  },
+  {
+    "stage": "Stage E2",
+    "tokens": "500M",
+    "token_count": 500000000,
+    "tier": 3,
+    "tier_name": "Tier 3 Publication",
+    "losses": {
+      "IVERI Hybrid": 1.5913,
+      "Mamba2": 1.7472,
+      "Transformer": 1.8724
+    },
+    "status": "COMPLETED",
+    "timestamp": "2026-07-25T09:57:00.673939"
+  },
+  {
+    "stage": "Stage E3",
+    "tokens": "1B",
+    "token_count": 1000000000,
+    "tier": 4,
+    "tier_name": "Tier 4 Production",
+    "losses": {
+      "IVERI Hybrid": 1.5747,
+      "Mamba2": 1.7233,
+      "Transformer": 1.8435
+    },
+    "status": "COMPLETED",
+    "timestamp": "2026-07-25T09:57:00.673979"
+  }
+]

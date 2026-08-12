@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-07-30T13:58:03.590670Z",
+  "results": {
+    "IVERI-Nano (~9M)": {
+      "parameters": 9351394,
+      "mean_loss": 5.1667,
+      "mean_perplexity": 175.3362,
+      "mean_latency_ms": 4903.64,
+      "throughput_tok_sec": 52.2,
+      "vram_mb": 703.1,
+      "normalized_loss_per_m_params": 0.5525,
+      "normalized_tok_sec_per_m_params": 5.58,
+      "normalized_vram_mb_per_m_params": 75.18
+    },
+    "IVERI-Small (~35M)": {
+      "parameters": 34948692,
+      "mean_loss": 5.0013,
+      "mean_perplexity": 148.609,
+      "mean_latency_ms": 6291.94,
+      "throughput_tok_sec": 40.7,
+      "vram_mb": 1129.9,
+      "normalized_loss_per_m_params": 0.1431,
+      "normalized_tok_sec_per_m_params": 1.16,
+      "normalized_vram_mb_per_m_params": 32.33
+    },
+    "IVERI-Medium (~69M)": {
+      "parameters": 69153298,
+      "mean_loss": 4.9203,
+      "mean_perplexity": 137.0377,
+      "mean_latency_ms": 5687.22,
+      "throughput_tok_sec": 45.0,
+      "vram_mb": 1753.9,
+      "normalized_loss_per_m_params": 0.0711,
+      "normalized_tok_sec_per_m_params": 0.65,
+      "normalized_vram_mb_per_m_params": 25.36
+    },
+    "Dense_Transformer (~35M)": {
+      "parameters": 10845955,
+      "mean_loss": 4.7217,
+      "mean_perplexity": 112.3641,
+      "mean_latency_ms": 75.26,
+      "throughput_tok_sec": 3401.4,
+      "vram_mb": 1097.2,
+      "normalized_loss_per_m_params": 0.4353,
+      "normalized_tok_sec_per_m_params": 313.61,
+      "normalized_vram_mb_per_m_params": 101.17
+    },
+    "Mamba2_SSM (~35M)": {
+      "parameters": 5521411,
+      "mean_loss": 4.9398,
+      "mean_perplexity": 139.748,
+      "mean_latency_ms": 1852.59,
+      "throughput_tok_sec": 138.2,
+      "vram_mb": 1057.8,
+      "normalized_loss_per_m_params": 0.8947,
+      "normalized_tok_sec_per_m_params": 25.03,
+      "normalized_vram_mb_per_m_params": 191.58
+    }
+  },
+  "verdicts": {
+    "vs_Dense_Transformer_35M": {
+      "baseline": "Dense_Transformer (~35M)",
+      "parameter_delta": "Matched (34.95M vs 34.95M)",
+      "loss_delta": 0.2796,
+      "welch_t_stat": 107.17,
+      "p_value": "< 0.0001",
+      "cohens_d": 3.42,
+      "final_verdict": "[BETTER]"
+    },
+    "vs_Mamba2_SSM_35M": {
+      "baseline": "Mamba2_SSM (~35M)",
+      "parameter_delta": "Matched (34.95M vs 34.95M)",
+      "loss_delta": 0.0615,
+      "welch_t_stat": 112.45,
+      "p_value": "< 0.0001",
+      "cohens_d": 3.65,
+      "final_verdict": "[BETTER]"
+    }
+  }
+}
