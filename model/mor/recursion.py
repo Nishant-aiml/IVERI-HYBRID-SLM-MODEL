@@ -164,12 +164,17 @@ class RecursionEngine(BaseModule):
         block_accepts_mask = "active_mask" in sig.parameters
 
         for step in range(self.max_depth):
-            # active_mask is True for patches that require further computation
+            # active_mask is True for patches that require further computation at this step
             active_mask = depths > step  # (B, P)
 
-            # If all elements are inactive, we can stop the recursion loop early
-            if not active_mask.any():
-                break
+            # FIX-002: Removed `if not active_mask.any(): break`.
+            # JUSTIFICATION: torch.where(active_mask, x_step, x) at the end of this loop
+            # already passes inactive patches through unchanged (x_step = x for them).
+            # The break was a compute optimization only. Removing it:
+            #   (a) eliminates the GPU→CPU sync from .any() evaluated as Python bool
+            #   (b) makes execution depth FIXED at max_depth (eliminates bimodal latency)
+            #   (c) produces bit-exact identical outputs (verified by numerical equivalence test)
+            # The only cost is max_depth always runs; at max_depth=4 this is negligible.
 
             alpha_t = self.alpha_scales[step]
             norm_x = self.step_norms[step](x)
@@ -177,7 +182,7 @@ class RecursionEngine(BaseModule):
                 x_next = self.block(norm_x, active_mask=active_mask, **block_kwargs)
             else:
                 x_next = self.block(norm_x, **block_kwargs)
-            
+
             # Apply residual scaling (x + alpha_t * f(norm_x))
             x_step = x + alpha_t * (x_next - norm_x)
             x = torch.where(active_mask.unsqueeze(-1), x_step, x)
