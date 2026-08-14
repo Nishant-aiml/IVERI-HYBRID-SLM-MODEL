@@ -1,0 +1,71 @@
+{
+  "experiment_id": "DEEP_COMPONENT_PROFILE_V1",
+  "timestamp_utc": "2026-08-14T07:15:07.027971+00:00",
+  "git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "batch_size": 4,
+  "seq_len": 64,
+  "warmup": 3,
+  "measure": 10,
+  "telemetry": {
+    "e2e_forward_ms": {
+      "mean": 389.105,
+      "std": 17.035,
+      "min": 356.22,
+      "max": 404.738
+    },
+    "titans_ms": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "titans_fraction": 0.0,
+    "block_stats": []
+  },
+  "cuda_event_stages": {
+    "entropy_model": {
+      "mean": 1.087,
+      "std": 0.223,
+      "min": 0.952,
+      "max": 1.706
+    },
+    "patcher": {
+      "mean": 0.37,
+      "std": 0.022,
+      "min": 0.348,
+      "max": 0.41
+    },
+    "encoder": {
+      "mean": 1.867,
+      "std": 0.249,
+      "min": 1.652,
+      "max": 2.525
+    },
+    "backbone_total": {
+      "mean": 338.517,
+      "std": 15.339,
+      "min": 314.761,
+      "max": 364.204
+    },
+    "decoder": {
+      "mean": 2.339,
+      "std": 0.416,
+      "min": 2.001,
+      "max": 3.17
+    },
+    "full_forward": {
+      "mean": 344.727,
+      "std": 15.652,
+      "min": 320.725,
+      "max": 370.753
+    }
+  },
+  "training_step_ms": {
+    "mean": 3281.296,
+    "std": 103.474,
+    "min": 3130.235,
+    "max": 3455.833
+  },
+  "backward_ms_estimate": 2936.57,
+  "backward_fraction": 0.8949
+}

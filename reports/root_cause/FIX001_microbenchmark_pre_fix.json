@@ -1,0 +1,50 @@
+{
+  "experiment": "FIX001_MICROBENCHMARK_PRE_FIX",
+  "timestamp_utc": "2026-08-14T07:25:25.982325+00:00",
+  "git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "bs": 4,
+  "sl": 64,
+  "warmup": 3,
+  "measure": 20,
+  "item_calls_per_training_step": 954,
+  "item_calls_per_inference_step": 158,
+  "item_calls_in_backward": 796,
+  "training_step_ms": {
+    "mean": 3240.25,
+    "std": 102.12,
+    "min": 3063.01,
+    "max": 3457.37,
+    "individual": [
+      3169.85,
+      3116.07,
+      3174.59,
+      3063.01,
+      3230.13,
+      3209.48,
+      3454.52,
+      3123.27,
+      3353.57,
+      3222.1,
+      3186.13,
+      3317.91,
+      3245.32,
+      3457.37,
+      3224.48,
+      3281.08,
+      3290.85,
+      3293.62,
+      3175.29,
+      3216.35
+    ]
+  },
+  "eval_forward_ms": {
+    "mean": 372.37,
+    "std": 20.19,
+    "min": 345.34,
+    "max": 431.18
+  },
+  "backward_overhead_ms": 2867.88,
+  "backward_overhead_pct": 88.51,
+  "status": "PRE_FIX_BASELINE"
+}
