@@ -1,0 +1,43 @@
+{
+  "experiment": "FIX001_POST_FIX_VALIDATION",
+  "timestamp_utc": "2026-08-14T07:33:01.236116+00:00",
+  "fix_git_sha": "b065e27",
+  "baseline_git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "fix_description": "FIX-001: .item()/.tolist() moved outside Titans per-patch loop",
+  "mathematical_change": "NONE \u2014 pure telemetry refactoring",
+  "numerical_equivalence_max_diff": 0.0,
+  "numerical_equivalence_verdict": "PASS",
+  "item_calls_pre_fix": 954,
+  "item_calls_post_fix": 446,
+  "item_call_reduction_pct": 53.25,
+  "timing": {
+    "pre_fix_step_ms": {
+      "mean": 3240.2,
+      "std": 102.1
+    },
+    "post_fix_step_ms": {
+      "mean": 3302.99,
+      "std": 741.16
+    },
+    "improvement_ms": -62.79,
+    "improvement_pct": -1.94
+  },
+  "quality": {
+    "baseline_mean": 3.1118,
+    "baseline_std": 0.047,
+    "fixed_mean": 3.1247,
+    "fixed_std": 0.0906,
+    "delta_nats": 0.0129,
+    "welch_t": -0.2828,
+    "p_value": 0.786846,
+    "individual": [
+      3.1192,
+      3.0342,
+      3.0849,
+      3.2756,
+      3.1098
+    ],
+    "verdict": "PASS \u2014 quality preserved"
+  },
+  "acceptance": "PENDING \u2014 see verdict above"
+}

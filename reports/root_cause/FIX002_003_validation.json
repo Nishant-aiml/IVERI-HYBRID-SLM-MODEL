@@ -1,0 +1,57 @@
+{
+  "experiment_id": "FIX002_003_VALIDATION",
+  "timestamp_utc": "2026-08-14T07:49:57.994099+00:00",
+  "fix_commits": {
+    "FIX-001": "b065e27",
+    "FIX-002+003": "b5889f1"
+  },
+  "baseline_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "forward_latency": {
+    "pre_fix_mean_ms": 372.4,
+    "pre_fix_cv_pct": 5.4,
+    "post_fix_mean_ms": 364.63,
+    "post_fix_cv_pct": 6.49,
+    "change_pct": 2.09,
+    "bimodality_eliminated": false
+  },
+  "training_step": {
+    "pre_fix_mean_ms": 3240.2,
+    "pre_fix_cv_pct": 3.15,
+    "post_fix_mean_ms": 3203.17,
+    "post_fix_cv_pct": 2.73,
+    "change_pct": 1.14
+  },
+  "fix003_smoke_test": "PASS",
+  "abl_c_result": {
+    "mean": 2.0502,
+    "std": 0.1943,
+    "delta": -1.0616,
+    "direction": "BETTER",
+    "p": 0.000151,
+    "n_params": 8956811,
+    "individual": [
+      1.9282,
+      1.8377,
+      2.1706,
+      2.3209,
+      1.9936
+    ],
+    "mean_lat_ms": 2878.9
+  },
+  "full_iveri_with_fixes": {
+    "mean": 3.1147,
+    "std": 0.0442,
+    "delta": 0.0029,
+    "direction": "SIMILAR",
+    "p": 0.923979,
+    "n_params": 10029874,
+    "individual": [
+      3.0843,
+      3.0752,
+      3.113,
+      3.1876,
+      3.1133
+    ],
+    "mean_lat_ms": 3662.2
+  }
+}
