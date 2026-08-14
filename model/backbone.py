@@ -111,33 +111,41 @@ class BackboneSubBlock(nn.Module):
             else:
                 x = x + self.attention(self.attn_norm(x))
 
-        # Run MoE FFN block (or dense FFN ablation path)
+        # Run MoE FFN block (or dense FFN ablation path).
+        # FIX-003: Separated the is_complex entropy gate from the use_moe config flag.
+        # When is_complex=False (low-entropy patches), the FFN is skipped entirely —
+        # the entropy gate passes the residual unchanged. This is the intended behavior.
+        # Previously the else branch called self.dense_ffn which does not exist when
+        # use_moe=True, causing an AttributeError for zero-entropy inputs (use_blt=False).
         norm_x = self.moe_norm(x)
-        if self.use_moe and is_complex:
-            dispatch_weights, dispatch_indices, aux_loss = self.moe_router(
-                norm_x, entropy=entropy if isinstance(entropy, torch.Tensor) else None
-            )
-            self.current_aux_losses.append(aux_loss)
-
-            self.expert_counts += torch.bincount(
-                dispatch_indices.detach().view(-1), minlength=self.num_experts
-            ).cpu()
-
-            if use_ckpt:
-                def run_experts(h: torch.Tensor, w: torch.Tensor, idxs: torch.Tensor) -> torch.Tensor:
-                    moe_out, _ = self.moe_experts(h, w, idxs)
-                    return moe_out
-                moe_out = torch.utils.checkpoint.checkpoint(
-                    run_experts, norm_x, dispatch_weights, dispatch_indices, use_reentrant=False
+        if is_complex:
+            if self.use_moe:
+                dispatch_weights, dispatch_indices, aux_loss = self.moe_router(
+                    norm_x, entropy=entropy if isinstance(entropy, torch.Tensor) else None
                 )
+                self.current_aux_losses.append(aux_loss)
+
+                self.expert_counts += torch.bincount(
+                    dispatch_indices.detach().view(-1), minlength=self.num_experts
+                ).cpu()
+
+                if use_ckpt:
+                    def run_experts(h: torch.Tensor, w: torch.Tensor, idxs: torch.Tensor) -> torch.Tensor:
+                        moe_out, _ = self.moe_experts(h, w, idxs)
+                        return moe_out
+                    moe_out = torch.utils.checkpoint.checkpoint(
+                        run_experts, norm_x, dispatch_weights, dispatch_indices, use_reentrant=False
+                    )
+                else:
+                    moe_out, _ = self.moe_experts(norm_x, dispatch_weights, dispatch_indices)
             else:
-                moe_out, _ = self.moe_experts(norm_x, dispatch_weights, dispatch_indices)
-        else:
-            if use_ckpt:
-                moe_out = torch.utils.checkpoint.checkpoint(self.dense_ffn, norm_x, use_reentrant=False)
-            else:
-                moe_out = self.dense_ffn(norm_x)
-        x = x + moe_out
+                # Ablation path (use_moe=False): use dense FFN
+                if use_ckpt:
+                    moe_out = torch.utils.checkpoint.checkpoint(self.dense_ffn, norm_x, use_reentrant=False)
+                else:
+                    moe_out = self.dense_ffn(norm_x)
+            x = x + moe_out
+        # else: is_complex=False — entropy gate skips FFN entirely; x passes through unchanged.
 
         return x
 
