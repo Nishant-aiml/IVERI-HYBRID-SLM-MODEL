@@ -271,13 +271,13 @@ class TitansMemory(BaseMemory):
 
         create_graph = torch.is_grad_enabled()
 
-        # Metrics for telemetry
-        sum_lr = 0.0
-        sum_forget = 0.0
-        sum_grad_norm = 0.0
-        sum_update_mag = 0.0
-        lr_vals = []
-        forget_vals = []
+        # FIX-001: Telemetry tensors accumulated on-GPU, converted to Python scalars
+        # ONCE after the loop. Zero .item()/.tolist() calls inside the loop.
+        # Mathematical algorithm (retrieve / loss / grad / lr_gen / update) is unchanged.
+        telemetry_lr_list: list[torch.Tensor] = []
+        telemetry_forget_list: list[torch.Tensor] = []
+        telemetry_gnorm_sq_list: list[torch.Tensor] = []
+        telemetry_updmag_sq_list: list[torch.Tensor] = []
 
         # Iterate sequentially over step dimension to perform online updates
         for t in range(P):
@@ -313,22 +313,30 @@ class TitansMemory(BaseMemory):
             weights = new_weights
             surprise = new_surprise
 
-            # Accumulate telemetry metrics
-            sum_lr += lr_t.detach().mean().item()
-            sum_forget += forget_t.detach().mean().item()
-            lr_vals.extend(lr_t.detach().view(-1).tolist())
-            forget_vals.extend(forget_t.detach().view(-1).tolist())
+            # FIX-001: Accumulate telemetry as GPU tensors — NO .item() inside loop.
+            telemetry_lr_list.append(lr_t.detach().mean())
+            telemetry_forget_list.append(forget_t.detach().mean())
+            gnorm_sq = sum(
+                [g.detach().pow(2).sum() for g in grads if g is not None]
+            )
+            telemetry_gnorm_sq_list.append(gnorm_sq)
+            upd_sq = sum(
+                [(w_new - w_old).detach().pow(2).sum()
+                 for w_new, w_old in zip(weights, old_weights, strict=False)]
+            )
+            telemetry_updmag_sq_list.append(upd_sq)
 
-            # Gradient norm
-            gnorm = sum([g.detach().pow(2).sum().item() for g in grads if g is not None]) ** 0.5
-            sum_grad_norm += gnorm
-
-            # Update magnitude (L2 distance old vs new weights)
-            update_norms = []
-            for w_new, w_old in zip(weights, old_weights, strict=False):
-                update_norms.append((w_new - w_old).detach().pow(2).sum().item())
-            mag = sum(update_norms) ** 0.5
-            sum_update_mag += mag
+        # FIX-001: All .item() calls happen HERE — once, after the loop.
+        sum_lr = float(torch.stack(telemetry_lr_list).sum().item()) if telemetry_lr_list else 0.0
+        sum_forget = float(torch.stack(telemetry_forget_list).sum().item()) if telemetry_forget_list else 0.0
+        sum_grad_norm = float(
+            torch.stack(telemetry_gnorm_sq_list).sum().sqrt().item()
+        ) if telemetry_gnorm_sq_list else 0.0
+        sum_update_mag = float(
+            torch.stack(telemetry_updmag_sq_list).sum().sqrt().item()
+        ) if telemetry_updmag_sq_list else 0.0
+        lr_vals: list[float] = [v.item() for v in telemetry_lr_list]
+        forget_vals: list[float] = [v.item() for v in telemetry_forget_list]
 
         # Calculate final telemetry stats
         if P > 0:
@@ -401,13 +409,12 @@ class TitansMemory(BaseMemory):
         create_graph = torch.is_grad_enabled()
         online_learning = create_graph
 
-        # Metrics for telemetry
-        sum_lr = 0.0
-        sum_forget = 0.0
-        sum_grad_norm = 0.0
-        sum_update_mag = 0.0
-        lr_vals = []
-        forget_vals = []
+        # FIX-001: Telemetry tensors accumulated on-GPU; .item() deferred to after loop.
+        # Mathematical algorithm (retrieve / loss / grad / lr_gen / update) is unchanged.
+        telemetry_lr_list: list[torch.Tensor] = []
+        telemetry_forget_list: list[torch.Tensor] = []
+        telemetry_gnorm_sq_list: list[torch.Tensor] = []
+        telemetry_updmag_sq_list: list[torch.Tensor] = []
 
         # Run sequential loop for online learning
         for t in range(P):
@@ -449,22 +456,30 @@ class TitansMemory(BaseMemory):
             weights = new_weights
             surprise = new_surprise
 
-            # Accumulate telemetry metrics if requested or for logging
-            sum_lr += lr_t.detach().mean().item()
-            sum_forget += forget_t.detach().mean().item()
-            lr_vals.extend(lr_t.detach().view(-1).tolist())
-            forget_vals.extend(forget_t.detach().view(-1).tolist())
+            # FIX-001: Accumulate telemetry as GPU tensors — NO .item() inside loop.
+            telemetry_lr_list.append(lr_t.detach().mean())
+            telemetry_forget_list.append(forget_t.detach().mean())
+            gnorm_sq = sum(
+                [g.detach().pow(2).sum() for g in grads if g is not None]
+            )
+            telemetry_gnorm_sq_list.append(gnorm_sq)
+            upd_sq = sum(
+                [(w_new - w_old).detach().pow(2).sum()
+                 for w_new, w_old in zip(weights, old_weights, strict=False)]
+            )
+            telemetry_updmag_sq_list.append(upd_sq)
 
-            # Gradient norm
-            gnorm = sum([g.detach().pow(2).sum().item() for g in grads if g is not None]) ** 0.5
-            sum_grad_norm += gnorm
-
-            # Update magnitude (L2 distance old vs new weights)
-            update_norms = []
-            for w_new, w_old in zip(weights, old_weights, strict=False):
-                update_norms.append((w_new - w_old).detach().pow(2).sum().item())
-            mag = sum(update_norms) ** 0.5
-            sum_update_mag += mag
+        # FIX-001: All .item() calls happen HERE — once, after the loop.
+        sum_lr = float(torch.stack(telemetry_lr_list).sum().item()) if telemetry_lr_list else 0.0
+        sum_forget = float(torch.stack(telemetry_forget_list).sum().item()) if telemetry_forget_list else 0.0
+        sum_grad_norm = float(
+            torch.stack(telemetry_gnorm_sq_list).sum().sqrt().item()
+        ) if telemetry_gnorm_sq_list else 0.0
+        sum_update_mag = float(
+            torch.stack(telemetry_updmag_sq_list).sum().sqrt().item()
+        ) if telemetry_updmag_sq_list else 0.0
+        lr_vals: list[float] = [v.item() for v in telemetry_lr_list]
+        forget_vals: list[float] = [v.item() for v in telemetry_forget_list]
 
         # Stack outputs to shape (B, P, D)
         retrieved = torch.cat(retrieved_list, dim=1)
