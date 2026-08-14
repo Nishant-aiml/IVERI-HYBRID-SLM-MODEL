@@ -153,7 +153,15 @@ class IVERIModel(BaseModule):
             latent_patches = self.byte_embed(raw_bytes)
             p_max = seq_len
             byte_entropy = torch.zeros(batch_size, seq_len, 1, device=device, dtype=torch.float32)
-            patch_entropy = torch.zeros(batch_size, seq_len, 1, device=device, dtype=torch.float32)
+            # ABL-C2 experiment flag: force all backbone blocks into the complex (high-entropy)
+            # path so that attention + MoE are active even without BLT entropy signal.
+            # Default False preserves original ABL-C (zero-entropy) behaviour.
+            _force_complex = kwargs.pop("force_complex", False)
+            patch_entropy = (
+                torch.ones(batch_size, seq_len, 1, device=device, dtype=torch.float32)
+                if _force_complex
+                else torch.zeros(batch_size, seq_len, 1, device=device, dtype=torch.float32)
+            )
             boundary_map = torch.zeros(batch_size, seq_len, device=device, dtype=torch.bool)
 
         # 5. Forward through the Backbone Block stack: (B, P_max, D)
