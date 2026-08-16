@@ -1,0 +1,100 @@
+{
+  "results": [
+    {
+      "seq_len": 64,
+      "old": {
+        "name": "OLD-TITANS",
+        "fwd_ms": 419.23,
+        "bwd_ms": 429.79,
+        "total_step_ms": 849.01,
+        "vram_mb": 111.1,
+        "has_nan": false,
+        "has_inf": false,
+        "grad_norm": NaN
+      },
+      "fast": {
+        "name": "FAST-TITANS",
+        "fwd_ms": 17.43,
+        "bwd_ms": 84.9,
+        "total_step_ms": 102.32,
+        "vram_mb": 24.3,
+        "has_nan": false,
+        "has_inf": false,
+        "grad_norm": 30967.2262
+      },
+      "speedup": 8.3
+    },
+    {
+      "seq_len": 128,
+      "old": {
+        "name": "OLD-TITANS",
+        "fwd_ms": 727.82,
+        "bwd_ms": 952.27,
+        "total_step_ms": 1680.09,
+        "vram_mb": 203.9,
+        "has_nan": true,
+        "has_inf": false,
+        "grad_norm": NaN
+      },
+      "fast": {
+        "name": "FAST-TITANS",
+        "fwd_ms": 41.68,
+        "bwd_ms": 193.7,
+        "total_step_ms": 235.38,
+        "vram_mb": 27.4,
+        "has_nan": false,
+        "has_inf": false,
+        "grad_norm": 279800174.5528
+      },
+      "speedup": 7.14
+    },
+    {
+      "seq_len": 256,
+      "old": {
+        "name": "OLD-TITANS",
+        "fwd_ms": 1482.4,
+        "bwd_ms": 1738.3,
+        "total_step_ms": 3220.7,
+        "vram_mb": 389.5,
+        "has_nan": true,
+        "has_inf": false,
+        "grad_norm": NaN
+      },
+      "fast": {
+        "name": "FAST-TITANS",
+        "fwd_ms": 73.01,
+        "bwd_ms": 379.79,
+        "total_step_ms": 452.8,
+        "vram_mb": 33.6,
+        "has_nan": false,
+        "has_inf": false,
+        "grad_norm": 1342941599339.362
+      },
+      "speedup": 7.11
+    },
+    {
+      "seq_len": 512,
+      "old": {
+        "name": "OLD-TITANS",
+        "fwd_ms": 3091.69,
+        "bwd_ms": 3815.07,
+        "total_step_ms": 6906.76,
+        "vram_mb": 761.0,
+        "has_nan": true,
+        "has_inf": false,
+        "grad_norm": NaN
+      },
+      "fast": {
+        "name": "FAST-TITANS",
+        "fwd_ms": 162.26,
+        "bwd_ms": 845.92,
+        "total_step_ms": 1008.19,
+        "vram_mb": 46.3,
+        "has_nan": false,
+        "has_inf": false,
+        "grad_norm": 1578114231388897.5
+      },
+      "speedup": 6.85
+    }
+  ]
+}
