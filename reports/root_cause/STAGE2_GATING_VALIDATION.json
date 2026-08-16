@@ -1,0 +1,44 @@
+{
+  "results": {
+    "SINGLE-PASS": {
+      "final_loss": 0.0522,
+      "peak_grad_norm": 3.1,
+      "step_lat_ms": 255.7,
+      "vram_mb": 59.4,
+      "gate_stats": []
+    },
+    "ORIGINAL-MoR": {
+      "final_loss": 0.0518,
+      "peak_grad_norm": 9.15,
+      "step_lat_ms": 775.7,
+      "vram_mb": 153.8,
+      "gate_stats": []
+    },
+    "VECTORIZED-GATE": {
+      "final_loss": 0.0939,
+      "peak_grad_norm": 2.7,
+      "step_lat_ms": 124.4,
+      "vram_mb": 92.3,
+      "gate_stats": [
+        {
+          "mean": 0.2766,
+          "std": 0.0014,
+          "min": 0.2671,
+          "max": 0.2771
+        },
+        {
+          "mean": 0.7261,
+          "std": 0.0273,
+          "min": 0.585,
+          "max": 0.7368
+        },
+        {
+          "mean": 0.6138,
+          "std": 0.0249,
+          "min": 0.5513,
+          "max": 0.6289
+        }
+      ]
+    }
+  }
+}
