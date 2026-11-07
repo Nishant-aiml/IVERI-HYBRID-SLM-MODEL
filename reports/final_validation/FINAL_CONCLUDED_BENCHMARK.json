@@ -1,0 +1,22 @@
+{
+  "validation_timestamp": "2026-10-07T23:14:20",
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "triton_accelerated": true,
+  "metrics": {
+    "iveri_parameters": 9985449,
+    "transformer_parameters": 10002496,
+    "parameter_delta_pct": 0.17,
+    "iveri_training_speed_tok_s": 2447.5,
+    "transformer_training_speed_tok_s": 34703.5,
+    "iveri_speedup_vs_pure_pytorch": 4.3,
+    "iveri_val_loss": 0.9625,
+    "transformer_val_loss": 2.4493,
+    "iveri_byte_ppl": 2.62,
+    "transformer_byte_ppl": 11.58,
+    "ppl_advantage_ratio": 4.42,
+    "o1_memory_step1_mb": 333.9844,
+    "o1_memory_step500_mb": 333.9844,
+    "o1_memory_growth_mb": 0.0
+  },
+  "generation_sample": "Once upon a time, a little girl named Timmy. They lister to easier Sarah swimming. She went back on a foop who had st"
+}

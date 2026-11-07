@@ -1,0 +1,88 @@
+{
+  "Dense Transformer": {
+    "raw_seeds": [
+      {
+        "val_loss": 3.11,
+        "byte_ppl": 22.42
+      },
+      {
+        "val_loss": 3.1631,
+        "byte_ppl": 23.64
+      },
+      {
+        "val_loss": 3.1126,
+        "byte_ppl": 22.48
+      }
+    ],
+    "loss_mean": 3.1286,
+    "loss_std": 0.0299,
+    "ppl_mean": 22.85,
+    "ppl_std": 0.69
+  },
+  "Pure Mamba SSM": {
+    "raw_seeds": [
+      {
+        "val_loss": 1.2453,
+        "byte_ppl": 3.47
+      },
+      {
+        "val_loss": 1.2482,
+        "byte_ppl": 3.48
+      },
+      {
+        "val_loss": 1.2451,
+        "byte_ppl": 3.47
+      }
+    ],
+    "loss_mean": 1.2462,
+    "loss_std": 0.0017,
+    "ppl_mean": 3.47,
+    "ppl_std": 0.01
+  },
+  "Linear Attention": {
+    "raw_seeds": [
+      {
+        "val_loss": 3.1911,
+        "byte_ppl": 24.31
+      },
+      {
+        "val_loss": 3.189,
+        "byte_ppl": 24.26
+      },
+      {
+        "val_loss": 3.1888,
+        "byte_ppl": 24.26
+      }
+    ],
+    "loss_mean": 3.1896,
+    "loss_std": 0.0013,
+    "ppl_mean": 24.28,
+    "ppl_std": 0.03
+  },
+  "IVERI-HYPERION": {
+    "raw_seeds": [
+      {
+        "val_loss": 1.2291,
+        "byte_ppl": 3.42
+      },
+      {
+        "val_loss": 1.2044,
+        "byte_ppl": 3.33
+      },
+      {
+        "val_loss": 1.197,
+        "byte_ppl": 3.31
+      }
+    ],
+    "loss_mean": 1.2102,
+    "loss_std": 0.0168,
+    "ppl_mean": 3.35,
+    "ppl_std": 0.06
+  },
+  "statistical_hypothesis_testing": {
+    "comparison": "IVERI-HYPERION vs Pure Mamba SSM",
+    "t_statistic": -3.6934,
+    "p_value": 0.064025,
+    "is_statistically_significant": false
+  }
+}

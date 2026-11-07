@@ -1,0 +1,124 @@
+{
+  "experiment_id": "LR_FAIRNESS_CAMPAIGN_V1",
+  "timestamp_utc": "2026-08-14T06:56:14.834930+00:00",
+  "git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "script": "scratch/lr_fairness_campaign.py",
+  "protocol": "PREREGISTERED \u2014 LR grid and val/test split defined before evaluation",
+  "corpus_hash": "4ac89968d4a4a22f",
+  "splits": {
+    "train": 6072,
+    "val": 2024,
+    "test": 2024
+  },
+  "lr_grid": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003
+  ],
+  "val_seeds": [
+    100,
+    101,
+    102
+  ],
+  "test_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "parameter_counts": {
+    "IVERI": 10029874,
+    "DenseTransformer": 9722083,
+    "delta_pct": 3.07
+  },
+  "transformer_lr_selection": {
+    "grid_results": {
+      "0.0001": {
+        "val_mean": 3.2188,
+        "n_valid": 3,
+        "n_diverged": 0
+      },
+      "0.0003": {
+        "val_mean": 2.4858,
+        "n_valid": 3,
+        "n_diverged": 0
+      },
+      "0.001": {
+        "val_mean": 2.5352,
+        "n_valid": 3,
+        "n_diverged": 0
+      },
+      "0.003": {
+        "val_mean": 4.3852,
+        "n_valid": 3,
+        "n_diverged": 0
+      }
+    },
+    "selected_lr": 0.0003,
+    "val_mean": 2.4858
+  },
+  "iveri_lr_audit": {
+    "grid_results": {
+      "0.0001": {
+        "val_mean": 5.0423,
+        "n_valid": 3,
+        "n_diverged": 0
+      },
+      "0.0003": {
+        "val_mean": 4.3687,
+        "n_valid": 3,
+        "n_diverged": 0
+      },
+      "0.001": {
+        "val_mean": 3.0859,
+        "n_valid": 3,
+        "n_diverged": 0
+      },
+      "0.003": {
+        "val_mean": 3.0098,
+        "n_valid": 3,
+        "n_diverged": 0
+      }
+    },
+    "best_lr": 0.003,
+    "val_mean": 3.0098
+  },
+  "final_test_results": {
+    "IVERI": {
+      "mean": 3.1118,
+      "std": 0.047,
+      "n": 5,
+      "diverged": 0,
+      "individual": [
+        3.070087432861328,
+        3.075153350830078,
+        3.1130447387695312,
+        3.1876220703125,
+        3.1132545471191406
+      ]
+    },
+    "DenseTransformer": {
+      "mean": 2.7051,
+      "std": 0.176,
+      "n": 5,
+      "diverged": 0,
+      "individual": [
+        2.647221565246582,
+        2.4773011207580566,
+        2.937420129776001,
+        2.812934398651123,
+        2.6503844261169434
+      ]
+    }
+  },
+  "statistics": {
+    "welch_t": 4.9944,
+    "exact_p_twoTailed": 0.005282,
+    "cohens_d": 3.157,
+    "note": "Exact p-value computed via scipy.stats.ttest_ind (Welch). Do not claim significance solely from p<0.05 given small n."
+  },
+  "fair_conclusion": "INCONCLUSIVE \u2014 see individual results",
+  "remaining_confound": "BLT/entropy patching is applied by IVERI but not Transformer. Architecture and input processing are still confounded."
+}

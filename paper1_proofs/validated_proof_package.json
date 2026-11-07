@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-08-21T20:30:08.424473",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "pytorch": "2.5.1+cu121",
+  "parameters": {
+    "iveri_total": 9351394,
+    "iveri_active": 6992098,
+    "iveri_dormant": 2359296,
+    "baseline_total": 3421440,
+    "delta_pct": 104.361263093902
+  },
+  "training_summary": {
+    "IVERI_Core": {
+      "final_train_loss": "3.1296 +/- 0.0743",
+      "final_val_loss": "3.0224 +/- 0.0991",
+      "throughput_tok_s": "45.6 +/- 18.2",
+      "peak_vram_mb": "504.7",
+      "mean_gen_gap": "-0.0220",
+      "final_train_ppl": "22.8639",
+      "final_val_ppl": "20.5401"
+    },
+    "Baseline_Transformer": {
+      "final_train_loss": "1.2719 +/- 0.0966",
+      "final_val_loss": "1.1538 +/- 0.0173",
+      "throughput_tok_s": "10949.1 +/- 159.0",
+      "peak_vram_mb": "94.6",
+      "mean_gen_gap": "-0.0674",
+      "final_train_ppl": "3.5676",
+      "final_val_ppl": "3.1702"
+    }
+  },
+  "statistics": {
+    "welchs_t": -26.277981899429776,
+    "p_value": 0.00105298022149251,
+    "cohens_d": 21.455882374565082,
+    "relative_loss_reduction_pct": -161.95111700609237
+  }
+}

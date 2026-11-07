@@ -1,6 +1,6 @@
 # Replay Integrity Report (Phase 6.3.2 OBJ6)
 
-**Generated:** 2026-07-24T18:04:47Z  
+**Generated:** 2026-08-21T13:22:07Z  
 **Protocol:** Phase-6.3.2-OBJ6  
 
 ## Executive Verdict
@@ -24,7 +24,7 @@
 ```json
 {
   "protocol_version": "Phase-6.3.2-OBJ6",
-  "timestamp_utc": "2026-07-24T18:04:47Z",
+  "timestamp_utc": "2026-08-21T13:22:07Z",
   "production_verdict": "PASS",
   "full_chain_passes": true,
   "blocks_failure_rows": true,

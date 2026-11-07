@@ -1,0 +1,37 @@
+{
+  "64": {
+    "context_length": 64,
+    "exact_passkey_accuracy_pct": 0.0,
+    "mean_target_byte_loss": 10.5842,
+    "correct_trials": 0,
+    "total_trials": 20
+  },
+  "128": {
+    "context_length": 128,
+    "exact_passkey_accuracy_pct": 0.0,
+    "mean_target_byte_loss": 10.1794,
+    "correct_trials": 0,
+    "total_trials": 20
+  },
+  "256": {
+    "context_length": 256,
+    "exact_passkey_accuracy_pct": 0.0,
+    "mean_target_byte_loss": 10.9075,
+    "correct_trials": 0,
+    "total_trials": 20
+  },
+  "512": {
+    "context_length": 512,
+    "exact_passkey_accuracy_pct": 0.0,
+    "mean_target_byte_loss": 10.6352,
+    "correct_trials": 0,
+    "total_trials": 20
+  },
+  "1024": {
+    "context_length": 1024,
+    "exact_passkey_accuracy_pct": 0.0,
+    "mean_target_byte_loss": 10.7033,
+    "correct_trials": 0,
+    "total_trials": 20
+  }
+}

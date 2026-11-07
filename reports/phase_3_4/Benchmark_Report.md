@@ -4,7 +4,7 @@
 - **Reference Model Checkpoint SHA256:** `unknown`
 - **Completion Steps:** `20`
 - **Final Loss:** `2.1269`
-- **Best Alignment Checkpoint:** `C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/logs/iveri_stage4_pref_lvl1/checkpoint_step_10.pt`
+- **Best Alignment Checkpoint:** `C:/Users/datta.000/Desktop/iveri core nexus/iveri-core/logs/iveri_stage4_pref_lvl1/checkpoint_step_20.pt`
 
 ## Reward Margin Histogram Quantiles
 - **Min:** `0.0000`

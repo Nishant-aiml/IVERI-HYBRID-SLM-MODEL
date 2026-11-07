@@ -1,0 +1,267 @@
+{
+  "experiment_id": "ABLATION_STUDY_V1",
+  "timestamp_utc": "2026-08-14T07:12:42.650641+00:00",
+  "git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "script": "scratch/ablation_study.py",
+  "protocol": "PREREGISTERED \u2014 ablation configs defined before evaluation. Components disabled via existing config flags (no architectural modification).",
+  "reference_baselines": {
+    "EXP020_IVERI_FULL": {
+      "mean": 3.1118,
+      "std": 0.047,
+      "individual": [
+        3.0701,
+        3.0752,
+        3.113,
+        3.1876,
+        3.1133
+      ]
+    },
+    "EXP020_TRANSFORMER_TUNED": {
+      "mean": 2.7051,
+      "std": 0.176,
+      "individual": [
+        2.6472,
+        2.4773,
+        2.9374,
+        2.8129,
+        2.6504
+      ]
+    }
+  },
+  "ablations": {
+    "ABL-D": {
+      "description": "IVERI without Titans (use_titans=False)",
+      "config": {
+        "use_titans": false,
+        "use_mor": true,
+        "use_moe": true,
+        "use_blt": true
+      },
+      "params": 9673034,
+      "mean": 3.0967,
+      "std": 0.0601,
+      "n_valid": 5,
+      "n_diverged": 0,
+      "individual": [
+        3.043,
+        3.0327,
+        3.1061,
+        3.1785,
+        3.1232
+      ],
+      "delta_from_full_iveri": -0.0151,
+      "direction": "SIMILAR",
+      "welch_t_vs_full": 0.4437,
+      "p_vs_full": 0.669705,
+      "cohens_d_vs_full": 0.28,
+      "seed_results": [
+        {
+          "seed": 42,
+          "test_loss": 3.043,
+          "lat_ms": 2610.6,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 43,
+          "test_loss": 3.0327,
+          "lat_ms": 2488.5,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 44,
+          "test_loss": 3.1061,
+          "lat_ms": 2481.0,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 45,
+          "test_loss": 3.1785,
+          "lat_ms": 2479.6,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 46,
+          "test_loss": 3.1232,
+          "lat_ms": 3073.3,
+          "diverged": false,
+          "titans_ms_per_step": null
+        }
+      ],
+      "status": "COMPLETE"
+    },
+    "ABL-E": {
+      "description": "IVERI without MoR (use_mor=False)",
+      "config": {
+        "use_titans": true,
+        "use_mor": false,
+        "use_moe": true,
+        "use_blt": true
+      },
+      "params": 10029874,
+      "mean": 3.1651,
+      "std": 0.1169,
+      "n_valid": 5,
+      "n_diverged": 0,
+      "individual": [
+        3.1828,
+        3.0337,
+        3.0969,
+        3.3451,
+        3.167
+      ],
+      "delta_from_full_iveri": 0.0533,
+      "direction": "WORSE",
+      "welch_t_vs_full": -0.9455,
+      "p_vs_full": 0.385786,
+      "cohens_d_vs_full": -0.598,
+      "seed_results": [
+        {
+          "seed": 42,
+          "test_loss": 3.1828,
+          "lat_ms": 1418.3,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 43,
+          "test_loss": 3.0337,
+          "lat_ms": 1478.9,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 44,
+          "test_loss": 3.0969,
+          "lat_ms": 1554.4,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 45,
+          "test_loss": 3.3451,
+          "lat_ms": 1483.4,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 46,
+          "test_loss": 3.167,
+          "lat_ms": 1489.1,
+          "diverged": false,
+          "titans_ms_per_step": null
+        }
+      ],
+      "status": "COMPLETE"
+    },
+    "ABL-F": {
+      "description": "IVERI without MoE (use_moe=False)",
+      "config": {
+        "use_titans": true,
+        "use_mor": true,
+        "use_moe": false,
+        "use_blt": true
+      },
+      "params": 7555690,
+      "mean": 3.1119,
+      "std": 0.0748,
+      "n_valid": 5,
+      "n_diverged": 0,
+      "individual": [
+        3.0685,
+        3.025,
+        3.0881,
+        3.1741,
+        3.204
+      ],
+      "delta_from_full_iveri": 0.0001,
+      "direction": "SIMILAR",
+      "welch_t_vs_full": -0.0025,
+      "p_vs_full": 0.998053,
+      "cohens_d_vs_full": -0.002,
+      "seed_results": [
+        {
+          "seed": 42,
+          "test_loss": 3.0685,
+          "lat_ms": 3557.3,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 43,
+          "test_loss": 3.025,
+          "lat_ms": 3656.2,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 44,
+          "test_loss": 3.0881,
+          "lat_ms": 3817.2,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 45,
+          "test_loss": 3.1741,
+          "lat_ms": 3542.3,
+          "diverged": false,
+          "titans_ms_per_step": null
+        },
+        {
+          "seed": 46,
+          "test_loss": 3.204,
+          "lat_ms": 3630.1,
+          "diverged": false,
+          "titans_ms_per_step": null
+        }
+      ],
+      "status": "COMPLETE"
+    },
+    "ABL-C": {
+      "description": "IVERI without BLT (use_blt=False)",
+      "config": {
+        "use_titans": true,
+        "use_mor": true,
+        "use_moe": true,
+        "use_blt": false
+      },
+      "status": "ALL_DIVERGED",
+      "seed_results": [
+        {
+          "seed": 42,
+          "test_loss": NaN,
+          "diverged": true,
+          "error": "'BackboneSubBlock' object has no attribute 'dense_ffn'"
+        },
+        {
+          "seed": 43,
+          "test_loss": NaN,
+          "diverged": true,
+          "error": "'BackboneSubBlock' object has no attribute 'dense_ffn'"
+        },
+        {
+          "seed": 44,
+          "test_loss": NaN,
+          "diverged": true,
+          "error": "'BackboneSubBlock' object has no attribute 'dense_ffn'"
+        },
+        {
+          "seed": 45,
+          "test_loss": NaN,
+          "diverged": true,
+          "error": "'BackboneSubBlock' object has no attribute 'dense_ffn'"
+        },
+        {
+          "seed": 46,
+          "test_loss": NaN,
+          "diverged": true,
+          "error": "'BackboneSubBlock' object has no attribute 'dense_ffn'"
+        }
+      ]
+    }
+  }
+}

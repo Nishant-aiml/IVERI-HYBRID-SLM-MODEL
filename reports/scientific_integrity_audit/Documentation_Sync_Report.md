@@ -1,6 +1,6 @@
 # Documentation Sync Report (Phase 6.3.2 OBJ8)
 
-**Generated:** 2026-07-24T18:01:06Z  
+**Generated:** 2026-08-21T13:16:54Z  
 **Protocol:** Phase-6.3.2-OBJ8  
 
 ## Executive Verdict
@@ -35,7 +35,7 @@ Pre-restoration discrepancies: `Documentation_Discrepancies.md` (2026-07-06 read
 ```json
 {
   "protocol_version": "Phase-6.3.2-OBJ8",
-  "timestamp_utc": "2026-07-24T18:01:06Z",
+  "timestamp_utc": "2026-08-21T13:16:54Z",
   "production_verdict": "PASS",
   "gates": [
     {

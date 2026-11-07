@@ -1,0 +1,104 @@
+{
+  "experiment": "Dual Benchmark: Exact 10.1M Match + Long-Context Passkey Retrieval",
+  "timestamp": "2026-08-12T14:04:40.489713+00:00",
+  "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "iveri_config": {
+    "hidden_dim": 268,
+    "num_experts": 2,
+    "titans_memory_dim": 128
+  },
+  "parameter_counts": {
+    "IVERI-Nano (10M)": 10029874,
+    "Dense Transformer (10.1M)": 11823043,
+    "Mamba2 SSM (10.1M)": 9725187
+  },
+  "part_a_results": {
+    "IVERI-Nano (10M)": {
+      "loss_mean": 3.0799,
+      "loss_std": 0.0185,
+      "loss_var": 0.00034119798510801047,
+      "ppl_mean": 21.76,
+      "latency_ms": 4821.5,
+      "vram_mb": 335.0
+    },
+    "Dense Transformer (10.1M)": {
+      "loss_mean": 2.9654,
+      "loss_std": 0.1861,
+      "loss_var": 0.03462359899034103,
+      "ppl_mean": 19.62,
+      "latency_ms": 93.0,
+      "vram_mb": 247.0
+    },
+    "Mamba2 SSM (10.1M)": {
+      "loss_mean": 0.1994,
+      "loss_std": 0.1073,
+      "loss_var": 0.011523541626361341,
+      "ppl_mean": 1.23,
+      "latency_ms": 386.9,
+      "vram_mb": 208.0
+    }
+  },
+  "part_a_stats": {
+    "Dense_Transformer_vs_IVERI": {
+      "welch_t": -1.061,
+      "cohens_d": -0.866
+    },
+    "Mamba2_SSM_vs_IVERI": {
+      "welch_t": -45.804,
+      "cohens_d": -37.398
+    }
+  },
+  "part_b_passkey": {
+    "IVERI-Nano (10M)": {
+      "512": {
+        "correct": false,
+        "loss": 5.5742,
+        "status": "FAIL"
+      },
+      "1024": {
+        "correct": false,
+        "loss": 5.5859,
+        "status": "FAIL"
+      },
+      "2048": {
+        "correct": false,
+        "loss": 5.5781,
+        "status": "FAIL"
+      }
+    },
+    "Dense Transformer (10.1M)": {
+      "512": {
+        "correct": false,
+        "loss": 5.3906,
+        "status": "FAIL"
+      },
+      "1024": {
+        "correct": false,
+        "loss": 5.3867,
+        "status": "FAIL"
+      },
+      "2048": {
+        "correct": false,
+        "loss": 5.3828,
+        "status": "FAIL"
+      }
+    },
+    "Mamba2 SSM (10.1M)": {
+      "512": {
+        "correct": false,
+        "loss": 7.8516,
+        "status": "FAIL"
+      },
+      "1024": {
+        "correct": false,
+        "loss": 7.8516,
+        "status": "FAIL"
+      },
+      "2048": {
+        "correct": false,
+        "loss": 7.8516,
+        "status": "FAIL"
+      }
+    }
+  }
+}

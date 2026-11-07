@@ -1,0 +1,44 @@
+{
+  "roneneldan/TinyStories-8M": {
+    "org": "Microsoft Research",
+    "huggingface_id": "roneneldan/TinyStories-8M",
+    "total_params": 8415744,
+    "vocab_size": 50257,
+    "token_type": "BPE (Byte-Pair Encoding Subwords)",
+    "embed_params": 12865792,
+    "compute_layer_params": 4812800,
+    "max_context": 2048,
+    "kv_cache_complexity": "O(S) Linear Growth",
+    "kv_cache_32k_mb": "CRASH (Hard max at 2,048)",
+    "kv_cache_2k_mb": 8.0,
+    "out_of_vocab_immune": false
+  },
+  "Dense Transformer (10.0M Exact)": {
+    "org": "Baseline Standard",
+    "huggingface_id": "PyTorch FlashAttention Transformer",
+    "total_params": 9985441,
+    "vocab_size": 259,
+    "token_type": "Byte-Level (0-255)",
+    "embed_params": 97384,
+    "compute_layer_params": 9888057,
+    "max_context": 8192,
+    "kv_cache_complexity": "O(S) Linear Growth",
+    "kv_cache_32k_mb": 188.0,
+    "kv_cache_2k_mb": 11.75,
+    "out_of_vocab_immune": true
+  },
+  "IVERI-HYPERION (10.0M Exact)": {
+    "org": "Our Proposed Hybrid Architecture",
+    "huggingface_id": "IVERI-HYPERION (ENSN Paradigm)",
+    "total_params": 9985441,
+    "vocab_size": 259,
+    "token_type": "Token-Free Native Bytes (0-255)",
+    "embed_params": 105154,
+    "compute_layer_params": 9880287,
+    "max_context": "Infinite (Streaming Recurrence)",
+    "kv_cache_complexity": "O(1) Constant State",
+    "kv_cache_32k_mb": 0.261,
+    "kv_cache_2k_mb": 0.261,
+    "out_of_vocab_immune": true
+  }
+}

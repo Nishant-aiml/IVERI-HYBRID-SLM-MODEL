@@ -1,0 +1,100 @@
+{
+  "experiment_id": "COMPONENT_TIMING_V1",
+  "timestamp_utc": "2026-08-14T06:42:24.253523+00:00",
+  "git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+  "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "pytorch": "2.5.1+cu121",
+  "batch_size": 4,
+  "seq_len": 64,
+  "warmup_runs": 3,
+  "measure_runs": 10,
+  "params": {
+    "iveri": 10029874,
+    "transformer": 9722083
+  },
+  "timings": {
+    "full_iveri_forward": {
+      "mean_ms": 524.53,
+      "std_ms": 242.86,
+      "all_ms": [
+        363.42,
+        385.65,
+        363.09,
+        358.84,
+        351.83,
+        362.59,
+        437.27,
+        865.24,
+        905.62,
+        851.77
+      ]
+    },
+    "embedding": {
+      "mean_ms": 0.24,
+      "std_ms": 0.09
+    },
+    "transformer_forward": {
+      "mean_ms": 23.61,
+      "std_ms": 2.35,
+      "all_ms": [
+        20.81,
+        20.64,
+        21.95,
+        23.5,
+        25.92,
+        27.24,
+        25.67,
+        25.55,
+        22.91,
+        21.88
+      ],
+      "params": 9722083
+    },
+    "overhead_ratio": 22.2,
+    "titans_isolation": {
+      "status": "BLOCKED",
+      "note": "Full isolation requires code modification to disable Titans update in forward pass. Attempting timing difference approach.",
+      "titans_modules_found": [
+        "backbone.titans",
+        "backbone.titans.q_proj",
+        "backbone.titans.k_proj",
+        "backbone.titans.v_proj",
+        "backbone.titans.out_proj",
+        "backbone.titans.entropy_proj",
+        "backbone.titans.lr_generator",
+        "backbone.titans.lr_generator.lr_proj",
+        "backbone.titans.lr_generator.forget_proj"
+      ],
+      "reason": "Isolating Titans requires disabling state update in IVERIModel.forward(). This would require modifying core/titans.py to add a skip_update flag. Currently BLOCKED \u2014 implement skip_update parameter to enable this measurement.",
+      "command_to_enable": "Add `skip_memory_update: bool = False` to IVERIModel.forward() signature, then re-run this script with skip_memory_update=True vs False comparison."
+    },
+    "sequence_length_scaling": {
+      "32": {
+        "iveri_ms": 538.54,
+        "transformer_ms": 22.94,
+        "ratio": 23.5
+      },
+      "64": {
+        "iveri_ms": 831.45,
+        "transformer_ms": 22.79,
+        "ratio": 36.5
+      },
+      "128": {
+        "iveri_ms": 1310.37,
+        "transformer_ms": 32.08,
+        "ratio": 40.8
+      },
+      "256": {
+        "iveri_ms": 2562.99,
+        "transformer_ms": 27.45,
+        "ratio": 93.4
+      }
+    }
+  },
+  "key_finding": "IVERI forward-only latency ratio vs Transformer: 22.2x. This represents CURRENT IMPLEMENTATION OVERHEAD (Python-sequential Titans), NOT theoretical architectural complexity. Titans component timing requires code modification to isolate accurately.",
+  "distinction": {
+    "THEORETICAL_COST": "Mamba-2 SSM is O(L) vs Transformer O(L^2) attention \u2014 but at seq_len=64 this advantage is negligible",
+    "IMPLEMENTATION_OVERHEAD": "~22x step latency due to Python-sequential Titans recurrent update",
+    "HONEST_CLAIM": "At seq_len=64, IVERI incurs ~22x forward-pass overhead vs Transformer in current implementation. This is NOT a claim about asymptotic complexity."
+  }
+}

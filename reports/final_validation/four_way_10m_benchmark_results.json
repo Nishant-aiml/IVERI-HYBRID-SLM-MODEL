@@ -1,0 +1,34 @@
+{
+  "Dense Transformer": {
+    "params": 9984556,
+    "param_delta_pct": 0.0089,
+    "param_diff": -893,
+    "val_loss": 3.1407,
+    "byte_ppl": 23.12,
+    "tok_per_sec": 32973.9
+  },
+  "Pure Mamba SSM": {
+    "params": 9985664,
+    "param_delta_pct": 0.0022,
+    "param_diff": 215,
+    "val_loss": 1.2524,
+    "byte_ppl": 3.5,
+    "tok_per_sec": 2419.2
+  },
+  "Linear Attention": {
+    "params": 9986816,
+    "param_delta_pct": 0.0137,
+    "param_diff": 1367,
+    "val_loss": 3.1892,
+    "byte_ppl": 24.27,
+    "tok_per_sec": 2653.3
+  },
+  "IVERI-HYPERION": {
+    "params": 9985449,
+    "param_delta_pct": 0.0,
+    "param_diff": 0,
+    "val_loss": 1.2191,
+    "byte_ppl": 3.38,
+    "tok_per_sec": 2400.8
+  }
+}
