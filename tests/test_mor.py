@@ -102,13 +102,14 @@ def test_recursion_engine_execution(base_config: IVERIConfig, device: str) -> No
     # Run forward pass
     out = engine(x, depths=depths)
 
-    # Since MockBlock adds 1.0 per execution step:
-    # Position 0 (depth 1) -> value should be 1.0
-    # Position 1 (depth 2) -> value should be 2.0
-    # Position 2 (depth 4) -> value should be 4.0
-    # Position 3, 4 (depth 8) -> value should be 8.0
-    expected = torch.tensor([[1.0, 2.0, 4.0, 8.0, 8.0]], device=device).unsqueeze(-1).expand_as(out)
-    assert torch.allclose(out, expected)
+    # Compute expected scaled residual outputs: sum_{d=0}^{depth-1} alpha_d * 1.0
+    alpha_scales = engine.alpha_scales.detach()
+    expected_vals = []
+    for d in [1, 2, 4, 8, 8]:
+        val = alpha_scales[:d].sum().item()
+        expected_vals.append(val)
+    expected = torch.tensor([expected_vals], device=device).unsqueeze(-1).expand_as(out)
+    assert torch.allclose(out, expected, atol=1e-5)
 
     # Check telemetry statistics are collected
     stats = engine.get_statistics()

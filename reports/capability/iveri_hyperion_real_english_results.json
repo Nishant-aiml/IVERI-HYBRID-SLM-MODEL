@@ -1,0 +1,60 @@
+{
+  "model": "IVERI-HYPERION",
+  "paradigm": "ENSN (Entropy-Driven Neural State Network)",
+  "params": 9985441,
+  "dataset": "TinyStories (Real English Text)",
+  "final_val_loss": 0.3435,
+  "final_val_ppl": 1.41,
+  "history": [
+    {
+      "step": 100,
+      "train_loss": 1.177,
+      "val_loss": 1.279,
+      "val_perplexity": 3.59,
+      "tokens_seen": 204800,
+      "elapsed_sec": 384.5,
+      "tok_per_sec": 532.6,
+      "generated_sample": "One day, Lily saw a big,\"\nThat's.\nThat's.\nThat's.\nThat's.\nTh"
+    },
+    {
+      "step": 200,
+      "train_loss": 0.8112,
+      "val_loss": 0.8562,
+      "val_perplexity": 2.35,
+      "tokens_seen": 409600,
+      "elapsed_sec": 751.4,
+      "tok_per_sec": 545.1,
+      "generated_sample": "One day, Lily saw a rancicy.\" \nWicky. Him.\n\"Wing.\nOncing him"
+    },
+    {
+      "step": 300,
+      "train_loss": 0.4487,
+      "val_loss": 0.4919,
+      "val_perplexity": 1.64,
+      "tokens_seen": 614400,
+      "elapsed_sec": 1107.8,
+      "tok_per_sec": 554.6,
+      "generated_sample": "One day, Lily saw a mommy,\",\"Con,\"\"Coming,\"\"Coming,\"\"\"Cincry"
+    },
+    {
+      "step": 400,
+      "train_loss": 0.3811,
+      "val_loss": 0.3792,
+      "val_perplexity": 1.46,
+      "tokens_seen": 819200,
+      "elapsed_sec": 1464.2,
+      "tok_per_sec": 559.5,
+      "generated_sample": "One day, Lily saw a mommy,\",\"Hon,\"\n<|y,\"\n<|y,\"\n\"Hoom,\"\"Hoor,"
+    },
+    {
+      "step": 500,
+      "train_loss": 0.3053,
+      "val_loss": 0.3435,
+      "val_perplexity": 1.41,
+      "tokens_seen": 1024000,
+      "elapsed_sec": 1822.3,
+      "tok_per_sec": 561.9,
+      "generated_sample": "One day, Lily saw a mommy,\",\"Hon',\",\"Hon,\"\"Hoor,\"\"Hoor,\"\"Hoo"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "protocol": "Fair lockstep side-by-side benchmark with 0 padding fluff & strictly causal forward pass",
+  "dataset": "TinyStories (Real English)",
+  "steps": 200,
+  "iveri_hyperion": {
+    "params": 9985441,
+    "final_val_loss": 1.2943,
+    "final_val_ppl": 3.65,
+    "tok_per_sec": 473.3,
+    "history": [
+      {
+        "step": 50,
+        "train_loss": 1.658,
+        "val_loss": 1.6531,
+        "val_ppl": 5.22
+      },
+      {
+        "step": 100,
+        "train_loss": 1.4208,
+        "val_loss": 1.4467,
+        "val_ppl": 4.25
+      },
+      {
+        "step": 150,
+        "train_loss": 1.2446,
+        "val_loss": 1.333,
+        "val_ppl": 3.79
+      },
+      {
+        "step": 200,
+        "train_loss": 1.3207,
+        "val_loss": 1.2943,
+        "val_ppl": 3.65
+      }
+    ]
+  },
+  "clean_transformer": {
+    "params": 10002496,
+    "final_val_loss": 3.1237,
+    "final_val_ppl": 22.73,
+    "tok_per_sec": 108879.1,
+    "history": [
+      {
+        "step": 50,
+        "train_loss": 3.1491,
+        "val_loss": 3.2527,
+        "val_ppl": 25.86
+      },
+      {
+        "step": 100,
+        "train_loss": 3.0723,
+        "val_loss": 3.2238,
+        "val_ppl": 25.12
+      },
+      {
+        "step": 150,
+        "train_loss": 3.0678,
+        "val_loss": 3.1664,
+        "val_ppl": 23.72
+      },
+      {
+        "step": 200,
+        "train_loss": 3.0638,
+        "val_loss": 3.1237,
+        "val_ppl": 22.73
+      }
+    ]
+  }
+}

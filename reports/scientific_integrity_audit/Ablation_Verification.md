@@ -1,6 +1,6 @@
 # Ablation Verification Report (Phase 6.3.1F)
 
-**Generated:** 2026-07-25T12:18:05Z  
+**Generated:** 2026-08-21T13:14:12Z  
 **Protocol:** Phase-6.3.1F  
 **Device:** cpu  
 
@@ -16,22 +16,22 @@
 
 | Ablation | Flag | Absent from forward path | Param Δ | Output Δ (L1) |
 |----------|------|:------------------------:|--------:|----------------:|
-| no_titans | `use_titans=False` | True | 20708 | 7.0093e-02 |
-| no_blt | `use_blt=False` | True | 99779 | 1.3366e-01 |
-| no_mor | `use_mor=False` | True | 0 | 6.2872e-01 |
-| no_moe | `use_moe=False` | True | 295944 | 5.8012e-01 |
+| no_titans | `use_titans=False` | True | 20708 | 5.6891e-02 |
+| no_blt | `use_blt=False` | True | 99779 | 1.3531e-01 |
+| no_mor | `use_mor=False` | True | 0 | 4.6923e-01 |
+| no_moe | `use_moe=False` | True | 295944 | 3.7101e-01 |
 | no_entropy_routing | `use_entropy_routing=False` | True | 0 | 0.0000e+00 |
 
 ## Architecture Fingerprints
 
 | Config | Params | Titans | BLT | MoE router | Dense FFN | MoR | Output Σ |
 |--------|-------:|:------:|:---:|:----------:|:---------:|:---:|---------:|
-| none | 727602 | True | True | True | False | True | 3.2826e+02 |
-| no_titans | 706894 | False | True | True | False | True | 4.1770e+02 |
-| no_blt | 627823 | True | False | True | False | True | 1.0642e+03 |
-| no_mor | 727602 | True | True | True | False | False | 3.1894e+02 |
-| no_moe | 431658 | True | True | False | True | True | 3.9640e+02 |
-| no_entropy_routing | 727602 | True | True | True | False | True | 3.2641e+02 |
+| none | 728122 | True | True | True | False | True | 3.3523e+02 |
+| no_titans | 707414 | False | True | True | False | True | 4.3016e+02 |
+| no_blt | 628343 | True | False | True | False | True | 1.0470e+03 |
+| no_mor | 728122 | True | True | True | False | False | 3.1894e+02 |
+| no_moe | 432178 | True | True | False | True | True | 3.7441e+02 |
+| no_entropy_routing | 728122 | True | True | True | False | True | 3.3573e+02 |
 
 ## Pairwise Distinctness
 
@@ -54,7 +54,7 @@ No unused flags, dead configuration, or silent fallback detected.
 ```json
 {
   "protocol_version": "Phase-6.3.1F",
-  "timestamp_utc": "2026-07-25T12:18:05Z",
+  "timestamp_utc": "2026-08-21T13:14:12Z",
   "device": "cpu",
   "production_verdict": "PASS",
   "probes": [
@@ -64,7 +64,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "flag_value": false,
       "component_absent": true,
       "parameter_delta": 20708,
-      "output_diff_l1": 0.07009257376194,
+      "output_diff_l1": 0.05689110979437828,
       "proof": "Backbone skips TitansMemory construction and forward_with_injection when use_titans=False."
     },
     {
@@ -73,7 +73,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "flag_value": false,
       "component_absent": true,
       "parameter_delta": 99779,
-      "output_diff_l1": 0.13365595042705536,
+      "output_diff_l1": 0.135306715965271,
       "proof": "IVERIModel uses byte_embed + bypass_lm_head instead of BLT stack when use_blt=False."
     },
     {
@@ -82,7 +82,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "flag_value": false,
       "component_absent": true,
       "parameter_delta": 0,
-      "output_diff_l1": 0.6287198662757874,
+      "output_diff_l1": 0.4692317247390747,
       "proof": "BackboneBlock calls sub_block once without RecursionEngine when use_mor=False."
     },
     {
@@ -91,7 +91,7 @@ No unused flags, dead configuration, or silent fallback detected.
       "flag_value": false,
       "component_absent": true,
       "parameter_delta": 295944,
-      "output_diff_l1": 0.5801219344139099,
+      "output_diff_l1": 0.3710099756717682,
       "proof": "BackboneSubBlock uses dense SwiGLU FFN instead of SparseMoERouter when use_moe=False."
     },
     {
@@ -115,13 +115,13 @@ No unused flags, dead configuration, or silent fallback detected.
         "use_moe": true,
         "use_entropy_routing": true
       },
-      "param_count": 727602,
+      "param_count": 728122,
       "has_titans": true,
       "has_entropy_model": true,
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": true,
-      "output_checksum": 328.2557067871094
+      "output_checksum": 335.2326965332031
     },
     {
       "label": "no_titans",
@@ -132,13 +132,13 @@ No unused flags, dead configuration, or silent fallback detected.
         "use_moe": true,
         "use_entropy_routing": true
       },
-      "param_count": 706894,
+      "param_count": 707414,
       "has_titans": false,
       "has_entropy_model": true,
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": true,
-      "output_checksum": 417.7000427246094
+      "output_checksum": 430.15887451171875
     },
     {
       "label": "no_blt",
@@ -149,13 +149,13 @@ No unused flags, dead configuration, or silent fallback detected.
         "use_moe": true,
         "use_entropy_routing": true
       },
-      "param_count": 627823,
+      "param_count": 628343,
       "has_titans": true,
       "has_entropy_model": false,
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": true,
-      "output_checksum": 1064.2281494140625
+      "output_checksum": 1047.0025634765625
     },
     {
       "label": "no_mor",
@@ -166,7 +166,7 @@ No unused flags, dead configuration, or silent fallback detected.
         "use_moe": true,
         "use_entropy_routing": true
       },
-      "param_count": 727602,
+      "param_count": 728122,
       "has_titans": true,
       "has_entropy_model": true,
       "has_moe_router": true,
@@ -183,13 +183,13 @@ No unused flags, dead configuration, or silent fallback detected.
         "use_moe": false,
         "use_entropy_routing": true
       },
-      "param_count": 431658,
+      "param_count": 432178,
       "has_titans": true,
       "has_entropy_model": true,
       "has_moe_router": false,
       "has_dense_ffn": true,
       "mor_active": true,
-      "output_checksum": 396.40289306640625
+      "output_checksum": 374.4051208496094
     },
     {
       "label": "no_entropy_routing",
@@ -200,13 +200,13 @@ No unused flags, dead configuration, or silent fallback detected.
         "use_moe": true,
         "use_entropy_routing": false
       },
-      "param_count": 727602,
+      "param_count": 728122,
       "has_titans": true,
       "has_entropy_model": true,
       "has_moe_router": true,
       "has_dense_ffn": false,
       "mor_active": true,
-      "output_checksum": 326.41094970703125
+      "output_checksum": 335.7309265136719
     }
   ],
   "pairwise_distinct": true,

@@ -1,6 +1,6 @@
 # Titans Memory Verification Report (Phase 6.3.2 OBJ2)
 
-**Generated:** 2026-07-24T18:05:15Z  
+**Generated:** 2026-08-21T13:23:00Z  
 **Protocol:** Phase-6.3.2-OBJ2  
 **Device:** cpu  
 
@@ -17,8 +17,8 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
 1. Production `Backbone.forward` calls `self.titans.forward_with_injection(x, entropy)` (model/backbone.py), which invokes `TitansMemory.forward()` for online read/update/write and applies entropy gating.
 2. `forward()` runs a sequential loop: read via `_forward_mlp`, compute local loss, and call `MemoryUpdater.update` per patch step.
 3. Runtime instrumentation on production path: forward_calls=4, updater_calls=12, read_calls=0, write_calls=0, inject_calls=0.
-4. Online weights diverge from expanded base_W1 after production forward (online_weight_delta=5.728851e-01).
-5. Titans telemetry reports updates after production forward: update_count=12, avg_update_mag=1.636808e-01.
+4. Online weights diverge from expanded base_W1 after production forward (online_weight_delta=5.728700e-01).
+5. Titans telemetry reports updates after production forward: update_count=12, avg_update_mag=6.693432e-02.
 6. Backbone telemetry `titans_write_count` is sourced from measured Titans telemetry (not hardcoded B*P).
 
 ## Path Comparison (runtime call counts)
@@ -35,16 +35,16 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
 | Stage | base_W1 ‖·‖ | online_W1 ‖·‖ | telemetry updates | avg update mag |
 |-------|----------:|---------------:|------------------:|---------------:|
 | before_forward | 5.670310 | N/A | 0 | 0.000000e+00 |
-| after_forward | 5.670310 | 7.455489 | 12 | 1.636808e-01 |
-| after_backward | 5.670310 | 7.455489 | 12 | 1.636808e-01 |
-| after_optimizer | 5.670599 | 7.455489 | 12 | 1.636808e-01 |
-| after_second_forward | 5.670599 | 7.455648 | 12 | 1.637535e-01 |
+| after_forward | 5.670310 | 7.455489 | 12 | 6.693432e-02 |
+| after_backward | 5.670310 | 7.455489 | 12 | 6.693432e-02 |
+| after_optimizer | 5.670302 | 7.455489 | 12 | 6.693432e-02 |
+| after_second_forward | 5.670302 | 7.455480 | 12 | 6.693417e-02 |
 
 ## Gradient Flow
 
 | Path | ‖grad base_W1‖ | ‖grad base_W2‖ | ‖grad q_proj‖ | online W changed in fwd | opt changed base_W1 | opt changed online_W1 |
 |---|--:|--:|--:|:---:|:---:|:---:|
-| Backbone.forward_with_injection (production) | 1.3218e+02 | 1.0488e+02 | 1.0531e+02 | False | True | False |
+| Backbone.forward_with_injection (production) | 6.9922e+01 | 6.6095e+01 | 6.5780e+01 | False | True | False |
 | TitansMemory.forward (isolated) | 1.5086e+02 | 1.2786e+02 | 1.6047e+02 | False | False | False |
 
 ## Capability Matrix (measured)
@@ -60,7 +60,7 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
 ## Isolated Forward Reference
 
 - `updater.update` calls during isolated `TitansMemory.forward`: **12**
-- Average update magnitude (isolated): **1.696578e-01**
+- Average update magnitude (isolated): **6.934527e-02**
 
 > Phase 6.3.2 OBJ2 wires `TitansMemory.forward_with_injection` into `Backbone.forward`.
 
@@ -69,7 +69,7 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
 ```json
 {
   "protocol_version": "Phase-6.3.2-OBJ2",
-  "timestamp_utc": "2026-07-24T18:05:15Z",
+  "timestamp_utc": "2026-08-21T13:23:00Z",
   "device": "cpu",
   "production_verdict": "PASS",
   "writes_occur_in_production": true,
@@ -78,8 +78,8 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
     "Production `Backbone.forward` calls `self.titans.forward_with_injection(x, entropy)` (model/backbone.py), which invokes `TitansMemory.forward()` for online read/update/write and applies entropy gating.",
     "`forward()` runs a sequential loop: read via `_forward_mlp`, compute local loss, and call `MemoryUpdater.update` per patch step.",
     "Runtime instrumentation on production path: forward_calls=4, updater_calls=12, read_calls=0, write_calls=0, inject_calls=0.",
-    "Online weights diverge from expanded base_W1 after production forward (online_weight_delta=5.728851e-01).",
-    "Titans telemetry reports updates after production forward: update_count=12, avg_update_mag=1.636808e-01.",
+    "Online weights diverge from expanded base_W1 after production forward (online_weight_delta=5.728700e-01).",
+    "Titans telemetry reports updates after production forward: update_count=12, avg_update_mag=6.693432e-02.",
     "Backbone telemetry `titans_write_count` is sourced from measured Titans telemetry (not hardcoded B*P)."
   ],
   "path_results": [
@@ -109,20 +109,20 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
           "base_w1_norm": 5.788279056549072,
           "base_w1_sum": -2.4745631217956543,
           "online_w1_norm": 7.591705799102783,
-          "online_w1_sum": -4.585822105407715,
+          "online_w1_sum": -4.585822582244873,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.1696577636167693
+          "telemetry_avg_update_mag": 0.06934526562690735
         },
         {
           "stage": "after_second_forward",
           "base_w1_norm": 5.788279056549072,
           "base_w1_sum": -2.4745631217956543,
           "online_w1_norm": 7.591705799102783,
-          "online_w1_sum": -4.585822105407715,
+          "online_w1_sum": -4.585822582244873,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.1696577636167693
+          "telemetry_avg_update_mag": 0.06934526562690735
         }
       ]
     },
@@ -155,7 +155,7 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
           "online_w1_sum": 14.93669605255127,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.16247669521781008
+          "telemetry_avg_update_mag": 0.06639742851257324
         },
         {
           "stage": "after_second_forward",
@@ -165,7 +165,7 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
           "online_w1_sum": 14.381261825561523,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.15439851890428857
+          "telemetry_avg_update_mag": 0.06310727695624034
         }
       ]
     },
@@ -219,7 +219,7 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
       "forward_calls": 4,
       "inject_calls": 0,
       "updater_calls": 12,
-      "online_weight_delta_after": 0.5728850960731506,
+      "online_weight_delta_after": 0.5728699564933777,
       "persistence_across_second_call": false,
       "telemetry_reports_writes": true,
       "snapshots": [
@@ -238,40 +238,40 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
           "base_w1_norm": 5.6703104972839355,
           "base_w1_sum": -3.0562314987182617,
           "online_w1_norm": 7.455488681793213,
-          "online_w1_sum": -5.691400051116943,
+          "online_w1_sum": -5.691399574279785,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.16368075879712896
+          "telemetry_avg_update_mag": 0.06693431735038757
         },
         {
           "stage": "after_backward",
           "base_w1_norm": 5.6703104972839355,
           "base_w1_sum": -3.0562314987182617,
           "online_w1_norm": 7.455488681793213,
-          "online_w1_sum": -5.691400051116943,
+          "online_w1_sum": -5.691399574279785,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.16368075879712896
+          "telemetry_avg_update_mag": 0.06693431735038757
         },
         {
           "stage": "after_optimizer",
-          "base_w1_norm": 5.670598983764648,
-          "base_w1_sum": -3.0547189712524414,
+          "base_w1_norm": 5.670301914215088,
+          "base_w1_sum": -3.0565743446350098,
           "online_w1_norm": 7.455488681793213,
-          "online_w1_sum": -5.691400051116943,
+          "online_w1_sum": -5.691399574279785,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.16368075879712896
+          "telemetry_avg_update_mag": 0.06693431735038757
         },
         {
           "stage": "after_second_forward",
-          "base_w1_norm": 5.670598983764648,
-          "base_w1_sum": -3.0547189712524414,
-          "online_w1_norm": 7.455647945404053,
-          "online_w1_sum": -5.688259601593018,
+          "base_w1_norm": 5.670301914215088,
+          "base_w1_sum": -3.0565743446350098,
+          "online_w1_norm": 7.455479621887207,
+          "online_w1_sum": -5.691999435424805,
           "online_weights_present": true,
           "telemetry_update_count": 12,
-          "telemetry_avg_update_mag": 0.16375353467346365
+          "telemetry_avg_update_mag": 0.06693416833877563
         }
       ]
     }
@@ -279,9 +279,9 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
   "gradient_results": [
     {
       "path_name": "Backbone.forward_with_injection (production)",
-      "base_w1_grad_norm": 132.18072509765625,
-      "base_w2_grad_norm": 104.877685546875,
-      "q_proj_grad_norm": 105.31144714355469,
+      "base_w1_grad_norm": 69.92208099365234,
+      "base_w2_grad_norm": 66.09538269042969,
+      "q_proj_grad_norm": 65.78028869628906,
       "online_weights_changed_during_forward": false,
       "optimizer_changed_base_w1": true,
       "optimizer_changed_online_w1": false
@@ -297,6 +297,6 @@ Instrumentation captures memory state at: **before forward**, **after forward**,
     }
   ],
   "isolated_forward_updates": 12,
-  "isolated_forward_avg_update_mag": 0.1696577636167693
+  "isolated_forward_avg_update_mag": 0.06934526562690735
 }
 ```

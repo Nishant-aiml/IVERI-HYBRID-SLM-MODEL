@@ -1,0 +1,290 @@
+{
+  "campaign": "IVERI-HYPERION Comprehensive Proof Campaign",
+  "timestamp": "2026-10-07T22:55:12",
+  "proof_1_training": {
+    "iveri": {
+      "params": 9985449,
+      "final_val_loss": 0.9644,
+      "final_byte_ppl": 2.62,
+      "tok_per_sec": 572.0,
+      "history": [
+        {
+          "step": 100,
+          "val_loss": 1.4437,
+          "val_ppl": 4.24
+        },
+        {
+          "step": 200,
+          "val_loss": 1.3211,
+          "val_ppl": 3.75
+        },
+        {
+          "step": 300,
+          "val_loss": 1.2239,
+          "val_ppl": 3.4
+        },
+        {
+          "step": 400,
+          "val_loss": 1.153,
+          "val_ppl": 3.17
+        },
+        {
+          "step": 500,
+          "val_loss": 1.1051,
+          "val_ppl": 3.02
+        },
+        {
+          "step": 600,
+          "val_loss": 1.062,
+          "val_ppl": 2.89
+        },
+        {
+          "step": 700,
+          "val_loss": 1.026,
+          "val_ppl": 2.79
+        },
+        {
+          "step": 800,
+          "val_loss": 0.9888,
+          "val_ppl": 2.69
+        },
+        {
+          "step": 900,
+          "val_loss": 0.9715,
+          "val_ppl": 2.64
+        },
+        {
+          "step": 1000,
+          "val_loss": 0.9644,
+          "val_ppl": 2.62
+        }
+      ]
+    },
+    "transformer": {
+      "params": 10002496,
+      "final_val_loss": 2.4493,
+      "final_byte_ppl": 11.58,
+      "tok_per_sec": 122127.3,
+      "history": [
+        {
+          "step": 100,
+          "val_loss": 3.2335,
+          "val_ppl": 25.37
+        },
+        {
+          "step": 200,
+          "val_loss": 3.0034,
+          "val_ppl": 20.15
+        },
+        {
+          "step": 300,
+          "val_loss": 2.8123,
+          "val_ppl": 16.65
+        },
+        {
+          "step": 400,
+          "val_loss": 2.6955,
+          "val_ppl": 14.81
+        },
+        {
+          "step": 500,
+          "val_loss": 2.6314,
+          "val_ppl": 13.89
+        },
+        {
+          "step": 600,
+          "val_loss": 2.5817,
+          "val_ppl": 13.22
+        },
+        {
+          "step": 700,
+          "val_loss": 2.5352,
+          "val_ppl": 12.62
+        },
+        {
+          "step": 800,
+          "val_loss": 2.4912,
+          "val_ppl": 12.08
+        },
+        {
+          "step": 900,
+          "val_loss": 2.4606,
+          "val_ppl": 11.71
+        },
+        {
+          "step": 1000,
+          "val_loss": 2.4493,
+          "val_ppl": 11.58
+        }
+      ]
+    },
+    "iveri_advantage_byte_ppl": 4.42
+  },
+  "proof_2_adaptive_computation": {
+    "layer_0_mamba_gate": {
+      "mean": 0.2281,
+      "std": 0.0422,
+      "min": 0.1701,
+      "max": 0.3044,
+      "pct_below_0.3": 99.2,
+      "pct_above_0.7": 0.0
+    },
+    "layer_0_ffn_gate": {
+      "mean": 0.7386,
+      "std": 0.0118,
+      "min": 0.7182,
+      "max": 0.7557,
+      "pct_below_0.3": 0.0,
+      "pct_above_0.7": 100.0
+    },
+    "layer_1_mamba_gate": {
+      "mean": 0.382,
+      "std": 0.0052,
+      "min": 0.3745,
+      "max": 0.3909,
+      "pct_below_0.3": 0.0,
+      "pct_above_0.7": 0.0
+    },
+    "layer_1_ffn_gate": {
+      "mean": 0.2539,
+      "std": 0.0461,
+      "min": 0.1902,
+      "max": 0.3368,
+      "pct_below_0.3": 73.8,
+      "pct_above_0.7": 0.0
+    },
+    "layer_2_mamba_gate": {
+      "mean": 0.4741,
+      "std": 0.0675,
+      "min": 0.3758,
+      "max": 0.5895,
+      "pct_below_0.3": 0.0,
+      "pct_above_0.7": 0.0
+    },
+    "layer_2_ffn_gate": {
+      "mean": 0.7333,
+      "std": 0.0395,
+      "min": 0.663,
+      "max": 0.7887,
+      "pct_below_0.3": 0.0,
+      "pct_above_0.7": 71.0
+    },
+    "layer_3_mamba_gate": {
+      "mean": 0.6613,
+      "std": 0.0281,
+      "min": 0.6123,
+      "max": 0.7019,
+      "pct_below_0.3": 0.0,
+      "pct_above_0.7": 2.3
+    },
+    "layer_3_ffn_gate": {
+      "mean": 0.5616,
+      "std": 0.0663,
+      "min": 0.4472,
+      "max": 0.6573,
+      "pct_below_0.3": 0.0,
+      "pct_above_0.7": 0.0
+    },
+    "entropy": {
+      "mean": 0.5406,
+      "std": 0.3104,
+      "min": 0.0092,
+      "max": 0.998
+    }
+  },
+  "proof_3_titans_ablation": {
+    "loss_with_titans": 0.9625,
+    "loss_without_titans": 1.0836,
+    "titans_contribution": 0.1211,
+    "titans_contributes": true,
+    "ppl_with": 2.62,
+    "ppl_without": 2.96
+  },
+  "proof_4_retrieval": [
+    {
+      "test": "positional_loss",
+      "iveri_early": 0.9295,
+      "iveri_mid": 0.955,
+      "iveri_late": 0.9622,
+      "tf_early": 2.2595,
+      "tf_mid": 2.3636,
+      "tf_late": 2.3414,
+      "iveri_context_drop_pct": -3.5,
+      "tf_context_drop_pct": -3.6
+    }
+  ],
+  "proof_5_memory": {
+    "o1_confirmed": true,
+    "max_growth_mb": 0.0,
+    "measurements": [
+      {
+        "step": 1,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 10,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 50,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 100,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 200,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 300,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 400,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      },
+      {
+        "step": 500,
+        "memory_mb": 224.3701,
+        "growth_from_base": 0.012695
+      }
+    ]
+  },
+  "proof_6_generation": [
+    {
+      "prompt": "Once upon a time, there was a little girl named",
+      "iveri": "Once upon a time, there was a little girl named Bobe. He started to paint the swim and yellow home. They play!\n<|endoftext|>\n\nThe stick of Tom at t",
+      "transformer": "Once upon a time, there was a little girl named ont|>\n\nOrape wile sis. Thid ad thenkiy ay Mandas kolen re pldo mo theierl d womonelk ee. the ofitil"
+    },
+    {
+      "prompt": "The big dog ran to the",
+      "iveri": "The big dog ran to the sound. The bird like cars, a big cloud when he was playing with that, Jake and Tom away. So he knew",
+      "transformer": "The big dog ran to the anaued imet bt shis. Thudise o topkenng\n<are! venthe oum in moowe. thin dd heery. \"\"\nOned wksu ld, "
+    },
+    {
+      "prompt": "Lily saw a pretty bird in the",
+      "iveri": "Lily saw a pretty bird in the rags. They were stories and rassed her tiger, happily.\nMax had a walk it in the car on the sluck. \n",
+      "transformer": "Lily saw a pretty bird in the somerapank>theyerenauurbould shidal waf. The so\ufffd Hewasnd fant.  Iume aso itery the tar'nd eilyy tha"
+    },
+    {
+      "prompt": "One day, a boy found a",
+      "iveri": "One day, a boy found all higher. The lay she says, \"It's thief it that only was not someone how tucket her home. One day, ",
+      "transformer": "One day, a boy found aso tongthy tomsord, splor a theato hey th>\nO ditun herelirt heprery hed fomy isiry \nAs highengisse t"
+    }
+  ],
+  "proof_7_flops": {
+    "iveri_flops_per_token": 19694112,
+    "transformer_flops_per_token": 19267584,
+    "effective_iveri_flops": 10538464,
+    "gate_savings_pct": 46.5
+  }
+}

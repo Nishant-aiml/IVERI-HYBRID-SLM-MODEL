@@ -29,14 +29,14 @@
       "backward_flops_per_token": 7102791680
     },
     "Baseline E (IVERI Hybrid)": {
-      "total_parameters": 9347282,
-      "active_parameters": 3738912,
-      "trainable_parameters": 9347282,
-      "forward_flops_per_token": 3828645888,
-      "backward_flops_per_token": 7657291776
+      "total_parameters": 9351394,
+      "active_parameters": 3740557,
+      "trainable_parameters": 9351394,
+      "forward_flops_per_token": 3830330368,
+      "backward_flops_per_token": 7660660736
     }
   },
-  "active_parameter_delta_pct": 9.28,
+  "active_parameter_delta_pct": 9.33,
   "tolerance_status": "PASS",
   "gate_spec": "<= 10.0%"
 }

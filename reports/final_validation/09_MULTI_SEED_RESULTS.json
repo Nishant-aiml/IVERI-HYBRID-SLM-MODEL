@@ -1,0 +1,293 @@
+{
+  "provenance": {
+    "experiment_id": "RIGOROUS_MULTISEED_V1",
+    "git_sha": "7012134f44403f6732333bba9e93bbc7ea73b867",
+    "script": "scratch/run_rigorous_scientific_benchmark.py",
+    "timestamp_utc": "2026-08-14T06:30:43.809228+00:00",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "pytorch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_gb": 4.29
+  },
+  "corpus_hash": "4ac89968d4a4a22f",
+  "corpus_length": 10120,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "steps": 10,
+  "parameter_counts": {
+    "IVERI-Nano": 10029874,
+    "DenseTransformer": 9722083
+  },
+  "param_delta_pct": 3.07,
+  "raw_runs": {
+    "IVERI-Nano": [
+      {
+        "final_loss": 3.1087,
+        "mean_latency_ms": 3220.1,
+        "peak_vram_mb": 336.0,
+        "diverged": false,
+        "all_losses": [
+          5.5885,
+          5.4208,
+          3.6819,
+          3.259,
+          3.474,
+          3.3531,
+          3.3011,
+          3.2107,
+          3.0889,
+          3.1087
+        ],
+        "mean_grad_norm": 8.7833,
+        "seed": 42,
+        "model": "IVERI-Nano"
+      },
+      {
+        "final_loss": 3.0325,
+        "mean_latency_ms": 3041.5,
+        "peak_vram_mb": 338.0,
+        "diverged": false,
+        "all_losses": [
+          5.5483,
+          5.1226,
+          3.4072,
+          3.2498,
+          3.5052,
+          3.3311,
+          3.2088,
+          3.0483,
+          2.9645,
+          3.0325
+        ],
+        "mean_grad_norm": 7.3949,
+        "seed": 43,
+        "model": "IVERI-Nano"
+      },
+      {
+        "final_loss": 2.9944,
+        "mean_latency_ms": 3114.2,
+        "peak_vram_mb": 338.0,
+        "diverged": false,
+        "all_losses": [
+          5.5933,
+          5.8023,
+          4.3775,
+          3.4284,
+          3.1463,
+          3.1126,
+          3.0268,
+          2.9479,
+          3.0936,
+          2.9944
+        ],
+        "mean_grad_norm": 9.2648,
+        "seed": 44,
+        "model": "IVERI-Nano"
+      },
+      {
+        "final_loss": 3.1308,
+        "mean_latency_ms": 3078.8,
+        "peak_vram_mb": 334.0,
+        "diverged": false,
+        "all_losses": [
+          5.5413,
+          5.1445,
+          3.3332,
+          3.5888,
+          3.3718,
+          3.2029,
+          3.0769,
+          3.1101,
+          3.0864,
+          3.1308
+        ],
+        "mean_grad_norm": 6.9847,
+        "seed": 45,
+        "model": "IVERI-Nano"
+      },
+      {
+        "final_loss": 3.0374,
+        "mean_latency_ms": 3035.8,
+        "peak_vram_mb": 334.0,
+        "diverged": false,
+        "all_losses": [
+          5.5611,
+          5.4105,
+          3.5884,
+          3.6099,
+          3.3505,
+          3.2327,
+          3.1812,
+          2.9927,
+          3.1301,
+          3.0374
+        ],
+        "mean_grad_norm": 8.1111,
+        "seed": 46,
+        "model": "IVERI-Nano"
+      }
+    ],
+    "DenseTransformer": [
+      {
+        "final_loss": 4.8396,
+        "mean_latency_ms": 38.1,
+        "peak_vram_mb": 206.0,
+        "diverged": false,
+        "all_losses": [
+          6.5628,
+          6.6035,
+          14.9395,
+          3.7775,
+          11.5907,
+          9.4945,
+          6.5925,
+          7.2097,
+          5.8804,
+          4.8396
+        ],
+        "mean_grad_norm": 34.5035,
+        "seed": 42,
+        "model": "DenseTransformer"
+      },
+      {
+        "final_loss": 4.2607,
+        "mean_latency_ms": 35.7,
+        "peak_vram_mb": 206.0,
+        "diverged": false,
+        "all_losses": [
+          6.3539,
+          8.0237,
+          13.7535,
+          4.6828,
+          32.5186,
+          11.1923,
+          6.9128,
+          5.4778,
+          4.9568,
+          4.2607
+        ],
+        "mean_grad_norm": 39.3655,
+        "seed": 43,
+        "model": "DenseTransformer"
+      },
+      {
+        "final_loss": NaN,
+        "mean_latency_ms": 16.7,
+        "peak_vram_mb": 227.0,
+        "diverged": true,
+        "all_losses": [
+          6.352,
+          7.7618,
+          14.8768,
+          5.9032,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "mean_grad_norm": 16.9865,
+        "seed": 44,
+        "model": "DenseTransformer"
+      },
+      {
+        "final_loss": 7.2323,
+        "mean_latency_ms": 33.9,
+        "peak_vram_mb": 206.0,
+        "diverged": false,
+        "all_losses": [
+          5.8043,
+          7.3966,
+          15.9053,
+          4.0409,
+          27.974,
+          29.7697,
+          12.8063,
+          9.9899,
+          8.7454,
+          7.2323
+        ],
+        "mean_grad_norm": 55.632,
+        "seed": 45,
+        "model": "DenseTransformer"
+      },
+      {
+        "final_loss": 6.7163,
+        "mean_latency_ms": 37.7,
+        "peak_vram_mb": 206.0,
+        "diverged": false,
+        "all_losses": [
+          6.2642,
+          5.6199,
+          16.4004,
+          4.4654,
+          15.4368,
+          9.7096,
+          7.1804,
+          8.5013,
+          7.1314,
+          6.7163
+        ],
+        "mean_grad_norm": 40.5027,
+        "seed": 46,
+        "model": "DenseTransformer"
+      }
+    ]
+  },
+  "summary": {
+    "IVERI-Nano": {
+      "loss_mean": 3.0608,
+      "loss_std": 0.0569,
+      "n_valid": 5,
+      "ppl": 21.34,
+      "diverged": 0,
+      "latency_ms": 3098.1,
+      "vram_mb": 336.0,
+      "individual_losses": [
+        3.1087,
+        3.0325,
+        2.9944,
+        3.1308,
+        3.0374
+      ]
+    },
+    "DenseTransformer": {
+      "loss_mean": 5.7622,
+      "loss_std": 1.4349,
+      "n_valid": 4,
+      "ppl": 318.05,
+      "diverged": 1,
+      "latency_ms": 36.4,
+      "vram_mb": 206.0,
+      "individual_losses": [
+        4.8396,
+        4.2607,
+        NaN,
+        7.2323,
+        6.7163
+      ]
+    }
+  },
+  "statistics": {
+    "welch_t": -3.763,
+    "welch_df": 3.0,
+    "cohens_d": -2.66,
+    "iveri_stable_n": 5,
+    "transformer_stable_n": 4
+  },
+  "notes": {
+    "param_delta_warning": "DenseTransformer has 3.07% more params than IVERI-Nano. Exceeds 5% threshold. Results must be disclosed with this caveat.",
+    "norm_first": "DenseTransformer uses Pre-LN (norm_first=True) for stability \u2014 more fair than Post-LN used in prior runs.",
+    "mamba2_excluded": "Mamba2 SSM excluded from statistical analysis due to synthetic data memorisation artifact (loss=0.139 on repetitive corpus).",
+    "steps_warning": "10 training steps is a preliminary evaluation only. Not sufficient for final quality assessment.",
+    "data_warning": "Synthetic text corpus used. Results may not generalize to real text distributions."
+  }
+}
