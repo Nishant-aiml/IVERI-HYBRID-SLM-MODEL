@@ -19,6 +19,7 @@
 [![Passkey Retrieval](https://img.shields.io/badge/32k_Needle_Recall-100.0%25_Verified-0ea5e9?style=for-the-badge&logo=target&logoColor=white)](https://github.com/Nishant-aiml/IVERI-HYBRID-SLM-MODEL)
 [![Loss Reduction](https://img.shields.io/badge/Loss_Delta-83.4%25_Reduction-ec4899?style=for-the-badge&logo=trending-down&logoColor=white)](https://github.com/Nishant-aiml/IVERI-HYBRID-SLM-MODEL)
 [![Speedup](https://img.shields.io/badge/Triton_Speedup-24.8x_GPU_Acceleration-f59e0b?style=for-the-badge&logo=lightning&logoColor=white)](https://github.com/Nishant-aiml/IVERI-HYBRID-SLM-MODEL)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97_Hugging_Face-IVERI--Hyperion--SLM-ffcc00?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/NishantIveri/IVERI-Hyperion-SLM)
 
 <!-- Badges Row 3: Legal, Academic & Copyright Attribution -->
 [![Paper Accepted](https://img.shields.io/badge/IJRASET-Accepted_ID:_85419-8b5cf6?style=for-the-badge&logo=academia&logoColor=white)](https://www.ijraset.com/)
